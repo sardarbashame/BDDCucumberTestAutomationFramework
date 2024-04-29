@@ -1,1 +1,0 @@
-This test automation framework uses Cucumber Options, Features, Scenarios and POM.xml, executes the test scripts from GitHub from Jenkins batch runner.
