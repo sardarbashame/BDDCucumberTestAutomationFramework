@@ -1,0 +1,11 @@
+PageObjects\CreateNewContact.class
+PageObjects\PageObjectManager.class
+PageObjects\CreateSalesNewOpportunity.class
+PageObjects\LoginIntoSalesConsole.class
+commonutilities\ReusableUtility.class
+PageObjects\CreateNewTask.class
+PageObjects\ContactDetailsTab.class
+PageObjects\TaskDetailsTab.class
+PageObjects\SelectApplication.class
+PageObjects\OpportunityDetailsTab.class
+resources\ExtentReporterNG.class

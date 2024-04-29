@@ -1,0 +1,11 @@
+Hooks\hooksclass.class
+Runner\MyRunner.class
+StepDefinitions\CreateOpportunityPerceptionAnalysis.class
+StepDefinitions\CreateOpportunityNeedsAnalysis.class
+StepDefinitions\CreateOpportunityQualification.class
+StepDefinitions\CreateOpportunityProspecting.class
+StepDefinitions\CreateTask.class
+testcomponents\BaseTest.class
+testcomponents\Listeners.class
+StepDefinitions\CreateContact.class
+StepDefinitions\CreateOpportunityValuePreposition.class
