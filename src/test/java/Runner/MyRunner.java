@@ -10,10 +10,9 @@ import io.cucumber.testng.CucumberOptions;
 		tags="@smoketest", 
 		features = "src/test/java/Features",
 		glue = {"StepDefinitions","Hooks"},
-		plugin = {"pretty",	
-				"html:target/htmlreport.html", 
-				"json:target/jsonreport.json"}
+		plugin = {"pretty",	"json:target/jsonreport.json"}
 		)
+//	"html:target/htmlreport.html",
 
 public class MyRunner extends AbstractTestNGCucumberTests {
 
