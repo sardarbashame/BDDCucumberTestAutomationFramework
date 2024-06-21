@@ -18,6 +18,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import commonutilities.JiraPolicy;
+
 import PageObjects.ContactDetailsTab;
 import PageObjects.CreateNewContact;
 import PageObjects.CreateNewTask;
@@ -30,7 +32,6 @@ CreateNewContact createNewContact;
 ContactDetailsTab contactDetailsTab;
 String contactname;
 String contactemail;
-
 
 @Given ("create new contact")
 public void create_new_contact() throws InterruptedException, IOException {		

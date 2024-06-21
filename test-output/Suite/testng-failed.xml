@@ -2,9 +2,9 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <listeners>
-    <listener class-name="testcomponents.Listeners"/>
+    <listener class-name="testcomponents.TestJiraListener"/>
   </listeners>
-  <test thread-count="5" name="Opportunity(failed)">
+  <test thread-count="5" name="test1(failed)">
     <classes>
       <class name="Runner.MyRunner">
         <methods>
@@ -14,5 +14,5 @@
         </methods>
       </class> <!-- Runner.MyRunner -->
     </classes>
-  </test> <!-- Opportunity(failed) -->
+  </test> <!-- test1(failed) -->
 </suite> <!-- Failed suite [Suite] -->

@@ -24,6 +24,7 @@ public class BaseTest {
 	public static WebDriver driver;
 	public JavascriptExecutor js = (JavascriptExecutor) driver;
 	public FileReader reader, reader1;
+	public TakesScreenshot ts;
 			
 	public WebDriver intializeDriver() throws IOException
 	{	
@@ -107,7 +108,7 @@ public class BaseTest {
 	
 	public String getScreenShot(String testCaseName, WebDriver driver) throws IOException
 	{
-		TakesScreenshot ts = (TakesScreenshot)driver;
+		ts = (TakesScreenshot) driver;
 		File source = ts.getScreenshotAs(OutputType.FILE);
 		File file = new File(System.getProperty("user.dir")+"//reports//" + testCaseName + ".png");
 		FileUtils.copyFile(source, file);

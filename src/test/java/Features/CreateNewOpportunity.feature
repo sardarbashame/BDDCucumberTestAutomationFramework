@@ -9,6 +9,7 @@ Scenario: Create Qualification Stage Opportunity
 Given create new opportunity with stage qualification
 Then verify opportunity details for stage qualification
 
+@smoketest
 Scenario: Create Needs Analysis Stage Opportunity
 Given create new opportunity with stage needs analysis
 Then verify opportunity details for stage needs analysis

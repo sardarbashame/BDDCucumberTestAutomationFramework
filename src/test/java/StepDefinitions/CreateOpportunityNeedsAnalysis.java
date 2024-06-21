@@ -20,6 +20,8 @@ import org.testng.annotations.Test;
 
 import PageObjects.CreateSalesNewOpportunity;
 import PageObjects.OpportunityDetailsTab;
+import commonutilities.JiraPolicy;
+
 
 public class CreateOpportunityNeedsAnalysis extends BaseTest{
 CreateSalesNewOpportunity createNewOpportunity;
@@ -27,7 +29,9 @@ OpportunityDetailsTab oppDetails;
 String stagename;
 String probability;
 
+
 @Given ("create new opportunity with stage needs analysis")
+
 public void create_new_opportunity_with_stage_needs_analysis() throws InterruptedException, IOException {		
 createNewOpportunity = new CreateSalesNewOpportunity(driver);
 createNewOpportunity.createNewOpp(
@@ -38,14 +42,17 @@ createNewOpportunity.createNewOpp(
 	
 //validate the stage and probability on opportunity details tab
 @Then ("verify opportunity details for stage needs analysis")
+@JiraPolicy(logTicketReady=true)
+
 public void verify_opportunity_details_for_stage_need_analysis() throws InterruptedException, IOException 
 {		
 	oppDetails =  new  OpportunityDetailsTab(driver);
 	oppDetails.clickopportunitydetailsTab();
 	stagename = oppDetails.getactualstage();
 	probability = oppDetails.getprobability();
-	Assert.assertEquals(stagename, getParameters().getProperty("OPP_STAGE_NEEDS_ANALYSIS"));
+	Assert.assertEquals(stagename, "needs");
 	Assert.assertEquals(probability, getParameters().getProperty("OPP_PROBABILITY_NEEDS_ANALYSIS"));
 	
 }
 }
+//Assert.assertEquals(stagename, getParameters().getProperty("OPP_STAGE_NEEDS_ANALYSIS"));

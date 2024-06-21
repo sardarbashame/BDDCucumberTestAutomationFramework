@@ -10,7 +10,12 @@ import io.cucumber.testng.CucumberOptions;
 		tags="@smoketest", 
 		features = "src/test/java/Features",
 		glue = {"StepDefinitions","Hooks"},
-		plugin = {"pretty",	"json:target/jsonreport.json"}
+		plugin = {
+				"pretty",	
+				"json:target/jsonreport.json",
+				"html:target/htmlreport.html",
+				"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
+				}
 		)
 //	"html:target/htmlreport.html",
 

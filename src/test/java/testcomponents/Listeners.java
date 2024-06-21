@@ -16,6 +16,7 @@ import resources.ExtentReporterNG;
 
 public class Listeners extends BaseTest implements ITestListener {
 	public static ExtentTest test;
+	public WebDriver  driver;
 	ExtentReports extent = ExtentReporterNG.getReportObject();
 	@Override
 	public void onTestStart(ITestResult result) {
