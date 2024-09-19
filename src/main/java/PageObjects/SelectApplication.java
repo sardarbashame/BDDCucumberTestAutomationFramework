@@ -25,7 +25,7 @@ public class SelectApplication {
 	    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 	    driver.findElement(By.xpath("//span[text()='App Launcher']/..")).click();
 	    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
-	    driver.findElement(By.xpath("//input[@placeholder='Search apps and items...' or @placeholder='Search apps or items...']")).sendKeys("Sales Console");
+	    driver.findElement(By.xpath("//input[@placeholder='Search apps and items...' or @placeholder='Search apps or items...']")).sendKeys("Service Management");
 	    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 	    driver.findElement(By.xpath("//p[.//*[text()='"+appname+"']]")).click();
 	    Thread.sleep(12000);

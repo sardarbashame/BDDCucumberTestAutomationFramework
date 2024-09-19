@@ -4,11 +4,11 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>DevSalesConsole</groupId>
-  <artifactId>DevSandboxBDDTestNGFramework</artifactId>
+  <groupId>HeatAndControl</groupId>
+  <artifactId>HeatAndControlAutomation</artifactId>
   <version>0.0.1-SNAPSHOT</version>
 
-  <name>DevSandboxBDDTestNGFramework</name>
+  <name>HeatAndControlAutomation</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
@@ -45,7 +45,7 @@
     <groupId>io.github.bonigarcia</groupId>
     <artifactId>webdrivermanager</artifactId>
     <version>5.7.0</version>
-    <scope>test</scope>
+    <scope>compile</scope>
 </dependency>
 
 <dependency>
