@@ -17,16 +17,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
-
 import PageObjects.AccountDetailsTab;
 import PageObjects.CaseDetailsTab;
 import PageObjects.CreateNewContact;
-
-
 import PageObjects.GlobalSearch;
-import PageObjects.LoginIntoServiceConsole;
-import PageObjects.OpportunityDetailsTab;
+import PageObjects.Login;
 import PageObjects.SelectApplication;
 
 public class HAC411AbilitytoReopenCase extends BaseTest{
@@ -35,12 +30,12 @@ public class HAC411AbilitytoReopenCase extends BaseTest{
 	String industryname;
 	String actualmessage;
 	String editcasestatus;
-	LoginIntoServiceConsole loginPO;
+	Login loginPO;
 	SelectApplication  selectApplication;
 
 @Given("^HAC411 user enters (.*) and (.*)$")	
 public void HAC411_user_enters_username_and_password(String userName, String  password) throws  IOException { 
-	loginPO = new LoginIntoServiceConsole(driver);
+	loginPO = new Login(driver);
 	loginPO.goTo(getParameters().getProperty("HAC_URL")); 
 	loginPO.LoginApp (userName, password); 
 	}

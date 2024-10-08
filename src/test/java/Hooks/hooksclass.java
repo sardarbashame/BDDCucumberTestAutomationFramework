@@ -20,11 +20,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
-import PageObjects.LoginIntoServiceConsole;
+import PageObjects.Login;
 import PageObjects.SelectApplication;
 
 public class hooksclass extends BaseTest{
-	LoginIntoServiceConsole loginPO;
+	Login loginPO;
 	SelectApplication selectApplication;
 
 @Before(order=1)

@@ -30,9 +30,6 @@ public class ContactListViews extends ReusableUtility{
 		PageFactory.initElements(driver, this);
 	}
 	
-
-	
-	
 public void clickcontactdetailsTab() throws InterruptedException
 	{
 		Thread.sleep(0,2000);

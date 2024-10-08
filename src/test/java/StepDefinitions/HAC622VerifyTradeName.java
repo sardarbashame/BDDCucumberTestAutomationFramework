@@ -23,8 +23,7 @@ import PageObjects.AccountDetailsTab;
 import PageObjects.CreateNewContact;
 
 import PageObjects.GlobalSearch;
-import PageObjects.LoginIntoServiceConsole;
-import PageObjects.OpportunityDetailsTab;
+import PageObjects.Login;
 import PageObjects.SelectApplication;
 
 
@@ -32,12 +31,12 @@ public class HAC622VerifyTradeName extends BaseTest{
 	AccountDetailsTab accountDetailsTab;
 	GlobalSearch globalSearch;
 	String tradename;
-	LoginIntoServiceConsole loginPO;
+	Login loginPO;
 	SelectApplication  selectApplication;
 
 @Given("^HAC622 user enters (.*) and (.*)$")	
 public void HAC622_user_enters_username_and_password(String userName, String password) throws  IOException { 
-	loginPO = new LoginIntoServiceConsole(driver);
+	loginPO = new Login(driver);
 	loginPO.goTo(getParameters().getProperty("HAC_URL")); 
 	loginPO.LoginApp (userName,password); 
 	}

@@ -10,11 +10,11 @@ import org.openqa.selenium.support.PageFactory;
 
 import commonutilities.ReusableUtility;
 
-public class LoginIntoServiceConsole extends ReusableUtility{
+public class Login extends ReusableUtility{
 	
 	WebDriver driver;
 	
-	public LoginIntoServiceConsole(WebDriver driver)
+	public Login(WebDriver driver)
 	{
 		super(driver);
 		this.driver=driver;

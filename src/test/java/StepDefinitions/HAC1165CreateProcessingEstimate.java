@@ -27,13 +27,12 @@ import PageObjects.EstimateCreationFlowStep2;
 import PageObjects.EstimateCreationFlowStep3;
 import PageObjects.GlobalSearch;
 import PageObjects.HomePage;
-import PageObjects.LoginIntoServiceConsole;
-import PageObjects.OpportunityDetailsTab;
+import PageObjects.Login;
 import PageObjects.SelectApplication;
 
 public class HAC1165CreateProcessingEstimate extends BaseTest {
 	GlobalSearch globalSearch;
-	LoginIntoServiceConsole loginPO;
+	Login loginPO;
 	CaseDetailsTab caseDetailsTab;
 	SelectApplication selectApplication;
 	EstimateCreationFlowStep1 estimateCreationFlowStep1;
@@ -53,7 +52,7 @@ public class HAC1165CreateProcessingEstimate extends BaseTest {
 
 	@Given("^HAC1165 user enters (.*) and (.*)$")
 	public void HAC145_user_enters_username_and_password(String userName, String password) throws IOException {
-		loginPO = new LoginIntoServiceConsole(driver);
+		loginPO = new Login(driver);
 		loginPO.goTo(getParameters().getProperty("HAC_URL"));
 		loginPO.LoginApp(userName, password);
 	}
