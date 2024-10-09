@@ -27,4 +27,4 @@ Feature: Verify the contact list views
 
     Examples: 
       | username            | password    |
-      | hctestcsr@gmail.com | M@shaallah1 |
+      | hctestcsr@gmail.com | M@shaallah2 |

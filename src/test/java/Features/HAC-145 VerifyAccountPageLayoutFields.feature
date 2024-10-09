@@ -1,6 +1,5 @@
 Feature: Verify the customer account page layout fields
 
-
   Scenario Outline: Login as Service Users and Verify the account page layout fields
     Given HAC145 user enters <username> and <password>
     When HAC145 select the applicaton
@@ -26,6 +25,6 @@ Feature: Verify the customer account page layout fields
 
     Examples: 
       | username                              | password    |
-      | hctestcsr@gmail.com                   | M@shaallah1 |
-      | channelpartnermanagerusersarda@qa.hnc | M@shaallah1 |
+      | hctestcsr@gmail.com                   | M@shaallah2 |
+      | channelpartnermanagerusersarda@qa.hnc | M@shaallah2 |
       | testservicescheduler@gmail.com        | M@shaallah1 |

@@ -11,8 +11,8 @@ Feature: Verify the Trade Name field on the customer account
 
     Examples: 
       | username                              | password    |
-      | hctestcsr@gmail.com                   | M@shaallah1 |
-      | channelpartnermanagerusersarda@qa.hnc | M@shaallah1 |
+      | hctestcsr@gmail.com                   | M@shaallah2 |
+      | channelpartnermanagerusersarda@qa.hnc | M@shaallah2 |
       | testservicescheduler@gmail.com        | M@shaallah1 |
 
   
