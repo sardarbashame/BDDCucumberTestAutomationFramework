@@ -23,6 +23,16 @@ public class HomePage extends ReusableUtility {
 		PageFactory.initElements(driver, this);
 	}
 
+	public void clickAccountsTab() throws InterruptedException {
+		js = (JavascriptExecutor) driver;
+		Thread.sleep(0, 4000);
+		waitForElementToAppear(By.xpath("//a[@title='Accounts']"));
+		Thread.sleep(0, 3000);
+		webele = driver.findElement(By.xpath("//a[@title='Accounts']"));
+		js.executeScript("arguments[0].click();", webele);
+		Thread.sleep(0, 3000);
+	}
+	
 	public void clickCasesTab() throws InterruptedException {
 		js = (JavascriptExecutor) driver;
 		Thread.sleep(0, 4000);

@@ -1,6 +1,6 @@
 Feature: Verify processing estimate creation
 
-  @smoketest
+
   Scenario Outline: Login as Service Scheduler and Verify the processing estimate creation
     Given HAC1165 user enters <username> and <password>
     When HAC1165 select the applicaton
