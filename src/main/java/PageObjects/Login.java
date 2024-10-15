@@ -2,58 +2,49 @@ package PageObjects;
 
 import java.time.Duration;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 
-import commonutilities.ReusableUtility;
+import commonutilities.CommonFunctions;
 
-public class Login extends ReusableUtility{
-	
-	WebDriver driver;
-	
-	public Login(WebDriver driver)
-	{
-		super(driver);
-		this.driver=driver;
-		PageFactory.initElements(driver, this);
+public class Login extends CommonFunctions {
+
+	public Login() {
+		PageFactory.initElements(new AjaxElementLocatorFactory(driver, 10), this);
 	}
-	
-   
-	@FindBy(id="username")
+
+	@FindBy(id = "username")
 	WebElement usernameele;
-	
-	@FindBy(id="password")
+
+	@FindBy(id = "password")
 	WebElement passwordele;
-	
-	@FindBy(id="Login")
+
+	@FindBy(id = "Login")
 	WebElement Loginele;
-	
-	public void goTo(String URL)
-	{
+
+	public void goTo(String URL) {
+		//driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		//driver.get(URL);
+		 driver.navigate().to(URL);
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-	 	driver.navigate().to(URL); 
-	    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-	    driver.manage().window().maximize();
-	    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10)); 
-		
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+
 	}
-	
-	public void LoginApp(String username, String password)
-	{	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+
+	public void LoginApp(String username, String password) {		
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		usernameele.sendKeys(username);
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		passwordele.sendKeys(password);
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		Loginele.click();
-		//By titleofhwk = By.xpath("//span[@title='Sales Console']");	
-	//	waitForElementToAppear(titleofhwk);
+		// By titleofhwk = By.xpath("//span[@title='Sales Console']");
+		// waitForElementToAppear(titleofhwk);
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
-		
+
 	}
 
-
 }
-

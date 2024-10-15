@@ -1,8 +1,8 @@
 Feature: Verify the contact list views
 
- 
-  Scenario Outline: Login as Service Users and Verify the contact list views
-    Given HAC1124 user enters <username> and <password>
+ @Test
+  Scenario: Login as Service Users and Verify the contact list views
+    Given HAC1124 login as service user
     When HAC1124 select the applicaton
     When HAC1124 close all the open tabs
     When HAC1124 close the bottom bar
@@ -23,8 +23,3 @@ Feature: Verify the contact list views
     Then HAC1124 verify the mailing city column in customer contact list view
     Then HAC1124 verify the shift column in customer contact list view
     Then HAC1124 verify the location column in customer contact list view
-
-
-    Examples: 
-      | username            | password    |
-      | hctestcsr@gmail.com | M@shaallah2 |

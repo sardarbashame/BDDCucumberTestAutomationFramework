@@ -1,14 +1,15 @@
 PageObjects\CreateNewContact.class
+PageObjects\Login.class
 PageObjects\EstimateCreationFlowStep1.class
 PageObjects\EstimateCreationFlowStep2.class
-PageObjects\LoginIntoServiceConsole.class
 PageObjects\CaseDetailsTab.class
 PageObjects\SelectApplication.class
 resources\ExtentReporterNG.class
 PageObjects\HomePage.class
+commonutilities\BaseTest.class
 PageObjects\GlobalSearch.class
 PageObjects\EstimateCreationFlowStep3.class
+commonutilities\CommonFunctions.class
 commonutilities\ReusableUtility.class
 PageObjects\AccountDetailsTab.class
-PageObjects\OpportunityDetailsTab.class
 PageObjects\ContactListViews.class

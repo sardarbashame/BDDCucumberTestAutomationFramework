@@ -4,12 +4,14 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import commonutilities.ReusableUtility;
+import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 
-public class EstimateCreationFlowStep1 extends ReusableUtility {
+import commonutilities.CommonFunctions;
 
-	WebDriver driver;
+public class EstimateCreationFlowStep1 extends CommonFunctions {
+
 	By waitforelementtodisappear;
 	By waitforelementtoappear;
 	String actualmessage;
@@ -20,34 +22,55 @@ public class EstimateCreationFlowStep1 extends ReusableUtility {
 	boolean pricebookoption5;
 	boolean pricebookoption6;
 	boolean pricebookoption7;
-	JavascriptExecutor js = (JavascriptExecutor) driver;
-	WebElement webele;
 
-	public EstimateCreationFlowStep1(WebDriver driver) {
-		super(driver);
-		this.driver = driver;
-		PageFactory.initElements(driver, this);
+	public EstimateCreationFlowStep1() {
+		PageFactory.initElements(new AjaxElementLocatorFactory(driver, 10), this);
 	}
 
+	@FindBy(xpath = "//li//a[text()='Estimations']")
+	WebElement clk_estimations;
+
+	@FindBy(xpath = "//*[text()='Price Book']/../..//button")
+	WebElement clk_priceBook;
+
+	@FindBy(xpath = "//button[text()='Next']")
+	WebElement btn_next;
+
+	@FindBy(xpath = "//*[text()='Estimate Items']/../..//button")
+	WebElement clk_estimateItems;
+
+	@FindBy(xpath = "//span[text()='CANADA Domestic Market Rate']")
+	WebElement txt_candaMarketRate;
+
+	@FindBy(xpath = "//span[text()='CANADA Domestic MPA-PEPSICO (FRITOLAY)']")
+	WebElement txt_candaPepsico;
+
+	@FindBy(xpath = "//span[text()='USA Domestic Market Rate']")
+	WebElement txt_usMarketRate;
+
+	@FindBy(xpath = "//span[text()='USA Domestic Market Rate PRE-PAY / COD']")
+	WebElement txt_usMarketRatePrepay;
+
+	@FindBy(xpath = "//span[text()='USA Domestic MPA-PEPSICO (FritoLay)']")
+	WebElement txt_usMarketRatePepsico;
+
+	@FindBy(xpath = "//span[text()='USA International Market Rate']")
+	WebElement txt_usInterNationalMarketRatePrepay;
+
+	@FindBy(xpath = "//span[text()='USA International MPA-PEPSICO (FRITOLAY)']")
+	WebElement txt_usInterNationalPepsico;
+
 	public void clickEstimatesTab() throws InterruptedException {
-		Thread.sleep(0, 2000);
-		// waitforelementtodisappear =
-		// waitForElementToDisAppear(By.xpath("//span[contains(@class,'toastMessage')]//a//div"));
-		Thread.sleep(0, 2000);
-		driver.findElement(By.xpath("//li//a[text()='Estimations']")).click();
+		expWaitToBeClickable(clk_estimations);
+		clk_estimations.click();
 		Thread.sleep(4000);
-		// waitforelementtoappear =
-		// waitForElementToAppear(By.xpath("(//button[text()='View
-		// Confirmation'])[1]"));
 	}
 
 	public void estimateFlowStep1(String pricebook, String estimatematrix, String estimatematrixoption,
 			String estimateitem) throws InterruptedException {
 		js = (JavascriptExecutor) driver;
-		Thread.sleep(0, 4000);
-		// waitForElementToAppear(By.xpath("//*[text()='Price Book']/../..//button"));
-		Thread.sleep(0, 3000);
-		driver.findElement(By.xpath("//*[text()='Price Book']/../..//button")).click();
+		expWaitToBeClickable(clk_priceBook);
+		clk_priceBook.click();
 		Thread.sleep(0, 3000);
 		driver.findElement(By.xpath("//span[text()='" + pricebook + "']")).click();
 		Thread.sleep(0, 3000);
@@ -55,78 +78,72 @@ public class EstimateCreationFlowStep1 extends ReusableUtility {
 		driver.findElement(By.xpath("//*[text()='" + estimatematrix + "']/../..//button")).click();
 		Thread.sleep(0, 3000);
 		driver.findElement(By.xpath("//span[text()='" + estimatematrixoption + "']")).click();
-		Thread.sleep(0, 3000);
+		expWaitToBeClickable(clk_estimateItems);
 
-		driver.findElement(By.xpath("//*[text()='Estimate Items']/../..//button")).click();
+		clk_estimateItems.click();
 		Thread.sleep(0, 3000);
 		driver.findElement(By.xpath("//span[text()='" + estimateitem + "']")).click();
 		Thread.sleep(0, 3000);
 
-		driver.findElement(By.xpath("//button[text()='Next']")).click();
+		btn_next.click();
 		Thread.sleep(0, 4000);
-
 	}
-	
-	
+
 	public boolean verifyPriceBookOption1() throws InterruptedException {
 		js = (JavascriptExecutor) driver;
 		Thread.sleep(0, 4000);
-		// waitForElementToAppear(By.xpath("//*[text()='Price Book']/../..//button"));
+		expWaitToBeClickable(clk_priceBook);
+		clk_priceBook.click();
 		Thread.sleep(0, 3000);
-		driver.findElement(By.xpath("//*[text()='Price Book']/../..//button")).click();
-		Thread.sleep(0, 3000);
-		pricebookoption1 =	driver.findElement(By.xpath("//span[text()='CANADA Domestic Market Rate']")).isDisplayed();
+		pricebookoption1 = txt_candaMarketRate.isDisplayed();
 		return pricebookoption1;
-		
+
 	}
-	
-	
+
 	public boolean verifyPriceBookOption2() throws InterruptedException {
 		Thread.sleep(0, 3000);
-		pricebookoption2 =	driver.findElement(By.xpath("//span[text()='CANADA Domestic MPA-PEPSICO (FRITOLAY)']")).isDisplayed();
+		pricebookoption2 = txt_candaPepsico.isDisplayed();
 		return pricebookoption2;
-		
+
 	}
-	
-	
+
 	public boolean verifyPriceBookOption3() throws InterruptedException {
 		Thread.sleep(0, 3000);
-		pricebookoption3 =	driver.findElement(By.xpath("//span[text()='USA Domestic Market Rate']")).isDisplayed();
+		pricebookoption3 = txt_usMarketRate.isDisplayed();
 		return pricebookoption3;
-		
+
 	}
-	
-	
+
 	public boolean verifyPriceBookOption4() throws InterruptedException {
 		Thread.sleep(0, 3000);
-		pricebookoption4 =	driver.findElement(By.xpath("//span[text()='USA Domestic Market Rate PRE-PAY / COD']")).isDisplayed();
+		pricebookoption4 = txt_usMarketRatePrepay.isDisplayed();
 		return pricebookoption4;
-		
+
 	}
-	
+
 	public boolean verifyPriceBookOption5() throws InterruptedException {
 		Thread.sleep(0, 3000);
-		pricebookoption5 =	driver.findElement(By.xpath("//span[text()='USA Domestic MPA-PEPSICO (FritoLay)']")).isDisplayed();
+		pricebookoption5 = txt_usMarketRatePepsico.isDisplayed();
 		Thread.sleep(0, 3000);
 		return pricebookoption5;
-		
+
 	}
-	
+
 	public boolean verifyPriceBookOption6() throws InterruptedException {
 		Thread.sleep(0, 4000);
-		pricebookoption6 =	driver.findElement(By.xpath("//span[text()='USA International Market Rate']")).isDisplayed();
+		pricebookoption6 = txt_usInterNationalMarketRatePrepay.isDisplayed();
 		Thread.sleep(0, 3000);
 		return pricebookoption6;
-		
+
 	}
-	
+
 	public boolean verifyPriceBookOption7() throws InterruptedException {
 		Thread.sleep(0, 3000);
-		pricebookoption7 =	driver.findElement(By.xpath("//span[text()='USA International MPA-PEPSICO (FRITOLAY)']")).isDisplayed();
-		Thread.sleep(0, 3000);
-		driver.findElement(By.xpath("//*[text()='Price Book']/../..//button")).click();
+		pricebookoption7 = txt_usInterNationalPepsico.isDisplayed();
+		expWaitToBeClickable(clk_priceBook);
+		clk_priceBook.click();
 		return pricebookoption7;
-		
+
 	}
 
 }

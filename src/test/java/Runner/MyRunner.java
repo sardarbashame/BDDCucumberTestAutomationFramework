@@ -7,8 +7,8 @@ import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions
 		(
-		tags="@smoketest", 
-		features = "src/test/java/Features",
+		tags="@Test", 
+		features = "src/test/java/Features",dryRun = false,
 		glue = {"StepDefinitions","Hooks"},
 		plugin = {
 				"pretty",	
