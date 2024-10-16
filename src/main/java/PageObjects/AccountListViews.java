@@ -37,83 +37,59 @@ public class AccountListViews extends ReusableUtility {
 	}
 
 	public void clickAccountLisViewButton() throws InterruptedException {
-		Thread.sleep(0, 2000);
 		driver.findElement(By.xpath("//button[@title='Select a List View: Accounts']")).click();
-		Thread.sleep(4000);
-	}
+		}
 
 	public void clickAllAccountsListView() throws InterruptedException {
-		Thread.sleep(0, 2000);
 		driver.findElement(By.xpath("(//li//span[text()='All Accounts'])[1]")).click();
-		Thread.sleep(4000);
 	}
 	
 	public void clickMyAccountsListView() throws InterruptedException {
-		Thread.sleep(0, 2000);
 		driver.findElement(By.xpath("(//li//span[text()='My Accounts'])[1]")).click();
-		Thread.sleep(4000);
-	}
+		}
 	
 	public void clickCustomerAccountsListView() throws InterruptedException {
-		Thread.sleep(0, 2000);
 		driver.findElement(By.xpath("(//li//span[text()='Customer Accounts'])[1]")).click();
-		Thread.sleep(4000);
-	}
+		}
 
 	public void clickProspectAccountsListView() throws InterruptedException {
-		Thread.sleep(0, 2000);
 		driver.findElement(By.xpath("(//li//span[text()='Prospect Accounts'])[1]")).click();
-		Thread.sleep(4000);
-	}
+		}
 	
 	public void clickInterCompanyAccountsListView() throws InterruptedException {
-		Thread.sleep(0, 2000);
 		driver.findElement(By.xpath("(//li//span[text()='Intercompany Accounts'])[1]")).click();
-		Thread.sleep(4000);
 	}
 
 	public boolean isAllAccountsListViewPresent() throws InterruptedException {
-		Thread.sleep(0, 2000);
 		allaccountslistviewpresent = driver.findElement(By.xpath("//li//span[text()='All Accounts']")).isDisplayed();
-		Thread.sleep(4000);
 		return allaccountslistviewpresent;
 	}
 
 	public boolean isMyAccountsListViewPresent() throws InterruptedException {
-		Thread.sleep(0, 2000);
 		myaccountslistviewpresent = driver.findElement(By.xpath("//li//span[text()='My Accounts']")).isDisplayed();
-		Thread.sleep(4000);
 		return myaccountslistviewpresent;
 	}
 
 	public boolean isCustomerAccountsListViewPresent() throws InterruptedException {
-		Thread.sleep(0, 2000);
 		customeraccountslistviewpresent = driver.findElement(By.xpath("//li//span[text()='Customer Accounts']"))
 				.isDisplayed();
-		Thread.sleep(4000);
 		return customeraccountslistviewpresent;
 	}
 
 	public boolean isProspectAccountsListViewPresent() throws InterruptedException {
-		Thread.sleep(0, 2000);
 		prospectaccountslistviewpresent = driver.findElement(By.xpath("//li//span[text()='Prospect Accounts']"))
 				.isDisplayed();
-		Thread.sleep(4000);
 		return prospectaccountslistviewpresent;
 	}
 
 	public boolean isIntercompanyAccountsListViewPresent() throws InterruptedException {
-		Thread.sleep(0, 2000);
 		intercompanyaccountslistviewpresent = driver.findElement(By.xpath("//li//span[text()='Intercompany Accounts']"))
 				.isDisplayed();
-		Thread.sleep(4000);
 		return intercompanyaccountslistviewpresent;
 	}
 
 	public boolean isOEMAccountsListViewPresent() throws InterruptedException {
-		Thread.sleep(0, 2000);
 		oemaccountslistviewpresent = driver.findElement(By.xpath("//li//span[text()='OEM Accounts']")).isDisplayed();
-		Thread.sleep(4000);
 		return oemaccountslistviewpresent;
 	}
 

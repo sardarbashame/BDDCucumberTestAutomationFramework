@@ -26,43 +26,29 @@ public class EstimateCreationFlowStep2 extends ReusableUtility {
 	}
 
 	public void selectFromDate() throws InterruptedException {
-		Thread.sleep(0, 2000);
 		waitforelementtoappear = waitForElementToAppear(By.xpath("(//button[text()='View Confirmation'])[1]"));
-		Thread.sleep(0, 4000);
 		driver.findElement(By.xpath("//*[text()='From Date']/..//input")).click();
-		Thread.sleep(0, 2000);
-		driver.findElement(By.xpath("//tr/td[@data-value='2024-09-01']")).click();
-		Thread.sleep(2000);
-	}
+		driver.findElement(By.xpath("//tr/td[@data-value='2024-10-01']")).click();
+		}
 
 	public void selectToDate() throws InterruptedException {
-		Thread.sleep(0, 2000);
 		waitforelementtoappear = waitForElementToAppear(By.xpath("(//button[text()='View Confirmation'])[1]"));
-		Thread.sleep(0, 4000);
 		driver.findElement(By.xpath("//*[text()='To Date']/..//input")).click();
-		Thread.sleep(0, 2000);
-		driver.findElement(By.xpath("//tr/td[@data-value='2024-09-30']")).click();
-		Thread.sleep(3000);
+		driver.findElement(By.xpath("//tr/td[@data-value='2024-10-30']")).click();
 	}
 
 	public boolean isNumberOfTechPresent() throws InterruptedException {
-		Thread.sleep(0, 3000);
 		numberoftechpresent = driver.findElement(By.xpath("(//label[text()='Number Of Tech'])")).isDisplayed();
-		Thread.sleep(1000);
 		return numberoftechpresent;
 	}
 
 	public boolean isNumberOfDaysPresent() throws InterruptedException {
-		Thread.sleep(0, 3000);
 		numberofdayspresent = driver.findElement(By.xpath("(//label[text()='Number Of Days'])")).isDisplayed();
-		Thread.sleep(1000);
 		return numberofdayspresent;
 	}
 
 	public boolean isNumberOfHrsPresent() throws InterruptedException {
-		Thread.sleep(0, 3000);
 		numberofhourspresent = driver.findElement(By.xpath("(//label[text()='Number of Hrs/day'])")).isDisplayed();
-		Thread.sleep(1000);
 		return numberofhourspresent;
 	}
 

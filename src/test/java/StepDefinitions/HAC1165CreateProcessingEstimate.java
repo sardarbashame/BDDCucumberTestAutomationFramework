@@ -21,7 +21,6 @@ import org.testng.annotations.Test;
 
 import PageObjects.AccountDetailsTab;
 import PageObjects.CaseDetailsTab;
-import PageObjects.CreateNewContact;
 import PageObjects.EstimateCreationFlowStep1;
 import PageObjects.EstimateCreationFlowStep2;
 import PageObjects.EstimateCreationFlowStep3;
@@ -84,13 +83,6 @@ public class HAC1165CreateProcessingEstimate extends BaseTest {
 		homePage = new HomePage(driver);
 		homePage.createNewCase("FN6 MN6 LN6","FN6","TestCase100");
 	}
-
-	/*
-	 * @When("^HAC1165 select case(.*)$") public void HAC1165_select_case(String
-	 * tstcase) throws InterruptedException, IOException { globalSearch = new
-	 * GlobalSearch(driver); System.out.println(tstcase);
-	 * globalSearch.selectcasefromglobalsearch(tstcase); }
-	 */
 
 	@When("HAC1165 user is on estimate tab")
 	public void HAC1165_user_is_on_estimate_tab() throws InterruptedException, IOException {

@@ -27,9 +27,6 @@ public class CaseDetailsTab extends ReusableUtility {
 
 	public void editCaseStatus() throws InterruptedException {
 		Thread.sleep(0, 2000);
-		// waitforelementtodisappear =
-		// waitForElementToDisAppear(By.xpath("//span[contains(@class,'toastMessage')]//a//div"));
-		Thread.sleep(0, 2000);
 		driver.findElement(By.xpath("//span[text()='Edit Status']/..")).click();
 		Thread.sleep(2000);
 	}
@@ -46,9 +43,6 @@ public class CaseDetailsTab extends ReusableUtility {
 	}
 
 	public void clickSaveButton() throws InterruptedException {
-		Thread.sleep(0, 2000);
-		// waitforelementtodisappear =
-		// waitForElementToDisAppear(By.xpath("//span[contains(@class,'toastMessage')]//a//div"));
 		Thread.sleep(0, 2000);
 		driver.findElement(By.xpath("//button[@name='SaveEdit']")).click();
 		Thread.sleep(2000);

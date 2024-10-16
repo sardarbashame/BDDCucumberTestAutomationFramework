@@ -48,8 +48,6 @@ public class Login extends ReusableUtility{
 		passwordele.sendKeys(password);
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		Loginele.click();
-		//By titleofhwk = By.xpath("//span[@title='Sales Console']");	
-	//	waitForElementToAppear(titleofhwk);
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 		
 	}

@@ -6,13 +6,12 @@ Feature: Verify the Trade Name field on the customer account
     When HAC622 select the applicaton
     When HAC622 close all the open tabs
     When HAC622 close the bottom bar
-    When HAC622 user is on account details
+    When HAC622 select accounts tab
+    When HAC622 create new customer account
     Then HAC622 verify trade name
 
     Examples: 
       | username                              | password    |
-      | hctestcsr@gmail.com                   | M@shaallah2 |
-      | channelpartnermanagerusersarda@qa.hnc | M@shaallah2 |
       | testservicescheduler@gmail.com        | M@shaallah1 |
 
   

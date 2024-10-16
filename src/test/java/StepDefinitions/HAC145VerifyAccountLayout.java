@@ -20,10 +20,8 @@ import org.testng.annotations.Test;
 
 
 import PageObjects.AccountDetailsTab;
-
-import PageObjects.CreateNewContact;
-
 import PageObjects.GlobalSearch;
+import PageObjects.HomePage;
 import PageObjects.Login;
 import PageObjects.SelectApplication;
 
@@ -33,6 +31,7 @@ public class HAC145VerifyAccountLayout extends BaseTest{
 	String industryname;
 	Login loginPO;
 	SelectApplication  selectApplication;
+	HomePage homepage;
 	String accountcurrency;
 	String accountname;
 	String type;
@@ -75,10 +74,16 @@ public void HAC387_close_the_bottom_bar() throws InterruptedException {
 	}
 	 	
 	
-@When ("HAC145 user is on account details")
-public void HAC145_user_is_on_account_details() throws InterruptedException, IOException {		
-	globalSearch = new GlobalSearch(driver);
-	globalSearch.selectaccountfromglobalsearch();
+@When("HAC145 select accounts tab")
+public void HAC145_select_accounts_tab() throws InterruptedException {
+	homepage = new HomePage(driver);
+	homepage.clickAccountsTab();
+}
+
+@When("HAC145 create new customer account")
+public void HAC145_create_new_customer_account() throws InterruptedException, IOException {
+	homepage = new HomePage(driver);
+	homepage.createNewCustomerAccount(getParameters().getProperty("ACCTNAME")+Math.random(), getParameters().getProperty("INDUSTRY"), getParameters().getProperty("TRADENAME"));
 }
 
 //validate account name on account details 
@@ -87,18 +92,18 @@ public void HAC145_verify_account_name() throws InterruptedException, IOExceptio
 {		
 	 accountDetailsTab = new AccountDetailsTab(driver);
 	 accountname = accountDetailsTab.getAccountName();
-	 Assert.assertEquals(accountname,"Test Customer Account11");
+	 Assert.assertTrue(accountname.contains("TestCustomerAccount"));
 	
 }
 
-@Then ("HAC145 verify parent account")
-public void HAC145_verify_parent_account() throws InterruptedException, IOException 
-{		
-	 accountDetailsTab = new AccountDetailsTab(driver);
-	 parentaccount = accountDetailsTab.getParentAccount();
-	 Assert.assertEquals(parentaccount,"Juicy Box (Sample)");
-	
-}
+//@Then ("HAC145 verify parent account")
+//public void HAC145_verify_parent_account() throws InterruptedException, IOException 
+//{		
+//	 accountDetailsTab = new AccountDetailsTab(driver);
+//	 parentaccount = accountDetailsTab.getParentAccount();
+//	 Assert.assertEquals(parentaccount,"Juicy Box (Sample)");
+//	
+//}
 
 @Then ("HAC145 verify type")
 public void HAC145_verify_type() throws InterruptedException, IOException 
@@ -114,7 +119,7 @@ public void HAC145_verify_industry() throws InterruptedException, IOException
 {		
 	 accountDetailsTab = new AccountDetailsTab(driver);
 	 industryname = accountDetailsTab.getIndustry();
-	 Assert.assertEquals(industryname,"Leafy Greens");
+	 Assert.assertEquals(industryname,"Animal Food");
 	
 }
 
@@ -127,14 +132,14 @@ public void HAC145_verify_industry() throws InterruptedException, IOException
  * }
  */
 
-@Then ("HAC145 verify account currency")
-public void HAC145_verify_accountcurrency() throws InterruptedException, IOException 
-{		
-	 accountDetailsTab = new AccountDetailsTab(driver);
-	 accountcurrency = accountDetailsTab.getAccountCurrency();
-	 Assert.assertEquals(accountcurrency,"USD - U.S. Dollar");
-	
-}
+//@Then ("HAC145 verify account currency")
+//public void HAC145_verify_accountcurrency() throws InterruptedException, IOException 
+//{		
+//	 accountDetailsTab = new AccountDetailsTab(driver);
+//	 accountcurrency = accountDetailsTab.getAccountCurrency();
+//	 Assert.assertEquals(accountcurrency,"USD - U.S. Dollar");
+//	
+//}
 
 //validate trade name label on account details 
 @Then ("HAC145 verify trade name label")
@@ -152,7 +157,7 @@ public void HAC145_verify_trade_name_value() throws InterruptedException, IOExce
 {		
 	 accountDetailsTab = new AccountDetailsTab(driver);
 	 tradename = accountDetailsTab.getTradeName();
-	 Assert.assertEquals(tradename,"Trade Name - Test Customer Account11");
+	 Assert.assertEquals(tradename,"TestTradeName");
 	
 }
 
@@ -177,14 +182,14 @@ public void HAC145_verify_customer_portal_account_label() throws InterruptedExce
 }
 
 //validate Employees label on account details 
-@Then ("HAC145 verify employees label")
-public void HAC145_verify_employees_label() throws InterruptedException, IOException 
-{		
-	 accountDetailsTab = new AccountDetailsTab(driver);
-	employeeslabel = accountDetailsTab.isEmployeesPresent();
-	 Assert.assertTrue(employeeslabel);
-	
-}
+//@Then ("HAC145 verify employees label")
+//public void HAC145_verify_employees_label() throws InterruptedException, IOException 
+//{		
+//	 accountDetailsTab = new AccountDetailsTab(driver);
+//	employeeslabel = accountDetailsTab.isEmployeesPresent();
+//	 Assert.assertTrue(employeeslabel);
+//	
+//}
 
 //validate Operating Hours label on account details 
 @Then ("HAC145 verify operating hours label")

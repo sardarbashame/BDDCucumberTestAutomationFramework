@@ -21,8 +21,6 @@ import org.testng.annotations.Test;
 import PageObjects.AccountDetailsTab;
 import PageObjects.AccountListViews;
 import PageObjects.ContactListViews;
-import PageObjects.CreateNewContact;
-
 import PageObjects.GlobalSearch;
 import PageObjects.HomePage;
 import PageObjects.Login;
