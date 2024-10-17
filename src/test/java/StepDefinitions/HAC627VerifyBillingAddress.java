@@ -26,22 +26,16 @@ public class HAC627VerifyBillingAddress extends BaseTest {
 			loginPO.LoginApp (userName, password); 
 			}
 	    
-	
-
 	@When("HAC627 select the applicaton")
 	public void HAC627_select_the_applicaton() throws InterruptedException, IOException {
 		selectApplication = new SelectApplication(driver);
 		  selectApplication.selectApp(getParameters().getProperty("APPNAME")); 
 		  }
 
-	    
-	
-
 	@When("HAC627 close all the open tabs")
 	public void HAC627_close_all_the_open_tabs() throws InterruptedException {
 		closeAllTabs(); 
-	    
-	}
+	    }
 
 	@When("HAC627 close the bottom bar")
 	public void HAC627_close_the_bottom_bar() throws InterruptedException {
@@ -71,9 +65,7 @@ public class HAC627VerifyBillingAddress extends BaseTest {
 		else {
 			assertTrue(false);
 		}
-		    
-		
-	       
+	
 	}
    
              

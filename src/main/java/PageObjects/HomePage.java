@@ -15,31 +15,6 @@ public class HomePage extends ReusableUtility {
 	By waitforelementtoappear;
 	String actualmessage;
 	JavascriptExecutor js = (JavascriptExecutor) driver;
-
-	public HomePage(WebDriver driver) {
-		super(driver);
-		this.driver = driver;
-		PageFactory.initElements(driver, this);
-	}
-
-	@FindBy(xpath="//a[@title='Accounts']")
-	WebElement accountstab;
-
-	public void clickAccountsTab() throws InterruptedException {
-		js = (JavascriptExecutor) driver;
-		waitForElementToAppear(By.xpath("//a[@title='Accounts']"));
-		js.executeScript("arguments[0].click();", accountstab);
-	}
-	
-	@FindBy(xpath="//a[@title='Cases']")
-	WebElement casestab;
-	public void clickCasesTab() throws InterruptedException {
-		js = (JavascriptExecutor) driver;
-		waitForElementToAppear(By.xpath("//a[@title='Cases']"));
-		js.executeScript("arguments[0].click();", casestab);
-	}
-	
-	
 	@FindBy(xpath="//a//div[text()='New']")
 	WebElement newaccountbtn;
 	@FindBy(xpath="//button//span[text()='Next']")
@@ -50,26 +25,10 @@ public class HomePage extends ReusableUtility {
 	WebElement tradenametxtbox;
 	@FindBy(xpath="	//button[text()='Save']")
 	WebElement accountsavebtn;
-	
-	public void createNewCustomerAccount(String accountname, String industryname, String tradename) throws InterruptedException {
-		js = (JavascriptExecutor) driver;
-		Thread.sleep(0, 4000);
-		waitForElementToAppear(By.xpath("//a//div[text()='New']"));
-		newaccountbtn.click();
-		nextbtn.click();
-		accountnametxtbox.click();
-		accountnametxtbox.sendKeys(accountname);
-		tradenametxtbox.click();
-		tradenametxtbox.sendKeys(tradename);
-		// scroll to Language field
-		js.executeScript(
-				"var result = document.evaluate(\"//label[text()='Language']\", document.body, null, XPathResult.ANY_TYPE, null);var input = result.iterateNext();input.scrollIntoView();");
-		driver.findElement(By.xpath("//ul/li//span[text()='"+industryname+"']")).click();
-		js.executeScript("var result = document.evaluate(\"(//span[text()='Move to Chosen'])[1]\", document.body, null, XPathResult.ANY_TYPE, null);     var input = result.iterateNext();input.scrollIntoView(); input.click();");
-		accountsavebtn.click();
-		waitForElementToAppear(By.xpath("//a[text()='Details']"));
-		}
-	
+	@FindBy(xpath="//a[@title='Cases']")
+	WebElement casestab;
+	@FindBy(xpath="//a[@title='Accounts']")
+	WebElement accountstab;
 	@FindBy(xpath="//a//div[text()='New']")
 	WebElement newcasebtn;
 	@FindBy(xpath="//*[@field-label='Contact Name']//input")
@@ -92,7 +51,44 @@ public class HomePage extends ReusableUtility {
 	WebElement casedescription;
 	@FindBy(xpath="//button[text()='Save']")
 	WebElement casesavebtn;
+
+	public HomePage(WebDriver driver) {
+		super(driver);
+		this.driver = driver;
+		PageFactory.initElements(driver, this);
+	}
+
+	public void clickAccountsTab() throws InterruptedException {
+		js = (JavascriptExecutor) driver;
+		waitForElementToAppear(By.xpath("//a[@title='Accounts']"));
+		js.executeScript("arguments[0].click();", accountstab);
+	}
 	
+	public void clickCasesTab() throws InterruptedException {
+		js = (JavascriptExecutor) driver;
+		waitForElementToAppear(By.xpath("//a[@title='Cases']"));
+		js.executeScript("arguments[0].click();", casestab);
+	}
+	
+	public void createNewCustomerAccount(String accountname, String industryname, String tradename) throws InterruptedException {
+		js = (JavascriptExecutor) driver;
+		Thread.sleep(0, 4000);
+		waitForElementToAppear(By.xpath("//a//div[text()='New']"));
+		newaccountbtn.click();
+		nextbtn.click();
+		accountnametxtbox.click();
+		accountnametxtbox.sendKeys(accountname);
+		tradenametxtbox.click();
+		tradenametxtbox.sendKeys(tradename);
+		// scroll to Language field
+		js.executeScript(
+				"var result = document.evaluate(\"//label[text()='Language']\", document.body, null, XPathResult.ANY_TYPE, null);var input = result.iterateNext();input.scrollIntoView();");
+		driver.findElement(By.xpath("//ul/li//span[text()='"+industryname+"']")).click();
+		js.executeScript("var result = document.evaluate(\"(//span[text()='Move to Chosen'])[1]\", document.body, null, XPathResult.ANY_TYPE, null);     var input = result.iterateNext();input.scrollIntoView(); input.click();");
+		accountsavebtn.click();
+		waitForElementToAppear(By.xpath("//a[text()='Details']"));
+		}
+
 	public void createNewCase(String contname, String firstname, String sub) throws InterruptedException {
 		js = (JavascriptExecutor) driver;
 		waitForElementToAppear(By.xpath("//a//div[text()='New']"));

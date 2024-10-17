@@ -72,7 +72,7 @@ public void HAC411_edit_the_case_status() throws InterruptedException, IOExcepti
 @When ("HAC411 update case status to new")
 public void HAC411_update_case_status_to_new() throws InterruptedException, IOException {		
 	caseDetailsTab = new CaseDetailsTab(driver);
-	caseDetailsTab.updateCaseStatusNew();
+	caseDetailsTab.updateCaseStatus("Escalated");
 }
 
 @When ("HAC411 click save")
