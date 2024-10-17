@@ -3,29 +3,13 @@ package StepDefinitions;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import io.github.bonigarcia.wdm.WebDriverManager;
-
-import java.io.FileReader;
 import java.io.IOException;
-import java.time.Duration;
-import java.util.Properties;
-
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
-import org.testng.annotations.Test;
-
 import PageObjects.AccountDetailsTab;
-
-import PageObjects.CreateNewContact;
-
 import PageObjects.GlobalSearch;
+import PageObjects.HomePage;
 import PageObjects.Login;
 import PageObjects.SelectApplication;
-import commonutilities.BaseTest;
 import commonutilities.CommonFunctions;
 
 public class HAC387VerifyIndustry extends CommonFunctions {
@@ -33,6 +17,7 @@ public class HAC387VerifyIndustry extends CommonFunctions {
 	GlobalSearch globalSearch;
 	String industryname;
 	Login loginPO;
+	HomePage homepage;
 	SelectApplication selectApplication;
 
 	@Given("^HAC387 user enters (.*) and (.*)$")
@@ -44,6 +29,8 @@ public class HAC387VerifyIndustry extends CommonFunctions {
 
 	@When("HAC387 select the applicaton")
 	public void HAC387_select_the_applicaton() throws InterruptedException, IOException {
+		selectApplication = new SelectApplication();
+		selectApplication.selectApp(ppty.getProperty("APPNAME"));
 		selectApplication = new SelectApplication();
 		selectApplication.selectApp(ppty.getProperty("APPNAME"));
 	}
@@ -70,6 +57,28 @@ public class HAC387VerifyIndustry extends CommonFunctions {
 		accountDetailsTab = new AccountDetailsTab();
 		industryname = accountDetailsTab.getIndustry();
 		Assert.assertEquals(industryname, "Leafy Greens");
+
+	}
+
+	@When("HAC387 select accounts tab")
+	public void HAC387_select_accounts_tab() throws InterruptedException {
+		homepage = new HomePage();
+		homepage.clickAccountsTab();
+	}
+
+	@When("HAC387 create new customer account")
+	public void HAC387_create_new_customer_account() throws InterruptedException, IOException {
+		homepage = new HomePage();
+		homepage.createNewCustomerAccount(ppty.getProperty("ACCTNAME") + Math.random(), ppty.getProperty("INDUSTRY"),
+				ppty.getProperty("TRADENAME"));
+	}
+
+	// validate industry name on account details
+	@Then("HAC387 verify industry name")
+	public void HAC387_verify_industry_name_1() throws InterruptedException, IOException {
+		accountDetailsTab = new AccountDetailsTab();
+		industryname = accountDetailsTab.getIndustry();
+		Assert.assertEquals(industryname, "Animal Food");
 
 	}
 

@@ -20,9 +20,8 @@ import org.testng.annotations.Test;
 
 import PageObjects.AccountDetailsTab;
 
-import PageObjects.CreateNewContact;
-
 import PageObjects.GlobalSearch;
+import PageObjects.HomePage;
 import PageObjects.Login;
 import PageObjects.SelectApplication;
 import commonutilities.BaseTest;
@@ -34,6 +33,7 @@ public class HAC622VerifyTradeName extends CommonFunctions {
 	String tradename;
 	Login loginPO;
 	SelectApplication selectApplication;
+	HomePage homepage;
 
 	@Given("^HAC622 user enters (.*) and (.*)$")
 	public void HAC622_user_enters_username_and_password(String userName, String password) throws IOException {
@@ -70,6 +70,28 @@ public class HAC622VerifyTradeName extends CommonFunctions {
 		accountDetailsTab = new AccountDetailsTab();
 		tradename = accountDetailsTab.getTradeName();
 		Assert.assertEquals(tradename, "Trade Name - Test Customer Account11");
+
+	}
+
+	@When("HAC622 select accounts tab")
+	public void HAC622_select_accounts_tab() throws InterruptedException {
+		homepage = new HomePage();
+		homepage.clickAccountsTab();
+	}
+
+	@When("HAC622 create new customer account")
+	public void HAC622_create_new_customer_account() throws InterruptedException, IOException {
+		homepage = new HomePage();
+		homepage.createNewCustomerAccount(ppty.getProperty("ACCTNAME") + Math.random(), ppty.getProperty("INDUSTRY"),
+				ppty.getProperty("TRADENAME"));
+	}
+
+	// validate trade name on account details
+	@Then("HAC622 verify trade name")
+	public void HAC622_verify_trade_name_1() throws InterruptedException, IOException {
+		accountDetailsTab = new AccountDetailsTab();
+		tradename = accountDetailsTab.getTradeName();
+		Assert.assertEquals(tradename, "TestTradeName");
 
 	}
 

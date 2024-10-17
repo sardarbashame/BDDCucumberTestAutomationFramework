@@ -1,5 +1,6 @@
 package PageObjects;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -34,6 +35,7 @@ public class CaseDetailsTab extends CommonFunctions {
 		Thread.sleep(0, 2000);
 		Thread.sleep(0, 2000);
 		clk_editStatus.click();
+		driver.findElement(By.xpath("//span[text()='Edit Status']/..")).click();
 		Thread.sleep(2000);
 	}
 
@@ -50,6 +52,7 @@ public class CaseDetailsTab extends CommonFunctions {
 		Thread.sleep(0, 2000);
 		Thread.sleep(0, 2000);
 		clk_SaveEdit.click();
+		driver.findElement(By.xpath("//button[@name='SaveEdit']")).click();
 		Thread.sleep(2000);
 	}
 

@@ -15,12 +15,11 @@ public class HomePage extends CommonFunctions {
 	By waitforelementtoappear;
 	String actualmessage;
 	WebElement webele;
-	WebElement caseorigin;
+	JavascriptExecutor js = (JavascriptExecutor) driver;
 
 	public HomePage() {
 		PageFactory.initElements(new AjaxElementLocatorFactory(driver, 10), this);
 	}
-
 
 	@FindBy(xpath = "//a[@title='Cases']")
 	WebElement clk_cases;
@@ -61,63 +60,121 @@ public class HomePage extends CommonFunctions {
 	@FindBy(xpath = "//*[@field-label='Type']//button[@aria-label='Type']")
 	WebElement ipt_type;
 
+	@FindBy(xpath = "//a[@title='Accounts']")
+	WebElement accountstab;
+
+	@FindBy(xpath = "//a[@title='Cases']")
+	WebElement casestab;
+
+	@FindBy(xpath = "//a//div[text()='New']")
+	WebElement newaccountbtn;
+
+	@FindBy(xpath = "//button//span[text()='Next']")
+	WebElement nextbtn;
+
+	@FindBy(xpath = "//*[text()='Account Name']/..//input")
+	WebElement accountnametxtbox;
+
+	@FindBy(xpath = "//*[text()='Trade Name']/..//input")
+	WebElement tradenametxtbox;
+
+	@FindBy(xpath = "	//button[text()='Save']")
+	WebElement accountsavebtn;
+
+	@FindBy(xpath = "//a//div[text()='New']")
+	WebElement newcasebtn;
+
+	@FindBy(xpath = "//*[@field-label='Contact Name']//input")
+	WebElement contactnametxtbox;
+
+	@FindBy(xpath = "//*[@field-label='Type']//button[@aria-label='Type']")
+	WebElement contacttype;
+
+	@FindBy(xpath = "//span[@title='Billing']")
+	WebElement contacttypebilling;
+
+	@FindBy(xpath = "//span[@title='Billing Dispute']")
+	WebElement contactsubtypebillingdispute;
+
+	@FindBy(xpath = "//button[@title='Move to Chosen']")
+	WebElement movetochosenbtn;
+
+	@FindBy(xpath = "(//button[@aria-label='Case Origin'])")
+	WebElement caseorigin;
+
+	@FindBy(xpath = "//span[@title='Email']")
+	WebElement email;
+
+	@FindBy(xpath = "//label[text()='Subject']/../..//input")
+	WebElement casesubject;
+
+	@FindBy(xpath = "//label[text()='Description']")
+	WebElement casedescription;
+
+	@FindBy(xpath = "//button[text()='Save']")
+	WebElement casesavebtn;
+
 	public void clickCasesTab() throws InterruptedException {
 		js = (JavascriptExecutor) driver;
 		Thread.sleep(0, 4000);
-		waitForElementToAppear(By.xpath("//a[@title='Cases']"),30);
+		waitForElementToAppear(By.xpath("//a[@title='Cases']"), 30);
 		Thread.sleep(0, 3000);
 		js.executeScript("arguments[0].click();", clk_cases);
 		Thread.sleep(0, 3000);
 	}
 
-	public void createNewCase(String contname, String firstname, String sub) throws InterruptedException {
+	public void clickAccountsTab() throws InterruptedException {
+		js = (JavascriptExecutor) driver;
+		waitForElementToAppear(By.xpath("//a[@title='Accounts']"), 30);
+		js.executeScript("arguments[0].click();", accountstab);
+	}
+
+	public void createNewCustomerAccount(String accountname, String industryname, String tradename)
+			throws InterruptedException {
 		js = (JavascriptExecutor) driver;
 		Thread.sleep(0, 4000);
-		waitForElementToAppear(By.xpath("//a//div[text()='New']"),30);
-		expWaitToBeClickable(clk_casesNew);
-		clk_casesNew.click();
-		expWaitToBeClickable(ipt_contactName);
-		ipt_contactName.click();
-		expWaitToBeClickable(ipt_contactName);
-		ipt_contactName.sendKeys(contname);
-		Thread.sleep(0, 3000);
+		waitForElementToAppear(By.xpath("//a//div[text()='New']"), 30);
+		newaccountbtn.click();
+		nextbtn.click();
+		accountnametxtbox.click();
+		accountnametxtbox.sendKeys(accountname);
+		tradenametxtbox.click();
+		tradenametxtbox.sendKeys(tradename);
+		// scroll to Language field
+		js.executeScript(
+				"var result = document.evaluate(\"//label[text()='Language']\", document.body, null, XPathResult.ANY_TYPE, null);var input = result.iterateNext();input.scrollIntoView();");
+		driver.findElement(By.xpath("//ul/li//span[text()='" + industryname + "']")).click();
+		js.executeScript(
+				"var result = document.evaluate(\"(//span[text()='Move to Chosen'])[1]\", document.body, null, XPathResult.ANY_TYPE, null);     var input = result.iterateNext();input.scrollIntoView(); input.click();");
+		accountsavebtn.click();
+		waitForElementToAppear(By.xpath("//a[text()='Details']"), 30);
+	}
+
+	public void createNewCase(String contname, String firstname, String sub) throws InterruptedException {
+		js = (JavascriptExecutor) driver;
+		waitForElementToAppear(By.xpath("//a//div[text()='New']"), 30);
+		newcasebtn.click();
+		contactnametxtbox.click();
+		contactnametxtbox.sendKeys(contname);
 		driver.findElement(By.xpath("//ul//li//*[text()='" + firstname + "']")).click();
-		Thread.sleep(0, 3000);
 		// scroll to Type field
 		js.executeScript(
 				"var result = document.evaluate(\"//label[text()='Sales Order']\", document.body, null, XPathResult.ANY_TYPE, null);var input = result.iterateNext();input.scrollIntoView();");
-		expWaitToBeClickable(ipt_type);
-
-		ipt_type.click();
-		Thread.sleep(0, 3000);
-		clk_billing.click();
-		expWaitToBeClickable(clk_billingDispute);
-
-		clk_billingDispute.click();
-		expWaitToBeClickable(clk_movenTOChosen);
-		clk_movenTOChosen.click();
-		Thread.sleep(0, 3000);
-
-		js.executeScript("arguments[0].click();", clk_caseOrigin);
-
-		expWaitToBeClickable(ipt_email);
-		ipt_email.click();
-		Thread.sleep(0, 4000);
-
+		contacttype.click();
+		contacttypebilling.click();
+		contactsubtypebillingdispute.click();
+		movetochosenbtn.click();
+		js.executeScript("arguments[0].click();", caseorigin);
+		email.click();
 		// scroll to Subject field
 		js.executeScript(
 				"var result = document.evaluate(\"//label[text()='Case Origin']\", document.body, null, XPathResult.ANY_TYPE, null);var input = result.iterateNext();input.scrollIntoView();");
-		expWaitToBeClickable(clk_subjects);
-		clk_subjects.click();
+		casesubject.click();
 		Thread.sleep(0, 3000);
-		clk_subjects.sendKeys(sub);
-
-		clk_description.click();
-		expWaitToBeClickable(btn_save);
-
-		btn_save.click();
-		Thread.sleep(0, 5000);
-		waitForElementToAppear(By.xpath("//a[text()='Details']"),30);
+		casesubject.sendKeys(sub);
+		casedescription.click();
+		casesavebtn.click();
+		waitForElementToAppear(By.xpath("//a[text()='Details']"), 30);
 		Thread.sleep(0, 2000);
 	}
 

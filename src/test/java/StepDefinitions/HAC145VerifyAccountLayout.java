@@ -19,10 +19,8 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import PageObjects.AccountDetailsTab;
-
-import PageObjects.CreateNewContact;
-
 import PageObjects.GlobalSearch;
+import PageObjects.HomePage;
 import PageObjects.Login;
 import PageObjects.SelectApplication;
 import commonutilities.BaseTest;
@@ -34,6 +32,7 @@ public class HAC145VerifyAccountLayout extends CommonFunctions {
 	String industryname;
 	Login loginPO;
 	SelectApplication selectApplication;
+	HomePage homepage;
 	String accountcurrency;
 	String accountname;
 	String type;
@@ -87,16 +86,30 @@ public class HAC145VerifyAccountLayout extends CommonFunctions {
 		accountDetailsTab = new AccountDetailsTab();
 		accountname = accountDetailsTab.getAccountName();
 		Assert.assertEquals(accountname, "Test Customer Account11");
-
 	}
 
-	@Then("HAC145 verify parent account")
-	public void HAC145_verify_parent_account() throws InterruptedException, IOException {
-		accountDetailsTab = new AccountDetailsTab();
-		parentaccount = accountDetailsTab.getParentAccount();
-		Assert.assertEquals(parentaccount, "Juicy Box (Sample)");
-
+	@When("HAC145 select accounts tab")
+	public void HAC145_select_accounts_tab() throws InterruptedException {
+		homepage = new HomePage();
+		homepage.clickAccountsTab();
 	}
+
+	@When("HAC145 create new customer account")
+	public void HAC145_create_new_customer_account() throws InterruptedException, IOException {
+		homepage = new HomePage();
+		homepage.createNewCustomerAccount(ppty.getProperty("ACCTNAME") + Math.random(), ppty.getProperty("INDUSTRY"),
+				ppty.getProperty("TRADENAME"));
+	}
+
+	// @Then ("HAC145 verify parent account")
+	// public void HAC145_verify_parent_account() throws InterruptedException,
+	// IOException
+	// {
+	// accountDetailsTab = new AccountDetailsTab(driver);
+	// parentaccount = accountDetailsTab.getParentAccount();
+	// Assert.assertEquals(parentaccount,"Juicy Box (Sample)");
+	//
+	// }
 
 	@Then("HAC145 verify type")
 	public void HAC145_verify_type() throws InterruptedException, IOException {
@@ -111,9 +124,48 @@ public class HAC145VerifyAccountLayout extends CommonFunctions {
 	public void HAC145_verify_industry() throws InterruptedException, IOException {
 		accountDetailsTab = new AccountDetailsTab();
 		industryname = accountDetailsTab.getIndustry();
+		Assert.assertEquals(industryname, "Animal Food");
+
+	}
+
+	@Then("HAC145 verify parent account")
+
+	public void HAC145_verify_parent_account() throws InterruptedException, IOException {
+		accountDetailsTab = new AccountDetailsTab();
+		parentaccount = accountDetailsTab.getParentAccount();
+		Assert.assertEquals(parentaccount, "Juicy Box (Sample)");
+		// @Then ("HAC145 verify account currency")
+		// public void HAC145_verify_accountcurrency() throws
+		// InterruptedException, IOException
+		// {
+		// accountDetailsTab = new AccountDetailsTab(driver);
+		// accountcurrency = accountDetailsTab.getAccountCurrency();
+		// Assert.assertEquals(accountcurrency,"USD - U.S. Dollar");
+		//
+		// }
+
+	}
+
+	// validate trade name value on account details
+
+	// validate industry name on account details
+	@Then("HAC145 verify industry")
+	public void HAC145_verify_industry_1() throws InterruptedException, IOException {
+		accountDetailsTab = new AccountDetailsTab();
+		industryname = accountDetailsTab.getIndustry();
 		Assert.assertEquals(industryname, "Leafy Greens");
 
 	}
+	// validate Employees label on account details
+	// @Then ("HAC145 verify employees label")
+	// public void HAC145_verify_employees_label() throws InterruptedException,
+	// IOException
+	// {
+	// accountDetailsTab = new AccountDetailsTab(driver);
+	// employeeslabel = accountDetailsTab.isEmployeesPresent();
+	// Assert.assertTrue(employeeslabel);
+	//
+	// }
 
 	/*
 	 * @Then ("HAC145 verify description") public void
@@ -126,6 +178,7 @@ public class HAC145VerifyAccountLayout extends CommonFunctions {
 	 */
 
 	@Then("HAC145 verify account currency")
+
 	public void HAC145_verify_accountcurrency() throws InterruptedException, IOException {
 		accountDetailsTab = new AccountDetailsTab();
 		accountcurrency = accountDetailsTab.getAccountCurrency();

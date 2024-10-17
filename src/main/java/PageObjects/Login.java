@@ -25,16 +25,16 @@ public class Login extends CommonFunctions {
 	WebElement Loginele;
 
 	public void goTo(String URL) {
-		//driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-		//driver.get(URL);
-		 driver.navigate().to(URL);
+		// driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		// driver.get(URL);
+		driver.navigate().to(URL);
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
 	}
 
-	public void LoginApp(String username, String password) {		
+	public void LoginApp(String username, String password) {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		usernameele.sendKeys(username);
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));

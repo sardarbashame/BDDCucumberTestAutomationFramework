@@ -34,7 +34,7 @@ public class EstimateCreationFlowStep3 extends CommonFunctions {
 		expWaitToBeClickable(btn_viewConfirmation);
 		btn_viewConfirmation.click();
 		Thread.sleep(2000);
-		waitforelementtoappear = waitForElementToAppear(By.xpath("(//button[text()='Create PDF'])[1]"),30);
+		waitforelementtoappear = waitForElementToAppear(By.xpath("(//button[text()='Create PDF'])[1]"), 30);
 	}
 
 	public void clickCreatePDF() throws InterruptedException {
@@ -47,7 +47,8 @@ public class EstimateCreationFlowStep3 extends CommonFunctions {
 		Thread.sleep(0, 2000);
 		expWaitToBeClickable(btn_saveEdit);
 		btn_saveEdit.click();
-		Thread.sleep(2000);
+		driver.findElement(By.xpath("(//button[text()='View Confirmation'])[2]")).click();
+		waitforelementtoappear = waitForElementToAppear(By.xpath("(//button[text()='Create PDF'])[1]"), 30);
 	}
 
 }

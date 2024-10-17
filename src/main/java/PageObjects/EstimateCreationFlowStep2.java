@@ -46,7 +46,7 @@ public class EstimateCreationFlowStep2 extends CommonFunctions {
 
 	public void selectFromDate() throws InterruptedException {
 		Thread.sleep(0, 2000);
-		waitforelementtoappear = waitForElementToAppear(By.xpath("(//button[text()='View Confirmation'])[1]"),30);
+		waitforelementtoappear = waitForElementToAppear(By.xpath("(//button[text()='View Confirmation'])[1]"), 30);
 		expWaitToBeClickable(ipt_fromDate);
 		ipt_fromDate.click();
 		expWaitToBeClickable(ipt_dateValueFrom);
@@ -56,7 +56,7 @@ public class EstimateCreationFlowStep2 extends CommonFunctions {
 
 	public void selectToDate() throws InterruptedException {
 		Thread.sleep(0, 2000);
-		waitforelementtoappear = waitForElementToAppear(By.xpath("(//button[text()='View Confirmation'])[1]"),30);
+		waitforelementtoappear = waitForElementToAppear(By.xpath("(//button[text()='View Confirmation'])[1]"), 30);
 		expWaitToBeClickable(ipt_toDate);
 		ipt_toDate.click();
 		expWaitToBeClickable(ipt_dateValueTO);
@@ -68,13 +68,16 @@ public class EstimateCreationFlowStep2 extends CommonFunctions {
 		Thread.sleep(0, 3000);
 		numberoftechpresent = lab_noOfTech.isDisplayed();
 		Thread.sleep(1000);
-		return numberoftechpresent;
+		driver.findElement(By.xpath("//*[text()='From Date']/..//input")).click();
+		driver.findElement(By.xpath("//tr/td[@data-value='2024-10-01']")).click();
+		return numberofdayspresent;
 	}
 
 	public boolean isNumberOfDaysPresent() throws InterruptedException {
 		Thread.sleep(0, 3000);
 		numberofdayspresent = lab_noOfDays.isDisplayed();
 		Thread.sleep(1000);
+		numberofdayspresent = driver.findElement(By.xpath("(//label[text()='Number Of Days'])")).isDisplayed();
 		return numberofdayspresent;
 	}
 
@@ -82,6 +85,7 @@ public class EstimateCreationFlowStep2 extends CommonFunctions {
 		Thread.sleep(0, 3000);
 		numberofhourspresent = lab_noOfHrsDay.isDisplayed();
 		Thread.sleep(1000);
+		numberofhourspresent = driver.findElement(By.xpath("(//label[text()='Number of Hrs/day'])")).isDisplayed();
 		return numberofhourspresent;
 	}
 

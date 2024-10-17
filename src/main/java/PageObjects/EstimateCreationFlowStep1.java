@@ -63,6 +63,8 @@ public class EstimateCreationFlowStep1 extends CommonFunctions {
 	public void clickEstimatesTab() throws InterruptedException {
 		expWaitToBeClickable(clk_estimations);
 		clk_estimations.click();
+		Thread.sleep(0, 2000);
+		driver.findElement(By.xpath("//li//a[text()='Estimations']")).click();
 		Thread.sleep(4000);
 	}
 
@@ -72,11 +74,9 @@ public class EstimateCreationFlowStep1 extends CommonFunctions {
 		expWaitToBeClickable(clk_priceBook);
 		clk_priceBook.click();
 		Thread.sleep(0, 3000);
+		driver.findElement(By.xpath("//*[text()='Price Book']/../..//button")).click();
 		driver.findElement(By.xpath("//span[text()='" + pricebook + "']")).click();
-		Thread.sleep(0, 3000);
-
 		driver.findElement(By.xpath("//*[text()='" + estimatematrix + "']/../..//button")).click();
-		Thread.sleep(0, 3000);
 		driver.findElement(By.xpath("//span[text()='" + estimatematrixoption + "']")).click();
 		expWaitToBeClickable(clk_estimateItems);
 
@@ -87,6 +87,9 @@ public class EstimateCreationFlowStep1 extends CommonFunctions {
 
 		btn_next.click();
 		Thread.sleep(0, 4000);
+		driver.findElement(By.xpath("//*[text()='Estimate Items']/../..//button")).click();
+		driver.findElement(By.xpath("//span[text()='" + estimateitem + "']")).click();
+		driver.findElement(By.xpath("//button[text()='Next']")).click();
 	}
 
 	public boolean verifyPriceBookOption1() throws InterruptedException {
@@ -96,34 +99,36 @@ public class EstimateCreationFlowStep1 extends CommonFunctions {
 		clk_priceBook.click();
 		Thread.sleep(0, 3000);
 		pricebookoption1 = txt_candaMarketRate.isDisplayed();
+		driver.findElement(By.xpath("//*[text()='Price Book']/../..//button")).click();
+		pricebookoption1 = driver.findElement(By.xpath("//span[text()='CANADA Domestic Market Rate']")).isDisplayed();
 		return pricebookoption1;
 
 	}
 
 	public boolean verifyPriceBookOption2() throws InterruptedException {
 		Thread.sleep(0, 3000);
-		pricebookoption2 = txt_candaPepsico.isDisplayed();
-		return pricebookoption2;
-
+		return pricebookoption2 = txt_candaPepsico.isDisplayed();
 	}
 
 	public boolean verifyPriceBookOption3() throws InterruptedException {
 		Thread.sleep(0, 3000);
 		pricebookoption3 = txt_usMarketRate.isDisplayed();
+		pricebookoption3 = driver.findElement(By.xpath("//span[text()='USA Domestic Market Rate']")).isDisplayed();
 		return pricebookoption3;
 
 	}
 
 	public boolean verifyPriceBookOption4() throws InterruptedException {
 		Thread.sleep(0, 3000);
-		pricebookoption4 = txt_usMarketRatePrepay.isDisplayed();
-		return pricebookoption4;
+		return pricebookoption4 = txt_usMarketRatePrepay.isDisplayed();
 
 	}
 
 	public boolean verifyPriceBookOption5() throws InterruptedException {
 		Thread.sleep(0, 3000);
 		pricebookoption5 = txt_usMarketRatePepsico.isDisplayed();
+		pricebookoption5 = driver.findElement(By.xpath("//span[text()='USA Domestic MPA-PEPSICO (FritoLay)']"))
+				.isDisplayed();
 		Thread.sleep(0, 3000);
 		return pricebookoption5;
 
@@ -133,6 +138,7 @@ public class EstimateCreationFlowStep1 extends CommonFunctions {
 		Thread.sleep(0, 4000);
 		pricebookoption6 = txt_usInterNationalMarketRatePrepay.isDisplayed();
 		Thread.sleep(0, 3000);
+		pricebookoption6 = driver.findElement(By.xpath("//span[text()='USA International Market Rate']")).isDisplayed();
 		return pricebookoption6;
 
 	}
@@ -142,8 +148,10 @@ public class EstimateCreationFlowStep1 extends CommonFunctions {
 		pricebookoption7 = txt_usInterNationalPepsico.isDisplayed();
 		expWaitToBeClickable(clk_priceBook);
 		clk_priceBook.click();
+		pricebookoption7 = driver.findElement(By.xpath("//span[text()='USA International MPA-PEPSICO (FRITOLAY)']"))
+				.isDisplayed();
+		driver.findElement(By.xpath("//*[text()='Price Book']/../..//button")).click();
 		return pricebookoption7;
-
 	}
 
 }

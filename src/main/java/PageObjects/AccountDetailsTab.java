@@ -1,11 +1,6 @@
 package PageObjects;
 
-import java.time.Duration;
-
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -36,7 +31,6 @@ public class AccountDetailsTab extends CommonFunctions {
 	boolean superregionpresent;
 	boolean saleschannelpresent;
 
-	
 	public AccountDetailsTab() {
 		PageFactory.initElements(new AjaxElementLocatorFactory(driver, 10), this);
 	}
@@ -101,12 +95,11 @@ public class AccountDetailsTab extends CommonFunctions {
 	@FindBy(xpath = "//span[text()='Email']/../../..//emailui-formatted-email-wrapper//a")
 	public WebElement get_email;
 
-    By Wait_toastMessage = By.xpath("//span[contains(@class,'toastMessage')]//a//div");
+	By Wait_toastMessage = By.xpath("//span[contains(@class,'toastMessage')]//a//div");
 
-    
 	public void clickcontactdetailsTab() throws InterruptedException {
 		Thread.sleep(0, 2000);
-		waitForElementToDisAppear(Wait_toastMessage,30);
+		waitForElementToDisAppear(Wait_toastMessage, 30);
 		Thread.sleep(0, 2000);
 		clk_details.click();
 		Thread.sleep(1000);
