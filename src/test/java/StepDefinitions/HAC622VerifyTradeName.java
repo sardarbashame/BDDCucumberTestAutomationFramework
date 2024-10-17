@@ -66,7 +66,10 @@ public void HAC622_select_accounts_tab() throws InterruptedException {
 @When("HAC622 create new customer account")
 public void HAC622_create_new_customer_account() throws InterruptedException, IOException {
 	homepage = new HomePage(driver);
-	homepage.createNewCustomerAccount(getParameters().getProperty("ACCTNAME")+Math.random(), getParameters().getProperty("INDUSTRY"), getParameters().getProperty("TRADENAME"));
+	homepage.createNewCustomerAccount(
+			getParameters().getProperty("ACCTNAME")+Math.random(), 
+			getParameters().getProperty("INDUSTRY"), 
+			getParameters().getProperty("TRADENAME"));
 }
 //validate trade name on account details 
 @Then ("HAC622 verify trade name")

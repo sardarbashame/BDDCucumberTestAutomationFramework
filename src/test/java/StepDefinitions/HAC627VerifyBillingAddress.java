@@ -60,7 +60,7 @@ public class HAC627VerifyBillingAddress extends BaseTest {
 	public void HAC627_verify_the_billing_address_on_contact_list_view_button() throws InterruptedException {
 	    
 		AccountDetailsTab AccountDetailsTab = new AccountDetailsTab(driver);
-		String billingaddress = AccountDetailsTab.getbillingAddress();
+		String billingaddress = AccountDetailsTab.getBillingAddress();
 		System.out.println(billingaddress);
 		String formattedbillingaddress = billingaddress.replace("\n", "");
 		System.out.println(formattedbillingaddress);

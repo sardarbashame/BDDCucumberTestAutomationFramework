@@ -35,6 +35,7 @@ public class AccountDetailsTab extends ReusableUtility{
 	boolean regionalsettingspresent;
 	boolean superregionpresent;
 	boolean saleschannelpresent;
+	JavascriptExecutor js = (JavascriptExecutor) driver;
 	
 	public AccountDetailsTab(WebDriver driver)
 	{
@@ -160,6 +161,17 @@ public String getactualcontactemail() throws InterruptedException
 {
 	actualcontactemail= driver.findElement(By.xpath("//span[text()='Email']/../../..//emailui-formatted-email-wrapper//a")).getText();
    return actualcontactemail;
+}
+
+public String getBillingAddress() throws InterruptedException {
+	Thread.sleep(0,1000);
+	js = (JavascriptExecutor) driver;
+	js.executeScript("window.scrollTo(0,600)");
+	Thread.sleep(1000);
+	String billingaddress = driver.findElement(By.xpath("//span[text()='Billing Address']/../../..//a")).getText();
+	Thread.sleep(1000);
+	return billingaddress;
+	
 }
 
 

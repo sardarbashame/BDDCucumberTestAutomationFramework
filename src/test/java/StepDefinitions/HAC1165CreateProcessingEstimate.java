@@ -79,9 +79,13 @@ public class HAC1165CreateProcessingEstimate extends BaseTest {
 	}
 	
 	@When("HAC1165 create new case")
-	public void HAC1165_create_new_case() throws InterruptedException  {
+	public void HAC1165_create_new_case() throws InterruptedException, IOException  {
 		homePage = new HomePage(driver);
-		homePage.createNewCase("FN6 MN6 LN6","FN6","TestCase100");
+		homePage.createNewCase(
+				getParameters().getProperty("CASECONTACT"),
+				getParameters().getProperty("CASEFIRSTNAME"),
+				getParameters().getProperty("CASESUB")
+				);
 	}
 
 	@When("HAC1165 user is on estimate tab")
