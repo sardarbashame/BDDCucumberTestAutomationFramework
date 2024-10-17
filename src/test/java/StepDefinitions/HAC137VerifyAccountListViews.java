@@ -25,8 +25,9 @@ import PageObjects.GlobalSearch;
 import PageObjects.HomePage;
 import PageObjects.Login;
 import PageObjects.SelectApplication;
+import commonutilities.CommonFunctions;
 
-public class HAC137VerifyAccountListViews extends BaseTest {
+public class HAC137VerifyAccountListViews extends CommonFunctions {
 	AccountListViews accountlistviews;
 	HomePage homepage;
 	Login loginPO;
@@ -35,14 +36,14 @@ public class HAC137VerifyAccountListViews extends BaseTest {
 	@Given("^HAC137 user enters (.*) and (.*)$")
 	public void HAC137_user_enters_username_and_password(String userName, String password) throws IOException {
 		loginPO = new Login();
-		loginPO.goTo(getParameters().getProperty("HAC_URL"));
+		loginPO.goTo(ppty.getProperty("HAC_URL"));
 		loginPO.LoginApp(userName, password);
 	}
 
 	@When("HAC137 select the applicaton")
 	public void HAC137_select_the_applicaton() throws InterruptedException, IOException {
 		selectApplication = new SelectApplication();
-		selectApplication.selectApp(getParameters().getProperty("APPNAME"));
+		selectApplication.selectApp(ppty.getProperty("APPNAME"));
 	}
 
 	@When("HAC137 close all the open tabs")

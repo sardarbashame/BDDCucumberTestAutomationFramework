@@ -149,7 +149,7 @@ public class HAC145VerifyAccountLayout extends CommonFunctions {
 	// validate trade name value on account details
 
 	// validate industry name on account details
-	@Then("HAC145 verify industry")
+	@Then("HAC145 verify industry_1")
 	public void HAC145_verify_industry_1() throws InterruptedException, IOException {
 		accountDetailsTab = new AccountDetailsTab();
 		industryname = accountDetailsTab.getIndustry();

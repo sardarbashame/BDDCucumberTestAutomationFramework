@@ -74,7 +74,7 @@ public class HAC387VerifyIndustry extends CommonFunctions {
 	}
 
 	// validate industry name on account details
-	@Then("HAC387 verify industry name")
+	@Then("HAC387 verify industry name_1")
 	public void HAC387_verify_industry_name_1() throws InterruptedException, IOException {
 		accountDetailsTab = new AccountDetailsTab();
 		industryname = accountDetailsTab.getIndustry();
