@@ -11,7 +11,6 @@ import commonutilities.CommonFunctions;
 
 public class AccountListViews extends CommonFunctions {
 
-	WebDriver driver;
 	WebElement webele;
 	String actualcontactemail;
 	String actualtradename;

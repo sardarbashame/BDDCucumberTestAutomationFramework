@@ -87,7 +87,7 @@ public class HAC622VerifyTradeName extends CommonFunctions {
 	}
 
 	// validate trade name on account details
-	@Then("HAC622 verify trade name")
+	@Then("HAC622 verify trade name_1")
 	public void HAC622_verify_trade_name_1() throws InterruptedException, IOException {
 		accountDetailsTab = new AccountDetailsTab();
 		tradename = accountDetailsTab.getTradeName();
