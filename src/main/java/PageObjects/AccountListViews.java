@@ -1,18 +1,15 @@
 package PageObjects;
 
-import java.time.Duration;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 
-import commonutilities.ReusableUtility;
+import commonutilities.CommonFunctions;
 
-public class AccountListViews extends ReusableUtility {
+public class AccountListViews extends CommonFunctions {
 
 	WebDriver driver;
 	WebElement webele;
@@ -30,11 +27,10 @@ public class AccountListViews extends ReusableUtility {
 	boolean boolvalue;
 	JavascriptExecutor js = (JavascriptExecutor) driver;
 
-	public AccountListViews(WebDriver driver) {
-		super(driver);
-		this.driver = driver;
-		PageFactory.initElements(driver, this);
+	public AccountListViews() {
+		PageFactory.initElements(new AjaxElementLocatorFactory(driver, 10), this);
 	}
+
 
 	public void clickAccountLisViewButton() throws InterruptedException {
 		driver.findElement(By.xpath("//button[@title='Select a List View: Accounts']")).click();

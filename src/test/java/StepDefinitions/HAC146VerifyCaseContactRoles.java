@@ -25,14 +25,14 @@ public class HAC146VerifyCaseContactRoles extends BaseTest {
 
 	@Given("^HAC146 user enters (.*) and (.*)$")
 	public void HAC146_user_enters_username_and_password(String userName, String password) throws IOException {
-		loginPO = new Login(driver);
+		loginPO = new Login();
 		loginPO.goTo(getParameters().getProperty("HAC_URL"));
 		loginPO.LoginApp(userName, password);
 	}
 
 	@When("HAC146 select the applicaton")
 	public void HAC146_select_the_applicaton() throws InterruptedException, IOException {
-		selectApplication = new SelectApplication(driver);
+		selectApplication = new SelectApplication();
 		selectApplication.selectApp(getParameters().getProperty("APPNAME"));
 	}
 
@@ -47,37 +47,36 @@ public class HAC146VerifyCaseContactRoles extends BaseTest {
 	}
 
 	@When("HAC146 click on cases tab")
-	public void HAC146_click_on_cases_tab() throws InterruptedException  {
-		homePage = new HomePage(driver);
+	public void HAC146_click_on_cases_tab() throws InterruptedException {
+		homePage = new HomePage();
 		homePage.clickCasesTab();
 	}
 
 	@When("HAC146 create new case")
-	public void HAC146_create_new_case() throws InterruptedException, IOException  {
-		homePage = new HomePage(driver);
-		homePage.createNewCase(
-				getParameters().getProperty("CASECONTACT"),
-				getParameters().getProperty("CASEFIRSTNAME"),
-				getParameters().getProperty("CASESUB")
-				);
+	public void HAC146_create_new_case() throws InterruptedException, IOException {
+		homePage = new HomePage();
+		homePage.createNewCase(getParameters().getProperty("CASECONTACT"), getParameters().getProperty("CASEFIRSTNAME"),
+				getParameters().getProperty("CASESUB"));
 	}
-	
+
 	@When("HAC146 add engineer contact role")
-	public void HAC146_add_engineer_contact_role() throws InterruptedException, IOException  {
+	public void HAC146_add_engineer_contact_role() throws InterruptedException, IOException {
 		casecontactroles = new CaseContactRoles(driver);
-		casecontactroles.addContactRole(getParameters().getProperty("CONTACTROLECONTACT"),getParameters().getProperty("ROLEENGG"));
-		
+		casecontactroles.addContactRole(getParameters().getProperty("CONTACTROLECONTACT"),
+				getParameters().getProperty("ROLEENGG"));
+
 	}
-	
+
 	@When("HAC146 add engineering manager contact role")
-	public void HAC146_add_engineer_manager_contact_role() throws InterruptedException, IOException  {
+	public void HAC146_add_engineer_manager_contact_role() throws InterruptedException, IOException {
 		casecontactroles = new CaseContactRoles(driver);
-		casecontactroles.addContactRole(getParameters().getProperty("CONTACTROLECONTACT"),getParameters().getProperty("ROLEENGGMGR"));
-		
+		casecontactroles.addContactRole(getParameters().getProperty("CONTACTROLECONTACT"),
+				getParameters().getProperty("ROLEENGGMGR"));
+
 	}
 
 	@Then("HAC146 verify case contact roles")
-	public void HAC146_verify_case_contact_roles() throws InterruptedException  {
+	public void HAC146_verify_case_contact_roles() throws InterruptedException {
 		casecontactroles = new CaseContactRoles(driver);
 		casecontactroles.verifyContactRoles();
 	}
