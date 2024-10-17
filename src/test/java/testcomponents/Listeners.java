@@ -12,9 +12,10 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 
+import commonutilities.CommonFunctions;
 import resources.ExtentReporterNG;
 
-public class Listeners extends BaseTest implements ITestListener {
+public class Listeners extends CommonFunctions implements ITestListener {
 	public static ExtentTest test;
 	public WebDriver  driver;
 	ExtentReports extent = ExtentReporterNG.getReportObject();

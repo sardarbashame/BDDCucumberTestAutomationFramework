@@ -6,7 +6,6 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.github.bonigarcia.wdm.WebDriverManager;
-import testcomponents.BaseTest;
 
 import java.io.FileReader;
 import java.io.IOException;
@@ -22,6 +21,7 @@ import org.testng.annotations.Test;
 
 import PageObjects.Login;
 import PageObjects.SelectApplication;
+import commonutilities.BaseTest;
 
 public class hooksclass extends BaseTest{
 	Login loginPO;

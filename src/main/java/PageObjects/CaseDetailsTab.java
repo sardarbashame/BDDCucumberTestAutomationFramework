@@ -1,58 +1,64 @@
 package PageObjects;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import commonutilities.ReusableUtility;
+import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 
-public class CaseDetailsTab extends ReusableUtility {
+import commonutilities.CommonFunctions;
 
-	WebDriver driver;
-	By waitforelementtodisappear;
-	By waitforelementtoappear;
-	boolean numberoftechpresent;
-	boolean numberofdayspresent;
-	boolean numberofhourspresent;
+public class CaseDetailsTab extends CommonFunctions {
+
 	String actualmessage;
-	JavascriptExecutor js = (JavascriptExecutor) driver;
-	WebElement webele;
 
-	public CaseDetailsTab(WebDriver driver) {
-		super(driver);
-		this.driver = driver;
-		PageFactory.initElements(driver, this);
+	public CaseDetailsTab() {
+		PageFactory.initElements(new AjaxElementLocatorFactory(driver, 10), this);
 	}
 
+	@FindBy(xpath = "//span[text()='Edit Status']/..")
+	public WebElement clk_editStatus;
+	
+	@FindBy(xpath = "//button[@aria-label='Status']")
+	public WebElement btn_status;
+	
+	@FindBy(xpath = "//span[@title='Escalated']")
+	public WebElement clk_escalated;
+	
+	@FindBy(xpath = "//button[@name='SaveEdit']")
+	public WebElement clk_SaveEdit;
+	
+	@FindBy(xpath = "//*[text()='This case has been closed for more than 14 days.  Please open a new case and link the two if desired']")
+	public WebElement get_caseClosedMsg;
+	
 	public void editCaseStatus() throws InterruptedException {
 		Thread.sleep(0, 2000);
+		Thread.sleep(0, 2000);
+		clk_editStatus.click();
 		driver.findElement(By.xpath("//span[text()='Edit Status']/..")).click();
 		Thread.sleep(2000);
 	}
 
 	public void updateCaseStatusNew() throws InterruptedException {
 		Thread.sleep(0, 2000);
-		// waitforelementtodisappear =
-		// waitForElementToDisAppear(By.xpath("//span[contains(@class,'toastMessage')]//a//div"));
 		Thread.sleep(0, 2000);
-		driver.findElement(By.xpath("//button[@aria-label='Status']")).click();
+		btn_status.click();
 		Thread.sleep(2000);
-		driver.findElement(By.xpath("//span[@title='Escalated']")).click();
+		clk_escalated.click();
 		Thread.sleep(2000);
 	}
 
 	public void clickSaveButton() throws InterruptedException {
 		Thread.sleep(0, 2000);
+		Thread.sleep(0, 2000);
+		clk_SaveEdit.click();
 		driver.findElement(By.xpath("//button[@name='SaveEdit']")).click();
 		Thread.sleep(2000);
 	}
 
 	public String getValidationMessage() throws InterruptedException {
 		Thread.sleep(0, 1000);
-		actualmessage = driver.findElement(By.xpath(
-				"//*[text()='This case has been closed for more than 14 days.  Please open a new case and link the two if desired']"))
-				.getText();
+		actualmessage = get_caseClosedMsg.getText();
 		Thread.sleep(1000);
 		return actualmessage;
 	}
