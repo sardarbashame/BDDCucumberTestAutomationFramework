@@ -1,6 +1,6 @@
 Feature: Verify the Billing Address
 
- 
+ @Test
   Scenario Outline: Login as Service Users and Verify the billing Address
     Given HAC627 user enters "<username>" and "<password>"
     When HAC627 select the applicaton

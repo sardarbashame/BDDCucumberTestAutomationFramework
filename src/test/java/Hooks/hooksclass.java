@@ -6,7 +6,6 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.github.bonigarcia.wdm.WebDriverManager;
-import testcomponents.BaseTest;
 
 import java.io.FileReader;
 import java.io.IOException;
@@ -19,9 +18,12 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
+import com.google.gson.*;
 
+import java.lang.reflect.Type;
 import PageObjects.Login;
 import PageObjects.SelectApplication;
+import commonutilities.BaseTest;
 
 public class hooksclass extends BaseTest{
 	Login loginPO;
@@ -34,7 +36,7 @@ public void setUp() throws IOException
 }
 	
 @After()
-public void tearDown() 
+public void tearDown() throws IOException 
 {
 	tearDownDriver();
 }

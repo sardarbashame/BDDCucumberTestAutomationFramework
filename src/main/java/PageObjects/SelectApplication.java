@@ -3,35 +3,34 @@ package PageObjects;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 
-public class SelectApplication {
-	
-	WebDriver driver;
-	
-	public SelectApplication(WebDriver driver)
-	{
-		this.driver=driver;
-		PageFactory.initElements(driver, this);
-	}
-	
-    
+import commonutilities.CommonFunctions;
 
-	public void selectApp(String appname) throws InterruptedException
-	{
-	    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-	    driver.findElement(By.xpath("//span[text()='App Launcher']/..")).click();
-	    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
-	    driver.findElement(By.xpath("//input[@placeholder='Search apps and items...' or @placeholder='Search apps or items...']")).sendKeys("Service Management");
-	    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
-	    driver.findElement(By.xpath("//p[.//*[text()='"+appname+"']]")).click();
-	    Thread.sleep(12000);
-		
+public class SelectApplication extends CommonFunctions {
+
+
+	public SelectApplication() {
+		PageFactory.initElements(new AjaxElementLocatorFactory(driver, 10), this);
 	}
 
+	@FindBy(xpath = "//span[text()='App Launcher']/..")
+	WebElement clk_AppLauncher;
 
+	@FindBy(xpath = "//input[@placeholder='Search apps and items...' or @placeholder='Search apps or items...']")
+	WebElement ipt_SearchAppsAndItems;
+
+	public void selectApp(String appname) throws InterruptedException {
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		clk_AppLauncher.click();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+		ipt_SearchAppsAndItems.sendKeys("Service Management");
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+		driver.findElement(By.xpath("//p[.//*[text()='" + appname + "']]")).click();
+		Thread.sleep(12000);
+
+	}
 }
-

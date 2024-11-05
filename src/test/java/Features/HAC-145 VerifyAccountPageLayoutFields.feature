@@ -1,5 +1,5 @@
 Feature: Verify the customer account page layout fields
-
+@Test
   Scenario Outline: Login as Service Users and Verify the account page layout fields
     Given HAC145 user enters <username> and <password>
     When HAC145 select the applicaton

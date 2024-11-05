@@ -7,8 +7,8 @@ import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions
 		(
-		tags="@test", 
-		features = "src/test/java/Features",
+		tags="@regtest", 
+		features = "src/test/java/Features",dryRun = false,
 		glue = {"StepDefinitions","Hooks"},
 		plugin = {
 				"pretty",	
@@ -17,7 +17,7 @@ import io.cucumber.testng.CucumberOptions;
 				"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
 				}
 		)
-//	"html:target/htmlreport.html",
+
 
 public class MyRunner extends AbstractTestNGCucumberTests {
 

@@ -1,161 +1,114 @@
 package PageObjects;
 
-import java.time.Duration;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 
-import commonutilities.ReusableUtility;
+import commonutilities.CommonFunctions;
 
-public class ContactListViews extends ReusableUtility{
-	
-	WebDriver driver;
-	WebElement webele;
+public class ContactListViews extends CommonFunctions {
+
 	String actualcontactemail;
 	String actualtradename;
 	String actualindustry;
-	By waitforelementtoappear;
 	boolean customercontaclsviewtpresent;
-	JavascriptExecutor js = (JavascriptExecutor) driver;
-	
-	public ContactListViews(WebDriver driver)
-	{
-		super(driver);
-		this.driver=driver;
-		PageFactory.initElements(driver, this);
+
+	@FindBy(xpath = "//ul//li//a[text()='Details']")
+	public WebElement clk_details;
+
+	@FindBy(xpath = "//button[@title='Select a List View: Contacts']")
+	public WebElement btn_contactsListView;
+
+	@FindBy(xpath = "//li//span[text()='Customer Contacts']")
+	public WebElement txt_customerContacts;
+
+	@FindBy(xpath = "//a//span[@title='Name']")
+	public WebElement txt_name;
+
+	@FindBy(xpath = "//a//span[@title='Title']")
+	public WebElement txt_title;
+
+	@FindBy(xpath = "//a//span[@title='Account Name']")
+	public WebElement txt_accountName;
+
+	@FindBy(xpath = "//a//span[@title='Phone']")
+	public WebElement txt_phone;
+
+	@FindBy(xpath = "//a//span[@title='Mobile']")
+	public WebElement txt_mobile;
+
+	@FindBy(xpath = "//a//span[@title='Preferred Phone']")
+	public WebElement txt_preferredPhone;
+
+	@FindBy(xpath = "//a//span[@title='Email']")
+	public WebElement txt_email;
+
+	@FindBy(xpath = "//a//span[@title='Mailing City']")
+	public WebElement txt_mailingCity;
+
+	@FindBy(xpath = "//a//span[@title='Shift']")
+	public WebElement txt_shift;
+
+	@FindBy(xpath = "//a//span[@title='Location']")
+	public WebElement txt_location;
+
+	@FindBy(xpath = "//li//span[text()='Heat and Control Billing Contacts']")
+	public WebElement txt_heatAndCntrlBilling;
+
+	@FindBy(xpath = "//li//span[text()='Heat and Control Sales Contacts']")
+	public WebElement txt_heatAndCntrlSales;
+
+	@FindBy(xpath = "//li//span[text()='Vendor Contacts']")
+	public WebElement txt_vendorContacts;
+
+	By wait_toastMessage = By.xpath("//span[contains(@class,'toastMessage')]//a//div");
+	public By wait_customerContacts = By.xpath("//li//span[text()='Customer Contacts']");
+	By wait_conatacts = By.xpath("//a[@title='Contacts']");
+
+	public ContactListViews() {
+		PageFactory.initElements(new AjaxElementLocatorFactory(driver, 10), this);
 	}
-	
-public void clickcontactdetailsTab() throws InterruptedException
-	{
-		Thread.sleep(0,2000);
-		waitforelementtoappear = waitForElementToAppear(By.xpath("//span[contains(@class,'toastMessage')]//a//div"));
-		Thread.sleep(0,2000);
-		driver.findElement(By.xpath("//ul//li//a[text()='Details']")).click();
+
+	public void clickcontactdetailsTab() throws InterruptedException {
+		Thread.sleep(0, 2000);
+		waitForElementToAppear(wait_toastMessage, 30);
+		expWaitToBeClickable(clk_details);
+		clk_details.click();
 		Thread.sleep(1000);
 	}
 
-public void clickContactsTab() throws InterruptedException {
-	js = (JavascriptExecutor) driver;
-	Thread.sleep(0,4000);
-	waitForElementToAppear(By.xpath("//a[@title='Contacts']"));
-	Thread.sleep(0,3000);
-	webele = driver.findElement(By.xpath("//a[@title='Contacts']"));
-	js.executeScript("arguments[0].click();", webele);
-	Thread.sleep(0,3000);
-}
-
 public void clickContactLisViewButton() throws InterruptedException {
-	Thread.sleep(0,2000);
-	driver.findElement(By.xpath("//button[@title='Select a List View: Contacts']")).click();
-	Thread.sleep(4000);
-}
+		expWaitToBeClickable(btn_contactsListView);
+		btn_contactsListView.click();
+		Thread.sleep(4000);
+	}
 
-public void clickCustomerContactsListView() throws InterruptedException {
-	Thread.sleep(0,2000);
-	driver.findElement(By.xpath("//li//span[text()='Customer Contacts']")).click();
-	Thread.sleep(4000);
-}
-
-public boolean isCustomerContactListViewPresent() throws InterruptedException {
-	Thread.sleep(0,2000);
-	customercontaclsviewtpresent = driver.findElement(By.xpath("//li//span[text()='Customer Contacts']")).isDisplayed();
-	Thread.sleep(4000);
-	return customercontaclsviewtpresent;
-}
-
-public boolean isCustomerContactListViewNameColPresent() throws InterruptedException {
-	Thread.sleep(0,2000);
-	customercontaclsviewtpresent = driver.findElement(By.xpath("//a//span[@title='Name']")).isDisplayed();
-	Thread.sleep(4000);
-	return customercontaclsviewtpresent;
-}
-
-public boolean isCustomerContactListViewTitleColPresent() throws InterruptedException {
-	Thread.sleep(0,2000);
-	customercontaclsviewtpresent = driver.findElement(By.xpath("//a//span[@title='Title']")).isDisplayed();
-	Thread.sleep(4000);
-	return customercontaclsviewtpresent;
-}
-
-public boolean isCustomerContactListViewAccountNameColPresent() throws InterruptedException {
-	Thread.sleep(0,2000);
-	customercontaclsviewtpresent = driver.findElement(By.xpath("//a//span[@title='Account Name']")).isDisplayed();
-	Thread.sleep(4000);
-	return customercontaclsviewtpresent;
-}
-
-public boolean isCustomerContactListViewPhoneColPresent() throws InterruptedException {
-	Thread.sleep(0,2000);
-	customercontaclsviewtpresent = driver.findElement(By.xpath("//a//span[@title='Phone']")).isDisplayed();
-	Thread.sleep(4000);
-	return customercontaclsviewtpresent;
-}
-
-public boolean isCustomerContactListViewMobileColPresent() throws InterruptedException {
-	Thread.sleep(0,2000);
-	customercontaclsviewtpresent = driver.findElement(By.xpath("//a//span[@title='Mobile']")).isDisplayed();
-	Thread.sleep(4000);
-	return customercontaclsviewtpresent;
-}
-
-public boolean isCustomerContactListViewPrefPhoneColPresent() throws InterruptedException {
-	Thread.sleep(0,2000);
-	customercontaclsviewtpresent = driver.findElement(By.xpath("//a//span[@title='Preferred Phone']")).isDisplayed();
-	Thread.sleep(4000);
-	return customercontaclsviewtpresent;
-}
-
-public boolean isCustomerContactListViewEmailColPresent() throws InterruptedException {
-	Thread.sleep(0,2000);
-	customercontaclsviewtpresent = driver.findElement(By.xpath("//a//span[@title='Email']")).isDisplayed();
-	Thread.sleep(4000);
-	return customercontaclsviewtpresent;
-}
-
-public boolean isCustomerContactListViewMailingCityColPresent() throws InterruptedException {
-	Thread.sleep(0,2000);
-	customercontaclsviewtpresent = driver.findElement(By.xpath("//a//span[@title='Mailing City']")).isDisplayed();
-	Thread.sleep(4000);
-	return customercontaclsviewtpresent;
-}
-public boolean isCustomerContactListViewShiftColPresent() throws InterruptedException {
-	Thread.sleep(0,2000);
-	customercontaclsviewtpresent = driver.findElement(By.xpath("//a//span[@title='Shift']")).isDisplayed();
-	Thread.sleep(4000);
-	return customercontaclsviewtpresent;
-}
-
-public boolean isCustomerContactListViewLocationColPresent() throws InterruptedException {
-	Thread.sleep(0,2000);
-	customercontaclsviewtpresent = driver.findElement(By.xpath("//a//span[@title='Location']")).isDisplayed();
-	Thread.sleep(4000);
-	return customercontaclsviewtpresent;
-}
-
-public boolean isHeatandControlBillingContactsListViewPresent() throws InterruptedException {
-	Thread.sleep(0,2000);
-	customercontaclsviewtpresent = driver.findElement(By.xpath("//li//span[text()='Heat and Control Billing Contacts']")).isDisplayed();
-	Thread.sleep(4000);
-	return customercontaclsviewtpresent;
-}
-public boolean isHeatandControlSalesContactsListViewPresent() throws InterruptedException {
-	Thread.sleep(0,2000);
-	customercontaclsviewtpresent = driver.findElement(By.xpath("//li//span[text()='Heat and Control Sales Contacts']")).isDisplayed();
-	Thread.sleep(4000);
-	return customercontaclsviewtpresent;
-}
-
-public boolean isVendorContactsListViewPresent() throws InterruptedException {
-	Thread.sleep(0,2000);
-	customercontaclsviewtpresent = driver.findElement(By.xpath("//li//span[text()='Vendor Contacts']")).isDisplayed();
-	Thread.sleep(4000);
-	return customercontaclsviewtpresent;
-}
+	public void clickCustomerContactsListView() throws InterruptedException {
+		expWaitToBeClickable(txt_customerContacts);
+		txt_customerContacts.click();
+		Thread.sleep(4000);
+	}
+	
+	public void clickHACBillingContactsListView() throws InterruptedException {
+		expWaitToBeClickable(txt_heatAndCntrlBilling);
+		txt_heatAndCntrlBilling.click();
+		Thread.sleep(4000);
+	}
+	
+	public void clickHACSalesContactsListView() throws InterruptedException {
+		expWaitToBeClickable(txt_heatAndCntrlSales);
+		txt_heatAndCntrlSales.click();
+		Thread.sleep(4000);
+	}
+	
+	public void clickVendorContactsListView() throws InterruptedException {
+		expWaitToBeClickable(txt_vendorContacts);
+		txt_vendorContacts.click();
+		Thread.sleep(4000);
+	}
 
 }
-

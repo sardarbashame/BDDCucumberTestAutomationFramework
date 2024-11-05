@@ -1,6 +1,6 @@
 Feature: Verify processing estimate creation
 
-
+@regtest
   Scenario Outline: Login as Service Scheduler and Verify the processing estimate creation
     Given HAC1165 user enters <username> and <password>
     When HAC1165 select the applicaton
@@ -21,4 +21,4 @@ Feature: Verify processing estimate creation
 
     Examples: 
       | username                       | password    | casename      |
-      | testservicescheduler@gmail.com | M@shaallah1 | PROCAutoCase1 |
+      | testservicescheduler@gmail.com | H@ctest1 | PROCAutoCase1 |
