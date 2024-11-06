@@ -2,6 +2,7 @@ package commonutilities;
 
 import java.io.FileReader;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
@@ -26,7 +27,6 @@ public class BaseTest {
 		String browserName = "chrome";
 		if (browserName.equalsIgnoreCase("chrome")) {
 			ppty = commonutilities.CommonFunctions.getObjDetails();
-
 			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();
 

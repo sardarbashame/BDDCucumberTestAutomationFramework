@@ -3,10 +3,6 @@ package StepDefinitions;
 import java.io.IOException;
 
 import PageObjects.CaseContactRoles;
-import PageObjects.CaseDetailsTab;
-import PageObjects.EstimateCreationFlowStep1;
-import PageObjects.EstimateCreationFlowStep2;
-import PageObjects.EstimateCreationFlowStep3;
 import PageObjects.GlobalSearch;
 import PageObjects.HomePage;
 import PageObjects.Login;
@@ -15,7 +11,6 @@ import commonutilities.CommonFunctions;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import testcomponents.BaseTest;
 
 public class HAC146VerifyCaseContactRoles extends CommonFunctions {
 	GlobalSearch globalSearch;
@@ -27,14 +22,14 @@ public class HAC146VerifyCaseContactRoles extends CommonFunctions {
 	@Given("^HAC146 user enters (.*) and (.*)$")
 	public void HAC146_user_enters_username_and_password(String userName, String password) throws IOException {
 		loginPO = new Login();
-		loginPO.goTo(getObjDetails().getProperty("HAC_URL"));
+		loginPO.goTo(ppty.getProperty("HAC_URL"));
 		loginPO.LoginApp(userName, password);
 	}
 
 	@When("HAC146 select the applicaton")
 	public void HAC146_select_the_applicaton() throws InterruptedException, IOException {
 		selectApplication = new SelectApplication();
-		selectApplication.selectApp(getObjDetails().getProperty("APPNAME"));
+		selectApplication.selectApp(ppty.getProperty("APPNAME"));
 	}
 
 	@When("HAC146 close all the open tabs")
@@ -56,33 +51,27 @@ public class HAC146VerifyCaseContactRoles extends CommonFunctions {
 	@When("HAC146 create new case")
 	public void HAC146_create_new_case() throws InterruptedException, IOException {
 		homePage = new HomePage();
-		homePage.createNewCase(
-				getObjDetails().getProperty("CASECONTACT"), 
-				getObjDetails().getProperty("CASEFIRSTNAME"),
-				getObjDetails().getProperty("CASESUB"));
+		homePage.createNewCase(ppty.getProperty("CASECONTACT"), ppty.getProperty("CASEFIRSTNAME"),
+				ppty.getProperty("CASESUB"));
 	}
 
 	@When("HAC146 add engineer contact role")
 	public void HAC146_add_engineer_contact_role() throws InterruptedException, IOException {
-		casecontactroles = new CaseContactRoles(driver);
-		casecontactroles.addContactRole(
-				getObjDetails().getProperty("CONTACTROLECONTACT"),
-				getObjDetails().getProperty("ROLEENGG"));
+		casecontactroles = new CaseContactRoles();
+		casecontactroles.addContactRole(ppty.getProperty("CONTACTROLECONTACT"), ppty.getProperty("ROLEENGG"));
 
 	}
 
 	@When("HAC146 add engineering manager contact role")
 	public void HAC146_add_engineer_manager_contact_role() throws InterruptedException, IOException {
-		casecontactroles = new CaseContactRoles(driver);
-		casecontactroles.addContactRole(
-				getObjDetails().getProperty("CONTACTROLECONTACT"),
-				getObjDetails().getProperty("ROLEENGGMGR"));
+		casecontactroles = new CaseContactRoles();
+		casecontactroles.addContactRole(ppty.getProperty("CONTACTROLECONTACT"), ppty.getProperty("ROLEENGGMGR"));
 
 	}
 
 	@Then("HAC146 verify case contact roles")
 	public void HAC146_verify_case_contact_roles() throws InterruptedException {
-		casecontactroles = new CaseContactRoles(driver);
+		casecontactroles = new CaseContactRoles();
 		casecontactroles.verifyContactRoles();
 	}
 

@@ -6,6 +6,8 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.time.Duration;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Properties;
 
 import org.apache.commons.io.FileUtils;
@@ -27,10 +29,10 @@ public class CommonFunctions extends BaseTest {
 	public static Actions actions;
 	public static FileReader reader;
 
-	public By waitForElementToAppear(By webele, int timeOut) {
+	public By waitForElementToAppear(By by, int timeOut) {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(TimeOutValue));
-		wait.until(ExpectedConditions.visibilityOfElementLocated(webele));
-		return webele;
+		wait.until(ExpectedConditions.visibilityOfElementLocated(by));
+		return by;
 	}
 
 	public By waitForElementToDisAppear(By webele, int timeOut) {
@@ -122,6 +124,8 @@ public class CommonFunctions extends BaseTest {
 
 	public JavascriptExecutor closeBottomeBar() throws InterruptedException {
 		// Closing all the open tabs
+		By wait_appOpen = By.xpath("//div[contains(@class,'oneUtilityBar slds-utility-bar_container oneUtilityBarContent')]");
+		waitForElementToAppear(wait_appOpen, 5000);
 		Thread.sleep(2000);
 		js = (JavascriptExecutor) driver;
 		js.executeScript(
@@ -142,7 +146,7 @@ public class CommonFunctions extends BaseTest {
 		return js;
 	}
 
-	public String getScreenShot(String testCaseName, WebDriver driver) throws IOException {
+	public String getScreenShot(String testCaseName) throws IOException {
 		TakesScreenshot ts = (TakesScreenshot) driver;
 		File source = ts.getScreenshotAs(OutputType.FILE);
 		File file = new File(System.getProperty("user.dir") + "//reports//" + testCaseName + ".png");
@@ -169,5 +173,21 @@ public class CommonFunctions extends BaseTest {
 
 	public static InputStream loadFileAsStream(String file) {
 		return CommonFunctions.class.getResourceAsStream(file);
+	}
+	public static String ConcatCurrentDateTime(String NameProvided) {		
+		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyyMMddHHmmss");
+		LocalDateTime now = LocalDateTime.now();
+		String DistinctName = NameProvided.concat(dtf.format(now));
+		return DistinctName;
+	}
+	public void clickDrpDownAndSelValue(WebElement ele, String value) throws Exception
+	{
+		expWaitToBeClickable(ele);
+		javascriptClick(ele);
+		Thread.sleep(1000);
+		TypeInField(ele, value);
+		WebElement clkEle = driver.findElement(By.xpath("(//*[@title = '"+value+"'])[last()]"));
+		drawHighlight(clkEle);
+		javascriptClick(clkEle);
 	}
 }

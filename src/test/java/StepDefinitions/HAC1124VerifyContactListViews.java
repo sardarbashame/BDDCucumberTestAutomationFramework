@@ -8,7 +8,6 @@ import org.testng.Assert;
 import PageObjects.AccountDetailsTab;
 import PageObjects.ContactListViews;
 import PageObjects.GlobalSearch;
-import PageObjects.HomePage;
 import PageObjects.Login;
 import PageObjects.SelectApplication;
 import commonutilities.CommonFunctions;
@@ -19,16 +18,15 @@ public class HAC1124VerifyContactListViews extends CommonFunctions {
 	GlobalSearch globalSearch;
 	String industryname;
 	Login loginPO;
-	HomePage homepage;
 	SelectApplication selectApplication;
 
-	@Given("HAC1124 login as service user")
-	public void hac1124_login_as_service_user() throws IOException {
+	@Given("Login as service user")
+	public void hac1124_login_as_service_user() {
 		loginPO = new Login();
 		loginPO.goTo(ppty.getProperty("HAC_URL"));
-		String uname = getObjDetails().getProperty("SERVICE_MANAGER_USER_NAME");
-		String pwd = getObjDetails().getProperty("SERVICE_MANAGER_PASSWORD");
-		loginPO.LoginApp(uname, pwd);
+		String Uname = ppty.getProperty("SERVICE_USER");
+		String pwd = ppty.getProperty("SERVICE_PASSWORD");
+		loginPO.LoginApp(Uname, pwd);
 	}
 
 	@When("HAC1124 select the applicaton")
@@ -50,8 +48,8 @@ public class HAC1124VerifyContactListViews extends CommonFunctions {
 	// click on contacts tab
 	@When("HAC1124 user is on contact home page")
 	public void HAC1124_user_is_on_contact_home_page() throws InterruptedException, IOException {
-		homepage = new HomePage();
-		homepage.ClickContactsTab();
+		contactlistviews = new ContactListViews();
+		contactlistviews.clickContactsTab();
 	}
 
 	// click on contacts list view button
@@ -178,27 +176,5 @@ public class HAC1124VerifyContactListViews extends CommonFunctions {
 		contactlistviews = new ContactListViews();
 		Assert.assertTrue(contactlistviews.txt_location.isDisplayed());
 	}
-	
-	// select the heat and control billing contacts list view
-	@Then("HAC1124 select the heatandcontrolbilling contacts list view")
-	public void HAC1124_select_the_heatandcontrolbilling_contacts_list_view() throws InterruptedException, IOException {
-		contactlistviews = new ContactListViews();
-		contactlistviews.clickHACBillingContactsListView();
-	}
-	
-	// select the heat and control sales contacts list view
-	@Then("HAC1124 select the heatandcontrolsales contacts list view")
-	public void HAC1124_select_the_heatandcontrolsales_contacts_list_view() throws InterruptedException, IOException {
-		contactlistviews = new ContactListViews();
-		contactlistviews.clickHACSalesContactsListView();
-	}
-	
-	// select the vendor sales contacts list view
-	@Then("HAC1124 select the vendor contacts list view")
-	public void HAC1124_select_the_vendor_contacts_list_view() throws InterruptedException, IOException {
-		contactlistviews = new ContactListViews();
-		contactlistviews.clickVendorContactsListView();
-	}
-
 
 }
