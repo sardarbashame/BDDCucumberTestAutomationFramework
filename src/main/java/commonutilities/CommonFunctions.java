@@ -1,6 +1,8 @@
 package commonutilities;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.time.Duration;
@@ -20,12 +22,12 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-
 public class CommonFunctions extends BaseTest {
 	public static WebDriverWait drvwait;
 	public static int TimeOutValue = 40;
 	public static JavascriptExecutor js;
 	public static Actions actions;
+	public static FileReader reader;
 
 	public By waitForElementToAppear(By by, int timeOut) {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(TimeOutValue));
@@ -152,12 +154,22 @@ public class CommonFunctions extends BaseTest {
 		return System.getProperty("user.dir") + "//reports//" + testCaseName + ".png";
 	}
 
-	public static Properties getObjDetails() throws IOException {
-		ppty = new Properties();
-		ppty.load(loadFileAsStream("/GlobalData.properties"));
-		return ppty;
+	
+	  public static Properties getObjDetails() throws IOException { 
+			reader = new FileReader(System.getProperty("user.dir") + "//src//main//java//resources//GlobalData.properties");
+			Properties props = new Properties();
+			props.load(reader);
+			return props;
+	  
+	  }
+	 
 
-	}
+		/*
+		 * public Properties getParameters() throws IOException { reader = new
+		 * FileReader(System.getProperty("user.dir") +
+		 * "//src//main//java//resources//GlobalData.properties"); Properties props =
+		 * new Properties(); props.load(reader); return props; }
+		 */
 
 	public static InputStream loadFileAsStream(String file) {
 		return CommonFunctions.class.getResourceAsStream(file);

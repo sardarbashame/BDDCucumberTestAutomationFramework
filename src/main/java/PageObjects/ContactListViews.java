@@ -20,9 +20,6 @@ public class ContactListViews extends CommonFunctions {
 	@FindBy(xpath = "//ul//li//a[text()='Details']")
 	public WebElement clk_details;
 
-	@FindBy(xpath = "//a[@title='Contacts']")
-	public WebElement clk_contacts;
-
 	@FindBy(xpath = "//button[@title='Select a List View: Contacts']")
 	public WebElement btn_contactsListView;
 
@@ -84,16 +81,7 @@ public class ContactListViews extends CommonFunctions {
 		Thread.sleep(1000);
 	}
 
-	public void clickContactsTab() throws InterruptedException {
-		js = (JavascriptExecutor) driver;
-		Thread.sleep(0, 4000);
-		waitForElementToAppear(wait_conatacts, 30);
-		expWaitToBeClickable(clk_contacts);
-		js.executeScript("arguments[0].click();", clk_contacts);
-		Thread.sleep(0, 3000);
-	}
-
-	public void clickContactLisViewButton() throws InterruptedException {
+public void clickContactLisViewButton() throws InterruptedException {
 		expWaitToBeClickable(btn_contactsListView);
 		btn_contactsListView.click();
 		Thread.sleep(4000);
@@ -105,5 +93,22 @@ public class ContactListViews extends CommonFunctions {
 		Thread.sleep(4000);
 	}
 	
+	public void clickHACBillingContactsListView() throws InterruptedException {
+		expWaitToBeClickable(txt_heatAndCntrlBilling);
+		txt_heatAndCntrlBilling.click();
+		Thread.sleep(4000);
+	}
+	
+	public void clickHACSalesContactsListView() throws InterruptedException {
+		expWaitToBeClickable(txt_heatAndCntrlSales);
+		txt_heatAndCntrlSales.click();
+		Thread.sleep(4000);
+	}
+	
+	public void clickVendorContactsListView() throws InterruptedException {
+		expWaitToBeClickable(txt_vendorContacts);
+		txt_vendorContacts.click();
+		Thread.sleep(4000);
+	}
 
 }

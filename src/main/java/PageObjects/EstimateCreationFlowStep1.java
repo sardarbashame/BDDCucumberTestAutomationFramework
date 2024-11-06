@@ -73,84 +73,66 @@ public class EstimateCreationFlowStep1 extends CommonFunctions {
 		js = (JavascriptExecutor) driver;
 		expWaitToBeClickable(clk_priceBook);
 		clk_priceBook.click();
-		Thread.sleep(0, 3000);
-		driver.findElement(By.xpath("//*[text()='Price Book']/../..//button")).click();
+		Thread.sleep(3000);
 		driver.findElement(By.xpath("//span[text()='" + pricebook + "']")).click();
 		driver.findElement(By.xpath("//*[text()='" + estimatematrix + "']/../..//button")).click();
 		driver.findElement(By.xpath("//span[text()='" + estimatematrixoption + "']")).click();
 		expWaitToBeClickable(clk_estimateItems);
-
-		clk_estimateItems.click();
-		Thread.sleep(0, 3000);
+		clk_estimateItems.click();;
+		Thread.sleep(3000);
 		driver.findElement(By.xpath("//span[text()='" + estimateitem + "']")).click();
-		Thread.sleep(0, 3000);
-
+		Thread.sleep(3000);
 		btn_next.click();
 		Thread.sleep(0, 4000);
-		driver.findElement(By.xpath("//*[text()='Estimate Items']/../..//button")).click();
-		driver.findElement(By.xpath("//span[text()='" + estimateitem + "']")).click();
-		driver.findElement(By.xpath("//button[text()='Next']")).click();
-	}
+		}
 
 	public boolean verifyPriceBookOption1() throws InterruptedException {
 		js = (JavascriptExecutor) driver;
-		Thread.sleep(0, 4000);
+		Thread.sleep(1000);
 		expWaitToBeClickable(clk_priceBook);
 		clk_priceBook.click();
-		Thread.sleep(0, 3000);
+		Thread.sleep(1000);
 		pricebookoption1 = txt_candaMarketRate.isDisplayed();
-		driver.findElement(By.xpath("//*[text()='Price Book']/../..//button")).click();
-		pricebookoption1 = driver.findElement(By.xpath("//span[text()='CANADA Domestic Market Rate']")).isDisplayed();
 		return pricebookoption1;
-
+		
 	}
 
 	public boolean verifyPriceBookOption2() throws InterruptedException {
-		Thread.sleep(0, 3000);
+		Thread.sleep(1000);
 		return pricebookoption2 = txt_candaPepsico.isDisplayed();
 	}
 
 	public boolean verifyPriceBookOption3() throws InterruptedException {
-		Thread.sleep(0, 3000);
+		Thread.sleep(1000);
 		pricebookoption3 = txt_usMarketRate.isDisplayed();
-		pricebookoption3 = driver.findElement(By.xpath("//span[text()='USA Domestic Market Rate']")).isDisplayed();
 		return pricebookoption3;
 
 	}
 
 	public boolean verifyPriceBookOption4() throws InterruptedException {
-		Thread.sleep(0, 3000);
+		Thread.sleep(1000);
 		return pricebookoption4 = txt_usMarketRatePrepay.isDisplayed();
 
 	}
 
 	public boolean verifyPriceBookOption5() throws InterruptedException {
-		Thread.sleep(0, 3000);
+		Thread.sleep(1000);
 		pricebookoption5 = txt_usMarketRatePepsico.isDisplayed();
-		pricebookoption5 = driver.findElement(By.xpath("//span[text()='USA Domestic MPA-PEPSICO (FritoLay)']"))
-				.isDisplayed();
-		Thread.sleep(0, 3000);
 		return pricebookoption5;
 
 	}
 
 	public boolean verifyPriceBookOption6() throws InterruptedException {
-		Thread.sleep(0, 4000);
+		Thread.sleep(1000);
 		pricebookoption6 = txt_usInterNationalMarketRatePrepay.isDisplayed();
-		Thread.sleep(0, 3000);
-		pricebookoption6 = driver.findElement(By.xpath("//span[text()='USA International Market Rate']")).isDisplayed();
 		return pricebookoption6;
 
 	}
 
 	public boolean verifyPriceBookOption7() throws InterruptedException {
-		Thread.sleep(0, 3000);
+		Thread.sleep(1000);
 		pricebookoption7 = txt_usInterNationalPepsico.isDisplayed();
-		expWaitToBeClickable(clk_priceBook);
 		clk_priceBook.click();
-		pricebookoption7 = driver.findElement(By.xpath("//span[text()='USA International MPA-PEPSICO (FRITOLAY)']"))
-				.isDisplayed();
-		driver.findElement(By.xpath("//*[text()='Price Book']/../..//button")).click();
 		return pricebookoption7;
 	}
 

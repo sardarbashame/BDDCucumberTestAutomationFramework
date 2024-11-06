@@ -18,7 +18,9 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
+import com.google.gson.*;
 
+import java.lang.reflect.Type;
 import PageObjects.Login;
 import PageObjects.SelectApplication;
 import commonutilities.BaseTest;
@@ -33,26 +35,8 @@ public void setUp() throws IOException
 	intializeDriver(); 
 }
 	
-/*
- * @Before(order=2) public void user_enters_username_and_password() throws
- * IOException { loginPO = new LoginIntoSalesConsole(driver);
- * loginPO.goTo(getParameters().getProperty("HAC_URL")); loginPO.LoginApp (
- * getParameters().getProperty("SERVICE_REP_USER_NAME"),
- * getParameters().getProperty("SERVICE_REP_PASSWORD") ); }
- * 
- * @Before(order=3) public void select_the_applicaton() throws
- * InterruptedException, IOException { selectApplication = new
- * SelectApplication(driver);
- * selectApplication.selectApp(getParameters().getProperty("APPNAME")); }
- * 
- * @Before(order=4) public void close_all_the_open_tabs() throws
- * InterruptedException { closeAllTabs(); }
- * 
- * @Before(order=5) public void close_the_bottom_bar() throws
- * InterruptedException { closeBottomeBar(); }
- */	
 @After()
-public void tearDown() 
+public void tearDown() throws IOException 
 {
 	tearDownDriver();
 }

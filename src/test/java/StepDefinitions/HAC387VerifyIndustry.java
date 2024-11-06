@@ -51,15 +51,6 @@ public class HAC387VerifyIndustry extends CommonFunctions {
 		globalSearch.selectaccountfromglobalsearch();
 	}
 
-	// validate industry name on account details
-	@Then("HAC387 verify industry name")
-	public void HAC387_verify_industry_name() throws InterruptedException, IOException {
-		accountDetailsTab = new AccountDetailsTab();
-		industryname = accountDetailsTab.getIndustry();
-		Assert.assertEquals(industryname, "Leafy Greens");
-
-	}
-
 	@When("HAC387 select accounts tab")
 	public void HAC387_select_accounts_tab() throws InterruptedException {
 		homepage = new HomePage();
@@ -69,13 +60,15 @@ public class HAC387VerifyIndustry extends CommonFunctions {
 	@When("HAC387 create new customer account")
 	public void HAC387_create_new_customer_account() throws InterruptedException, IOException {
 		homepage = new HomePage();
-		homepage.createNewCustomerAccount(ppty.getProperty("ACCTNAME") + Math.random(), ppty.getProperty("INDUSTRY"),
-				ppty.getProperty("TRADENAME"));
+		homepage.createNewCustomerAccount(
+				getObjDetails().getProperty("ACCTNAME") + Math.random(), 
+				getObjDetails().getProperty("INDUSTRY"),
+				getObjDetails().getProperty("TRADENAME"));
 	}
 
 	// validate industry name on account details
-	@Then("HAC387 verify industry name_1")
-	public void HAC387_verify_industry_name_1() throws InterruptedException, IOException {
+	@Then("HAC387 verify industry name")
+	public void HAC387_verify_industry_name() throws InterruptedException, IOException {
 		accountDetailsTab = new AccountDetailsTab();
 		industryname = accountDetailsTab.getIndustry();
 		Assert.assertEquals(industryname, "Animal Food");

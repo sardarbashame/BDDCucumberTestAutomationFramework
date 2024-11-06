@@ -26,8 +26,8 @@ public class EstimateCreationFlowStep3 extends CommonFunctions {
 	@FindBy(xpath = "(//button[text()='Create PDF'])[2]")
 	WebElement btn_createPDF;
 
-	@FindBy(xpath = "//button[@name='SaveEdit']")
-	WebElement btn_saveEdit;
+	@FindBy(xpath = "(//button[text()='Save'])[2]")
+	WebElement btn_save;
 
 	public void clickViewConfirmation() throws InterruptedException {
 		Thread.sleep(0, 2000);
@@ -44,11 +44,10 @@ public class EstimateCreationFlowStep3 extends CommonFunctions {
 	}
 
 	public void clickSaveButton() throws InterruptedException {
-		Thread.sleep(0, 2000);
-		expWaitToBeClickable(btn_saveEdit);
-		btn_saveEdit.click();
-		driver.findElement(By.xpath("(//button[text()='View Confirmation'])[2]")).click();
-		waitforelementtoappear = waitForElementToAppear(By.xpath("(//button[text()='Create PDF'])[1]"), 30);
+		Thread.sleep(2000);
+		expWaitToBeClickable(btn_save);
+		btn_save.click();
+		Thread.sleep(5000);
 	}
 
 }

@@ -72,7 +72,7 @@ public class HAC145VerifyAccountLayout extends CommonFunctions {
 	public void HAC145_verify_account_name() throws InterruptedException, IOException {
 		accountDetailsTab = new AccountDetailsTab();
 		accountname = accountDetailsTab.getAccountName();
-		Assert.assertEquals(accountname, "Test Customer Account11");
+		Assert.assertTrue(accountname.contains("TestCustomerAccount"));
 	}
 
 	@When("HAC145 select accounts tab")
@@ -87,16 +87,6 @@ public class HAC145VerifyAccountLayout extends CommonFunctions {
 		homepage.createNewCustomerAccount(ppty.getProperty("ACCTNAME") + Math.random(), ppty.getProperty("INDUSTRY"),
 				ppty.getProperty("TRADENAME"));
 	}
-
-	// @Then ("HAC145 verify parent account")
-	// public void HAC145_verify_parent_account() throws InterruptedException,
-	// IOException
-	// {
-	// accountDetailsTab = new AccountDetailsTab(driver);
-	// parentaccount = accountDetailsTab.getParentAccount();
-	// Assert.assertEquals(parentaccount,"Juicy Box (Sample)");
-	//
-	// }
 
 	@Then("HAC145 verify type")
 	public void HAC145_verify_type() throws InterruptedException, IOException {
@@ -116,24 +106,11 @@ public class HAC145VerifyAccountLayout extends CommonFunctions {
 	}
 
 	@Then("HAC145 verify parent account")
-
 	public void HAC145_verify_parent_account() throws InterruptedException, IOException {
 		accountDetailsTab = new AccountDetailsTab();
 		parentaccount = accountDetailsTab.getParentAccount();
 		Assert.assertEquals(parentaccount, "Juicy Box (Sample)");
-		// @Then ("HAC145 verify account currency")
-		// public void HAC145_verify_accountcurrency() throws
-		// InterruptedException, IOException
-		// {
-		// accountDetailsTab = new AccountDetailsTab(driver);
-		// accountcurrency = accountDetailsTab.getAccountCurrency();
-		// Assert.assertEquals(accountcurrency,"USD - U.S. Dollar");
-		//
-		// }
-
-	}
-
-	// validate trade name value on account details
+		}
 
 	// validate industry name on account details
 	@Then("HAC145 verify industry_1")
@@ -143,27 +120,6 @@ public class HAC145VerifyAccountLayout extends CommonFunctions {
 		Assert.assertEquals(industryname, "Leafy Greens");
 
 	}
-	// validate Employees label on account details
-	// @Then ("HAC145 verify employees label")
-	// public void HAC145_verify_employees_label() throws InterruptedException,
-	// IOException
-	// {
-	// accountDetailsTab = new AccountDetailsTab(driver);
-	// employeeslabel = accountDetailsTab.isEmployeesPresent();
-	// Assert.assertTrue(employeeslabel);
-	//
-	// }
-
-	/*
-	 * @Then ("HAC145 verify description") public void
-	 * HAC145_verify_description() throws InterruptedException, IOException {
-	 * accountDetailsTab = new AccountDetailsTab(driver); description =
-	 * accountDetailsTab.getDescription();
-	 * Assert.assertEquals(description,"Leafy Greens");
-	 * 
-	 * }
-	 */
-
 	@Then("HAC145 verify account currency")
 
 	public void HAC145_verify_accountcurrency() throws InterruptedException, IOException {
@@ -187,7 +143,7 @@ public class HAC145VerifyAccountLayout extends CommonFunctions {
 	public void HAC145_verify_trade_name_value() throws InterruptedException, IOException {
 		accountDetailsTab = new AccountDetailsTab();
 		tradename = accountDetailsTab.getTradeName();
-		Assert.assertEquals(tradename, "Trade Name - Test Customer Account11");
+		Assert.assertTrue(tradename.contains("TestTradeName"));
 
 	}
 

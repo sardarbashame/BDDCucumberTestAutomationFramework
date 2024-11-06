@@ -1,8 +1,6 @@
 package PageObjects;
-
 import java.util.ArrayList;
 import java.util.List;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
@@ -34,6 +32,7 @@ public class AccountDetailsTab extends CommonFunctions {
 	boolean regionalsettingspresent;
 	boolean superregionpresent;
 	boolean saleschannelpresent;
+	JavascriptExecutor js = (JavascriptExecutor) driver;
 
 	public AccountDetailsTab() {
 		PageFactory.initElements(new AjaxElementLocatorFactory(driver, 10), this);
@@ -329,13 +328,25 @@ public class AccountDetailsTab extends CommonFunctions {
 		elementToBePresent(Wait_stageChange, 30);
 	}
 
-	public void validateNewAccountCreatedInDetailsAndAccType(String accType,String accCnt) throws InterruptedException {
+	public void validateNewAccountCreatedInDetailsAndAccType(String accType, String accCnt)
+			throws InterruptedException {
 		String str = txt_accTypeName.getText();
 		Assert.assertEquals(accType, str);
 		chk_editAccType.click();
 		sel_dropdownAccType.click();
 		int cnt = sel_dropdownAccTypeCnt.size();
 		Assert.assertEquals(String.valueOf(cnt), accCnt.toString());
+	}
+
+	public String getBillingAddress() throws InterruptedException {
+		Thread.sleep(0, 1000);
+		js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollTo(0,600)");
+		Thread.sleep(1000);
+		String billingaddress = driver.findElement(By.xpath("//span[text()='Billing Address']/../../..//a")).getText();
+		Thread.sleep(1000);
+		return billingaddress;
+
 	}
 
 }

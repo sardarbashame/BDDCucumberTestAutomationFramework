@@ -40,6 +40,15 @@ public class HAC622VerifyTradeName extends CommonFunctions {
 		closeAllTabs();
 	}
 
+	@When("HAC622 create new customer account")
+	public void HAC622_create_new_customer_account() throws InterruptedException, IOException {
+		homepage = new HomePage();
+		homepage.createNewCustomerAccount(
+				ppty.getProperty("ACCTNAME") + Math.random(), 
+				ppty.getProperty("INDUSTRY"),
+				ppty.getProperty("TRADENAME"));
+	}
+
 	@When("HAC622 close the bottom bar")
 	public void HAC622_close_the_bottom_bar() throws InterruptedException {
 		closeBottomeBar();
@@ -64,13 +73,6 @@ public class HAC622VerifyTradeName extends CommonFunctions {
 	public void HAC622_select_accounts_tab() throws InterruptedException {
 		homepage = new HomePage();
 		homepage.clickAccountsTab();
-	}
-
-	@When("HAC622 create new customer account")
-	public void HAC622_create_new_customer_account() throws InterruptedException, IOException {
-		homepage = new HomePage();
-		homepage.createNewCustomerAccount(ppty.getProperty("ACCTNAME") + Math.random(), ppty.getProperty("INDUSTRY"),
-				ppty.getProperty("TRADENAME"));
 	}
 
 	// validate trade name on account details

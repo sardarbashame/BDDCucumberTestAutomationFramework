@@ -82,11 +82,15 @@ public class HAC1165CreateProcessingEstimate extends CommonFunctions {
 	}
 
 	@When("HAC1165 create new case")
-	public void HAC1165_create_new_case() throws InterruptedException {
+	public void HAC1165_create_new_case() throws InterruptedException, IOException  {
 		homePage = new HomePage();
-		homePage.createNewCase("FN6 MN6 LN6", "FN6", "TestCase100");
-	}
+		homePage.createNewCase(
+				getObjDetails().getProperty("CASECONTACT"),
+				getObjDetails().getProperty("CASEFIRSTNAME"),
+				getObjDetails().getProperty("CASESUB")
+				);
 
+	}
 	@When("HAC1165 user is on estimate tab")
 	public void HAC1165_user_is_on_estimate_tab() throws InterruptedException, IOException {
 		estimateCreationFlowStep1 = new EstimateCreationFlowStep1();
@@ -110,7 +114,7 @@ public class HAC1165CreateProcessingEstimate extends CommonFunctions {
 		Assert.assertTrue(pboption6);
 		pboption7 = estimateCreationFlowStep1.verifyPriceBookOption7();
 		Assert.assertTrue(pboption7);
-		;
+		
 	}
 
 	@When("HAC1165 select values on estimate flow step1")

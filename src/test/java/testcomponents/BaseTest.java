@@ -30,7 +30,6 @@ public class BaseTest {
 	{	
 
 		Properties prop1 = new Properties();
-	//	reader1 = new FileReader("C:\\Users\\sarda\\eclipse-workspace\\SeleniumTestingFramework\\src\\main\\java\\resources\\GlobalData.properties");
 		reader1 =new FileReader(System.getProperty("user.dir")+"//src//main//java//resources//GlobalData.properties");
 		prop1.load(reader1);
 		String browserName = prop1.getProperty("BROWSER");

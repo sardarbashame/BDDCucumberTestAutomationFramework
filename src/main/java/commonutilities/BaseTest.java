@@ -14,6 +14,8 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import com.google.gson.*;
+import java.lang.reflect.Type;
 
 public class BaseTest {
 	public static WebDriver driver;
