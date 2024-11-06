@@ -1,12 +1,16 @@
 package PageObjects;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
-
 import commonutilities.CommonFunctions;
+import org.testng.Assert;
 
 public class AccountDetailsTab extends CommonFunctions {
 
@@ -95,7 +99,48 @@ public class AccountDetailsTab extends CommonFunctions {
 	@FindBy(xpath = "//span[text()='Email']/../../..//emailui-formatted-email-wrapper//a")
 	public WebElement get_email;
 
+	@FindBy(xpath = "//a//div[text()='New']")
+	WebElement newaccountbtn;
+
+	@FindBy(xpath = "//button//span[text()='Next']")
+	WebElement nextbtn;
+
+	@FindBy(xpath = "//*[text()='Account Name']/..//input")
+	WebElement accountnametxtbox;
+
+	@FindBy(xpath = "//*[text()='Trade Name']/..//input")
+	WebElement tradenametxtbox;
+
+	@FindBy(xpath = "	//button[text()='Save']")
+	WebElement accountsavebtn;
+
+	@FindBy(xpath = "//div[@role = 'dialog']//span[text() = 'Customer']")
+	WebElement chk_customerAccount;
+
+	@FindBy(xpath = "//div[@role = 'dialog']//span[text() = 'Supplier']")
+	WebElement chk_supplierAccount;
+
+	@FindBy(xpath = "//div[contains(@class, 'active ')]//label[text() = 'Type']//parent::div//descendant::div[@class = 'slds-combobox_container']//button")
+	WebElement clk_drpdownAccType;
+
+	@FindBy(xpath = "//div[contains(@class, 'active ')]//label[text() = 'Type']//parent::div//descendant::lightning-base-combobox-item//span[not(contains(@title,'--None--')) and @class = 'slds-truncate']")
+	List<WebElement> lst_accTypes;
+
+	@FindBy(xpath = "//div[contains(@class, 'active ')]//span[text() = 'Type']//ancestor::dt//following-sibling::dd//lightning-formatted-text")
+	WebElement txt_accTypeName;
+
+	@FindBy(xpath = "//div[contains(@class, 'active ')]//span[text() = 'Type']//ancestor::dt//following-sibling::dd//button")
+	WebElement chk_editAccType;
+
+	@FindBy(xpath = "//div[contains(@class, 'active ')]//*[text() = 'Type']//parent::div//lightning-base-combobox//button")
+	WebElement sel_dropdownAccType;
+
+	@FindBy(xpath = "//div[contains(@class, 'active ')]//label[text() = 'Type']//parent::div//descendant::lightning-base-combobox-item//span[not(contains(@title,'--None--')) and @class = 'slds-truncate']")
+	List<WebElement> sel_dropdownAccTypeCnt;
+
 	By Wait_toastMessage = By.xpath("//span[contains(@class,'toastMessage')]//a//div");
+	By Wait_stageChange = By
+			.xpath("//span[contains(@class, 'toastMessage slds-text-heading--small forceActionsText')]");
 
 	public void clickcontactdetailsTab() throws InterruptedException {
 		Thread.sleep(0, 2000);
@@ -237,4 +282,60 @@ public class AccountDetailsTab extends CommonFunctions {
 		Thread.sleep(1000);
 		return actualcontactemail;
 	}
+
+	public void createNewAccount(String accType, String accountname, String tradename, String industryname,
+			String values) throws InterruptedException {
+		js = (JavascriptExecutor) driver;
+		Thread.sleep(0, 4000);
+		waitForElementToAppear(By.xpath("//a//div[text()='New']"), 30);
+		newaccountbtn.click();
+
+		if (accType.equals("Customer")) {
+			chk_customerAccount.click();
+		} else {
+			chk_supplierAccount.click();
+		}
+		nextbtn.click();
+		accountnametxtbox.click();
+		accountnametxtbox.sendKeys(ConcatCurrentDateTime(accountname));
+		tradenametxtbox.click();
+		tradenametxtbox.sendKeys(ConcatCurrentDateTime(tradename));
+
+		javascriptClick(clk_drpdownAccType);
+		Thread.sleep(5000);
+		int cnt = lst_accTypes.size();
+		List<String> lst1 = new ArrayList<String>();
+		List<String> lst2 = new ArrayList<String>();
+
+		for (String str : values.split(",")) {
+			str = str.trim();
+			lst1.add(str);
+		}
+
+		for (int i = 0; i < cnt; i++) {
+			lst2.add(lst_accTypes.get(i).getText());
+		}
+
+		boolean flag = lst1.equals(lst2);
+		System.out.print(flag);
+		Assert.assertTrue(flag);
+
+		js.executeScript(
+				"var result = document.evaluate(\"//label[text()='Language']\", document.body, null, XPathResult.ANY_TYPE, null);var input = result.iterateNext();input.scrollIntoView();");
+		driver.findElement(By.xpath("//ul/li//span[text()='" + industryname + "']")).click();
+		js.executeScript(
+				"var result = document.evaluate(\"(//span[text()='Move to Chosen'])[1]\", document.body, null, XPathResult.ANY_TYPE, null);     var input = result.iterateNext();input.scrollIntoView(); input.click();");
+		accountsavebtn.click();
+		elementToBePresent(Wait_stageChange, 30);
+	}
+
+	public void validateNewAccountCreatedInDetailsAndAccType(String accType,String accCnt) throws InterruptedException {
+		String str = txt_accTypeName.getText();
+		Assert.assertEquals(accType, str);
+		chk_editAccType.click();
+		sel_dropdownAccType.click();
+		int cnt = sel_dropdownAccTypeCnt.size();
+		Assert.assertEquals(String.valueOf(cnt), accCnt.toString());
+	}
+
 }
