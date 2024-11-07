@@ -1,6 +1,6 @@
 Feature: Verify the contact page layout fields
 
- @Test
+  @Test
   Scenario Outline: Login as service scheduler and verify the contact page layout fields
     Given HAC148 user enters <username> and <password>
     When HAC148 select the applicaton
@@ -9,9 +9,13 @@ Feature: Verify the contact page layout fields
     When HAC148 select contacts tab
     When HAC148 create new customer contact
     Then HAC148 verify name field label
+    Then HAC148 verify name field value
     Then HAC148 verify account name field label
+    Then HAC148 verify account name field value
     Then HAC148 verify title field label
+    Then HAC148 verify title field value
     Then HAC148 verify department field label
+    Then HAC148 verify department field value
     Then HAC148 verify email field label
     Then HAC148 verify phone field label
     Then HAC148 verify reportsto field label
@@ -20,10 +24,7 @@ Feature: Verify the contact page layout fields
     Then HAC148 verify preferredlanguage field label
     Then HAC148 verify mailingaddress field label
     Then HAC148 verify contact related list quick links
-    
 
     Examples: 
-      | username                              | password    |
-      | testservicescheduler@gmail.com        | H@ctest1 |
-
-  
+      | username                       | password |
+      | testservicescheduler@gmail.com | H@ctest1 |

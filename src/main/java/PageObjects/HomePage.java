@@ -159,12 +159,21 @@ public class HomePage extends CommonFunctions {
 
 	@FindBy(xpath = "(//*[@title='Test Customer Account10'])[last()]")
 	WebElement select_accountname;
-
+	
 	@FindBy(xpath = "//label[text()='Email']/..//input")
 	WebElement ipt_contactemail;
 
+	@FindBy(xpath = "//label[text()='Title']/..//input")
+	WebElement ipt_contacttitle;
+
 	@FindBy(xpath = "//label[text()='Phone']/..//input")
 	WebElement ipt_contactphone;
+	
+	@FindBy(xpath = "//label[text()='Department']/..//input")
+	WebElement ipt_contactdepartment;
+	
+	@FindBy(xpath = "//label[text()='Other Phone']/..//input")
+	WebElement ipt_contactotherphone;
 
 	@FindBy(xpath = "//button[text()='Save']")
 	WebElement contactsavebtn;
@@ -233,7 +242,7 @@ public class HomePage extends CommonFunctions {
 
 	// create a new contact
 	public void CreateNewContact(String FirstName, String MiddleName, String LastName, String AccountName, String Email,
-			String Phone) throws InterruptedException {
+			String Phone, String title, String otherphone, String dept) throws InterruptedException {
 		js = (JavascriptExecutor) driver;
 		Thread.sleep(4000);
 		newcontactbtn.click();
@@ -254,8 +263,11 @@ public class HomePage extends CommonFunctions {
 		ipt_accountname.sendKeys(AccountName);
 		Thread.sleep(3000);
 		select_accountname.click();
+		ipt_contacttitle.sendKeys(title);
 		ipt_contactemail.sendKeys(Email);
 		ipt_contactphone.sendKeys(Phone);
+		ipt_contactotherphone.sendKeys(otherphone);
+		ipt_contactdepartment.sendKeys(dept);
 		contactsavebtn.click();
 		Thread.sleep(4000);
 		// waitForElementToDisAppear(Wait_toastMessage, 30);

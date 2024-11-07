@@ -36,6 +36,9 @@ public class HAC148VerifyContactPageLayoutFields extends CommonFunctions {
 	HomePage homepage;
 	ContactDetailsTab contactDetailsTab;
 	boolean name;
+	String contname;
+	String contactaccountname;
+	String contacttitle;
 
 	@Given("^HAC148 user enters (.*) and (.*)$")
 	public void HAC622_user_enters_username_and_password(String userName, String password) throws IOException {
@@ -70,12 +73,17 @@ public class HAC148VerifyContactPageLayoutFields extends CommonFunctions {
 	public void hac148_create_new_customer_contact()  throws InterruptedException, IOException {
 		homepage = new HomePage();
 		homepage.CreateNewContact(
-				ppty.getProperty("CONTACT_FIRSTNAME"), 
-				ppty.getProperty("CONTACT_MIDDLENAME"), 
-				ppty.getProperty("CONTACT_LASTNAME"), 
-				ppty.getProperty("CONTACT_ACCOUNTNAME"), 
-				Math.random()+ppty.getProperty("CONTACT_EMAIL"), 
-				ppty.getProperty("CONTACT_PHONE"));
+				getObjDetails().getProperty("CONTACT_FIRSTNAME"), 
+				getObjDetails().getProperty("CONTACT_MIDDLENAME"), 
+				Math.random()+getObjDetails().getProperty("CONTACT_LASTNAME"), 
+				getObjDetails().getProperty("CONTACT_ACCOUNTNAME"), 
+				Math.random()+getObjDetails().getProperty("CONTACT_EMAIL"), 
+				getObjDetails().getProperty("CONTACT_PHONE"),
+				getObjDetails().getProperty("CONTACT_TITLE"),
+				getObjDetails().getProperty("CONTACT_OTHERPHONE"),
+				getObjDetails().getProperty("CONTACT_DEPT")
+				
+				);
 	}
 
 	// validate name field label on contact details
@@ -84,6 +92,15 @@ public class HAC148VerifyContactPageLayoutFields extends CommonFunctions {
 		contactDetailsTab = new ContactDetailsTab();
 		name = contactDetailsTab.isNamePresent();
 		Assert.assertTrue(name);
+
+	}
+	
+	// validate name field value on contact details
+	@Then("HAC148 verify name field value")
+	public void HAC148_verify_name_field_value() throws InterruptedException, IOException {
+		contactDetailsTab = new ContactDetailsTab();
+		contname = contactDetailsTab.getContactName();
+		Assert.assertTrue(contname.contains("Steve"));
 
 	}
 
@@ -96,6 +113,14 @@ public class HAC148VerifyContactPageLayoutFields extends CommonFunctions {
 
 	}
 	
+	@Then("HAC148 verify account name field value")
+	public void HAC148_verify_account_name_field_value() throws InterruptedException, IOException {
+		contactDetailsTab = new ContactDetailsTab();
+		contactaccountname = contactDetailsTab.getContactAccountName();
+		Assert.assertTrue(contactaccountname.contains("Test Customer"));
+
+	}
+	
 	@Then("HAC148 verify title field label")
 	public void HAC148_verify_title_field_label() throws InterruptedException, IOException {
 		contactDetailsTab = new ContactDetailsTab();
@@ -104,11 +129,27 @@ public class HAC148VerifyContactPageLayoutFields extends CommonFunctions {
 
 	}
 	
+	@Then("HAC148 verify title field value")
+	public void HAC148_verify_title_field_value() throws InterruptedException, IOException {
+		contactDetailsTab = new ContactDetailsTab();
+		contacttitle = contactDetailsTab.getContactTitle();
+		Assert.assertTrue(contacttitle.contains("Testcontacttitle"));
+
+	}
+	
 	@Then("HAC148 verify department field label")
 	public void HAC148_verify_department_field_label() throws InterruptedException, IOException {
 		contactDetailsTab = new ContactDetailsTab();
 		name = contactDetailsTab.isDepartmentPresent();
 		Assert.assertTrue(name);
+
+	}
+	
+	@Then("HAC148 verify department field value")
+	public void HAC148_verify_department_field_value() throws InterruptedException, IOException {
+		contactDetailsTab = new ContactDetailsTab();
+		contacttitle = contactDetailsTab.getDepartment();
+		Assert.assertTrue(contacttitle.contains("Engineering"));
 
 	}
 	
