@@ -49,7 +49,7 @@ public class HAC1124VerifyContactListViews extends CommonFunctions {
 	@When("HAC1124 user is on contact home page")
 	public void HAC1124_user_is_on_contact_home_page() throws InterruptedException, IOException {
 		contactlistviews = new ContactListViews();
-		contactlistviews.clickContactsTab();
+		contactlistviews.clickcontactdetailsTab();
 	}
 
 	// click on contacts list view button

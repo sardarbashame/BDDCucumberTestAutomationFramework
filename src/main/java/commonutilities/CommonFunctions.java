@@ -156,7 +156,7 @@ public class CommonFunctions extends BaseTest {
 
 	
 	  public static Properties getObjDetails() throws IOException { 
-			reader = new FileReader(System.getProperty("user.dir") + "//src//main//java//resources//GlobalData.properties");
+			reader = new FileReader(System.getProperty("user.dir") + "//src//test//resources//GlobalData.properties");
 			Properties props = new Properties();
 			props.load(reader);
 			return props;

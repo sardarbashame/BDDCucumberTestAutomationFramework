@@ -70,9 +70,9 @@ public class HAC408VerifyAddCaseTeam extends CommonFunctions {
 	public void HAC408_create_new_case() throws InterruptedException, IOException  {
 		homepage = new HomePage();
 		homepage.createNewCase(
-				getObjDetails().getProperty("CASECONTACT"),
-				getObjDetails().getProperty("CASEFIRSTNAME"),
-				getObjDetails().getProperty("CASESUB")
+				ppty.getProperty("CASECONTACT"),
+				ppty.getProperty("CASEFIRSTNAME"),
+				ppty.getProperty("CASESUB")
 				);
 	}
 	

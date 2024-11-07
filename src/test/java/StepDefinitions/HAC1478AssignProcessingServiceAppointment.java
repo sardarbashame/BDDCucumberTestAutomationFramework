@@ -90,9 +90,9 @@ public class HAC1478AssignProcessingServiceAppointment extends CommonFunctions {
 	public void HAC1478_create_new_case() throws InterruptedException, IOException  {
 		homePage = new HomePage();
 		homePage.createNewCase(
-				getObjDetails().getProperty("CASECONTACT"),
-				getObjDetails().getProperty("CASEFIRSTNAME"),
-				getObjDetails().getProperty("CASESUB")
+				ppty.getProperty("CASECONTACT"),
+				ppty.getProperty("CASEFIRSTNAME"),
+				ppty.getProperty("CASESUB")
 				);
 
 	}

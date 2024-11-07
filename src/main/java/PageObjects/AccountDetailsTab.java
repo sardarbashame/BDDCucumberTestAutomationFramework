@@ -1,4 +1,5 @@
 package PageObjects;
+
 import java.util.ArrayList;
 import java.util.List;
 import org.openqa.selenium.By;
@@ -136,6 +137,27 @@ public class AccountDetailsTab extends CommonFunctions {
 
 	@FindBy(xpath = "//div[contains(@class, 'active ')]//label[text() = 'Type']//parent::div//descendant::lightning-base-combobox-item//span[not(contains(@title,'--None--')) and @class = 'slds-truncate']")
 	List<WebElement> sel_dropdownAccTypeCnt;
+
+	@FindBy(xpath = "//div[contains(@class, 'active ')]//span[text() = 'Log a Call']//parent::button")
+	WebElement clk_logACall;
+
+	@FindBy(xpath = "//div[contains(@class, 'active ')]//span[text() = 'New Task']//parent::button")
+	WebElement clk_newTask;
+
+	@FindBy(xpath = "//div[contains(@class, 'active ')]//span[text() = 'New Event']//parent::button")
+	WebElement clk_newEvent;
+
+	@FindBy(xpath = "//textarea[@role = 'textbox']")
+	WebElement ipt_commentsTextBox;
+
+	@FindBy(xpath = "//label[text() = 'Subject']//following-sibling::div//input")
+	WebElement ipt_subjectTask;
+
+	@FindBy(xpath = "//label[text() = 'Subject']//following-sibling::div//span[@title= 'Call']")
+	WebElement opt_subjectCall;
+
+	@FindBy(xpath = "//span[text() = 'Save']//parent::button//ancestor::div[contains(@class, 'slds-grid bottomBar')]//button")
+	WebElement btn_saveTask;
 
 	By Wait_toastMessage = By.xpath("//span[contains(@class,'toastMessage')]//a//div");
 	By Wait_stageChange = By
@@ -346,7 +368,45 @@ public class AccountDetailsTab extends CommonFunctions {
 		String billingaddress = driver.findElement(By.xpath("//span[text()='Billing Address']/../../..//a")).getText();
 		Thread.sleep(1000);
 		return billingaddress;
+	}
 
+	public void createdLogACall() throws InterruptedException {
+		expWaitToBeClickable(clk_logACall);
+		javascriptClick(clk_logACall);
+		ipt_commentsTextBox.sendKeys("Test Comments for Test Automation Log Call");
+		btn_saveTask.click();
+		waitForElementToDisAppear(Wait_toastMessage, 5);
+		Thread.sleep(1000);
+	}
+
+	public void createdNewTask() throws Exception {
+		expWaitToBeClickable(clk_newTask);
+		javascriptClick(clk_newTask);
+		clickDrpDownAndSelValue(ipt_subjectTask, "Call");
+		btn_saveTask.click();
+		elementToBePresent(Wait_toastMessage, 30);
+		waitForElementToDisAppear(Wait_toastMessage, 5);
+		Thread.sleep(1000);
+	}
+
+	public void createdNewEvent() throws Exception {
+		expWaitToBeClickable(clk_newEvent);
+		javascriptClick(clk_newEvent);
+		clickDrpDownAndSelValue(ipt_subjectTask, "Call");
+		ipt_commentsTextBox.sendKeys("Test Comments for Test Automation Event");
+		btn_saveTask.click();
+		waitForElementToDisAppear(Wait_toastMessage, 5);
+		Thread.sleep(1000);
+	}
+
+	public void clickDrpDownAndSelValue(WebElement ele, String value) throws Exception {
+		expWaitToBeClickable(ele);
+		javascriptClick(ele);
+		Thread.sleep(1000);
+		TypeInField(ele, value);
+		WebElement clkEle = driver.findElement(By.xpath("(//*[@title = '" + value + "'])[last()]"));
+		drawHighlight(clkEle);
+		javascriptClick(clkEle);
 	}
 
 }

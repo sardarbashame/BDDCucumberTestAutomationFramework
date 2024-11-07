@@ -12,7 +12,6 @@ import commonutilities.CommonFunctions;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import testcomponents.BaseTest;
 
 public class HAC627VerifyBillingAddress extends CommonFunctions {
 
@@ -23,14 +22,14 @@ public class HAC627VerifyBillingAddress extends CommonFunctions {
 	@Given("HAC627 user enters {string} and {string}")
 	public void HAC1124_user_enters_username_and_password(String userName, String password) throws IOException {
 		loginPO = new Login();
-		loginPO.goTo(getObjDetails().getProperty("HAC_URL"));
+		loginPO.goTo(ppty.getProperty("HAC_URL"));
 		loginPO.LoginApp(userName, password);
 	}
 
 	@When("HAC627 select the applicaton")
 	public void HAC627_select_the_applicaton() throws InterruptedException, IOException {
 		selectApplication = new SelectApplication();
-		selectApplication.selectApp(getObjDetails().getProperty("APPNAME"));
+		selectApplication.selectApp(ppty.getProperty("APPNAME"));
 	}
 
 	@When("HAC627 close all the open tabs")
