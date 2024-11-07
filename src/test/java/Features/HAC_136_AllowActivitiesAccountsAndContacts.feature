@@ -1,7 +1,7 @@
 Feature: Verify Allow Activities to create Log, Task and Event for Customer Account
 
   Scenario Outline: HAC_136_Verify Allow Activities to Create Log, Task and Event for Customer Account
-    Given Login as SERVICE REP USER NAME
+    Given Login as SERVICE SCH USER NAME
     When HAC145 select the applicaton
     When HAC145 close all the open tabs
     When HAC145 close the bottom bar
@@ -15,9 +15,9 @@ Feature: Verify Allow Activities to create Log, Task and Event for Customer Acco
       | AccType  | AccName          | TradeName | Industry   | DropDownValues          |
       | Customer | AutoTestCustomer | TestTrade | Automotive | Customer,Prospect,Other |
 
-  @Test1
-  Scenario: HAC_136_Verify Allow Activities to Create Log, Task and Event for Customer Account
-    Given Login as SERVICE REP USER NAME
+  
+   Scenario: HAC_136_Verify Allow Activities to Create Log, Task and Event for Customer Account
+    Given Login as SERVICE SCH USER NAME
     When HAC145 select the applicaton
     When HAC145 close all the open tabs
     When HAC145 close the bottom bar

@@ -372,6 +372,7 @@ public class AccountDetailsTab extends CommonFunctions {
 
 	public void validateNewAccountCreatedInDetailsAndAccType(String accType, String accCnt)
 			throws InterruptedException {
+		Thread.sleep(5000);
 		String str = txt_accTypeName.getText();
 		Assert.assertEquals(accType, str);
 		chk_editAccType.click();
