@@ -68,9 +68,9 @@ public class HAC322VerifyCasePageLayout extends CommonFunctions {
 	public void HAC322_create_new_case() throws InterruptedException, IOException  {
 		homepage = new HomePage();
 		homepage.createNewCase(
-				getObjDetails().getProperty("CASECONTACT"),
-				getObjDetails().getProperty("CASEFIRSTNAME"),
-				getObjDetails().getProperty("CASESUB")
+				ppty.getProperty("CASECONTACT"),
+				ppty.getProperty("CASEFIRSTNAME"),
+				ppty.getProperty("CASESUB")
 				);
 	}
 

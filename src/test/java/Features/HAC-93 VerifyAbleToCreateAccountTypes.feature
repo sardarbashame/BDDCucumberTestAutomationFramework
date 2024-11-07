@@ -11,8 +11,8 @@ Feature: Verify account types
     Then HAC94 Verify Account type after new account created and displaying in the edit details page "<AccType>","<AccTypesCnt>"
 
     Examples: 
-      | username                       | password    | AccType  | AccName          | TradeName | Industry   | DropDownValues          | AccTypesCnt |
-      | mubeen.mohiuddin@gerent.com.qa | Strange@234 | Customer | AutoTestCustomer | TestTrade | Automotive | Customer,Prospect,Other |           3 |
+      | AccType  | AccName          | TradeName | Industry   | DropDownValues          | AccTypesCnt |  
+      | Customer | AutoTestCustomer | TestTrade | Automotive | Customer,Prospect,Other |           3 |  
 
   Scenario Outline: Verify able to create supplier account type
     Given Login as service user
@@ -24,5 +24,7 @@ Feature: Verify account types
     Then HAC94 Verify Account type after new account created and displaying in the edit details page "<EditAccType>","<AccTypesCnt>"
 
     Examples: 
-      | username                       | password    | AccType  | AccName          | TradeName | Industry   | DropDownValues                        | EditAccType | AccTypesCnt |
-      | mubeen.mohiuddin@gerent.com.qa | Strange@234 | Supplier | AutoTestCustomer | TestTrade | Automotive | Intercompany,OEM,Partner,Vendor,Other | Partner     |           5 |
+      | AccType  | AccName          | TradeName | Industry   | DropDownValues                        | EditAccType | AccTypesCnt |
+      | Supplier | AutoTestCustomer | TestTrade | Automotive | Intercompany,OEM,Partner,Vendor,Other | Partner     |           5 |
+
+ 

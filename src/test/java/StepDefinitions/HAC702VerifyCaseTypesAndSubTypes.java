@@ -41,6 +41,7 @@ public class HAC702VerifyCaseTypesAndSubTypes extends CommonFunctions {
 		loginPO.goTo(ppty.getProperty("HAC_URL"));
 		loginPO.LoginApp(getObjDetails().getProperty("SERVICE_MANAGER_USER_NAME"),
 				getObjDetails().getProperty("SERVICE_MANAGER_PASSWORD"));
+		loginPO.LoginApp(ppty.getProperty("SERVICE_MANAGER_USER_NAME"),ppty.getProperty("SERVICE_MANAGER_PASSWORD"));
 	}
 
 	@When("HAC702 select the applicaton")

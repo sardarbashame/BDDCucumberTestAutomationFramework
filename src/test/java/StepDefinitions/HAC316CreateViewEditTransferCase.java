@@ -15,7 +15,6 @@ import commonutilities.CommonFunctions;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import testcomponents.BaseTest;
 
 public class HAC316CreateViewEditTransferCase extends CommonFunctions {
 	GlobalSearch globalSearch;
@@ -28,14 +27,14 @@ public class HAC316CreateViewEditTransferCase extends CommonFunctions {
 	@Given("^HAC316 user enters (.*) and (.*)$")
 	public void HAC316_user_enters_username_and_password(String userName, String password) throws IOException {
 		loginPO = new Login();
-		loginPO.goTo(getObjDetails().getProperty("HAC_URL"));
+		loginPO.goTo(ppty.getProperty("HAC_URL"));
 		loginPO.LoginApp(userName, password);
 	}
 
 	@When("HAC316 select the applicaton")
 	public void HAC316_select_the_applicaton() throws InterruptedException, IOException {
 		selectApplication = new SelectApplication();
-		selectApplication.selectApp(getObjDetails().getProperty("APPNAME"));
+		selectApplication.selectApp(ppty.getProperty("APPNAME"));
 	}
 
 	@When("HAC316 close all the open tabs")
@@ -58,9 +57,9 @@ public class HAC316CreateViewEditTransferCase extends CommonFunctions {
 	public void HAC316_create_new_case() throws InterruptedException, IOException  {
 		homePage = new HomePage();
 		homePage.createNewCase(
-				getObjDetails().getProperty("CASECONTACT"),
-				getObjDetails().getProperty("CASEFIRSTNAME"),
-				getObjDetails().getProperty("CASESUB")
+				ppty.getProperty("CASECONTACT"),
+				ppty.getProperty("CASEFIRSTNAME"),
+				ppty.getProperty("CASESUB")
 				);
 	}
 	

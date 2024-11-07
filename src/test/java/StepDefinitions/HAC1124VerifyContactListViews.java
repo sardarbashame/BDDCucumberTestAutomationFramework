@@ -51,6 +51,8 @@ public class HAC1124VerifyContactListViews extends CommonFunctions {
 	public void HAC1124_user_is_on_contact_home_page() throws InterruptedException, IOException {
 		homepage = new HomePage();
 		homepage.ClickContactsTab();
+		contactlistviews = new ContactListViews();
+		contactlistviews.clickcontactdetailsTab();
 	}
 
 	// click on contacts list view button

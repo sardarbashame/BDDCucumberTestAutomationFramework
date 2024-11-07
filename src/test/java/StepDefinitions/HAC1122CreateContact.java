@@ -70,12 +70,12 @@ public class HAC1122CreateContact extends CommonFunctions {
 	public void HAC1122_create_new_customer_contact()  throws InterruptedException, IOException {
 		homepage = new HomePage();
 		homepage.CreateNewContact(
-				getObjDetails().getProperty("CONTACT_FIRSTNAME"), 
-				getObjDetails().getProperty("CONTACT_MIDDLENAME"), 
-				getObjDetails().getProperty("CONTACT_LASTNAME"), 
-				getObjDetails().getProperty("CONTACT_ACCOUNTNAME"), 
-				Math.random()+getObjDetails().getProperty("CONTACT_EMAIL"), 
-				getObjDetails().getProperty("CONTACT_PHONE"));
+				ppty.getProperty("CONTACT_FIRSTNAME"), 
+				ppty.getProperty("CONTACT_MIDDLENAME"), 
+				ppty.getProperty("CONTACT_LASTNAME"), 
+				ppty.getProperty("CONTACT_ACCOUNTNAME"), 
+				Math.random()+ppty.getProperty("CONTACT_EMAIL"), 
+				ppty.getProperty("CONTACT_PHONE"));
 	}
 
 	// validate name field label on contact details
