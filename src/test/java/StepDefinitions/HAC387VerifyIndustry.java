@@ -61,9 +61,9 @@ public class HAC387VerifyIndustry extends CommonFunctions {
 	public void HAC387_create_new_customer_account() throws InterruptedException, IOException {
 		homepage = new HomePage();
 		homepage.createNewCustomerAccount(
-				getObjDetails().getProperty("ACCTNAME") + Math.random(), 
-				getObjDetails().getProperty("INDUSTRY"),
-				getObjDetails().getProperty("TRADENAME"));
+				ppty.getProperty("ACCTNAME") + Math.random(), 
+				ppty.getProperty("INDUSTRY"),
+				ppty.getProperty("TRADENAME"));
 	}
 
 	// validate industry name on account details

@@ -39,7 +39,7 @@ public class HAC542VerifyCaseCloseProcess extends CommonFunctions {
 	public void HAC542_login_as_a_service_manager() throws IOException {
 		loginPO = new Login();
 		loginPO.goTo(ppty.getProperty("HAC_URL"));
-		loginPO.LoginApp(getObjDetails().getProperty("SERVICE_MANAGER_USER_NAME"),getObjDetails().getProperty("SERVICE_MANAGER_PASSWORD"));
+		loginPO.LoginApp(ppty.getProperty("SERVICE_MANAGER_USER_NAME"),ppty.getProperty("SERVICE_MANAGER_PASSWORD"));
 	}
 
 	@When("HAC542 select the applicaton")
@@ -68,9 +68,9 @@ public class HAC542VerifyCaseCloseProcess extends CommonFunctions {
 	public void HAC542_create_new_case() throws InterruptedException, IOException  {
 		homepage = new HomePage();
 		homepage.createNewCase(
-				getObjDetails().getProperty("CASECONTACT"),
-				getObjDetails().getProperty("CASEFIRSTNAME"),
-				getObjDetails().getProperty("CASESUB")
+				ppty.getProperty("CASECONTACT"),
+				ppty.getProperty("CASEFIRSTNAME"),
+				ppty.getProperty("CASESUB")
 				);
 	}
 

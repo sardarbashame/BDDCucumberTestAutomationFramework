@@ -1,10 +1,7 @@
-Feature: Verify processing estimate creation
-
-  Scenario: Login as Service Scheduler and Verify the processing estimate creation
-    Given Login as service user
+Feature: Verify HAC_1165_CreateINSP Estimate Matrix
 
   @Test
-  Scenario Outline: Login as Service Scheduler and Verify the processing estimate creation
+  Scenario Outline: Login as service user and Verify HAC_1165_CreateINSP Estimate Matrix
     Given HAC1165 user enters <username> and <password>
     When HAC1165 select the applicaton
     When HAC1165 close all the open tabs
@@ -24,4 +21,4 @@ Feature: Verify processing estimate creation
 
     Examples: 
       | username                       | password    |
-      | mubeen.mohiuddin@gerent.com.qa | Strange@234 |
+      | mubeen.mohiuddin@gerent.com.qa | M@shaallah1 |
