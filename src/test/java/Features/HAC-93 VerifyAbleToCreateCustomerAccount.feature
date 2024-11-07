@@ -2,7 +2,7 @@
 Feature: Verify account types
 
   Scenario Outline: Verify able to create customer account type
-    Given Login as service user
+    Given HAC145 Login as service user
     When HAC145 select the applicaton
     When HAC145 close all the open tabs
     When HAC145 close the bottom bar

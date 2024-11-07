@@ -28,8 +28,6 @@ Feature: Verify contact creation
     Then HAC1122 verify donotcall field label
     Then HAC1122 verify emailoptout field label
 
-    
-
     Examples: 
       | username                              | password    |
       | testservicescheduler@gmail.com        | H@ctest1 |

@@ -8,6 +8,7 @@ import org.testng.Assert;
 import PageObjects.AccountDetailsTab;
 import PageObjects.ContactListViews;
 import PageObjects.GlobalSearch;
+import PageObjects.HomePage;
 import PageObjects.Login;
 import PageObjects.SelectApplication;
 import commonutilities.CommonFunctions;
@@ -16,23 +17,23 @@ public class HAC1124VerifyContactListViews extends CommonFunctions {
 	AccountDetailsTab accountDetailsTab;
 	ContactListViews contactlistviews;
 	GlobalSearch globalSearch;
+	HomePage homepage;
 	String industryname;
 	Login loginPO;
 	SelectApplication selectApplication;
 
-	@Given("Login as service user")
-	public void hac1124_login_as_service_user() {
+	@Given("HAC1124 Login as service user")
+	public void hac1124_login_as_service_user() throws IOException {
 		loginPO = new Login();
 		loginPO.goTo(ppty.getProperty("HAC_URL"));
-		String Uname = ppty.getProperty("SERVICE_USER");
-		String pwd = ppty.getProperty("SERVICE_PASSWORD");
-		loginPO.LoginApp(Uname, pwd);
+		loginPO.LoginApp(getObjDetails().getProperty("SERVICE_MANAGER_USER_NAME"),
+				getObjDetails().getProperty("SERVICE_MANAGER_PASSWORD"));
 	}
 
 	@When("HAC1124 select the applicaton")
 	public void HAC1124_select_the_applicaton() throws InterruptedException, IOException {
 		selectApplication = new SelectApplication();
-		selectApplication.selectApp(ppty.getProperty("APPNAME"));
+		selectApplication.selectApp(getObjDetails().getProperty("APPNAME"));
 	}
 
 	@When("HAC1124 close all the open tabs")
@@ -48,8 +49,8 @@ public class HAC1124VerifyContactListViews extends CommonFunctions {
 	// click on contacts tab
 	@When("HAC1124 user is on contact home page")
 	public void HAC1124_user_is_on_contact_home_page() throws InterruptedException, IOException {
-		contactlistviews = new ContactListViews();
-		contactlistviews.clickContactsTab();
+		homepage = new HomePage();
+		homepage.ClickContactsTab();
 	}
 
 	// click on contacts list view button

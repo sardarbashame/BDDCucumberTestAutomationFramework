@@ -69,6 +69,17 @@ public class EstimateCreationFlowStep2 extends CommonFunctions {
 		numberoftechpresent = lab_noOfTech.isDisplayed();
 		return numberoftechpresent;
 	}
+	
+	@FindBy(xpath = "//label[text()='Number Of Tech']/..//input")
+	WebElement value_noOfTech;
+	
+	String numberoftech;
+	
+	public String NumberOfTech() throws InterruptedException {
+		Thread.sleep(4000);
+		numberoftech = value_noOfTech.getText();
+		return numberoftech;
+	}
 
 	public boolean isNumberOfDaysPresent() throws InterruptedException {
 		Thread.sleep(4000);
