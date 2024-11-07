@@ -1,13 +1,7 @@
 Feature: Verify processing estimate creation
 
-<<<<<<< HEAD:src/test/java/Features/HAC-1165 CreateProcessingEstimatewithIOCommissioing.feature
-   @regtest
-=======
   Scenario: Login as Service Scheduler and Verify the processing estimate creation
-    Given Login as service user
-
-  @Test
->>>>>>> 88e5c101390800f6e1993ee525f7fe7b9e66e365:src/test/java/Features/HAC-1165 CreateProcessingEstimate.feature
+  
   Scenario Outline: Login as Service Scheduler and Verify the processing estimate creation
     Given HAC1165 user enters <username> and <password>
     When HAC1165 select the applicaton
@@ -28,5 +22,5 @@ Feature: Verify processing estimate creation
     Then HAC1165 generate estimate pdf
 
     Examples: 
-      | username                       | password    |
-      | mubeen.mohiuddin@gerent.com.qa | Strange@234 |
+      | username                       | password | casename      |
+      | testservicescheduler@gmail.com | H@ctest1 | PROCAutoCase1 |

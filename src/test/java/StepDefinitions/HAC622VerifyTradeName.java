@@ -44,9 +44,14 @@ public class HAC622VerifyTradeName extends CommonFunctions {
 	public void HAC622_create_new_customer_account() throws InterruptedException, IOException {
 		homepage = new HomePage();
 		homepage.createNewCustomerAccount(
-				ppty.getProperty("ACCTNAME") + Math.random(), 
-				ppty.getProperty("INDUSTRY"),
-				ppty.getProperty("TRADENAME"));
+				getObjDetails().getProperty("ACCTNAME") + Math.random(), 
+				getObjDetails().getProperty("ACCTSITE"),
+				getObjDetails().getProperty("ACCTPHONE"),
+				getObjDetails().getProperty("ACCTFAX"),
+				getObjDetails().getProperty("ACCTEMAIL"),
+				getObjDetails().getProperty("ACCTWEBSITE"),
+				getObjDetails().getProperty("INDUSTRY"),
+				getObjDetails().getProperty("TRADENAME"));
 	}
 
 	@When("HAC622 close the bottom bar")

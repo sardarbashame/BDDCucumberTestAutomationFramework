@@ -1,6 +1,6 @@
 Feature: Verify the customer account page layout fields
 
-  Scenario: Login as Service Users and Verify the account page layout fields
+  Scenario: Login as service user and verify the account page layout fields
     Given Login as service user
     When HAC145 select the applicaton
     When HAC145 close all the open tabs
@@ -21,4 +21,6 @@ Feature: Verify the customer account page layout fields
     Then HAC145 verify sales channel label
     Then HAC145 verify regional settings label
     Then HAC145 verify language label
+    Then HAC145 verify language value
     Then HAC145 verify website label
+    Then HAC145 verify website value

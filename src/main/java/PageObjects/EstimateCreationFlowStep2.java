@@ -18,31 +18,43 @@ public class EstimateCreationFlowStep2 extends CommonFunctions {
 	boolean numberofdayspresent;
 	boolean numberofhourspresent;
 	String actualmessage;
+	@FindBy(xpath = "//li//a[text()='RAW']")
+	WebElement Tab_RAW;
+	@FindBy(xpath = "(//label[text()='Number Of Tech'])")
+	WebElement lab_noOfTech;
+	@FindBy(xpath = "(//label[text()='Number Of Days'])")
+	WebElement lab_noOfDays;
+	@FindBy(xpath = "(//label[text()='Number of Hrs/day'])")
+	WebElement lab_noOfHrsDay;
+	@FindBy(xpath = "//*[text()='From Date']/..//input")
+	WebElement ipt_fromDate;
+	@FindBy(xpath = "//tr/td[@data-value='2024-11-01']")
+	WebElement ipt_dateValueFrom;
+	@FindBy(xpath = "//*[text()='To Date']/..//input")
+	WebElement ipt_toDate;
+	@FindBy(xpath = "//tr/td[@data-value='2024-11-05']")
+	WebElement ipt_dateValueTO;
+	@FindBy(xpath = "(//label[text()='Number Of Tech'])[last()]")
+	WebElement raw_label_noOfTech;
+	@FindBy(xpath = "(//label[text()='Number Of Days'])[last()]")
+	WebElement raw_label_noOfDays;
+	@FindBy(xpath = "(//label[text()='Number of Hrs/day'])[last()]")
+	WebElement raw_label_noOfHrsDay;
+	@FindBy(xpath = "(//*[text()='From Date']/..//input)[last()]")
+	WebElement raw_ipt_fromDate;
+	@FindBy(xpath = "//tr/td[@data-value='2024-11-01']")
+	WebElement raw_ipt_dateValueFrom;
+	@FindBy(xpath = "(//*[text()='To Date']/..//input)[last()]")
+	WebElement raw_ipt_toDate;
+	@FindBy(xpath = "//tr/td[@data-value='2024-11-05']")
+	WebElement raw_ipt_dateValueTO;
+	@FindBy(xpath = "//label[text()='Number Of Tech']/..//input")
+	WebElement value_noOfTech;
+	String numberoftech;
 
 	public EstimateCreationFlowStep2() {
 		PageFactory.initElements(new AjaxElementLocatorFactory(driver, 10), this);
 	}
-
-	@FindBy(xpath = "//*[text()='From Date']/..//input")
-	WebElement ipt_fromDate;
-
-	@FindBy(xpath = "//tr/td[@data-value='2024-11-01']")
-	WebElement ipt_dateValueFrom;
-
-	@FindBy(xpath = "//*[text()='To Date']/..//input")
-	WebElement ipt_toDate;
-
-	@FindBy(xpath = "//tr/td[@data-value='2024-11-05']")
-	WebElement ipt_dateValueTO;
-
-	@FindBy(xpath = "(//label[text()='Number Of Tech'])")
-	WebElement lab_noOfTech;
-
-	@FindBy(xpath = "(//label[text()='Number Of Days'])")
-	WebElement lab_noOfDays;
-
-	@FindBy(xpath = "(//label[text()='Number of Hrs/day'])")
-	WebElement lab_noOfHrsDay;
 
 	public void selectFromDate() throws InterruptedException {
 		Thread.sleep(0, 2000);
@@ -63,17 +75,39 @@ public class EstimateCreationFlowStep2 extends CommonFunctions {
 		ipt_dateValueTO.click();
 		Thread.sleep(3000);
 	}
+	
+	public void ClickRAWTab() throws InterruptedException {
+		Thread.sleep(3000);
+		expWaitToBeClickable(Tab_RAW);
+		Tab_RAW.click();
+		Thread.sleep(3000);
+	}
+
+	public void selectFromDateRAWTab() throws InterruptedException {
+		Thread.sleep(0, 2000);
+		waitForElementToAppear(By.xpath("(//button[text()='View Confirmation'])[1]"), 30);
+		expWaitToBeClickable(raw_ipt_fromDate);
+		raw_ipt_fromDate.click();
+		expWaitToBeClickable(raw_ipt_dateValueFrom);
+		raw_ipt_dateValueFrom.click();
+		Thread.sleep(2000);
+	}
+
+	public void selectToDateRAWTab() throws InterruptedException {
+		Thread.sleep(0, 2000);
+		waitForElementToAppear(By.xpath("(//button[text()='View Confirmation'])[1]"), 30);
+		expWaitToBeClickable(raw_ipt_toDate);
+		raw_ipt_toDate.click();
+		expWaitToBeClickable(raw_ipt_dateValueTO);
+		raw_ipt_dateValueTO.click();
+		Thread.sleep(3000);
+	}
 
 	public boolean isNumberOfTechPresent() throws InterruptedException {
 		Thread.sleep(4000);
 		numberoftechpresent = lab_noOfTech.isDisplayed();
 		return numberoftechpresent;
 	}
-	
-	@FindBy(xpath = "//label[text()='Number Of Tech']/..//input")
-	WebElement value_noOfTech;
-	
-	String numberoftech;
 	
 	public String NumberOfTech() throws InterruptedException {
 		Thread.sleep(4000);

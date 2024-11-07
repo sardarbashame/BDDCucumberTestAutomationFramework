@@ -31,6 +31,21 @@ public class HomePage extends CommonFunctions {
 	@FindBy(xpath = "//*[text()='Trade Name']/..//input")
 	WebElement tradenametxtbox;
 	
+	@FindBy(xpath = "//*[text()='Account Site']/..//input")
+	WebElement txtbox_accountsite;
+	
+	@FindBy(xpath = "//*[text()='Phone']/..//input")
+	WebElement txtbox_phone;
+	
+	@FindBy(xpath = "//*[text()='Fax']/..//input")
+	WebElement txtbox_fax;
+	
+	@FindBy(xpath = "//*[text()='Email']/..//input")
+	WebElement txtbox_email;
+	
+	@FindBy(xpath = "//*[text()='Website']/..//input")
+	WebElement txtbox_website;
+	
 	@FindBy(xpath = "//button[text()='Save']")
 	WebElement accountsavebtn;
 	
@@ -175,7 +190,7 @@ public class HomePage extends CommonFunctions {
 		js.executeScript("arguments[0].click();", accountstab);
 	}
 
-	public void createNewCustomerAccount(String accountname, String industryname, String tradename)
+	public void createNewCustomerAccount(String accountname, String accountsite, String phone, String fax, String email, String website, String industryname, String tradename)
 			throws InterruptedException {
 		js = (JavascriptExecutor) driver;
 		Thread.sleep(4000);
@@ -184,6 +199,16 @@ public class HomePage extends CommonFunctions {
 		nextbtn.click();
 		accountnametxtbox.click();
 		accountnametxtbox.sendKeys(accountname);
+		txtbox_accountsite.click();
+		txtbox_accountsite.sendKeys(accountsite);
+		txtbox_phone.click();
+		txtbox_phone.sendKeys(phone);
+		txtbox_fax.click();
+		txtbox_fax.sendKeys(fax);
+		txtbox_email.click();
+		txtbox_email.sendKeys(email);
+		txtbox_website.click();
+		txtbox_website.sendKeys(website);
 		tradenametxtbox.click();
 		tradenametxtbox.sendKeys(tradename);
 		// scroll to Language field
