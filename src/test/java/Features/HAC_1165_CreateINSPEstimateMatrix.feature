@@ -21,4 +21,4 @@ Feature: Verify HAC_1165_CreateINSP Estimate Matrix
 
     Examples: 
       | username                       | password    |
-      | mubeen.mohiuddin@gerent.com.qa | M@shaallah1 |
+      | mubeen.mohiuddin@gerent.com.qa | Strange@234 |

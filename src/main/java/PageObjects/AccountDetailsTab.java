@@ -177,6 +177,14 @@ public class AccountDetailsTab extends CommonFunctions {
 	@FindBy(xpath = "//div[contains(@class, 'active ')]//label[text() = 'Preference Type']//parent::div//descendant::lightning-base-combobox-item//span[not(contains(@title,'--None--')) and @class = 'slds-truncate']")
 	List<WebElement> lst_PreferenceTypes;
 	
+	@FindBy(xpath="(//a//div[text()='100 1st Street'])[2]")
+	WebElement value_shippingaddress;
+	String strvalue;
+	
+	@FindBy(xpath="//span[text()='Shipping Address']")
+	WebElement label_shippingaddress;
+	boolean boolvalue;
+	
 	By Wait_toastMessage = By.xpath("//span[contains(@class,'toastMessage')]//a//div");
 	By Wait_stageChange = By
 			.xpath("//span[contains(@class, 'toastMessage slds-text-heading--small forceActionsText')]");
@@ -196,6 +204,22 @@ public class AccountDetailsTab extends CommonFunctions {
 		return tradenamepresent;
 	}
 
+
+	public boolean isShippingAddressPresent() throws InterruptedException {
+		Thread.sleep(1000);
+		boolvalue = label_shippingaddress.isDisplayed();
+		Thread.sleep(1000);
+		return boolvalue;
+	}
+	
+
+	public String getShippingAddress() throws InterruptedException {
+		Thread.sleep(2000);
+		strvalue = value_shippingaddress.getText();
+		Thread.sleep(1000);
+		return strvalue;
+	}
+	
 	public boolean isActivePresent() throws InterruptedException {
 		Thread.sleep(0, 1000);
 		activepresent = txt_active.isDisplayed();
