@@ -33,11 +33,14 @@ public class HAC_AccountCreation extends CommonFunctions {
 			String AccType, String accCnt) throws Exception {
 		accountDetailsTab.validateNewAccountCreatedInDetailsAndAccType(AccType, accCnt);
 	}
-
-	@When("click on the Resource prefence link and add new Resource preference")
-	public void click_on_the_resource_prefence_link_and_add_new_resource_preference() {
-		throw new io.cucumber.java.PendingException();
+	
+	@When("click on the Resource prefence link and add new Resource preference {string}, {string},{string}")
+	public void click_on_the_resource_prefence_link_and_add_new_resource_preference(String ServiceResource,
+			String DrpDownPreferenceType, String PreferenceTypesCnt) throws Exception {
+		accountDetailsTab = new AccountDetailsTab();
+		accountDetailsTab.clickOnResourceReference(ServiceResource, DrpDownPreferenceType, PreferenceTypesCnt);
 	}
+	
 
 	@When("click on Log a call")
 	public void click_on_log_a_call() throws Exception {

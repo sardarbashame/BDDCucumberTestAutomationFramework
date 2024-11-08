@@ -23,25 +23,25 @@ public class EstimateCreationFlowStep2 extends CommonFunctions {
 		PageFactory.initElements(new AjaxElementLocatorFactory(driver, 10), this);
 	}
 
-	@FindBy(xpath = "//*[text()='From Date']/..//input")
+	@FindBy(xpath = "(//*[text()='From Date']/..//input)[last()]")
 	WebElement ipt_fromDate;
 
 	@FindBy(xpath = "//tr/td[@data-value='2024-11-01']")
 	WebElement ipt_dateValueFrom;
 
-	@FindBy(xpath = "//*[text()='To Date']/..//input")
+	@FindBy(xpath = "(//*[text()='To Date']/..//input)[last()]")
 	WebElement ipt_toDate;
 
-	@FindBy(xpath = "//tr/td[@data-value='2024-11-05']")
+	@FindBy(xpath = "//tr/td[@data-value='2024-11-05'][last()]")
 	WebElement ipt_dateValueTO;
 
-	@FindBy(xpath = "(//label[text()='Number Of Tech'])")
+	@FindBy(xpath = "(//div[contains(@class, 'active ')]//label[text()='Number Of Tech'])[last()]")
 	WebElement lab_noOfTech;
 
-	@FindBy(xpath = "(//label[text()='Number Of Days'])")
+	@FindBy(xpath = "(//label[text()='Number Of Days'])[last()]")
 	WebElement lab_noOfDays;
 
-	@FindBy(xpath = "(//label[text()='Number of Hrs/day'])")
+	@FindBy(xpath = "(//label[text()='Number of Hrs/day'])[last()]")
 	WebElement lab_noOfHrsDay;
 
 	public void selectFromDate() throws InterruptedException {

@@ -29,6 +29,8 @@ public class EstimateCreationFlowStep3 extends CommonFunctions {
 	@FindBy(xpath = "(//button[text()='Save'])[2]")
 	WebElement btn_save;
 
+	
+	
 	public void clickViewConfirmation() throws InterruptedException {
 		Thread.sleep(0, 2000);
 		expWaitToBeClickable(btn_viewConfirmation);
@@ -49,5 +51,6 @@ public class EstimateCreationFlowStep3 extends CommonFunctions {
 		btn_save.click();
 		Thread.sleep(5000);
 	}
+	
 
 }

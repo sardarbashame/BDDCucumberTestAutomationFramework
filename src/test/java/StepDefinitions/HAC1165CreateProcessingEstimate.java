@@ -65,32 +65,30 @@ public class HAC1165CreateProcessingEstimate extends CommonFunctions {
 		selectApplication.selectApp(ppty.getProperty("APPNAME"));
 	}
 
-	@When("HAC1165 close all the open tabs")
+	@When("close all the open tabs")
 	public void HAC145_close_all_the_open_tabs() throws InterruptedException {
 		closeAllTabs();
 	}
 
-	@When("HAC1165 close the bottom bar")
+	@When("close the bottom bar")
 	public void HAC387_close_the_bottom_bar() throws InterruptedException {
 		closeBottomeBar();
 	}
 
-	@When("HAC1165 click on cases tab")
+	@When("click on cases tab")
 	public void HAC1165_click_on_cases_tab() throws InterruptedException {
 		homePage = new HomePage();
 		homePage.clickCasesTab();
 	}
 
 	@When("HAC1165 create new case")
-	public void HAC1165_create_new_case() throws InterruptedException, IOException  {
+	public void HAC1165_create_new_case() throws InterruptedException, IOException {
 		homePage = new HomePage();
-		homePage.createNewCase(
-				ppty.getProperty("CASECONTACT"),
-				ppty.getProperty("CASEFIRSTNAME"),
-				ppty.getProperty("CASESUB")
-				);
+		homePage.createNewCase(ppty.getProperty("CASECONTACT"), ppty.getProperty("CASEFIRSTNAME"),
+				ppty.getProperty("CASESUB"));
 
 	}
+
 	@When("HAC1165 user is on estimate tab")
 	public void HAC1165_user_is_on_estimate_tab() throws InterruptedException, IOException {
 		estimateCreationFlowStep1 = new EstimateCreationFlowStep1();
@@ -114,7 +112,7 @@ public class HAC1165CreateProcessingEstimate extends CommonFunctions {
 		Assert.assertTrue(pboption6);
 		pboption7 = estimateCreationFlowStep1.verifyPriceBookOption7();
 		Assert.assertTrue(pboption7);
-		
+
 	}
 
 	@When("HAC1165 select values on estimate flow step1")
@@ -169,4 +167,53 @@ public class HAC1165CreateProcessingEstimate extends CommonFunctions {
 		estimateCreationFlowStep3.clickCreatePDF();
 	}
 
+	@When("Create new case with help of {string}, {string}, {string}")
+	public void createnewcase(String CaseContact, String CaseFirstName, String CaseSub) throws Exception {
+		homePage = new HomePage();
+		homePage.createNewCase(CaseContact, CaseFirstName, CaseSub);
+	}
+
+	@When("Create Estimations with INSP {string}, {string}, {string}")
+	public void createEstimationsINSP(String Pricebook, String InspectionEstimateMatrix, String Estimateitem)
+			throws Exception {
+		estimateCreationFlowStep1 = new EstimateCreationFlowStep1();
+		estimateCreationFlowStep1.createEstimationINSP(Pricebook, InspectionEstimateMatrix, Estimateitem);
+	}
+	
+	@When("Create Estimations with SPRAY {string}, {string}, {string}")
+	public void createEstimationsSPRAY(String Pricebook, String sprayEstimateMatrix, String Estimateitem)
+			throws Exception {
+		estimateCreationFlowStep1 = new EstimateCreationFlowStep1();
+		estimateCreationFlowStep1.createEstimationSPRAY(Pricebook, sprayEstimateMatrix, Estimateitem);
+	}
+
+	@Then("User click on INSP Tab")
+	public void UserclickonINSPTab() throws InterruptedException, IOException {
+		estimateCreationFlowStep1 = new EstimateCreationFlowStep1();
+		estimateCreationFlowStep1.clickOnINSPTab();
+	}
+	
+	@Then("User click on SPRAY Tab")
+	public void UserclickonSPRAYTab() throws InterruptedException, IOException {
+		estimateCreationFlowStep1 = new EstimateCreationFlowStep1();
+		estimateCreationFlowStep1.clickSPRAYTab();
+	}
+
+	@Then("user click on Save Estimation")
+	public void UserclickSaveBtn() throws InterruptedException, IOException {
+		estimateCreationFlowStep1 = new EstimateCreationFlowStep1();
+		estimateCreationFlowStep1.clickSaveButton();
+	}
+
+	@When("User click on Show All quick link")
+	public void UserclickShowAllquicklink() throws InterruptedException, IOException {
+		estimateCreationFlowStep1 = new EstimateCreationFlowStep1();
+		estimateCreationFlowStep1.clickShowAllQuickLink();
+	}
+
+	@Then("Click on QuoteEstimates and verify quote is created in the details page")
+	public void verifyQuoteisCreated() throws InterruptedException, IOException {
+		estimateCreationFlowStep1 = new EstimateCreationFlowStep1();
+		estimateCreationFlowStep1.verifyQuoteIsCreatedInDetailsPage();
+	}
 }
