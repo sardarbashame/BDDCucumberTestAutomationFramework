@@ -389,7 +389,7 @@ public class CaseDetailsTab extends CommonFunctions {
 	@FindBy(xpath="//span[@title='Quotes and Orders']")
 	WebElement casesubtypequotesandorders;
 	
-	@FindBy(xpath="//span[@title='Recomended Parts List']")
+	@FindBy(xpath="//span[@title='Recommended Parts List']")
 	WebElement casesubtyperecomdedpartslist;
 	
 	@FindBy(xpath="//span[@title='Other']")
@@ -399,8 +399,10 @@ public class CaseDetailsTab extends CommonFunctions {
 	public void VerifyCaseSubTypesForPartsType() throws InterruptedException {
 		Thread.sleep(2000);
 		casetype.click();
-		Thread.sleep(2000);
-
+		Thread.sleep(3000);
+	//	casetypeparts.click();
+		js.executeScript("var result = document.evaluate(\"//span[@title='Parts']\", document.body, null, XPathResult.ANY_TYPE, null);     var input = result.iterateNext();input.scrollIntoView(); input.click();");
+		Thread.sleep(3000);;
 		casesubtypeorderstatus.isDisplayed();
 		casesubtypepartsmanual.isDisplayed();
 		casesubtypequotesandorders.isDisplayed();
@@ -411,17 +413,16 @@ public class CaseDetailsTab extends CommonFunctions {
 	WebElement casetypesales;
 	public void VerifyCaseSubTypesForSalesType() throws InterruptedException {
 		Thread.sleep(2000);
-		casetype.click();
-		Thread.sleep(2000);
-		casetypesales.click();
-		Thread.sleep(2000);
+	//	casetype.click();
+		js.executeScript("var result = document.evaluate(\"//span[@title='Sales']\", document.body, null, XPathResult.ANY_TYPE, null);     var input = result.iterateNext();input.scrollIntoView(); input.click();");
+		Thread.sleep(3000);;
 	}
 	
 	
 	@FindBy(xpath="//span[@title='Scheduling']")
 	WebElement casetypescheduling;
 	
-	@FindBy(xpath="//span[@title='Assesment']")
+	@FindBy(xpath="//span[@title='Assessment']")
 	WebElement casesubtypeassesment;
 	
 	@FindBy(xpath="//span[@title='Calibration']")
@@ -429,15 +430,40 @@ public class CaseDetailsTab extends CommonFunctions {
 	
 	@FindBy(xpath="//span[@title='Courtesy Visit']")
 	WebElement casesubtypecourtestyvisit;
+	
+	@FindBy(xpath="//span[@title='Demo / Customer Testing']")
+	WebElement casesubtypedempcustomertesting;
+	
+	@FindBy(xpath="//span[@title='Estimate for Visit']")
+	WebElement casesubtypeestimateforvisit;
+	
+	@FindBy(xpath="//span[@title='In-House Checkout']")
+	WebElement casesubtypeinhousecheckout;
+	
+	@FindBy(xpath="//span[@title='Preventative Maintenance']")
+	WebElement casesubtypepreventativemaintenance;
+	
+	@FindBy(xpath="//span[@title='Repair']")
+	WebElement casesubtyperepair;
+	
+	@FindBy(xpath="//span[@title='Trade Show']")
+	WebElement casesubtypetradeshow;
 
 	public void VerifyCaseSubTypesForSchedulingType() throws InterruptedException {
 		Thread.sleep(2000);
 		casetype.click();
-		Thread.sleep(2000);
-		casetypescheduling.click();
-		Thread.sleep(2000);
+		Thread.sleep(3000);
+		//casetypescheduling.click();
+		js.executeScript("var result = document.evaluate(\"//span[@title='Scheduling']\", document.body, null, XPathResult.ANY_TYPE, null);     var input = result.iterateNext();input.scrollIntoView(); input.click();");
+		Thread.sleep(3000);
 		casesubtypeassesment.isDisplayed();
 		casesubtypecalibration.isDisplayed();
 		casesubtypecourtestyvisit.isDisplayed();
+		casesubtypedempcustomertesting.isDisplayed();
+		casesubtypeestimateforvisit.isDisplayed();
+		casesubtypeinhousecheckout.isDisplayed();
+		casesubtypepreventativemaintenance.isDisplayed();
+		casesubtyperepair.isDisplayed();
+		casesubtypetradeshow.isDisplayed();
 	}
 }

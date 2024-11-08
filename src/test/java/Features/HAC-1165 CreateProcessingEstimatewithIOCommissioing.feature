@@ -1,9 +1,7 @@
 Feature: Verify processing estimate creation
 
   Scenario: Login as Service Scheduler and Verify the processing estimate creation
-    Given Login as service user
-
-  @Test
+  
   Scenario Outline: Login as Service Scheduler and Verify the processing estimate creation
     Given HAC1165 user enters <username> and <password>
     When HAC1165 select the applicaton
@@ -15,6 +13,7 @@ Feature: Verify processing estimate creation
     When HAC1165 verify the pricebook options
     When HAC1165 select values on estimate flow step1
     When HAC1165 verify the field label number of tech
+ #   When HAC1165 verify the field value number of tech
     When HAC1165 verify the field label number of days
     When HAC1165 verify the field label number of hours
     When HAC1165 select from date
@@ -23,5 +22,5 @@ Feature: Verify processing estimate creation
     Then HAC1165 generate estimate pdf
 
     Examples: 
-      | username                       | password    |
-      | mubeen.mohiuddin@gerent.com.qa | Strange@234 |
+      | username                       | password | casename      |
+      | testservicescheduler@gmail.com | H@ctest1 | PROCAutoCase1 |

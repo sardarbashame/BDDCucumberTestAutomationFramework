@@ -15,6 +15,7 @@ public class EstimateCreationFlowStep3 extends CommonFunctions {
 	By waitforelementtodisappear;
 	By waitforelementtoappear;
 	String actualmessage;
+	JavascriptExecutor js = (JavascriptExecutor) driver;
 
 	public EstimateCreationFlowStep3() {
 		PageFactory.initElements(new AjaxElementLocatorFactory(driver, 10), this);
@@ -39,10 +40,15 @@ public class EstimateCreationFlowStep3 extends CommonFunctions {
 		waitforelementtoappear = waitForElementToAppear(By.xpath("(//button[text()='Create PDF'])[1]"), 30);
 	}
 
+	
+	@FindBy(xpath = "//*[text()='Download PDF']")
+	WebElement btn_downloadpdf;
+	
 	public void clickCreatePDF() throws InterruptedException {
 		expWaitToBeClickable(btn_createPDF);
 		btn_createPDF.click();
 		Thread.sleep(4000);
+		expWaitToBeClickable(btn_downloadpdf);
 	}
 
 	public void clickSaveButton() throws InterruptedException {
@@ -53,4 +59,32 @@ public class EstimateCreationFlowStep3 extends CommonFunctions {
 	}
 	
 
+	
+	@FindBy(xpath = "//span[text()='Navigate To Case Record']")
+	WebElement btn_navigatetocaserecord;
+	
+	@FindBy(xpath = "//a[text()='Details']")
+	WebElement tab_casedetails;
+	
+	public void NavigateToCaseRecordButton() throws InterruptedException {
+		js.executeScript("window.scrollTo(0,5000)");
+		Thread.sleep(2000);
+		expWaitToBeClickable(btn_navigatetocaserecord);
+		btn_navigatetocaserecord.click();
+		tab_casedetails.isEnabled();
+		
+	}
+	
+	 
+	@FindBy(xpath = "//div[contains(text(), '.docx')]")
+	WebElement text_docx;
+	
+	public void VerifyEstimateDocumentVersions() throws InterruptedException {
+		Thread.sleep(5000);
+		js.executeScript("window.scrollTo(0,5000)");
+		Thread.sleep(2000);
+		expWaitToBeClickable(text_docx);
+		text_docx.isDisplayed();
+		
+	}
 }

@@ -31,6 +31,21 @@ public class HomePage extends CommonFunctions {
 	@FindBy(xpath = "//*[text()='Trade Name']/..//input")
 	WebElement tradenametxtbox;
 	
+	@FindBy(xpath = "//*[text()='Account Site']/..//input")
+	WebElement txtbox_accountsite;
+	
+	@FindBy(xpath = "//*[text()='Phone']/..//input")
+	WebElement txtbox_phone;
+	
+	@FindBy(xpath = "//*[text()='Fax']/..//input")
+	WebElement txtbox_fax;
+	
+	@FindBy(xpath = "//*[text()='Email']/..//input")
+	WebElement txtbox_email;
+	
+	@FindBy(xpath = "//*[text()='Website']/..//input")
+	WebElement txtbox_website;
+	
 	@FindBy(xpath = "//button[text()='Save']")
 	WebElement accountsavebtn;
 	
@@ -144,12 +159,21 @@ public class HomePage extends CommonFunctions {
 
 	@FindBy(xpath = "(//*[@title='Test Customer Account10'])[last()]")
 	WebElement select_accountname;
-
+	
 	@FindBy(xpath = "//label[text()='Email']/..//input")
 	WebElement ipt_contactemail;
 
+	@FindBy(xpath = "//label[text()='Title']/..//input")
+	WebElement ipt_contacttitle;
+
 	@FindBy(xpath = "//label[text()='Phone']/..//input")
 	WebElement ipt_contactphone;
+	
+	@FindBy(xpath = "//label[text()='Department']/..//input")
+	WebElement ipt_contactdepartment;
+	
+	@FindBy(xpath = "//label[text()='Other Phone']/..//input")
+	WebElement ipt_contactotherphone;
 
 	@FindBy(xpath = "//button[text()='Save']")
 	WebElement contactsavebtn;
@@ -175,7 +199,7 @@ public class HomePage extends CommonFunctions {
 		js.executeScript("arguments[0].click();", accountstab);
 	}
 
-	public void createNewCustomerAccount(String accountname, String industryname, String tradename)
+	public void createNewCustomerAccount(String accountname, String accountsite, String phone, String fax, String email, String website, String industryname, String tradename)
 			throws InterruptedException {
 		js = (JavascriptExecutor) driver;
 		Thread.sleep(4000);
@@ -184,6 +208,16 @@ public class HomePage extends CommonFunctions {
 		nextbtn.click();
 		accountnametxtbox.click();
 		accountnametxtbox.sendKeys(accountname);
+		txtbox_accountsite.click();
+		txtbox_accountsite.sendKeys(accountsite);
+		txtbox_phone.click();
+		txtbox_phone.sendKeys(phone);
+		txtbox_fax.click();
+		txtbox_fax.sendKeys(fax);
+		txtbox_email.click();
+		txtbox_email.sendKeys(email);
+		txtbox_website.click();
+		txtbox_website.sendKeys(website);
 		tradenametxtbox.click();
 		tradenametxtbox.sendKeys(tradename);
 		// scroll to Language field
@@ -208,7 +242,7 @@ public class HomePage extends CommonFunctions {
 
 	// create a new contact
 	public void CreateNewContact(String FirstName, String MiddleName, String LastName, String AccountName, String Email,
-			String Phone) throws InterruptedException {
+			String Phone, String title, String otherphone, String dept) throws InterruptedException {
 		js = (JavascriptExecutor) driver;
 		Thread.sleep(4000);
 		newcontactbtn.click();
@@ -229,8 +263,11 @@ public class HomePage extends CommonFunctions {
 		ipt_accountname.sendKeys(AccountName);
 		Thread.sleep(3000);
 		select_accountname.click();
+		ipt_contacttitle.sendKeys(title);
 		ipt_contactemail.sendKeys(Email);
 		ipt_contactphone.sendKeys(Phone);
+		ipt_contactotherphone.sendKeys(otherphone);
+		ipt_contactdepartment.sendKeys(dept);
 		contactsavebtn.click();
 		Thread.sleep(4000);
 		// waitForElementToDisAppear(Wait_toastMessage, 30);

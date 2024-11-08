@@ -38,11 +38,11 @@ public class HAC145VerifyAccountLayout extends CommonFunctions {
 	boolean languagelabel;
 	boolean websitelabel;
 
-	@Given("^HAC145 user enters (.*) and (.*)$")
-	public void HAC145_user_enters_username_and_password(String userName, String password) throws IOException {
+	@Given("Login as service user")
+	public void HAC145_user_enters_username_and_password() throws IOException {
 		loginPO = new Login();
 		loginPO.goTo(ppty.getProperty("HAC_URL"));
-		loginPO.LoginApp(userName, password);
+		loginPO.LoginApp(getObjDetails().getProperty("SERVICE_SCH_USER_NAME"), getObjDetails().getProperty("SERVICE_SCH_PASSWORD"));
 	}
 
 	@When("HAC145 select the applicaton")
@@ -72,7 +72,7 @@ public class HAC145VerifyAccountLayout extends CommonFunctions {
 	public void HAC145_verify_account_name() throws InterruptedException, IOException {
 		accountDetailsTab = new AccountDetailsTab();
 		accountname = accountDetailsTab.getAccountName();
-		Assert.assertTrue(accountname.contains("TestCustomerAccount"));
+		Assert.assertTrue(accountname.contains("HACTestAccount"));
 	}
 
 	@When("HAC145 select accounts tab")
@@ -84,8 +84,15 @@ public class HAC145VerifyAccountLayout extends CommonFunctions {
 	@When("HAC145 create new customer account")
 	public void HAC145_create_new_customer_account() throws InterruptedException, IOException {
 		homepage = new HomePage();
-		homepage.createNewCustomerAccount(ppty.getProperty("ACCTNAME") + Math.random(), ppty.getProperty("INDUSTRY"),
-				ppty.getProperty("TRADENAME"));
+		homepage.createNewCustomerAccount(
+				getObjDetails().getProperty("ACCTNAME") + Math.random(), 
+				getObjDetails().getProperty("ACCTSITE"),
+				getObjDetails().getProperty("ACCTPHONE"),
+				getObjDetails().getProperty("ACCTFAX"),
+				getObjDetails().getProperty("ACCTEMAIL"),
+				getObjDetails().getProperty("ACCTWEBSITE"),
+				getObjDetails().getProperty("INDUSTRY"),
+				getObjDetails().getProperty("TRADENAME"));
 	}
 
 	@Then("HAC145 verify type")
@@ -112,16 +119,8 @@ public class HAC145VerifyAccountLayout extends CommonFunctions {
 		Assert.assertEquals(parentaccount, "Juicy Box (Sample)");
 		}
 
-	// validate industry name on account details
-	@Then("HAC145 verify industry_1")
-	public void HAC145_verify_industry_1() throws InterruptedException, IOException {
-		accountDetailsTab = new AccountDetailsTab();
-		industryname = accountDetailsTab.getIndustry();
-		Assert.assertEquals(industryname, "Leafy Greens");
 
-	}
 	@Then("HAC145 verify account currency")
-
 	public void HAC145_verify_accountcurrency() throws InterruptedException, IOException {
 		accountDetailsTab = new AccountDetailsTab();
 		accountcurrency = accountDetailsTab.getAccountCurrency();
@@ -143,10 +142,26 @@ public class HAC145VerifyAccountLayout extends CommonFunctions {
 	public void HAC145_verify_trade_name_value() throws InterruptedException, IOException {
 		accountDetailsTab = new AccountDetailsTab();
 		tradename = accountDetailsTab.getTradeName();
-		Assert.assertTrue(tradename.contains("TestTradeName"));
+		Assert.assertTrue(tradename.contains("HACTradeName"));
 
 	}
+	
+	// validate language value on account details
+	@Then("HAC145 verify language value")
+	public void HAC145_verify_language_value() throws InterruptedException, IOException {
+		accountDetailsTab = new AccountDetailsTab();
+		tradename = accountDetailsTab.getLanguage();
+		Assert.assertTrue(tradename.contains("English"));
 
+	}
+	// validate language value on account details
+	@Then("HAC145 verify website value")
+	public void HAC145_verify_website_value() throws InterruptedException, IOException {
+		accountDetailsTab = new AccountDetailsTab();
+		tradename = accountDetailsTab.getWebbSite();
+		Assert.assertTrue(tradename.contains("www.hactest.com"));
+
+	}
 	// validate active label on account details
 	@Then("HAC145 verify active label")
 	public void HAC145_verify_active_label() throws InterruptedException, IOException {

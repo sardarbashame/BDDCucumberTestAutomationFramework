@@ -33,6 +33,12 @@ public class CaseRelatedListQuickLinks extends CommonFunctions {
 	@FindBy(xpath = "//button[@name='save']")
 	WebElement modalbtn_save;
 	
+	@FindBy(xpath = "//a[contains(text(), 'Show All')]")
+	WebElement link_showall;
+	
+	@FindBy(xpath = "//slot[contains(text(), 'Quotes / Estimates')]/..")
+	WebElement relatedlistquouteestimate;
+	
 
 	public void ScrollPageToTop() throws InterruptedException {
 		Thread.sleep(4000);
@@ -41,6 +47,16 @@ public class CaseRelatedListQuickLinks extends CommonFunctions {
 		Thread.sleep(5000);
 	}
 
+	public void ClickShowAllLink() throws InterruptedException {
+		Thread.sleep(4000);
+		driver.navigate().refresh();
+		Thread.sleep(6000);
+		expWaitToBeClickable(link_showall);
+		js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", link_showall);
+		Thread.sleep(5000);
+	}
+	
 	public void clickWorkOrderLink() throws InterruptedException {
 		Thread.sleep(4000);
 		expWaitToBeClickable(relatedlistlnk_workorder);
@@ -54,6 +70,14 @@ public class CaseRelatedListQuickLinks extends CommonFunctions {
 		expWaitToBeClickable(relatedlistlnk_caseteam);
 		js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].click();", relatedlistlnk_caseteam);
+		Thread.sleep(5000);
+	}
+	
+	public void ClickQuoteEstimateRelatedListLink() throws InterruptedException {
+		Thread.sleep(4000);
+		expWaitToBeClickable(relatedlistquouteestimate);
+		js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", relatedlistquouteestimate);
 		Thread.sleep(5000);
 	}
 	

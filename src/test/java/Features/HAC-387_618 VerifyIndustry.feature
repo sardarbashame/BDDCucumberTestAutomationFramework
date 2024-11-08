@@ -1,7 +1,7 @@
 Feature: Verify the Industry field on the customer account
 
 
-  Scenario Outline: Login as Service Users and Verify the Industry field
+  Scenario Outline: Login as service user and verify the Industry field
     Given HAC387 user enters <username> and <password>
     When HAC387 select the applicaton
     When HAC387 close all the open tabs
@@ -12,6 +12,6 @@ Feature: Verify the Industry field on the customer account
 
     Examples: 
       | username                              | password    |
-      | testservicescheduler@gmail.com        | M@shaallah1 |
+      | testservicescheduler@gmail.com        | H@ctest1 |
 
   

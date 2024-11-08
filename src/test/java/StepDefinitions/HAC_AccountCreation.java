@@ -11,12 +11,12 @@ public class HAC_AccountCreation extends CommonFunctions {
 
 	AccountDetailsTab accountDetailsTab;
 	Login loginPO;
-	@Given("Login as SERVICE REP USER NAME")
+	@Given("Login as SERVICE SCH USER NAME")
 	public void login_as_service_rep_user_name() {
 		loginPO = new Login();
 		loginPO.goTo(ppty.getProperty("HAC_URL"));
-		String Uname = ppty.getProperty("SERVICE_REP_USER_NAME");
-		String pwd = ppty.getProperty("SERVICE_REP_PASSWORD");
+		String Uname = ppty.getProperty("SERVICE_SCH_USER_NAME");
+		String pwd = ppty.getProperty("SERVICE_SCH_PASSWORD");
 		loginPO.LoginApp(Uname, pwd);
 	   
 	}

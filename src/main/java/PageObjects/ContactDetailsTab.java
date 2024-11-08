@@ -293,6 +293,60 @@ public class ContactDetailsTab extends CommonFunctions {
 		return namepresent;
 	}
 
+	@FindBy(xpath="//*[text()='Account Name']/../..//a//span//slot//slot")
+	WebElement value_contactaccountname;
+	String contactaccouuntnamevalue;
+	
+	public String getContactAccountName() throws InterruptedException {
+		Thread.sleep(2000);
+		contactaccouuntnamevalue = value_contactaccountname.getText();
+		Thread.sleep(2000);
+		return contactaccouuntnamevalue;
+	}
+	
+	@FindBy(xpath="//*[text()='Name']/../../..//lightning-formatted-name")
+	WebElement value_contactname;
+	String contactnamevalue;
+	
+	@FindBy(xpath="(//*[text()='Title']/../../..//lightning-formatted-text)[2]")
+	WebElement value_contacttitle;
+	String contacttitlevalue;
+			
+	public String getContactName() throws InterruptedException {
+		Thread.sleep(2000);
+		contactnamevalue = value_contactname.getText();
+		Thread.sleep(2000);
+		return contactnamevalue;
+	}
+	
+	public String getContactTitle() throws InterruptedException {
+		Thread.sleep(2000);
+		contacttitlevalue = value_contacttitle.getText();
+		Thread.sleep(2000);
+		return contacttitlevalue;
+	}
+	@FindBy(xpath="//*[text()='Department']/../../..//lightning-formatted-text")
+	WebElement value_contactdepartment;
+	String contactdepartmentvalue;
+	
+	public String getDepartment() throws InterruptedException {
+		Thread.sleep(2000);
+		contactdepartmentvalue = value_contactdepartment.getText();
+		Thread.sleep(2000);
+		return contactdepartmentvalue;
+	}
+	
+	@FindBy(xpath="//*[text()='Type']/../../..//lightning-formatted-text")
+	WebElement value_contacttype;
+	String contacttypevalue;
+	
+	public String getType() throws InterruptedException {
+		Thread.sleep(2000);
+		contacttypevalue = value_contacttype.getText();
+		Thread.sleep(2000);
+		return contacttypevalue;
+	}
+	
 	public void VerifyContactRelatedListQuickLinks() throws InterruptedException {
 		Thread.sleep(2000);
 		// lnk_showall.click();

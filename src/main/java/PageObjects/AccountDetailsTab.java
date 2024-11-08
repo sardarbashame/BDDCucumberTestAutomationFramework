@@ -98,6 +98,12 @@ public class AccountDetailsTab extends CommonFunctions {
 
 	@FindBy(xpath = "//span[text()='Email']/../../..//emailui-formatted-email-wrapper//a")
 	public WebElement get_email;
+	
+	@FindBy(xpath = "//span[text()='Language']/../../..//lightning-formatted-text")
+	public WebElement get_language;
+	
+	@FindBy(xpath = "(//lightning-formatted-url//a)")
+	public WebElement get_website;
 
 	@FindBy(xpath = "//a//div[text()='New']")
 	WebElement newaccountbtn;
@@ -259,6 +265,20 @@ public class AccountDetailsTab extends CommonFunctions {
 		Thread.sleep(1000);
 		return actualtradename;
 	}
+	
+	public String getLanguage() throws InterruptedException {
+		Thread.sleep(0, 1000);
+		actualtradename = get_language.getText();
+		Thread.sleep(1000);
+		return actualtradename;
+	}
+	
+	public String getWebbSite() throws InterruptedException {
+		Thread.sleep(0, 1000);
+		actualtradename = get_website.getText();
+		Thread.sleep(1000);
+		return actualtradename;
+	}
 
 	public String getIndustry() throws InterruptedException {
 		Thread.sleep(0, 1000);
@@ -364,6 +384,7 @@ public class AccountDetailsTab extends CommonFunctions {
 
 	public void validateNewAccountCreatedInDetailsAndAccType(String accType, String accCnt)
 			throws InterruptedException {
+		Thread.sleep(5000);
 		String str = txt_accTypeName.getText();
 		Assert.assertEquals(accType, str);
 		chk_editAccType.click();

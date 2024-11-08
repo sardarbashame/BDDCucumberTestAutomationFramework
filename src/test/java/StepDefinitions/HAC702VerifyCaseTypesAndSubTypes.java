@@ -39,6 +39,8 @@ public class HAC702VerifyCaseTypesAndSubTypes extends CommonFunctions {
 	public void HAC702_login_as_a_service_manager() throws IOException {
 		loginPO = new Login();
 		loginPO.goTo(ppty.getProperty("HAC_URL"));
+		loginPO.LoginApp(getObjDetails().getProperty("SERVICE_MANAGER_USER_NAME"),
+				getObjDetails().getProperty("SERVICE_MANAGER_PASSWORD"));
 		loginPO.LoginApp(ppty.getProperty("SERVICE_MANAGER_USER_NAME"),ppty.getProperty("SERVICE_MANAGER_PASSWORD"));
 	}
 
@@ -57,9 +59,9 @@ public class HAC702VerifyCaseTypesAndSubTypes extends CommonFunctions {
 	public void HAC702_close_the_bottom_bar() throws InterruptedException {
 		closeBottomeBar();
 	}
-	
+
 	@When("HAC702 select cases tab")
-	public void HAC702_select_cases_tab() throws InterruptedException  {
+	public void HAC702_select_cases_tab() throws InterruptedException {
 		homepage = new HomePage();
 		homepage.clickCasesTab();
 	}
@@ -71,7 +73,7 @@ public class HAC702VerifyCaseTypesAndSubTypes extends CommonFunctions {
 		caseDetailsTab.VerifyCaseSubTypesForBillingType();
 
 	}
-	
+
 	// verify the case subtypes for emergency case type
 	@Then("HAC702 verify case subtypes for emergency type")
 	public void HAC702_verify_case_subtypes_for_emergency_type() throws InterruptedException, IOException {
@@ -79,7 +81,7 @@ public class HAC702VerifyCaseTypesAndSubTypes extends CommonFunctions {
 		caseDetailsTab.VerifyCaseSubTypesForEmergencyType();
 
 	}
-	
+
 	// verify the case subtypes for equipment case type
 	@Then("HAC702 verify case subtypes for equipment type")
 	public void HAC702_verify_case_subtypes_for_equipment_type() throws InterruptedException, IOException {
@@ -87,7 +89,7 @@ public class HAC702VerifyCaseTypesAndSubTypes extends CommonFunctions {
 		caseDetailsTab.VerifyCaseSubTypesForEquipementType();
 
 	}
-	
+
 	// verify the case subtypes for feedback case type
 	@Then("HAC702 verify case subtypes for feedback type")
 	public void HAC702_verify_case_subtypes_for_feedback_type() throws InterruptedException, IOException {
@@ -95,7 +97,7 @@ public class HAC702VerifyCaseTypesAndSubTypes extends CommonFunctions {
 		caseDetailsTab.VerifyCaseSubTypesForFeedbackType();
 
 	}
-	
+
 	// verify the case subtypes for feedback case type
 	@Then("HAC702 verify case subtypes for general type")
 	public void HAC702_verify_case_subtypes_for_general_type() throws InterruptedException, IOException {
@@ -111,7 +113,7 @@ public class HAC702VerifyCaseTypesAndSubTypes extends CommonFunctions {
 		caseDetailsTab.VerifyCaseSubTypesForJunkSpamType();
 
 	}
-	
+
 	// verify the case subtypes for newprojectscheduling case type
 	@Then("HAC702 verify case subtypes for newprojectscheduling type")
 	public void HAC702_verify_case_subtypes_for_newprojectscheduling_type() throws InterruptedException, IOException {
@@ -119,7 +121,7 @@ public class HAC702VerifyCaseTypesAndSubTypes extends CommonFunctions {
 		caseDetailsTab.VerifyCaseSubTypesForNewProjectSchedulingType();
 
 	}
-	
+
 	// verify the case subtypes for parts case type
 	@Then("HAC702 verify case subtypes for parts type")
 	public void HAC702_verify_case_subtypes_for_parts_type() throws InterruptedException, IOException {
@@ -127,7 +129,7 @@ public class HAC702VerifyCaseTypesAndSubTypes extends CommonFunctions {
 		caseDetailsTab.VerifyCaseSubTypesForPartsType();
 
 	}
-	
+
 	// verify the case subtypes for sales case type
 	@Then("HAC702 verify case subtypes for sales type")
 	public void HAC702_verify_case_subtypes_for_sales_type() throws InterruptedException, IOException {
@@ -135,7 +137,7 @@ public class HAC702VerifyCaseTypesAndSubTypes extends CommonFunctions {
 		caseDetailsTab.VerifyCaseSubTypesForSalesType();
 
 	}
-	
+
 	// verify the case subtypes for scheduling case type
 	@Then("HAC702 verify case subtypes for scheduling type")
 	public void HAC702_verify_case_subtypes_for_scheduling_type() throws InterruptedException, IOException {
@@ -144,6 +146,4 @@ public class HAC702VerifyCaseTypesAndSubTypes extends CommonFunctions {
 
 	}
 
-
-	
 }
