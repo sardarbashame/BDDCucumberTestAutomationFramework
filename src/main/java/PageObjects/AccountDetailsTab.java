@@ -165,6 +165,18 @@ public class AccountDetailsTab extends CommonFunctions {
 	@FindBy(xpath = "//span[text() = 'Save']//parent::button//ancestor::div[contains(@class, 'slds-grid bottomBar')]//button")
 	WebElement btn_saveTask;
 
+	@FindBy(xpath = "//slot[contains(text(), 'Resource Preferences')]//parent::span")
+	WebElement lnk_resourceRefernece;
+	
+	@FindBy(xpath = "//label[text() = 'Service Resource']//following-sibling::div//input")
+	WebElement ipt_serviceResource;
+	
+	@FindBy(xpath = "//div[contains(@class, 'active ')]//label[text() = 'Preference Type']//following-sibling::div//button")
+	WebElement clk_preferenceType;
+	
+	@FindBy(xpath = "//div[contains(@class, 'active ')]//label[text() = 'Preference Type']//parent::div//descendant::lightning-base-combobox-item//span[not(contains(@title,'--None--')) and @class = 'slds-truncate']")
+	List<WebElement> lst_PreferenceTypes;
+	
 	By Wait_toastMessage = By.xpath("//span[contains(@class,'toastMessage')]//a//div");
 	By Wait_stageChange = By
 			.xpath("//span[contains(@class, 'toastMessage slds-text-heading--small forceActionsText')]");
@@ -419,15 +431,39 @@ public class AccountDetailsTab extends CommonFunctions {
 		waitForElementToDisAppear(Wait_toastMessage, 5);
 		Thread.sleep(1000);
 	}
+	
+	public void clickOnResourceReference(String serviceResource, String values, String prefCnt) throws Exception {
+		expWaitToBeClickable(lnk_resourceRefernece);
+		javascriptClick(lnk_resourceRefernece);
+		expWaitToBeClickable(newaccountbtn);
+		newaccountbtn.click();
+		expWaitToBeClickable(ipt_serviceResource);
+		clickDrpDownAndSelValue(ipt_serviceResource, "Test Service Resource2");
+		javascriptClick(clk_preferenceType);
+		int cnt2 = sel_dropdownAccTypeCnt.size();
+		Assert.assertEquals(String.valueOf(cnt2), prefCnt.toString());
 
-	public void clickDrpDownAndSelValue(WebElement ele, String value) throws Exception {
-		expWaitToBeClickable(ele);
-		javascriptClick(ele);
+		Thread.sleep(5000);
+		int cnt = lst_PreferenceTypes.size();
+		List<String> lst1 = new ArrayList<String>();
+		List<String> lst2 = new ArrayList<String>();
+
+		for (String str : values.split(",")) {
+			str = str.trim();
+			lst1.add(str);
+		}
+
+		for (int i = 0; i < cnt; i++) {
+			lst2.add(lst_PreferenceTypes.get(i).getText());
+		}
+
+		boolean flag = lst1.equals(lst2);
+		System.out.print(flag);
+		Assert.assertTrue(flag);
+
 		Thread.sleep(1000);
-		TypeInField(ele, value);
-		WebElement clkEle = driver.findElement(By.xpath("(//*[@title = '" + value + "'])[last()]"));
-		drawHighlight(clkEle);
-		javascriptClick(clkEle);
+		accountsavebtn.click();
+		elementToBePresent(Wait_stageChange, 30);
 	}
 
 }

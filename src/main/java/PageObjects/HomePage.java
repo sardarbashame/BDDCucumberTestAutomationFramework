@@ -186,7 +186,7 @@ public class HomePage extends CommonFunctions {
 
 	public void clickCasesTab() throws InterruptedException {
 		js = (JavascriptExecutor) driver;
-		Thread.sleep(0, 4000);
+		Thread.sleep(0, 2000);
 		waitForElementToAppear(By.xpath("//a[@title='Cases']"), 30);
 		Thread.sleep(0, 3000);
 		js.executeScript("arguments[0].click();", clk_cases);

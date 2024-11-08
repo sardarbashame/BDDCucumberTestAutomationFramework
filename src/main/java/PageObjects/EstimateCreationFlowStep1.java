@@ -1,5 +1,7 @@
 package PageObjects;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
@@ -8,7 +10,6 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 
 import commonutilities.CommonFunctions;
-
 
 public class EstimateCreationFlowStep1 extends CommonFunctions {
 
@@ -60,6 +61,41 @@ public class EstimateCreationFlowStep1 extends CommonFunctions {
 	@FindBy(xpath = "//span[text()='USA International MPA-PEPSICO (FRITOLAY)']")
 	WebElement txt_usInterNationalPepsico;
 
+	@FindBy(xpath = "//*[text()='Inspection Estimate Matrix']/../..//button")
+	WebElement drpDown_inspectionEstMatrix;
+	
+	@FindBy(xpath = "//*[text()='SPRAY Estimate Matrix']/../..//button")
+	WebElement drpDown_sprayEstMatrix;
+
+	@FindBy(xpath = "//a[text() = 'INSP']//parent::li")
+	WebElement clk_INSP;
+	
+	@FindBy(xpath = "//a[text() = 'SPRAY']//parent::li")
+	WebElement clk_SPRAY;
+
+	@FindBy(xpath = "//span[text() = 'Quote Line Items created successfully.']")
+	WebElement msg_quoteLineCreated;
+
+	@FindBy(xpath = "(//button[text()='Save'])[2]")
+	WebElement btn_save;
+
+	@FindBy(xpath = "(//lst-related-list-quick-links-grid//a)[last()]")
+	List<WebElement> lnk_showALL;
+	
+	@FindBy(xpath = "//button[text() = 'Search...']")
+	WebElement ipt_search;
+
+	@FindBy(xpath = "(//slot[contains(text() , 'Quotes /')]//parent::span)[last()]")
+	WebElement lnk_quotes;
+
+	@FindBy(xpath = "//h1[text() = 'Quotes / Estimates']//ancestor::lst-list-view-manager-header//following-sibling::div//th//lightning-primitive-cell-factory//a")
+	WebElement lnk_quoteCreated;
+
+	@FindBy(xpath = "//li[contains(@class, 'is-active')]//a[text() = 'Details']")
+	WebElement clk_detailsTab;
+
+	By Wait_toastMessage = By.xpath("//span[text() = 'Quote Line Items created successfully.']");
+
 	public void clickEstimatesTab() throws InterruptedException {
 		expWaitToBeClickable(clk_estimations);
 		clk_estimations.click();
@@ -78,13 +114,14 @@ public class EstimateCreationFlowStep1 extends CommonFunctions {
 		driver.findElement(By.xpath("//*[text()='" + estimatematrix + "']/../..//button")).click();
 		driver.findElement(By.xpath("//span[text()='" + estimatematrixoption + "']")).click();
 		expWaitToBeClickable(clk_estimateItems);
-		clk_estimateItems.click();;
+		clk_estimateItems.click();
+		;
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("//span[text()='" + estimateitem + "']")).click();
 		Thread.sleep(3000);
 		btn_next.click();
 		Thread.sleep(0, 4000);
-		}
+	}
 
 	public boolean verifyPriceBookOption1() throws InterruptedException {
 		js = (JavascriptExecutor) driver;
@@ -94,7 +131,7 @@ public class EstimateCreationFlowStep1 extends CommonFunctions {
 		Thread.sleep(1000);
 		pricebookoption1 = txt_candaMarketRate.isDisplayed();
 		return pricebookoption1;
-		
+
 	}
 
 	public boolean verifyPriceBookOption2() throws InterruptedException {
@@ -126,7 +163,6 @@ public class EstimateCreationFlowStep1 extends CommonFunctions {
 		Thread.sleep(1000);
 		pricebookoption6 = txt_usInterNationalMarketRatePrepay.isDisplayed();
 		return pricebookoption6;
-
 	}
 
 	public boolean verifyPriceBookOption7() throws InterruptedException {
@@ -136,4 +172,85 @@ public class EstimateCreationFlowStep1 extends CommonFunctions {
 		return pricebookoption7;
 	}
 
+	public void createEstimationINSP(String pricebook, String InspectionEstimateMatrix, String Estimateitem)
+			throws InterruptedException {
+		expWaitToBeClickable(clk_priceBook);
+		clk_priceBook.click();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//span[text()='" + pricebook + "']")).click();
+		expWaitToBeClickable(drpDown_inspectionEstMatrix);
+		drpDown_inspectionEstMatrix.click();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//span[text()='" + InspectionEstimateMatrix + "']")).click();
+		expWaitToBeClickable(clk_estimateItems);
+		clk_estimateItems.click();
+		driver.findElement(By.xpath("//span[text()='" + Estimateitem + "']")).click();
+		Thread.sleep(3000);
+		btn_next.click();
+		Thread.sleep(0, 4000);
+	}
+
+	public void createEstimationSPRAY(String pricebook, String SPRAYEstimateMatrix, String Estimateitem)
+			throws InterruptedException {
+		expWaitToBeClickable(clk_priceBook);
+		clk_priceBook.click();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//span[text()='" + pricebook + "']")).click();
+		expWaitToBeClickable(drpDown_sprayEstMatrix);
+		drpDown_sprayEstMatrix.click();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//span[text()='" + SPRAYEstimateMatrix + "']")).click();
+		expWaitToBeClickable(clk_estimateItems);
+		clk_estimateItems.click();
+		driver.findElement(By.xpath("//span[text()='" + Estimateitem + "']")).click();
+		Thread.sleep(3000);
+		btn_next.click();
+		Thread.sleep(0, 4000);
+	}
+	public void clickOnINSPTab() throws InterruptedException {
+		expWaitToBeClickable(clk_INSP);
+		clk_INSP.click();
+		Thread.sleep(1000);
+	}
+	public void clickSPRAYTab() throws InterruptedException {
+		expWaitToBeClickable(clk_SPRAY);
+		clk_SPRAY.click();
+		Thread.sleep(1000);
+	}
+
+	public void clickSaveButton() throws InterruptedException {
+		Thread.sleep(2000);
+		expWaitToBeClickable(btn_save);
+		btn_save.click();
+		msg_quoteLineCreated.isDisplayed();
+		waitForElementToAppear(Wait_toastMessage, 2);
+	}
+
+	public void clickShowAllQuickLink() throws InterruptedException {
+		int cnt = lnk_showALL.size();
+		System.out.println("Size of show All is " + cnt);
+		expWaitToBeClickable(lnk_showALL.get(0));
+		Thread.sleep(2000);
+		scrollIntoView(ipt_search);
+		drawHighlight(ipt_search);
+		drawHighlight(lnk_showALL.get(0));
+		mouseHover(lnk_showALL.get(0));
+		javascriptClick(lnk_showALL.get(0));
+	}
+
+	public void verifyQuoteIsCreatedInDetailsPage() throws InterruptedException {
+		expWaitToBeClickable(lnk_quotes);
+		Thread.sleep(4000);
+		drawHighlight(lnk_quotes);
+		lnk_quotes.click();
+		Thread.sleep(4000);
+		String str = lnk_quoteCreated.getText();
+		System.out.println("Quote is created - " + str);
+		javascriptClick(lnk_quoteCreated);
+		Thread.sleep(2000);
+		expWaitToBeClickable(clk_detailsTab);
+		clk_detailsTab.isDisplayed();
+		clk_detailsTab.click();
+		Thread.sleep(2000);
+	}
 }

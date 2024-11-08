@@ -24,8 +24,9 @@ import java.lang.reflect.Type;
 import PageObjects.Login;
 import PageObjects.SelectApplication;
 import commonutilities.BaseTest;
+import commonutilities.CommonFunctions;
 
-public class hooksclass extends BaseTest{
+public class hooksclass extends CommonFunctions{
 	Login loginPO;
 	SelectApplication selectApplication;
 
@@ -33,6 +34,9 @@ public class hooksclass extends BaseTest{
 public void setUp() throws IOException 
 {
 	intializeDriver(); 
+	actionInit();
+	webDriverWaitInit();
+	javascriptInit();
 }
 	
 @After()

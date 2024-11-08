@@ -67,7 +67,16 @@ public class CommonFunctions extends BaseTest {
 		wait.until(ExpectedConditions.invisibilityOf(ele));
 
 	}
-
+	public static void moveToEle(WebElement to) {
+		actions.moveToElement(to).click();
+		buildPerform();
+	}
+	public static void buildPerform() {
+		actions.build().perform();
+	}
+	public static void mouseHover(WebElement ele) {
+		actions.moveToElement(ele).perform();
+	}
 	public static void drawHighlight(WebElement element) {
 		js = ((JavascriptExecutor) driver);
 		js.executeScript("arguments[0].setAttribute('style', 'background: yellow; border: 2px solid red;');", element);
@@ -91,15 +100,13 @@ public class CommonFunctions extends BaseTest {
 		actions = new Actions(driver);
 	}
 
-	public static void moveToEle(WebElement to) {
+	/*public static void moveToEle(WebElement to) {
 		Actions actions = new Actions(driver);
 		actions.moveToElement(to).click().keyDown(to, Keys.SHIFT).sendKeys(to, "W");
 		actions.build().perform();
-	}
+	}*/
 
-	public static void buildPerform() {
-		actions.build().perform();
-	}
+	
 
 	public void TypeInField(WebElement element, String value) {
 		String val = value;
@@ -114,23 +121,23 @@ public class CommonFunctions extends BaseTest {
 
 	public JavascriptExecutor closeAllTabs() throws InterruptedException {
 		// Closing all the open tabs
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		js = (JavascriptExecutor) driver;
 		js.executeScript(
 				"var elements = document.evaluate(\"//div[contains(@class,'tabsetHeader')]//button[starts-with(@title,'Close')]//lightning-primitive-icon\", document.body, null, XPathResult.ANY_TYPE, null); while(element = elements.iterateNext()){  element.click(); }");
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		return js;
 	}
 
 	public JavascriptExecutor closeBottomeBar() throws InterruptedException {
 		// Closing all the open tabs
 		By wait_appOpen = By.xpath("//div[contains(@class,'oneUtilityBar slds-utility-bar_container oneUtilityBarContent')]");
-		waitForElementToAppear(wait_appOpen, 5000);
+		waitForElementToAppear(wait_appOpen, 1000);
 		Thread.sleep(2000);
 		js = (JavascriptExecutor) driver;
 		js.executeScript(
 				"var node=document.evaluate(\"//div[contains(@class,'oneUtilityBar slds-utility-bar_container oneUtilityBarContent')]\", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null ).singleNodeValue; node.parentNode.removeChild(node);");
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		return js;
 	}
 
