@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -80,7 +81,7 @@ public class EstimateCreationFlowStep1 extends CommonFunctions {
 	WebElement btn_save;
 
 	@FindBy(xpath = "(//lst-related-list-quick-links-grid//a)[last()]")
-	List<WebElement> lnk_showALL;
+	WebElement lnk_showALL;
 	
 	@FindBy(xpath = "//button[text() = 'Search...']")
 	WebElement ipt_search;
@@ -227,22 +228,21 @@ public class EstimateCreationFlowStep1 extends CommonFunctions {
 	}
 
 	public void clickShowAllQuickLink() throws InterruptedException {
-		int cnt = lnk_showALL.size();
-		System.out.println("Size of show All is " + cnt);
-		expWaitToBeClickable(lnk_showALL.get(0));
+		expWaitToBeClickable(lnk_showALL);
 		Thread.sleep(2000);
 		scrollIntoView(ipt_search);
 		drawHighlight(ipt_search);
-		drawHighlight(lnk_showALL.get(0));
-		mouseHover(lnk_showALL.get(0));
-		javascriptClick(lnk_showALL.get(0));
+		drawHighlight(lnk_showALL);
+		mouseHover(lnk_showALL);
+		lnk_showALL.sendKeys(Keys.ENTER);
+		//moveToEle(lnk_showALL);
 	}
 
 	public void verifyQuoteIsCreatedInDetailsPage() throws InterruptedException {
 		expWaitToBeClickable(lnk_quotes);
 		Thread.sleep(4000);
 		drawHighlight(lnk_quotes);
-		lnk_quotes.click();
+		javascriptClick(lnk_quotes);
 		Thread.sleep(4000);
 		String str = lnk_quoteCreated.getText();
 		System.out.println("Quote is created - " + str);
