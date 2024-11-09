@@ -4,7 +4,7 @@ Feature: Verify the account list views
   Scenario: Login as Service Users and Verify the account list views
     Given Login as service user
 
-  @Test
+  
   Scenario Outline: Login as Service Users and Verify the account list views
     Given HAC137 user enters <username> and <password>
     When HAC137 select the applicaton

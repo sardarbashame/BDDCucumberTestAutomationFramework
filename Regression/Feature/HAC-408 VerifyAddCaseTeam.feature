@@ -1,6 +1,6 @@
 Feature: Verify the case page layout fields
 
- @Test
+ 
   Scenario Outline: Login as service scheduler and verify the case page layout fields
     Given HAC408 user enters <username> and <password>
     When HAC408 select the applicaton

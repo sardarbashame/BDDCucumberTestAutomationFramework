@@ -1,6 +1,6 @@
 Feature: Verify the case close reasons
 
- @Test
+ 
   Scenario: Login as service manager and verify the case closure reasons
     Given HAC550 login as a service manager
     When HAC550 select the applicaton

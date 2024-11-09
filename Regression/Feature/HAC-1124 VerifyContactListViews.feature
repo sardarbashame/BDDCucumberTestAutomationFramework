@@ -3,7 +3,7 @@ Feature: Verify the contact list views
   Scenario: Login as Service Users and Verify the contact list views
     Given Login as service user
 
-  @Test
+  
   Scenario: Login as service user and verify the contact list views
     Given HAC1124 login as service user
     When HAC1124 select the applicaton

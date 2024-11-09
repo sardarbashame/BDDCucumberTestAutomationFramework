@@ -1,4 +1,4 @@
-@Test
+
 Feature: Verify account types
 
   Scenario Outline: Verify able to create customer account type

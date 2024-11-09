@@ -1,4 +1,4 @@
-@Test
+
 Feature: Verify Ability to Indicate Resource Preferences for an Account
 
   Scenario Outline: HAC_378_Verify Able to indicate Resource Prefences on an Account

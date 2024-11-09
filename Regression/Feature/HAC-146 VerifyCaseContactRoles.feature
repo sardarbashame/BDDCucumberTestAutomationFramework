@@ -1,6 +1,6 @@
 Feature: create and verify the case contact roles
 
-  @Test
+  
   Scenario Outline: Login as service users and add engineer as case contact role
     Given HAC146 user enters <username> and <password>
     When HAC146 select the applicaton
