@@ -27,7 +27,7 @@ public class SelectApplication extends CommonFunctions {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		clk_AppLauncher.click();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
-		ipt_SearchAppsAndItems.sendKeys("Service Management");
+		ipt_SearchAppsAndItems.sendKeys(appname);
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 		driver.findElement(By.xpath("//p[.//*[text()='" + appname + "']]")).click();
 		Thread.sleep(12000);

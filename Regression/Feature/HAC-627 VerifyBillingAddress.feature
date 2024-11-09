@@ -10,5 +10,5 @@ Feature: Verify the Billing Address
     Then HAC627 verify the billing Address on exsiting account record
                             
     Examples: 
-      | username            | password    |
-      | hctestcsr@gmail.com | M@shaallah2 |
+      | username                              | password    |
+      | testservicescheduler@gmail.com        | H@ctest1 |

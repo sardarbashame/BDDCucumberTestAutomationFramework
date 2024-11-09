@@ -25,6 +25,8 @@ public class HAC145VerifyAccountLayout extends CommonFunctions {
 	String type;
 	String description;
 	String phone;
+	boolean boolvalue;
+	String strvalue;
 	boolean tradenamelabel;
 	boolean operatinghourslabel;
 	boolean employeeslabel;
@@ -240,6 +242,24 @@ public class HAC145VerifyAccountLayout extends CommonFunctions {
 		accountDetailsTab = new AccountDetailsTab();
 		websitelabel = accountDetailsTab.isWebsitePresent();
 		Assert.assertTrue(websitelabel);
+
+	}
+	
+	// validate shipping address label on account details
+	@Then("HAC145 verify shippingaddress label")
+	public void HAC145_verify_shippingaddress_label() throws InterruptedException, IOException {
+		accountDetailsTab = new AccountDetailsTab();
+		boolvalue = accountDetailsTab.isShippingAddressPresent();
+		Assert.assertTrue(boolvalue);
+
+	}
+	
+	// validate trade name value on account details
+	@Then("HAC145 verify shippingaddress value")
+	public void HAC145_verify_shippingaddress_value() throws InterruptedException, IOException {
+		accountDetailsTab = new AccountDetailsTab();
+		strvalue = accountDetailsTab.getShippingAddress();
+		Assert.assertTrue(strvalue.contains("100 1st Street"));
 
 	}
 

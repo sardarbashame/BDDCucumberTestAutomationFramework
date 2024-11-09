@@ -190,6 +190,19 @@ public class HAC1478AssignProcessingServiceAppointment extends CommonFunctions {
 		serviceappointments.SelectServiceAppointment();
 	}
 	
+	@Then("HAC1478 select a schedule start date")
+	public void HAC1478_select_a_schedule_start_date() throws InterruptedException, IOException {
+		serviceappointments = new ServiceAppointments();
+		serviceappointments.UpdateSAScheduleStartDate();
+	}
+	
+	@Then("HAC1478 select a schedule end date")
+	public void HAC1478_select_a_schedule_end_date() throws InterruptedException, IOException {
+		serviceappointments = new ServiceAppointments();
+		serviceappointments.UpdateSAScheduleEndDate();
+		serviceappointments.ClickSaveButton();
+	}
+	
 	@Then("HAC1478 click related tab")
 	public void HAC1478_click_related_tab() throws InterruptedException, IOException {
 		serviceappointments = new ServiceAppointments();
@@ -201,5 +214,55 @@ public class HAC1478AssignProcessingServiceAppointment extends CommonFunctions {
 	public void HAC1478_assign_service_resource() throws InterruptedException, IOException {
 		serviceappointmentrelatedtab = new ServiceAppointmentRelatedTab();
 		serviceappointmentrelatedtab.AssignResource();
+	}
+	
+	@Then("HAC1478 update sa status to dispatched")
+	public void HAC1478_update_sa_satus_to_dispatched() throws InterruptedException, IOException {
+		serviceappointments = new ServiceAppointments();
+		serviceappointments.ClickDetailsTab();
+		serviceappointments.UpdateSAStatus();
+		serviceappointments.ClickSaveButton();
+	}
+	
+	@Then("HAC1478 logout as service scheduler")
+	public void HAC1478_logout_as_service_scheduler() throws InterruptedException, IOException {
+		homePage = new HomePage();
+		homePage.Logout();
+	}
+	
+	@Then("HAC1478 login as service technician")
+	public void HAC1478_login_as_service_technician() throws InterruptedException, IOException {
+		loginPO = new Login();
+		loginPO.LoginApp("jausterman@heatandcontrol.com.qa", "H@ctest1");
+	}
+	
+	@Then("HAC1478 select the field service applicaton")
+	public void HAC1478_select_the_field_service_applicaton() throws InterruptedException, IOException {
+		selectApplication = new SelectApplication();
+		selectApplication.selectApp("Field Service");
+	}
+	
+	@Then("HAC1478 select the service appointments tab")
+	public void HAC1478_select_the_service_appointments_tab() throws InterruptedException, IOException {
+		homePage = new HomePage();
+		homePage.clickServiceAppointmentsTab();
+		
+	}
+	
+	@Then("HAC1478 select all service appointments listview")
+	public void HAC1478_select_all_service_appointments_listview() throws InterruptedException, IOException {
+		serviceappointments = new ServiceAppointments();
+		serviceappointments.clickServiceAppointmentListViewButton();
+		serviceappointments.clickAllServiceAppointmentsListView();
+		
+		
+	}
+	
+	@Then("HAC1478 select dispatched service appointment")
+	public void HAC1478_select_dispatched_service_appointment() throws InterruptedException, IOException {
+		serviceappointments = new ServiceAppointments();
+		serviceappointments.SelectDispatchedServiceAppointment();;
+		
+		
 	}
 }

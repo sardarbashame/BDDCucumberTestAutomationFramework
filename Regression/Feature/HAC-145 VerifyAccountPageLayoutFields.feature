@@ -24,3 +24,5 @@ Feature: Verify the customer account page layout fields
     Then HAC145 verify language value
     Then HAC145 verify website label
     Then HAC145 verify website value
+    Then HAC145 verify shippingaddress label
+  #  Then HAC145 verify shippingaddress value

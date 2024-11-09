@@ -55,6 +55,9 @@ public class HomePage extends CommonFunctions {
 	@FindBy(xpath = "//a[@title='Accounts']")
 	WebElement accounttab;
 	
+	@FindBy(xpath = "//a[@title='Service Appointments']")
+	WebElement serviceappointmentstab;
+	
 	@FindBy(xpath = "//a//div[text()='New']")
 	WebElement newcasebtn;
 	
@@ -199,6 +202,19 @@ public class HomePage extends CommonFunctions {
 		js.executeScript("arguments[0].click();", accountstab);
 	}
 
+	public void clickServiceAppointmentsTab() throws InterruptedException {
+		js = (JavascriptExecutor) driver;
+		waitForElementToAppear(By.xpath("//a[@title='Service Appointments']"), 30);
+		js.executeScript("arguments[0].click();", serviceappointmentstab);
+		Thread.sleep(4000);
+	}
+	
+	@FindBy(xpath="//*[text()='Shipping Address']/..//input[@placeholder='Search Address']")
+	WebElement ipt_ShippingAddress;
+	
+	@FindBy(xpath="//span[@title='Brooklyn, NY, USA']")
+	WebElement clk_ShippingAddress;
+	
 	public void createNewCustomerAccount(String accountname, String accountsite, String phone, String fax, String email, String website, String industryname, String tradename)
 			throws InterruptedException {
 		js = (JavascriptExecutor) driver;
@@ -226,6 +242,12 @@ public class HomePage extends CommonFunctions {
 		driver.findElement(By.xpath("//ul/li//span[text()='" + industryname + "']")).click();
 		js.executeScript(
 				"var result = document.evaluate(\"(//span[text()='Move to Chosen'])[1]\", document.body, null, XPathResult.ANY_TYPE, null);     var input = result.iterateNext();input.scrollIntoView(); input.click();");
+		
+		
+	//	ipt_ShippingAddress.sendKeys("100 1st street NY, USA");
+		Thread.sleep(3000);
+	//	clk_ShippingAddress.click();
+		Thread.sleep(3000);
 		accountsavebtn.click();
 		waitForElementToAppear(By.xpath("//a[text()='Details']"), 30);
 	}
@@ -293,6 +315,7 @@ public class HomePage extends CommonFunctions {
 		javascriptClick(casesubtypebillingdispute);
 		javascriptClick(movetochosenbtn);
 		js.executeScript("arguments[0].click();", caseorigin);
+		Thread.sleep(2000);
 		expWaitToBeClickable(email);
 		email.click();
 		// scroll to Subject field
@@ -308,4 +331,16 @@ public class HomePage extends CommonFunctions {
 		Thread.sleep(0, 4000);
 	}
 
+	@FindBy(xpath="//a[text()='Log Out']")
+	WebElement logoutlink;
+	public void Logout() throws InterruptedException{
+		js = (JavascriptExecutor) driver;
+		Thread.sleep(0, 4000);
+		js.executeScript("var result = document.evaluate(\"//span[text()='View profile']/..//span[@class='uiImage']\", document.body, null, XPathResult.ANY_TYPE, null);     var input = result.iterateNext();input.scrollIntoView(); input.click();");
+		Thread.sleep(0, 2000);
+		logoutlink.click();
+		Thread.sleep(0, 4000);
+	}
+	
+	
 }
