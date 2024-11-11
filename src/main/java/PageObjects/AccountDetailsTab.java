@@ -105,7 +105,7 @@ public class AccountDetailsTab extends CommonFunctions {
 	@FindBy(xpath = "(//lightning-formatted-url//a)")
 	public WebElement get_website;
 
-	@FindBy(xpath = "//a//div[text()='New']")
+	@FindBy(xpath = "(//a//div[text()='New'])[last()]")
 	WebElement newaccountbtn;
 
 	@FindBy(xpath = "//button//span[text()='Next']")
@@ -117,7 +117,7 @@ public class AccountDetailsTab extends CommonFunctions {
 	@FindBy(xpath = "//*[text()='Trade Name']/..//input")
 	WebElement tradenametxtbox;
 
-	@FindBy(xpath = "	//button[text()='Save']")
+	@FindBy(xpath = "(//button[text()='Save'])[last()]")
 	WebElement accountsavebtn;
 
 	@FindBy(xpath = "//div[@role = 'dialog']//span[text() = 'Customer']")
@@ -143,6 +143,9 @@ public class AccountDetailsTab extends CommonFunctions {
 
 	@FindBy(xpath = "//div[contains(@class, 'active ')]//label[text() = 'Type']//parent::div//descendant::lightning-base-combobox-item//span[not(contains(@title,'--None--')) and @class = 'slds-truncate']")
 	List<WebElement> sel_dropdownAccTypeCnt;
+	
+	@FindBy(xpath = "//div[contains(@class, 'active ')]//label[text() = 'Preference Type']//parent::div//descendant::lightning-base-combobox-item//span[not(contains(@title,'--None--')) and @class = 'slds-truncate']")
+	List<WebElement> sel_dropdownPreferenceTypeCnt;
 
 	@FindBy(xpath = "//div[contains(@class, 'active ')]//span[text() = 'Log a Call']//parent::button")
 	WebElement clk_logACall;
@@ -462,9 +465,9 @@ public class AccountDetailsTab extends CommonFunctions {
 		expWaitToBeClickable(newaccountbtn);
 		newaccountbtn.click();
 		expWaitToBeClickable(ipt_serviceResource);
-		clickDrpDownAndSelValue(ipt_serviceResource, "Test Service Resource2");
+		clickDrpDownAndSelValue(ipt_serviceResource, serviceResource);
 		javascriptClick(clk_preferenceType);
-		int cnt2 = sel_dropdownAccTypeCnt.size();
+		int cnt2 = sel_dropdownPreferenceTypeCnt.size();
 		Assert.assertEquals(String.valueOf(cnt2), prefCnt.toString());
 
 		Thread.sleep(5000);
@@ -484,6 +487,7 @@ public class AccountDetailsTab extends CommonFunctions {
 		boolean flag = lst1.equals(lst2);
 		System.out.print(flag);
 		Assert.assertTrue(flag);
+		lst_PreferenceTypes.get(0).click();
 
 		Thread.sleep(1000);
 		accountsavebtn.click();
