@@ -105,8 +105,7 @@ public class HAC1478AssignPackageServiceAppointment extends CommonFunctions {
 	@When("HAC1478pkg select values on estimate flow step1")
 	public void HAC1478pkg_select_values_on_estimate_flow_step1() throws InterruptedException, IOException {
 		estimateCreationFlowStep1 = new EstimateCreationFlowStep1();
-		estimateCreationFlowStep1.estimateFlowStep1("USA Domestic Market Rate", "Packaging Estimate Matrix",
-				"CCW", "IO/Commissioning");
+		estimateCreationFlowStep1.estimateFlowStep1("USA Domestic Market Rate", "CCW", "IO/Commissioning");
 	}
 	
 	@When("HAC1478pkg select pkg tab")

@@ -34,11 +34,6 @@ public class AccountDetailsTab extends CommonFunctions {
 	boolean superregionpresent;
 	boolean saleschannelpresent;
 	JavascriptExecutor js = (JavascriptExecutor) driver;
-
-	public AccountDetailsTab() {
-		PageFactory.initElements(new AjaxElementLocatorFactory(driver, 10), this);
-	}
-
 	@FindBy(xpath = "//ul//li//a[text()='Details']")
 	public WebElement clk_details;
 
@@ -184,6 +179,12 @@ public class AccountDetailsTab extends CommonFunctions {
 	@FindBy(xpath="//span[text()='Shipping Address']")
 	WebElement label_shippingaddress;
 	boolean boolvalue;
+
+	public AccountDetailsTab() {
+		PageFactory.initElements(new AjaxElementLocatorFactory(driver, 10), this);
+	}
+
+	
 	
 	By Wait_toastMessage = By.xpath("//span[contains(@class,'toastMessage')]//a//div");
 	By Wait_stageChange = By

@@ -121,7 +121,7 @@ public class HAC1165CreateProcessingEstimatewithIOCommissioningTraining extends 
 	@When("HAC1165CT select values on estimate flow step1")
 	public void HAC1165CT_select_values_on_estimate_flow_step1() throws InterruptedException, IOException {
 		estimateCreationFlowStep1 = new EstimateCreationFlowStep1();
-		estimateCreationFlowStep1.estimateFlowStep1("CANADA Domestic MPA-PEPSICO (FRITOLAY)", "Processing Estimate Matrix",
+		estimateCreationFlowStep1.estimateFlowStep1("CANADA Domestic MPA-PEPSICO (FRITOLAY)", 
 				"IMP / MPO / Single Spiral Ovens / Taco Lines", "IO/Commissioning + Training");
 	}
 

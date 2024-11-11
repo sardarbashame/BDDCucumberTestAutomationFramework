@@ -32,7 +32,7 @@ import PageObjects.SelectApplication;
 import commonutilities.BaseTest;
 import commonutilities.CommonFunctions;
 
-public class HAC1165CreateProcessingEstimatewithIOCommissioningTrainingTesting extends CommonFunctions {
+public class HAC1021CreatePROCandSPRAYEstimateswithIOCommissioning extends CommonFunctions {
 	GlobalSearch globalSearch;
 	Login loginPO;
 	CaseDetailsTab caseDetailsTab;
@@ -53,53 +53,51 @@ public class HAC1165CreateProcessingEstimatewithIOCommissioningTrainingTesting e
 	boolean pboption7;
 	String numberoftech;
 
-	@Given("^HAC1165CTT user enters (.*) and (.*)$")
+	@Given("^HAC1165PICT user enters (.*) and (.*)$")
 	public void HAC145_user_enters_username_and_password(String userName, String password) throws IOException {
 		loginPO = new Login();
 		loginPO.goTo(ppty.getProperty("HAC_URL"));
 		loginPO.LoginApp(userName, password);
 	}
 
-	@When("HAC1165CTT select the applicaton")
-	public void HAC145_select_the_applicaton() throws InterruptedException, IOException {
+	@When("HAC1165PICT select the applicaton")
+	public void HAC1165PICT_select_the_application() throws InterruptedException, IOException {
 		selectApplication = new SelectApplication();
 		selectApplication.selectApp(ppty.getProperty("APPNAME"));
 	}
 
-	@When("HAC1165CTT close all the open tabs")
+	@When("HAC1165PICT close all the open tabs")
 	public void HAC145_close_all_the_open_tabs() throws InterruptedException {
 		closeAllTabs();
 	}
 
-	@When("HAC1165CTT close the bottom bar")
+	@When("HAC1165PICT close the bottom bar")
 	public void HAC387_close_the_bottom_bar() throws InterruptedException {
 		closeBottomeBar();
 	}
 
-	@When("HAC1165CTT click on cases tab")
-	public void HAC1165CTT_click_on_cases_tab() throws InterruptedException {
+	@When("HAC1165PICT click on cases tab")
+	public void HAC1165PICT_click_on_cases_tab() throws InterruptedException {
 		homePage = new HomePage();
 		homePage.clickCasesTab();
 	}
 
-	@When("HAC1165CTT create new case")
-	public void HAC1165CTT_create_new_case() throws InterruptedException, IOException  {
+	@When("HAC1165PICT create new case")
+	public void HAC1165PICT_create_new_case() throws InterruptedException, IOException {
 		homePage = new HomePage();
-		homePage.createNewCase(
-				getObjDetails().getProperty("CASECONTACT"),
-				getObjDetails().getProperty("CASEFIRSTNAME"),
-				getObjDetails().getProperty("CASESUB")
-				);
+		homePage.createNewCase(ppty.getProperty("CASECONTACT"), ppty.getProperty("CASEFIRSTNAME"),
+				ppty.getProperty("CASESUB"));
 
 	}
-	@When("HAC1165CTT user is on estimate tab")
-	public void HAC1165CTT_user_is_on_estimate_tab() throws InterruptedException, IOException {
+
+	@When("HAC1165PICT user is on estimate tab")
+	public void HAC1165PICT_user_is_on_estimate_tab() throws InterruptedException, IOException {
 		estimateCreationFlowStep1 = new EstimateCreationFlowStep1();
 		estimateCreationFlowStep1.clickEstimatesTab();
 	}
 
-	@When("HAC1165CTT verify the pricebook options")
-	public void HAC1165CTT_verify_the_pricebook_options() throws InterruptedException, IOException {
+	@When("HAC1165PICT verify the pricebook options")
+	public void HAC1165PICT_verify_the_pricebook_options() throws InterruptedException, IOException {
 		estimateCreationFlowStep1 = new EstimateCreationFlowStep1();
 		pboption1 = estimateCreationFlowStep1.verifyPriceBookOption1();
 		Assert.assertTrue(pboption1);
@@ -115,62 +113,80 @@ public class HAC1165CreateProcessingEstimatewithIOCommissioningTrainingTesting e
 		Assert.assertTrue(pboption6);
 		pboption7 = estimateCreationFlowStep1.verifyPriceBookOption7();
 		Assert.assertTrue(pboption7);
-		
+
 	}
 
-	@When("HAC1165CTT select values on estimate flow step1")
-	public void HAC1165CTT_select_values_on_estimate_flow_step1() throws InterruptedException, IOException {
+	@When("HAC1165PICT select processing and inspection values on estimate flow step1")
+	public void HAC1165PICT_select_processing_and_inspection_values_on_estimate_flow_step1() throws InterruptedException, IOException {
 		estimateCreationFlowStep1 = new EstimateCreationFlowStep1();
-		estimateCreationFlowStep1.estimateFlowStep1("USA Domestic Market Rate PRE-PAY / COD", "Dual Spiral Ovens", "IO/Commissioning + Training + Testing");
+		estimateCreationFlowStep1.PROCSPRAYEstimateFlowStep1("USA Domestic Market Rate", "BASIC Dual Spiral Ovens","SINGLE RDR", "IO/Commissioning");
 	}
 
-	@When("HAC1165CTT verify the field label number of tech")
-	public void HAC1165CTT_verify_the_field_label_number_of_tech() throws InterruptedException, IOException {
+	@When("HAC1165PICT verify the field label number of tech")
+	public void HAC1165PICT_verify_the_field_label_number_of_tech() throws InterruptedException, IOException {
 		estimateCreationFlowStep2 = new EstimateCreationFlowStep2();
 		numberoftechpresent = estimateCreationFlowStep2.isNumberOfTechPresent();
 		Assert.assertTrue(numberoftechpresent);
 	}
 
-	@When("HAC1165CTT verify the field value number of tech")
-	public void HAC1165CTT_verify_the_field_value_number_of_tech() throws InterruptedException, IOException {
+	@When("HAC1165PICT verify the field value number of tech")
+	public void HAC1165PICT_verify_the_field_value_number_of_tech() throws InterruptedException, IOException {
 		estimateCreationFlowStep2 = new EstimateCreationFlowStep2();
 		numberoftech = estimateCreationFlowStep2.NumberOfTech();
 		Assert.assertEquals(numberoftech,"2");
 	}
-	@When("HAC1165CTT verify the field label number of days")
-	public void HAC1165CTT_verify_the_field_label_number_of_days() throws InterruptedException, IOException {
+	@When("HAC1165PICT verify the field label number of days")
+	public void HAC1165PICT_verify_the_field_label_number_of_days() throws InterruptedException, IOException {
 		estimateCreationFlowStep2 = new EstimateCreationFlowStep2();
 		numberofdayspresent = estimateCreationFlowStep2.isNumberOfDaysPresent();
 		Assert.assertTrue(numberofdayspresent);
 	}
 
-	@When("HAC1165CTT verify the field label number of hours")
-	public void HAC1165CTT_verify_the_field_label_number_of_hours() throws InterruptedException, IOException {
+	@When("HAC1165PICT verify the field label number of hours")
+	public void HAC1165PICT_verify_the_field_label_number_of_hours() throws InterruptedException, IOException {
 		estimateCreationFlowStep2 = new EstimateCreationFlowStep2();
 		numberofhourspresent = estimateCreationFlowStep2.isNumberOfHrsPresent();
 		Assert.assertTrue(numberofhourspresent);
 	}
 
-	@When("HAC1165CTT select from date")
-	public void HAC1165CTT_seelct_from_date() throws InterruptedException, IOException {
+	@When("HAC1165PICT select from date")
+	public void HAC1165PICT_seelct_from_date() throws InterruptedException, IOException {
 		estimateCreationFlowStep2 = new EstimateCreationFlowStep2();
 		estimateCreationFlowStep2.selectFromDate();
 	}
 
-	@When("HAC1165CTT select to date")
-	public void HAC1165CTT_seelct_to_date() throws InterruptedException, IOException {
+	@When("HAC1165PICT select to date")
+	public void HAC1165PICT_seelct_to_date() throws InterruptedException, IOException {
 		estimateCreationFlowStep2 = new EstimateCreationFlowStep2();
 		estimateCreationFlowStep2.selectToDate();
 	}
+	
+	@Then("HAC1165PICT user click on SPRAY Tab")
+	public void HAC1165PICT_user_click_on_INSP_Tab() throws InterruptedException, IOException {
+		estimateCreationFlowStep1 = new EstimateCreationFlowStep1();
+		estimateCreationFlowStep1.clickSPRAYTab();
+	}
+	
+	@When("HAC1165PICT select from date for SPRAY")
+	public void HAC1165PICT_seelct_from_date_for_INSP() throws InterruptedException, IOException {
+		estimateCreationFlowStep2 = new EstimateCreationFlowStep2();
+		estimateCreationFlowStep2.selectFromDateINSP();
+	}
 
-	@When("HAC1165CTT select view confirmation")
-	public void HAC1165CTT_seelct_view_confirmation() throws InterruptedException, IOException {
+	@When("HAC1165PICT select to date for SPRAY")
+	public void HAC1165PICT_seelct_to_date_for_INSP() throws InterruptedException, IOException {
+		estimateCreationFlowStep2 = new EstimateCreationFlowStep2();
+		estimateCreationFlowStep2.selectToDateINSP();
+	}
+
+	@When("HAC1165PICT select view confirmation")
+	public void HAC1165PICT_seelct_view_confirmation() throws InterruptedException, IOException {
 		estimateCreationFlowStep3 = new EstimateCreationFlowStep3();
 		estimateCreationFlowStep3.clickViewConfirmation();
 	}
 
-	@Then("HAC1165CTT generate estimate pdf")
-	public void HAC1165CTT_generate_estimate_pdf() throws InterruptedException, IOException {
+	@Then("HAC1165PICT generate estimate pdf")
+	public void HAC1165PICT_generate_estimate_pdf() throws InterruptedException, IOException {
 		estimateCreationFlowStep3 = new EstimateCreationFlowStep3();
 		estimateCreationFlowStep3.clickCreatePDF();
 	}

@@ -61,22 +61,22 @@ public class HAC1165CreateProcessingEstimatewithIOCommissioning extends CommonFu
 	}
 
 	@When("HAC1165 select the applicaton")
-	public void HAC145_select_the_applicaton() throws InterruptedException, IOException {
+	public void HAC1165_select_the_application() throws InterruptedException, IOException {
 		selectApplication = new SelectApplication();
 		selectApplication.selectApp(ppty.getProperty("APPNAME"));
 	}
 
-	@When("close all the open tabs")
+	@When("HAC1165 close all the open tabs")
 	public void HAC145_close_all_the_open_tabs() throws InterruptedException {
 		closeAllTabs();
 	}
 
-	@When("close the bottom bar")
+	@When("HAC1165 close the bottom bar")
 	public void HAC387_close_the_bottom_bar() throws InterruptedException {
 		closeBottomeBar();
 	}
 
-	@When("click on cases tab")
+	@When("HAC1165 click on cases tab")
 	public void HAC1165_click_on_cases_tab() throws InterruptedException {
 		homePage = new HomePage();
 		homePage.clickCasesTab();
@@ -119,7 +119,7 @@ public class HAC1165CreateProcessingEstimatewithIOCommissioning extends CommonFu
 	@When("HAC1165 select values on estimate flow step1")
 	public void HAC1165_select_values_on_estimate_flow_step1() throws InterruptedException, IOException {
 		estimateCreationFlowStep1 = new EstimateCreationFlowStep1();
-		estimateCreationFlowStep1.estimateFlowStep1("USA Domestic Market Rate", "Processing Estimate Matrix",
+		estimateCreationFlowStep1.estimateFlowStep1("USA Domestic Market Rate",
 				"BASIC Dual Spiral Ovens", "IO/Commissioning");
 	}
 

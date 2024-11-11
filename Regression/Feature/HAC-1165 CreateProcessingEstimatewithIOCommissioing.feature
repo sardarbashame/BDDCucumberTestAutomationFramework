@@ -1,6 +1,6 @@
 Feature: Verify processing estimate creation
 
-  Scenario: Login as Service Scheduler and Verify the processing estimate creation
+  Scenario: Login as service scheduler and Verify the processing estimate creation
   
   Scenario Outline: Login as Service Scheduler and Verify the processing estimate creation
     Given HAC1165 user enters <username> and <password>

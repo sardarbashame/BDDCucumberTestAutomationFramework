@@ -93,6 +93,26 @@ public class EstimateCreationFlowStep2 extends CommonFunctions {
 		Thread.sleep(3000);
 	}
 	
+	public void selectFromDateINSP() throws InterruptedException {
+		Thread.sleep(0, 2000);
+		waitForElementToAppear(By.xpath("(//button[text()='View Confirmation'])[1]"), 30);
+		expWaitToBeClickable(ipt_fromDate);
+		ipt_fromDate.click();
+		expWaitToBeClickable(ipt_dateValueFrom);
+		ipt_dateValueFrom.click();
+		Thread.sleep(2000);
+	}
+	
+	public void selectToDateINSP() throws InterruptedException {
+		Thread.sleep(0, 2000);
+		waitForElementToAppear(By.xpath("(//button[text()='View Confirmation'])[1]"), 30);
+		expWaitToBeClickable(ipt_toDate);
+		ipt_toDate.click();
+		expWaitToBeClickable(ipt_dateValueTO);
+		ipt_dateValueTO.click();
+		Thread.sleep(3000);
+	}
+	
 	public void ClickRAWTab() throws InterruptedException {
 		Thread.sleep(3000);
 		expWaitToBeClickable(Tab_RAW);
