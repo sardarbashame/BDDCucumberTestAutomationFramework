@@ -9,6 +9,10 @@ import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Properties;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
@@ -28,15 +32,17 @@ public class CommonFunctions extends BaseTest {
 	public static JavascriptExecutor js;
 	public static Actions actions;
 	public static FileReader reader;
+	public static ClassLoader basedir;
+
 
 	public By waitForElementToAppear(By by, int timeOut) {
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(TimeOutValue));
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeOut));
 		wait.until(ExpectedConditions.visibilityOfElementLocated(by));
 		return by;
 	}
 
 	public By waitForElementToDisAppear(By webele, int timeOut) {
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(TimeOutValue));
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeOut));
 		wait.until(ExpectedConditions.invisibilityOfElementLocated(webele));
 		return webele;
 	}
@@ -196,5 +202,32 @@ public class CommonFunctions extends BaseTest {
 		WebElement clkEle = driver.findElement(By.xpath("(//*[@title = '"+value+"'])[last()]"));
 		drawHighlight(clkEle);
 		javascriptClick(clkEle);
+	}
+	public static void draganddrop(WebElement from, WebElement to) {
+		// action.clickAndHold(From).moveToElement(To).release().build().perform();
+		actions.dragAndDrop(from, to);
+		buildPerform();
+	}
+	public static void loadClassLoader() {
+		basedir = CommonFunctions.class.getClassLoader();
+	}
+	public static String getTargetFilePath(String filename) {
+		String path = basedir.getResource(filename).getPath();
+		if (System.getProperty("os.name").toLowerCase().contains("win")) {
+			path = path.indexOf("/") == 0 ? path.substring(1, path.length()) : path;
+		} else {
+		}
+		return path;
+	}
+	public static File getTargetFile(String filename) {
+		File retFile = new File(getTargetFilePath(filename));
+		return retFile;
+	}
+	public static void draganddropJscript(WebElement src, WebElement tgt) throws IOException {
+		String path = getTargetFilePath("dragAndDropNw.js");
+		Path fpath = Paths.get(path);
+		String script = new String(Files.readAllBytes(fpath), StandardCharsets.UTF_8);
+		script += "simulateHTML5DragAndDrop(arguments[0], arguments[1])";
+		js.executeScript(script, src, tgt);
 	}
 }
