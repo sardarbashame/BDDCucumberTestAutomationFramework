@@ -1,6 +1,5 @@
 Feature: create view edit transfer a case
-
-  
+ 
   Scenario Outline: Login as service technician and create a case
     Given HAC316 user enters <username> and <password>
     When HAC316 select the applicaton

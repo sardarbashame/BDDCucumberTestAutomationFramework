@@ -1,9 +1,6 @@
-Feature: Verify processing estimate creation
+Feature: Verify processing estimate creation in draft status
 
-  Scenario: Login as Service Scheduler and Verify the processing estimate creation
-
-  @regtest
-  Scenario Outline: Login as Service Scheduler and Verify the processing estimate creation
+   Scenario Outline: Login as service scheduler and verify the processing estimate creation in draft status
     Given HAC1166 user enters <username> and <password>
     When HAC1166 select the applicaton
     When HAC1166 close all the open tabs

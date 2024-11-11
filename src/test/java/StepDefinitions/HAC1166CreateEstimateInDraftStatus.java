@@ -172,9 +172,8 @@ public class HAC1166CreateEstimateInDraftStatus extends CommonFunctions {
 	
 	@Then("HAC1166 select quoteestimate related list")
 	public void HAC1166_select_quoteeestimate_relted_list() throws InterruptedException, IOException {
-		caserelatedlistquicklinks = new CaseRelatedListQuickLinks();
-		caserelatedlistquicklinks.ClickShowAllLink();
-		caserelatedlistquicklinks.ClickQuoteEstimateRelatedListLink();
+		estimateCreationFlowStep1 = new EstimateCreationFlowStep1();
+		estimateCreationFlowStep1.clickShowAllQuickLink();
 	}
 	
 	@Then("HAC1166 verify estimate is in draft status")
