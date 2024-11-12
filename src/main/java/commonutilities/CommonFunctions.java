@@ -9,6 +9,7 @@ import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Properties;
+import java.util.Set;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -229,5 +230,17 @@ public class CommonFunctions extends BaseTest {
 		String script = new String(Files.readAllBytes(fpath), StandardCharsets.UTF_8);
 		script += "simulateHTML5DragAndDrop(arguments[0], arguments[1])";
 		js.executeScript(script, src, tgt);
+	}
+	public static void switchToWindow() {
+		String parentHandle = driver.getWindowHandle();
+		Set<String> windowHandles = driver.getWindowHandles();
+		if (windowHandles.size() > 1)
+			driver.close();
+		for (String windowHandle : windowHandles) {
+			if (!(windowHandle.equals(parentHandle))) {
+				driver.switchTo().window(windowHandle);
+				break;
+			}
+		}
 	}
 }

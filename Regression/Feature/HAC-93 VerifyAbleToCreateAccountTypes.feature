@@ -1,7 +1,7 @@
 
 Feature: Verify account types
 
-  Scenario Outline: Verify able to create customer account type
+  Scenario Outline: HAC_93_Verify able to create customer account type
     Given Login as SERVICE SCH USER NAME
     When HAC145 select the applicaton
     When HAC145 close all the open tabs
@@ -14,7 +14,7 @@ Feature: Verify account types
       | AccType  | AccName          | TradeName | Industry   | DropDownValues          | AccTypesCnt |  
       | Customer | AutoTestCustomer | TestTrade | Automotive | Customer,Prospect,Other |           3 |  
 
-  Scenario Outline: Verify able to create supplier account type
+  Scenario Outline: HAC_93_Verify able to create supplier account type
     Given Login as SERVICE SCH USER NAME
     When HAC145 select the applicaton
     When HAC145 close all the open tabs

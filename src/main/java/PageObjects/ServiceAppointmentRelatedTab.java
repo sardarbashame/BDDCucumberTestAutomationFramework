@@ -46,5 +46,17 @@ public ServiceAppointmentRelatedTab() {
 		btn_save.click();
 	}
 	
+	public void c() throws InterruptedException {
+		expWaitToBeClickable(btn_new);
+		btn_new.click();
+		heading_newresource.click();
+		txt_serviceresource.click();
+		txt_serviceresourceinput.sendKeys("Test Service Resource1");
+		Thread.sleep(3000);
+		res_serviceresource.click();
+		Thread.sleep(3000);
+		btn_save.click();
+	}
+	
 
 }

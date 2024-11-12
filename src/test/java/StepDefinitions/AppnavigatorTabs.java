@@ -104,5 +104,34 @@ public class AppnavigatorTabs extends CommonFunctions {
 		appNavigatorObj = new AppnavigatorTabsPages();
 		appNavigatorObj.changeStatusToTravelCustomerLocation();
 	}
+	@Then("Click on TimeSheet Entries and verify all the lables under details tab")
+	public void clickOnTimeSheetEntriesAndVerifyLabels() throws Exception {
+		appNavigatorObj = new AppnavigatorTabsPages();
+		appNavigatorObj.clickOnTimesheetEntriesAndVerifyLables();
+	}
+
+	@Then("Verify TLI number column under All Quotes and Estimates filter")
+	public void verifyTLINumberColumnAndAllQuotes() throws Exception {
+		appNavigatorObj = new AppnavigatorTabsPages();
+		appNavigatorObj.verifyTLIColumniSDisplayed();
+	}
+
+	@When("Select any existing Service Appointment")
+	public void clickToOpenAnyexistingServiceAppointment() throws Exception {
+		appNavigatorObj = new AppnavigatorTabsPages();
+		appNavigatorObj.clkRecentServiceAppointment();
+	}
+
+	@When("Create New Expanses and save it")
+	public void createNewExpansesAndSaveIt() throws Exception {
+		appNavigatorObj = new AppnavigatorTabsPages();
+		appNavigatorObj.createNewExpansesAndSaveIt();
+	}
+
+	@Then("Open Created Exanses and verify work order number is displayed")
+	public void verifyWorkOrderNumber() throws Exception {
+		appNavigatorObj = new AppnavigatorTabsPages();
+		appNavigatorObj.verifyWorkOrderNumber();
+	}
 
 }

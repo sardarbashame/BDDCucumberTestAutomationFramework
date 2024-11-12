@@ -208,4 +208,9 @@ public class HAC1478AssignPackageServiceAppointment extends CommonFunctions {
 		serviceappointmentrelatedtab = new ServiceAppointmentRelatedTab();
 		serviceappointmentrelatedtab.AssignResource();
 	}
+	@When("Create New Service Appointment with {string}, {string}")
+	public void create_new_service_appointment_with(String string, String string2) throws Exception {
+		serviceappointmentrelatedtab = new ServiceAppointmentRelatedTab();
+		serviceappointmentrelatedtab.AssignResource();
+	}
 }
