@@ -1,4 +1,4 @@
-Feature: Verify timesheet entry logic on service appointments
+Feature: HAC-1355 Verify timesheet entry logic on service appointments
 @Test
   Scenario Outline: Login as service technician and verify the timesheet entries on service appointment
     Given HAC1355 login as service technician

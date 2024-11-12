@@ -1,7 +1,7 @@
 Feature: Verify HAC_1165_CreateINSP Estimate Matrix
 
 
-  
+  @Test
   Scenario Outline: Login as service user and HAC_1165_Create Spray Estimate Matrix  IO/comissioning+Training
     Given HAC1165 user enters <username> and <password>
     When HAC1165 select the applicaton

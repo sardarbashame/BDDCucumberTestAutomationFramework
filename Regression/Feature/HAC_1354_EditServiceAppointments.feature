@@ -1,5 +1,5 @@
 Feature: Edit service appointments
-
+@Test
   Scenario Outline: Login as service technician and edit the service appointments
     Given HAC1354 login as service technician
 	 	When HAC1354 select the field service applicaton

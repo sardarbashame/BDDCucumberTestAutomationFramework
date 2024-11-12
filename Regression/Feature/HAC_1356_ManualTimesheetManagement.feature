@@ -1,5 +1,5 @@
 Feature: HAC_1356 Manual Timesheet Management
-
+@Test
   Scenario: Login as service user and HAC_1356_Manual Timesheet Management
     Given Login as SERVICE SCH USER NAME
     When select the Field Service application
