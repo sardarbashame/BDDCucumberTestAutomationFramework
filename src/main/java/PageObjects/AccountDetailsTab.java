@@ -407,7 +407,9 @@ public class AccountDetailsTab extends CommonFunctions {
 		js.executeScript(
 				"var result = document.evaluate(\"(//span[text()='Move to Chosen'])[1]\", document.body, null, XPathResult.ANY_TYPE, null);     var input = result.iterateNext();input.scrollIntoView(); input.click();");
 		accountsavebtn.click();
-		elementToBePresent(Wait_stageChange, 30);
+		//elementToBePresent(Wait_stageChange, 30);
+		elementToBePresent(Wait_toastMessage, 30);
+		
 	}
 
 	public void validateNewAccountCreatedInDetailsAndAccType(String accType, String accCnt)

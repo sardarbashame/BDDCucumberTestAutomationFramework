@@ -27,6 +27,9 @@ public class EstimateCreationFlowStep1 extends CommonFunctions {
 	@FindBy(xpath="//*[text()='Processing Estimate Matrix']/../..//button")
 	WebElement dropdownclick_processingestimatematrix;
 	
+	@FindBy(xpath="//*[text()='RAW Estimate Matrix']/../..//button")
+	WebElement dropdownclick_rawestimatematrix;
+	
 	@FindBy(xpath="//*[text()='Packaging Estimate Matrix']/../..//button")
 	WebElement dropdownclick_packagingstimatematrix;
 	
@@ -129,6 +132,24 @@ public class EstimateCreationFlowStep1 extends CommonFunctions {
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("//span[text()='" + pricebook + "']")).click();
 		dropdownclick_processingestimatematrix.click();
+		driver.findElement(By.xpath("//span[text()='" + estimatematrixoption + "']")).click();
+		expWaitToBeClickable(clk_estimateItems);
+		clk_estimateItems.click();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//span[text()='" + estimateitem + "']")).click();
+		Thread.sleep(3000);
+		btn_next.click();
+		Thread.sleep(0, 4000);
+	}
+	
+	public void RAWestimateFlowStep1(String pricebook, String estimatematrixoption,
+			String estimateitem) throws InterruptedException {
+		js = (JavascriptExecutor) driver;
+		expWaitToBeClickable(clk_priceBook);
+		clk_priceBook.click();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//span[text()='" + pricebook + "']")).click();
+		dropdownclick_rawestimatematrix.click();
 		driver.findElement(By.xpath("//span[text()='" + estimatematrixoption + "']")).click();
 		expWaitToBeClickable(clk_estimateItems);
 		clk_estimateItems.click();

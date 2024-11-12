@@ -22,7 +22,7 @@ public class HAC1124VerifyContactListViews extends CommonFunctions {
 	Login loginPO;
 	SelectApplication selectApplication;
 
-	@Given("HAC1124 Login as service user")
+	@Given("HAC1124 login as service user")
 	public void hac1124_login_as_service_user() throws IOException {
 		loginPO = new Login();
 		loginPO.goTo(ppty.getProperty("HAC_URL"));

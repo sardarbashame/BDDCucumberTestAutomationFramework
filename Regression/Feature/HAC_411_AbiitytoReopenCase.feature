@@ -1,6 +1,5 @@
 Feature: HAC_411_Verify the abiity to reopen the case
 
-  @Test
   Scenario Outline: Login as Service Users and Verify the ability t reopen the case
     Given HAC411 user enters <username> and <password>
     When HAC411 select the applicaton

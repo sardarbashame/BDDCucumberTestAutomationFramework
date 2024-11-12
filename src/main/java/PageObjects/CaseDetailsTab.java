@@ -58,8 +58,12 @@ public class CaseDetailsTab extends CommonFunctions {
 	
 	@FindBy(xpath = "//span[text()='Show more actions']")
 	WebElement quickactions_showmoreactions;
+	
 	@FindBy(xpath = "//span[text()='Close the Case']")
 	WebElement btn_closecase;
+	
+	@FindBy(xpath = "//button[text()='Add Asset']")
+	WebElement btn_addasset;
 	
 	@FindBy(xpath = "//span[text()='Case Reason']/../..//a")
 	WebElement clk_caseclosereason;
@@ -86,6 +90,23 @@ public class CaseDetailsTab extends CommonFunctions {
 	
 	@FindBy(xpath = "//a[text()='Training Needed']")
 	WebElement clk_casereason_trainingneeded;
+	
+	@FindBy(xpath="//button[@aria-label='Type']")
+	WebElement casetype;
+	@FindBy(xpath="//span[@title='Billing']")
+	WebElement casetypebilling;
+	@FindBy(xpath="//span[@title='Billing Dispute']")
+	WebElement casesubtypebillingdispute;
+	@FindBy(xpath="//span[@title='Credit Application']")
+	WebElement casesubtypecreditapplication;
+	@FindBy(xpath="//span[@title='Request for Backup Support']")
+	WebElement casesubtyperequestforbackupsupport;
+	@FindBy(xpath="//span[@title='Request for Invoice']")
+	WebElement casesubtyperequestforinvoice;
+	@FindBy(xpath="//span[@title='Other']")
+	WebElement casesubtypeother;
+	@FindBy(xpath="//a//div[text()='New']")
+	WebElement newcasebtn;
 
 	
 	@FindBy(xpath = "//span[text()='Case Resolution']/../..//textarea")
@@ -93,6 +114,129 @@ public class CaseDetailsTab extends CommonFunctions {
 	
 	@FindBy(xpath = "(//span[text()='Save'])[last()]")
 	WebElement btn_caseclosesave;
+	
+	@FindBy(xpath="//span[@title='Scheduling']")
+	WebElement casetypescheduling;
+	
+	@FindBy(xpath="//span[@title='Assessment']")
+	WebElement casesubtypeassesment;
+	
+	@FindBy(xpath="//span[@title='Calibration']")
+	WebElement casesubtypecalibration;
+	
+	@FindBy(xpath="//span[@title='Courtesy Visit']")
+	WebElement casesubtypecourtestyvisit;
+	
+	@FindBy(xpath="//span[@title='Demo / Customer Testing']")
+	WebElement casesubtypedempcustomertesting;
+	
+	@FindBy(xpath="//span[@title='Estimate for Visit']")
+	WebElement casesubtypeestimateforvisit;
+	
+	@FindBy(xpath="//span[@title='In-House Checkout']")
+	WebElement casesubtypeinhousecheckout;
+	
+	@FindBy(xpath="//span[@title='Preventative Maintenance']")
+	WebElement casesubtypepreventativemaintenance;
+	
+	@FindBy(xpath="//span[@title='Repair']")
+	WebElement casesubtyperepair;
+	
+	@FindBy(xpath="//span[@title='Trade Show']")
+	WebElement casesubtypetradeshow;
+	
+	@FindBy(xpath="//span[@title='Feedback']")
+	WebElement casetypefeedback;
+	
+	@FindBy(xpath="//span[@title='Customer Service']")
+	WebElement casesubtypecustomerservice;
+	
+	@FindBy(xpath="//span[@title='Equipment']")
+	WebElement casesubtypeequipment;
+	
+	@FindBy(xpath="//span[@title='Feature Requests']")
+	WebElement casesubtypefeaturerequests;
+	
+	@FindBy(xpath="//span[@title='New Equipment']")
+	WebElement casesubtypenewequipment;
+	
+	@FindBy(xpath="//span[@title='Other']")
+	WebElement casesubtypeother2;
+	
+	@FindBy(xpath="//span[@title='General']")
+	WebElement casetypegeneral;
+	
+	@FindBy(xpath="//span[@title='Parts']")
+	WebElement casetypeparts;
+	
+	@FindBy(xpath="//span[@title='Order Status']")
+	WebElement casesubtypeorderstatus;
+	
+	@FindBy(xpath="//span[@title='Parts Manual']")
+	WebElement casesubtypepartsmanual;
+	
+	@FindBy(xpath="//span[@title='Quotes and Orders']")
+	WebElement casesubtypequotesandorders;
+	
+	@FindBy(xpath="//span[@title='Recommended Parts List']")
+	WebElement casesubtyperecomdedpartslist;
+	
+	@FindBy(xpath="//span[@title='Other']")
+	WebElement casesubtypeother3;
+	
+	@FindBy(xpath="//span[@title='New Project Scheduling']")
+	WebElement casetypenewprojscheduling;
+	
+	@FindBy(xpath="//span[@title='C&I']")
+	WebElement casesubtypecandi;
+	
+	@FindBy(xpath="//span[@title='Commissioning']")
+	WebElement casesubtypecommissioning;
+	
+	@FindBy(xpath="//span[@title='Controls']")
+	WebElement casesubtypecontrols;
+	
+	@FindBy(xpath="//span[@title='Courtesy Visit']")
+	WebElement casesubtypecourtesyvisit;
+	
+	@FindBy(xpath="//span[@title='Demo / Customer Testing']")
+	WebElement casesubtypedemocustomertesting;
+	
+	@FindBy(xpath="//span[@title='FAT']")
+	WebElement casesubtypefat;
+		
+	@FindBy(xpath="//span[@title='Junk/Spam']")
+	WebElement casetypejunkspam;
+	
+	@FindBy(xpath="//span[@title='Emergency']")
+	WebElement casetypeemergency;
+	
+	@FindBy(xpath="//span[@title='Fire']")
+	WebElement casesubtypefire;
+	
+	@FindBy(xpath="//span[@title='Injury']")
+	WebElement casesubtypeinjury;
+	
+	@FindBy(xpath="//span[@title='Safety Issue']")
+	WebElement casesubtypesafetyissue;
+	
+	@FindBy(xpath="//span[@title='Equipment']")
+	WebElement casetypeequipment;
+	
+	@FindBy(xpath="//span[@title='Information']")
+	WebElement casesubtypeinformation;
+	
+	@FindBy(xpath="//span[@title='Safety Issue']")
+	WebElement casesubtypesafetyissue1;
+	
+	@FindBy(xpath="//span[@title='Troubleshooting']")
+	WebElement casesubtypetroubleshooting;
+	
+	@FindBy(xpath="//span[@title='Other']")
+	WebElement casesubtypeother1;
+	
+	@FindBy(xpath="//span[@title='Sales']")
+	WebElement casetypesales;
 
 
 	public CaseDetailsTab() {
@@ -143,8 +287,7 @@ public class CaseDetailsTab extends CommonFunctions {
 		clk_SaveEdit.click();
 		driver.findElement(By.xpath("//button[@name='SaveEdit']")).click();
 	}
-	
-	
+
 	public boolean isAccountNamePresent() throws InterruptedException {
 		boolvalue = label_accountname.isDisplayed();
 		return boolvalue;
@@ -170,6 +313,36 @@ public class CaseDetailsTab extends CommonFunctions {
 		relatedlistlnk_workorders.isDisplayed();
 		Thread.sleep(1000);
 	
+	}
+	
+	public void ClickAddAssetQuickAction() throws InterruptedException {
+	//	expWaitToBeClickable(quickactions_showmoreactions);
+		Thread.sleep(2000);
+		//js.executeScript("var result = document.evaluate(\"//span[text()='Show more actions']\", document.body, null, XPathResult.ANY_TYPE, null);     var input = result.iterateNext();input.scrollIntoView(); input.click();");
+		Thread.sleep(2000);
+		btn_addasset.click();
+		Thread.sleep(2000);
+	
+	}
+	
+	@FindBy(xpath="//*[text()='Select Item 1']")
+	WebElement checkbox_asset1;
+	
+	@FindBy(xpath="//button[text()='Add Assets']")
+	WebElement btn_addassets;
+	
+	@FindBy(xpath="//h2[text()='Add Asset']")
+	WebElement heading_addasset;
+	
+	public void AddSingleAsset() throws InterruptedException {
+		expWaitToBeClickable(heading_addasset);
+		Thread.sleep(4000);
+		heading_addasset.click();
+		Thread.sleep(4000);
+		checkbox_asset1.click();
+		Thread.sleep(2000);
+		btn_addassets.click();
+		Thread.sleep(2000);
 	}
 	
 	public void ClickCloseCaseQuickAction() throws InterruptedException {
@@ -201,24 +374,7 @@ public class CaseDetailsTab extends CommonFunctions {
 		clk_casereason_schedulingreqd.isDisplayed();
 		clk_casereason_trainingneeded.isDisplayed();
 	}
-	
-	@FindBy(xpath="//button[@aria-label='Type']")
-	WebElement casetype;
-	@FindBy(xpath="//span[@title='Billing']")
-	WebElement casetypebilling;
-	@FindBy(xpath="//span[@title='Billing Dispute']")
-	WebElement casesubtypebillingdispute;
-	@FindBy(xpath="//span[@title='Credit Application']")
-	WebElement casesubtypecreditapplication;
-	@FindBy(xpath="//span[@title='Request for Backup Support']")
-	WebElement casesubtyperequestforbackupsupport;
-	@FindBy(xpath="//span[@title='Request for Invoice']")
-	WebElement casesubtyperequestforinvoice;
-	@FindBy(xpath="//span[@title='Other']")
-	WebElement casesubtypeother;
-	@FindBy(xpath="//a//div[text()='New']")
-	WebElement newcasebtn;
-	
+
 	public void VerifyCaseSubTypesForBillingType() throws InterruptedException {
 		waitForElementToAppear(By.xpath("//a//div[text()='New']"), 30);
 		newcasebtn.click();
@@ -235,17 +391,7 @@ public class CaseDetailsTab extends CommonFunctions {
 		casesubtyperequestforinvoice.isDisplayed();
 		casesubtypeother.isDisplayed();
 	}
-	@FindBy(xpath="//span[@title='Emergency']")
-	WebElement casetypeemergency;
 	
-	@FindBy(xpath="//span[@title='Fire']")
-	WebElement casesubtypefire;
-	
-	@FindBy(xpath="//span[@title='Injury']")
-	WebElement casesubtypeinjury;
-	
-	@FindBy(xpath="//span[@title='Safety Issue']")
-	WebElement casesubtypesafetyissue;
 	
 	public void VerifyCaseSubTypesForEmergencyType() throws InterruptedException {
 		Thread.sleep(4000);
@@ -258,22 +404,6 @@ public class CaseDetailsTab extends CommonFunctions {
 		casesubtypesafetyissue.isDisplayed();
 	}
 	
-	
-	@FindBy(xpath="//span[@title='Equipment']")
-	WebElement casetypeequipment;
-	
-	@FindBy(xpath="//span[@title='Information']")
-	WebElement casesubtypeinformation;
-	
-	@FindBy(xpath="//span[@title='Safety Issue']")
-	WebElement casesubtypesafetyissue1;
-	
-	@FindBy(xpath="//span[@title='Troubleshooting']")
-	WebElement casesubtypetroubleshooting;
-	
-	@FindBy(xpath="//span[@title='Other']")
-	WebElement casesubtypeother1;
-	
 	public void VerifyCaseSubTypesForEquipementType() throws InterruptedException {
 		Thread.sleep(2000);
 		casetype.click();
@@ -285,26 +415,6 @@ public class CaseDetailsTab extends CommonFunctions {
 		casesubtypetroubleshooting.isDisplayed();
 		casesubtypeother1.isDisplayed();
 	}
-	
-	
-	@FindBy(xpath="//span[@title='Feedback']")
-	WebElement casetypefeedback;
-	
-	@FindBy(xpath="//span[@title='Customer Service']")
-	WebElement casesubtypecustomerservice;
-	
-	@FindBy(xpath="//span[@title='Equipment']")
-	WebElement casesubtypeequipment;
-	
-	@FindBy(xpath="//span[@title='Feature Requests']")
-	WebElement casesubtypefeaturerequests;
-	
-	@FindBy(xpath="//span[@title='New Equipment']")
-	WebElement casesubtypenewequipment;
-	
-	@FindBy(xpath="//span[@title='Other']")
-	WebElement casesubtypeother2;
-	
 	public void VerifyCaseSubTypesForFeedbackType() throws InterruptedException {
 		Thread.sleep(2000);
 		casetype.click();
@@ -317,11 +427,6 @@ public class CaseDetailsTab extends CommonFunctions {
 		casesubtypenewequipment.isDisplayed();
 		casesubtypeother2.isDisplayed();
 	}
-	
-	@FindBy(xpath="//span[@title='General']")
-	WebElement casetypegeneral;
-	
-
 	public void VerifyCaseSubTypesForGeneralType() throws InterruptedException {
 		Thread.sleep(2000);
 		casetype.click();
@@ -330,10 +435,6 @@ public class CaseDetailsTab extends CommonFunctions {
 		Thread.sleep(2000);
 	}
 	
-	@FindBy(xpath="//span[@title='Junk/Spam']")
-	WebElement casetypejunkspam;
-	
-
 	public void VerifyCaseSubTypesForJunkSpamType() throws InterruptedException {
 		Thread.sleep(2000);
 		casetype.click();
@@ -341,28 +442,7 @@ public class CaseDetailsTab extends CommonFunctions {
 		casetypejunkspam.click();
 		Thread.sleep(2000);
 	}
-	
-	@FindBy(xpath="//span[@title='New Project Scheduling']")
-	WebElement casetypenewprojscheduling;
-	
-	@FindBy(xpath="//span[@title='C&I']")
-	WebElement casesubtypecandi;
-	
-	@FindBy(xpath="//span[@title='Commissioning']")
-	WebElement casesubtypecommissioning;
-	
-	@FindBy(xpath="//span[@title='Controls']")
-	WebElement casesubtypecontrols;
-	
-	@FindBy(xpath="//span[@title='Courtesy Visit']")
-	WebElement casesubtypecourtesyvisit;
-	
-	@FindBy(xpath="//span[@title='Demo / Customer Testing']")
-	WebElement casesubtypedemocustomertesting;
-	
-	@FindBy(xpath="//span[@title='FAT']")
-	WebElement casesubtypefat;
-	
+
 	public void VerifyCaseSubTypesForNewProjectSchedulingType() throws InterruptedException {
 		Thread.sleep(2000);
 		casetype.click();
@@ -376,26 +456,6 @@ public class CaseDetailsTab extends CommonFunctions {
 		casesubtypedemocustomertesting.isDisplayed();
 		casesubtypefat.isDisplayed();
 	}
-	
-	@FindBy(xpath="//span[@title='Parts']")
-	WebElement casetypeparts;
-	
-	@FindBy(xpath="//span[@title='Order Status']")
-	WebElement casesubtypeorderstatus;
-	
-	@FindBy(xpath="//span[@title='Parts Manual']")
-	WebElement casesubtypepartsmanual;
-	
-	@FindBy(xpath="//span[@title='Quotes and Orders']")
-	WebElement casesubtypequotesandorders;
-	
-	@FindBy(xpath="//span[@title='Recommended Parts List']")
-	WebElement casesubtyperecomdedpartslist;
-	
-	@FindBy(xpath="//span[@title='Other']")
-	WebElement casesubtypeother3;
-	
-
 	public void VerifyCaseSubTypesForPartsType() throws InterruptedException {
 		Thread.sleep(2000);
 		casetype.click();
@@ -409,8 +469,7 @@ public class CaseDetailsTab extends CommonFunctions {
 		casesubtyperecomdedpartslist.isDisplayed();
 		casesubtypeother3.isDisplayed();
 	}
-	@FindBy(xpath="//span[@title='Sales']")
-	WebElement casetypesales;
+
 	public void VerifyCaseSubTypesForSalesType() throws InterruptedException {
 		Thread.sleep(2000);
 	//	casetype.click();
@@ -418,37 +477,6 @@ public class CaseDetailsTab extends CommonFunctions {
 		Thread.sleep(3000);;
 	}
 	
-	
-	@FindBy(xpath="//span[@title='Scheduling']")
-	WebElement casetypescheduling;
-	
-	@FindBy(xpath="//span[@title='Assessment']")
-	WebElement casesubtypeassesment;
-	
-	@FindBy(xpath="//span[@title='Calibration']")
-	WebElement casesubtypecalibration;
-	
-	@FindBy(xpath="//span[@title='Courtesy Visit']")
-	WebElement casesubtypecourtestyvisit;
-	
-	@FindBy(xpath="//span[@title='Demo / Customer Testing']")
-	WebElement casesubtypedempcustomertesting;
-	
-	@FindBy(xpath="//span[@title='Estimate for Visit']")
-	WebElement casesubtypeestimateforvisit;
-	
-	@FindBy(xpath="//span[@title='In-House Checkout']")
-	WebElement casesubtypeinhousecheckout;
-	
-	@FindBy(xpath="//span[@title='Preventative Maintenance']")
-	WebElement casesubtypepreventativemaintenance;
-	
-	@FindBy(xpath="//span[@title='Repair']")
-	WebElement casesubtyperepair;
-	
-	@FindBy(xpath="//span[@title='Trade Show']")
-	WebElement casesubtypetradeshow;
-
 	public void VerifyCaseSubTypesForSchedulingType() throws InterruptedException {
 		Thread.sleep(2000);
 		casetype.click();
