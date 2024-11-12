@@ -32,7 +32,7 @@ import PageObjects.SelectApplication;
 import commonutilities.BaseTest;
 import commonutilities.CommonFunctions;
 
-public class HAC1165CreateProcessingEstimatewithIOCommissioning extends CommonFunctions {
+public class HAC1165CreatePROCEstimatewithIOCommissioning extends CommonFunctions {
 	GlobalSearch globalSearch;
 	Login loginPO;
 	CaseDetailsTab caseDetailsTab;

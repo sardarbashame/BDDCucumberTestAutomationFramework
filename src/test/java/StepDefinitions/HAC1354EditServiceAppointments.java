@@ -56,7 +56,7 @@ public class HAC1354EditServiceAppointments extends CommonFunctions {
 	boolean numberofhourspresent;
 	boolean pboption1;
 
-	@Given("HAC1354 login as service technician")
+	@When("HAC1354 login as service technician")
 	public void HAC1354_login_as_service_technician() throws InterruptedException, IOException {
 		loginPO = new Login();
 		loginPO.goTo(ppty.getProperty("HAC_URL"));
@@ -90,7 +90,7 @@ public class HAC1354EditServiceAppointments extends CommonFunctions {
 	@Then("HAC1354 select a service appointment")
 	public void HAC1354_select_a_service_appointment() throws InterruptedException, IOException {
 		serviceappointments = new ServiceAppointmentDetailsTab();
-		serviceappointments.SelectServiceAppointment();
+		serviceappointments.SelectServiceAppointmentFromListView();
 	}
 	
 	@Then("HAC1354 verify service appointment statuses")

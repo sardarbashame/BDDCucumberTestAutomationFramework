@@ -92,7 +92,7 @@ public class HAC1355TimeEntryLogic extends CommonFunctions {
 	@Then("HAC1355 select a service appointment")
 	public void HAC1355_select_a_service_appointment() throws InterruptedException, IOException {
 		serviceappointments = new ServiceAppointmentDetailsTab();
-		serviceappointments.SelectServiceAppointment();
+		serviceappointments.SelectServiceAppointmentFromListView();
 	}
 	
 	@Then("HAC1355 update the service appointment status to In Progress")

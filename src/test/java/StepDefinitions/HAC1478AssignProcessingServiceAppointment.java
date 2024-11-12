@@ -220,7 +220,7 @@ public class HAC1478AssignProcessingServiceAppointment extends CommonFunctions {
 		serviceappointments = new ServiceAppointmentDetailsTab();
 		serviceappointments.ClickDetailsTab();
 		serviceappointments.UpdateSAStatus("Dispatched");
-		serviceappointments.ClickSaveButton();
+	//	serviceappointments.ClickSaveButton();
 	}
 	
 	@Then("HAC1478 logout as service scheduler")

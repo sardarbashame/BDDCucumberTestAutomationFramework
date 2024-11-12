@@ -139,6 +139,24 @@ public class EstimateCreationFlowStep1 extends CommonFunctions {
 		Thread.sleep(0, 4000);
 	}
 	
+	public void PKGEstimateFlowStep1(String pricebook, String estimatematrixoption,
+			String estimateitem) throws InterruptedException {
+		js = (JavascriptExecutor) driver;
+		expWaitToBeClickable(clk_priceBook);
+		clk_priceBook.click();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//span[text()='" + pricebook + "']")).click();
+		dropdownclick_packagingstimatematrix.click();
+		driver.findElement(By.xpath("//span[text()='" + estimatematrixoption + "']")).click();
+		expWaitToBeClickable(clk_estimateItems);
+		clk_estimateItems.click();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//span[text()='" + estimateitem + "']")).click();
+		Thread.sleep(3000);
+		btn_next.click();
+		Thread.sleep(0, 4000);
+	}
+	
 	public void PROCINSPEstimateFlowStep1(String pricebook, String processingestimatematrixoption, String inspectionestimatematrixoption,
 			String estimateitem) throws InterruptedException {
 		js = (JavascriptExecutor) driver;

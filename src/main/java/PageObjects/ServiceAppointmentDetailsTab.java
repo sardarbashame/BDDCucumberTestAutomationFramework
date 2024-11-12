@@ -11,8 +11,11 @@ import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 import commonutilities.CommonFunctions;
 
 public class ServiceAppointmentDetailsTab extends CommonFunctions {
-	@FindBy(xpath = "(//a[contains(text(),'SA')])[1]")
+	@FindBy(xpath = "(//slot[contains(text(),'SA')])[1]")
 	WebElement lnk_SA;
+	
+	@FindBy(xpath = "(//a[contains(text(),'SA')])[1]")
+	WebElement lnk_SA1;
 	
 	@FindBy(xpath = "(//a[text()='Details'])")
 	WebElement tab_details;
@@ -104,6 +107,15 @@ public class ServiceAppointmentDetailsTab extends CommonFunctions {
 		Thread.sleep(5000);
 		expWaitToBeClickable(tab_details);
 		}
+	
+	public void SelectServiceAppointmentFromListView() throws InterruptedException {
+		Thread.sleep(2000);
+		expWaitToBeClickable(lnk_SA1);
+		js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", lnk_SA1);
+		Thread.sleep(5000);
+		expWaitToBeClickable(tab_details);
+		}
 
 	public void UpdateSAScheduleStartDate() throws InterruptedException {
 		js.executeScript("window.scrollTo(0,750)");
@@ -125,12 +137,13 @@ public class ServiceAppointmentDetailsTab extends CommonFunctions {
 		expWaitToBeClickable(clk_scheduleenddate);
 		Thread.sleep(2000);
 		clk_scheduleenddate.click();
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		select_scheduleenddate.click();
+		Thread.sleep(2000);
 		}
 
 	public void ClickSaveButton() throws InterruptedException {
-		Thread.sleep(2000);
+		Thread.sleep(4000);
 		btn_save.click();
 		Thread.sleep(4000);
 		js.executeScript("window.scrollTo(0,0)");
@@ -157,9 +170,9 @@ public class ServiceAppointmentDetailsTab extends CommonFunctions {
 		clk_sastatus.click();
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//span[@title='"+newstatus+"']")).click();
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		btn_save.click();
-		Thread.sleep(2000);
+		Thread.sleep(4000);
 		}
 
 	public void VerifyServiceAppointmentStatusus() throws InterruptedException {

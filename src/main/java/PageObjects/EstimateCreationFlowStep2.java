@@ -149,6 +149,7 @@ public class EstimateCreationFlowStep2 extends CommonFunctions {
 	public String NumberOfTech() throws InterruptedException {
 		Thread.sleep(4000);
 		numberoftech = value_noOfTech.getText();
+		System.out.println(numberoftech);
 		return numberoftech;
 	}
 
