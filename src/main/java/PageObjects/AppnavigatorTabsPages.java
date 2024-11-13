@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -43,43 +44,46 @@ public class AppnavigatorTabsPages extends CommonFunctions {
 	List<WebElement> lst_recentServiceAppointment;
 
 	@FindBy(xpath = "//span[text() = 'Service Resources']//parent::a")
-	public WebElement clk_ServiceResourcestab;
+	WebElement clk_ServiceResourcestab;
 
 	@FindBy(xpath = "(//table[@aria-label= 'Recently Viewed'])[last()]//th//a[@title]")
 	List<WebElement> lst_recentServiceResource;
 
 	@FindBy(xpath = "(//span[text() = 'Service Territories']//following-sibling::span//parent::a)")
-	public WebElement txt_serviceTerritoriesListView;
+	WebElement txt_serviceTerritoriesListView;
 
 	@FindBy(xpath = "//span[text() = 'Field Service']//parent::a")
-	public WebElement clk_FieldServicetab;
+	WebElement clk_FieldServicetab;
 
 	@FindBy(xpath = "(//div[@class= 'SingleTask DraggableSingleTask']//div[@title= 'None'])[1]")
-	public WebElement DraggableSingleTask;
+	WebElement DraggableSingleTask;
 
+	@FindBy(xpath = "//input[@id = 'TaskSearchFilterInput']")
+	WebElement ipt_searchServiceApment;
+	
 	@FindBy(xpath = "(//div[@class= 'SingleTask DraggableSingleTask']//input)[1]")
-	public WebElement clk_DraggableSingleTask;
+	WebElement clk_DraggableSingleTask;
 
 	@FindBy(xpath = "(//div[@class= 'dhx_marked_timespan gray_section'])[3]")
-	public WebElement dropGantt;
-
+	WebElement dropGantt;
+	
 	@FindBy(xpath = "//a[text() = 'Timesheet & Expenses']")
-	public WebElement clk_timeSheetAndExpenses;
+	WebElement clk_timeSheetAndExpenses;
 
 	@FindBy(xpath = "(//table)[last()]//th//a[contains(text(), 'TSE')]")
-	public WebElement clk_TSEEntries;
+	WebElement clk_TSEEntries;
 
 	@FindBy(xpath = "//span[text() = 'Timesheet Entries']//parent::button")
-	public WebElement txt_timeSheetEntriesView;
+	WebElement txt_timeSheetEntriesView;
 
 	@FindBy(xpath = "//span[text() = 'Status']//parent::div//parent::dt//parent::div[contains(@class, 'edit')]//following-sibling::dd//lightning-formatted-text")
-	public WebElement txt_timeSheetEntriesStatus;
+	WebElement txt_timeSheetEntriesStatus;
 
 	@FindBy(xpath = "//span[text() = 'Status']//parent::div//parent::dt//parent::div[contains(@class, 'edit')]//following-sibling::dd//button")
-	public WebElement edit_StatusTimesheet;
+	WebElement edit_StatusTimesheet;
 
 	@FindBy(xpath = "//label[text() = 'Status']//parent::div//following-sibling::div//button")
-	public WebElement clk_timesheetStatusDropDown;
+	WebElement clk_timesheetStatusDropDown;
 
 	@FindBy(xpath = "(//button[text()='Save'])[last()]")
 	WebElement btn_save;
@@ -186,7 +190,7 @@ public class AppnavigatorTabsPages extends CommonFunctions {
 	@FindBy(xpath = "//slot[text() = 'Expense created successfully']")
 	WebElement msg_expenseCreated;
 
-	@FindBy(xpath = "((//table)[last()]//th//a[contains(text(), 'EXP-')])[1]")
+	@FindBy(xpath = "(//span[text() = 'Expenses']//ancestor::article//a[contains(text(), 'EXP-')])[1]")
 	WebElement clk_expenseListView;
 
 	@FindBy(xpath = "//span[text() = 'Work Order']")
@@ -293,16 +297,16 @@ public class AppnavigatorTabsPages extends CommonFunctions {
 
 	public void selectAppointmentAndDragAndDrop() throws Exception {
 		waitForElementToAppear(fieldServiceTabAppear, 30);
-		Thread.sleep(4000);
+		Thread.sleep(5000);
 		WebElement iframe = driver.findElement(By.xpath("//iframe[@title='Field Service']"));
-
-		// Switch to the frame
 		driver.switchTo().frame(iframe);
-		// drawHighlight(iframe);
 		JavascriptExecutor executor = (JavascriptExecutor) driver;
-		executor.executeScript("document.body.style.zoom = '0.75'");
-		javascriptClick(clk_DraggableSingleTask);
-		draganddrop(DraggableSingleTask, dropGantt);
+		executor.executeScript("document.body.style.zoom = '0.55'");
+		drawHighlight(ipt_searchServiceApment);	
+		javascriptClick(ipt_searchServiceApment);
+		ipt_searchServiceApment.sendKeys(ServiceAppointmentRelatedTab.ServiceAppmentName);
+		ipt_searchServiceApment.sendKeys(Keys.ENTER);
+		draganddropJscript(DraggableSingleTask, dropGantt);
 		waitForElementToDisAppear(wait_disapperLoading, 30);
 		Thread.sleep(4000);
 	}
@@ -334,7 +338,7 @@ public class AppnavigatorTabsPages extends CommonFunctions {
 		Thread.sleep(4000);
 		String str = txt_timeSheetEntriesStatus.getText();
 		if (!(str.equals("Travel - Customer Location"))) {
-			edit_StatusTimesheet.click();
+			javascriptClick(edit_StatusTimesheet);
 			expWaitToBeClickable(clk_timesheetStatusDropDown);
 			clk_timesheetStatusDropDown.click();
 			driver.findElement(By.xpath("//span[text()='Travel - Customer Location']")).click();
@@ -395,9 +399,11 @@ public class AppnavigatorTabsPages extends CommonFunctions {
 		javascriptClick(sel_todayDate);
 		ipt_amountValue.sendKeys("200");
 		btn_next.click();
+		Thread.sleep(2000);
 		btn_save.click();
 		waitForElementToAppear(waitExpenseCreatedmsg, 30);
 		Assert.assertTrue(msg_expenseCreated.isDisplayed());
+		Thread.sleep(2000);		
 	}
 
 	public void verifyWorkOrderNumber() throws Exception {

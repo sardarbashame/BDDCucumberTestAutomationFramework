@@ -26,33 +26,45 @@ public class ServiceAppointmentDetailsTab extends CommonFunctions {
 	@FindBy(xpath="//span[text()='Edit Scheduled Start']")
 	WebElement clk_editschedulestartdate;
 	
-	@FindBy(xpath="//input[@name='SchedStartTime']")
+
+	@FindBy(xpath="//label[text() = 'Date']//following-sibling::div//input[@name='SchedStartTime']")
 	WebElement clk_schedulestartdate;
 	
 	@FindBy(xpath="//td[@data-value='2024-11-15']")
 	WebElement select_schedulestartdate;
 	
-	@FindBy(xpath="//span[text()='Edit Scheduled End']")
+
+	@FindBy(xpath="//ul//li//span[@title='Service Appointments']")
+	WebElement lnk_serviceAppointment;
+		
+	@FindBy(xpath="//label[text() = 'Date']//following-sibling::div//input[@name='SchedEndTime']")
 	WebElement clk_editscheduleenddate;
 	
 	@FindBy(xpath="//input[@name='SchedEndTime']")
+
 	WebElement clk_scheduleenddate;
 	
 	@FindBy(xpath="//td[@data-value='2024-11-16']")
 	WebElement select_scheduleenddate;
-		
+
 	@FindBy(xpath="//button[text()='Save']")
 	WebElement btn_save;
 	
 	@FindBy(xpath="//button[text()='Cancel']")
 	WebElement btn_cancel;
 		
+
 	@FindBy(xpath="//label[text()='Status']//..//button")
 	WebElement clk_sastatus;
 	
 	@FindBy(xpath="//span[@title='Dispatched']")
 	WebElement select_dispatchedoption;
 	
+
+	@FindBy(xpath = "//button[text() = 'Today']")
+	WebElement clk_today;
+	
+
 	@FindBy(xpath = "//button[@title='Select a List View: Service Appointments']")
 	WebElement btn_serviceappointmentlistview;
 	
@@ -99,6 +111,7 @@ public class ServiceAppointmentDetailsTab extends CommonFunctions {
 		PageFactory.initElements(new AjaxElementLocatorFactory(driver, 10), this);
 	}
 
+
 	public void SelectServiceAppointment() throws InterruptedException {
 		Thread.sleep(2000);
 		expWaitToBeClickable(lnk_SA);
@@ -108,6 +121,12 @@ public class ServiceAppointmentDetailsTab extends CommonFunctions {
 		expWaitToBeClickable(tab_details);
 		}
 	
+
+	public void lnkserviceAppointment() throws InterruptedException {
+		expWaitToBeClickable(lnk_serviceAppointment);
+		javascriptClick(lnk_serviceAppointment);
+	}
+
 	public void SelectServiceAppointmentFromListView() throws InterruptedException {
 		Thread.sleep(2000);
 		expWaitToBeClickable(lnk_SA1);
@@ -118,29 +137,36 @@ public class ServiceAppointmentDetailsTab extends CommonFunctions {
 		}
 
 	public void UpdateSAScheduleStartDate() throws InterruptedException {
-		js.executeScript("window.scrollTo(0,750)");
+		JavascriptExecutor executor = (JavascriptExecutor) driver;
+		//executor.executeScript("document.body.style.zoom = '0.75'");
+		executor.executeScript("window.scrollTo(0,750)");
 		Thread.sleep(3000);
-	//	clk_editschedulestartdate.click();
-		js.executeScript("var result = document.evaluate(\"//button[@title='Edit Scheduled Start']\", document.body, null, XPathResult.ANY_TYPE, null);     var input = result.iterateNext();input.scrollIntoView(); input.click();");
+		executor.executeScript(
+				"var result = document.evaluate(\"//button[@title='Edit Scheduled Start']\", document.body, null, XPathResult.ANY_TYPE, null);     var input = result.iterateNext();input.scrollIntoView(); input.click();");
 		Thread.sleep(2000);
 		expWaitToBeClickable(clk_schedulestartdate);
 		Thread.sleep(2000);
-		clk_schedulestartdate.click();
+		expWaitToBeClickable(clk_schedulestartdate);
+		javascriptClick(clk_schedulestartdate);
 		Thread.sleep(2000);
-		select_schedulestartdate.click();
+		scrollIntoView(clk_today);
+		javascriptClick(clk_today);
 		Thread.sleep(2000);
-	//	expWaitToBeClickable(tab_details);
-		}
+	}
 
 	public void UpdateSAScheduleEndDate() throws InterruptedException {
+		JavascriptExecutor executor = (JavascriptExecutor) driver;
+		//executor.executeScript("document.body.style.zoom = '0.75'");
 		Thread.sleep(2000);
 		expWaitToBeClickable(clk_scheduleenddate);
 		Thread.sleep(2000);
-		clk_scheduleenddate.click();
-		Thread.sleep(3000);
-		select_scheduleenddate.click();
+		javascriptClick(clk_scheduleenddate);
 		Thread.sleep(2000);
-		}
+		executor.executeScript("document.body.style.zoom = '0.85'");
+		scrollIntoView(clk_today);
+		javascriptClick(clk_today);
+		Thread.sleep(2000);
+	}
 
 	public void ClickSaveButton() throws InterruptedException {
 		Thread.sleep(4000);
@@ -175,6 +201,7 @@ public class ServiceAppointmentDetailsTab extends CommonFunctions {
 		Thread.sleep(4000);
 		}
 
+
 	public void VerifyServiceAppointmentStatusus() throws InterruptedException {
 		Thread.sleep(2000);
 	//	expWaitToBeClickable(clk_sastatus);
@@ -204,6 +231,7 @@ public class ServiceAppointmentDetailsTab extends CommonFunctions {
 		btn_cancel.click();
 		Thread.sleep(2000);
 		}
+
 	public void ClickRelatedTab() throws InterruptedException {
 		Thread.sleep(2000);
 		expWaitToBeClickable(tab_related);

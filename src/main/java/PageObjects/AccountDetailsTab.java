@@ -181,6 +181,10 @@ public class AccountDetailsTab extends CommonFunctions {
 	
 	@FindBy(xpath="//span[text()='Shipping Address']")
 	WebElement label_shippingaddress;
+	
+	@FindBy(xpath="//button[contains(@class, 'toastClose')]")
+	WebElement clk_closeToasterMsg;
+	
 	boolean boolvalue;
 
 	public AccountDetailsTab() {
@@ -407,8 +411,10 @@ public class AccountDetailsTab extends CommonFunctions {
 		js.executeScript(
 				"var result = document.evaluate(\"(//span[text()='Move to Chosen'])[1]\", document.body, null, XPathResult.ANY_TYPE, null);     var input = result.iterateNext();input.scrollIntoView(); input.click();");
 		accountsavebtn.click();
-		//elementToBePresent(Wait_stageChange, 30);
+        Thread.sleep(1000);
+		drawHighlight(clk_closeToasterMsg);
 		elementToBePresent(Wait_toastMessage, 30);
+		clk_closeToasterMsg.click();	
 		
 	}
 
@@ -438,7 +444,10 @@ public class AccountDetailsTab extends CommonFunctions {
 		javascriptClick(clk_logACall);
 		ipt_commentsTextBox.sendKeys("Test Comments for Test Automation Log Call");
 		btn_saveTask.click();
-		waitForElementToDisAppear(Wait_toastMessage, 5);
+		Thread.sleep(1000);
+		drawHighlight(clk_closeToasterMsg);
+		elementToBePresent(Wait_toastMessage, 30);
+		clk_closeToasterMsg.click();
 		Thread.sleep(1000);
 	}
 
@@ -447,9 +456,11 @@ public class AccountDetailsTab extends CommonFunctions {
 		javascriptClick(clk_newTask);
 		clickDrpDownAndSelValue(ipt_subjectTask, "Call");
 		btn_saveTask.click();
-		elementToBePresent(Wait_toastMessage, 30);
-		waitForElementToDisAppear(Wait_toastMessage, 5);
 		Thread.sleep(1000);
+		drawHighlight(clk_closeToasterMsg);
+		elementToBePresent(Wait_toastMessage, 30);
+		clk_closeToasterMsg.click();
+		Thread.sleep(2000);
 	}
 
 	public void createdNewEvent() throws Exception {
@@ -458,8 +469,11 @@ public class AccountDetailsTab extends CommonFunctions {
 		clickDrpDownAndSelValue(ipt_subjectTask, "Call");
 		ipt_commentsTextBox.sendKeys("Test Comments for Test Automation Event");
 		btn_saveTask.click();
-		waitForElementToDisAppear(Wait_toastMessage, 5);
 		Thread.sleep(1000);
+		drawHighlight(clk_closeToasterMsg);
+		elementToBePresent(Wait_toastMessage, 30);
+		clk_closeToasterMsg.click();
+		Thread.sleep(2000);
 	}
 	
 	public void clickOnResourceReference(String serviceResource, String values, String prefCnt) throws Exception {
