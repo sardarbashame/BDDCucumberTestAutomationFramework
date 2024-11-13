@@ -70,7 +70,7 @@ public class HAC622VerifyTradeName extends CommonFunctions {
 	public void HAC622_verify_trade_name() throws InterruptedException, IOException {
 		accountDetailsTab = new AccountDetailsTab();
 		tradename = accountDetailsTab.getTradeName();
-		Assert.assertEquals(tradename, "Trade Name - Test Customer Account11");
+		Assert.assertEquals(tradename, "HACTradeName");
 
 	}
 

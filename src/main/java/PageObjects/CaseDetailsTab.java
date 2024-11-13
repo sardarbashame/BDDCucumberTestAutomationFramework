@@ -72,6 +72,9 @@ public class CaseDetailsTab extends CommonFunctions {
 	@FindBy(xpath = "//span[text()='Close the Case']")
 	WebElement btn_closecase;
 	
+	@FindBy(xpath = "//button[text()='Add Asset']")
+	WebElement btn_addasset;
+	
 	@FindBy(xpath = "//span[text()='Case Reason']/../..//a")
 	WebElement clk_caseclosereason;
 	
@@ -98,14 +101,15 @@ public class CaseDetailsTab extends CommonFunctions {
 	
 	@FindBy(xpath = "//a[text()='Training Needed']")
 	WebElement clk_casereason_trainingneeded;
-
+	
 	
 	@FindBy(xpath = "//span[text()='Case Resolution']/../..//textarea")
 	WebElement ipt_caseresolution;
 	
 	@FindBy(xpath = "(//span[text()='Save'])[last()]")
 	WebElement btn_caseclosesave;
-
+	
+	
 	@FindBy(xpath="//button[@aria-label='Type']")
 	WebElement casetype;
 	
@@ -265,6 +269,9 @@ public class CaseDetailsTab extends CommonFunctions {
 	@FindBy(xpath="(//strong[text() = 'Case Assets']//ancestor::runtime_omnistudio_flexcards-flex-card-state//runtime_omnistudio_common-output-field//span[contains(@title, 'Ass')])[last()]")
 	WebElement txt_AssetNameInListView;
 	
+	@FindBy(xpath="//span[@title='General']")
+	WebElement casetypegeneral;
+	
 	public CaseDetailsTab() {
 		PageFactory.initElements(new AjaxElementLocatorFactory(driver, 10), this);
 	}
@@ -313,8 +320,7 @@ public class CaseDetailsTab extends CommonFunctions {
 		clk_SaveEdit.click();
 		driver.findElement(By.xpath("//button[@name='SaveEdit']")).click();
 	}
-	
-	
+
 	public boolean isAccountNamePresent() throws InterruptedException {
 		boolvalue = label_accountname.isDisplayed();
 		return boolvalue;
@@ -340,6 +346,36 @@ public class CaseDetailsTab extends CommonFunctions {
 		relatedlistlnk_workorders.isDisplayed();
 		Thread.sleep(1000);
 	
+	}
+	
+	public void ClickAddAssetQuickAction() throws InterruptedException {
+	//	expWaitToBeClickable(quickactions_showmoreactions);
+		Thread.sleep(2000);
+		//js.executeScript("var result = document.evaluate(\"//span[text()='Show more actions']\", document.body, null, XPathResult.ANY_TYPE, null);     var input = result.iterateNext();input.scrollIntoView(); input.click();");
+		Thread.sleep(2000);
+		btn_addasset.click();
+		Thread.sleep(2000);
+	
+	}
+	
+	@FindBy(xpath="//*[text()='Select Item 1']")
+	WebElement checkbox_asset1;
+	
+	@FindBy(xpath="//button[text()='Add Assets']")
+	WebElement btn_addassets;
+	
+	@FindBy(xpath="//h2[text()='Add Asset']")
+	WebElement heading_addasset;
+	
+	public void AddSingleAsset() throws InterruptedException {
+		expWaitToBeClickable(heading_addasset);
+		Thread.sleep(4000);
+		heading_addasset.click();
+		Thread.sleep(4000);
+		checkbox_asset1.click();
+		Thread.sleep(2000);
+		btn_addassets.click();
+		Thread.sleep(2000);
 	}
 	
 	public void ClickCloseCaseQuickAction() throws InterruptedException {
@@ -371,9 +407,8 @@ public class CaseDetailsTab extends CommonFunctions {
 		clk_casereason_schedulingreqd.isDisplayed();
 		clk_casereason_trainingneeded.isDisplayed();
 	}
-	
-	
-	
+
+
 	public void VerifyCaseSubTypesForBillingType() throws InterruptedException {
 		waitForElementToAppear(By.xpath("//a//div[text()='New']"), 30);
 		newcasebtn.click();
@@ -404,7 +439,6 @@ public class CaseDetailsTab extends CommonFunctions {
 	}
 	
 
-	
 	public void VerifyCaseSubTypesForEquipementType() throws InterruptedException {
 		Thread.sleep(2000);
 		casetype.click();
@@ -416,10 +450,7 @@ public class CaseDetailsTab extends CommonFunctions {
 		casesubtypetroubleshooting.isDisplayed();
 		casesubtypeother1.isDisplayed();
 	}
-	
-	
-	
-	
+
 	public void VerifyCaseSubTypesForFeedbackType() throws InterruptedException {
 		Thread.sleep(2000);
 		casetype.click();
@@ -432,11 +463,6 @@ public class CaseDetailsTab extends CommonFunctions {
 		casesubtypenewequipment.isDisplayed();
 		casesubtypeother2.isDisplayed();
 	}
-	
-	@FindBy(xpath="//span[@title='General']")
-	WebElement casetypegeneral;
-	
-
 	public void VerifyCaseSubTypesForGeneralType() throws InterruptedException {
 		Thread.sleep(2000);
 		casetype.click();
@@ -446,8 +472,6 @@ public class CaseDetailsTab extends CommonFunctions {
 	}
 	
 
-	
-
 	public void VerifyCaseSubTypesForJunkSpamType() throws InterruptedException {
 		Thread.sleep(2000);
 		casetype.click();
@@ -455,8 +479,8 @@ public class CaseDetailsTab extends CommonFunctions {
 		casetypejunkspam.click();
 		Thread.sleep(2000);
 	}
-	
-	
+
+
 	public void VerifyCaseSubTypesForNewProjectSchedulingType() throws InterruptedException {
 		Thread.sleep(2000);
 		casetype.click();
@@ -470,7 +494,7 @@ public class CaseDetailsTab extends CommonFunctions {
 		casesubtypedemocustomertesting.isDisplayed();
 		casesubtypefat.isDisplayed();
 	}
-		
+
 	public void VerifyCaseSubTypesForPartsType() throws InterruptedException {
 		Thread.sleep(2000);
 		casetype.click();
@@ -491,6 +515,7 @@ public class CaseDetailsTab extends CommonFunctions {
 		js.executeScript("var result = document.evaluate(\"//span[@title='Sales']\", document.body, null, XPathResult.ANY_TYPE, null);     var input = result.iterateNext();input.scrollIntoView(); input.click();");
 		Thread.sleep(3000);;
 	}
+
 	public void VerifyCaseSubTypesForSchedulingType() throws InterruptedException {
 		Thread.sleep(2000);
 		casetype.click();

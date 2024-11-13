@@ -13,13 +13,6 @@ import org.testng.Assert;
 import commonutilities.CommonFunctions;
 
 public class OrderPages extends CommonFunctions {
-
-	
-
-	public OrderPages() {
-		PageFactory.initElements(new AjaxElementLocatorFactory(driver, 10), this);
-	}
-
 	@FindBy(xpath = "//span[text() = 'Orders']//parent::a")
 	public WebElement clk_ordertab;
 
@@ -40,9 +33,11 @@ public class OrderPages extends CommonFunctions {
 	
 	By orderTabAppear = By.xpath("//span[text() = 'Orders']//parent::a");
 	By inquiriesTabAppear = By.xpath("//span[text() = 'Recently Viewed | Inquiries']//parent::a");
-
-
 	
+	public OrderPages() {
+		PageFactory.initElements(new AjaxElementLocatorFactory(driver, 10), this);
+	}
+
 	public void clkordersTab() throws InterruptedException {
 		waitForElementToAppear(orderTabAppear, 30);
 		javascriptClick(clk_ordertab);

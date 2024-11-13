@@ -121,8 +121,7 @@ public class HAC1165CreateRAWEstimatewithIOCommissioning extends CommonFunctions
 	@When("HAC1165RC select values on estimate flow step1")
 	public void HAC1165RC_select_values_on_estimate_flow_step1() throws InterruptedException, IOException {
 		estimateCreationFlowStep1 = new EstimateCreationFlowStep1();
-		estimateCreationFlowStep1.estimateFlowStep1("USA Domestic MPA-PEPSICO (FritoLay)", "RAW Estimate Matrix",
-				"BDC / BI-DIRECTIONAL CONVEYOR", "IO/Commissioning");
+		estimateCreationFlowStep1.RAWestimateFlowStep1("USA Domestic MPA-PEPSICO (FritoLay)", "BDC / BI-DIRECTIONAL CONVEYOR", "IO/Commissioning");
 	}
 
 	@When("HAC1165RC verify the field label number of tech")

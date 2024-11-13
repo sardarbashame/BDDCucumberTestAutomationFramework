@@ -29,7 +29,18 @@ public class EstimateCreationFlowStep3 extends CommonFunctions {
 
 	@FindBy(xpath = "(//button[text()='Save'])[2]")
 	WebElement btn_save;
-
+	 
+	@FindBy(xpath = "//div[contains(text(), '.docx')]")
+	WebElement text_docx;
+	
+	@FindBy(xpath = "//*[text()='Download PDF']")
+	WebElement btn_downloadpdf;
+	
+	@FindBy(xpath = "//span[text()='Navigate To Case Record']")
+	WebElement btn_navigatetocaserecord;
+	
+	@FindBy(xpath = "//a[text()='Details']")
+	WebElement tab_casedetails;
 	
 	
 	public void clickViewConfirmation() throws InterruptedException {
@@ -40,10 +51,6 @@ public class EstimateCreationFlowStep3 extends CommonFunctions {
 		waitforelementtoappear = waitForElementToAppear(By.xpath("(//button[text()='Create PDF'])[1]"), 30);
 	}
 
-	
-	@FindBy(xpath = "//*[text()='Download PDF']")
-	WebElement btn_downloadpdf;
-	
 	public void clickCreatePDF() throws InterruptedException {
 		expWaitToBeClickable(btn_createPDF);
 		btn_createPDF.click();
@@ -59,13 +66,6 @@ public class EstimateCreationFlowStep3 extends CommonFunctions {
 	}
 	
 
-	
-	@FindBy(xpath = "//span[text()='Navigate To Case Record']")
-	WebElement btn_navigatetocaserecord;
-	
-	@FindBy(xpath = "//a[text()='Details']")
-	WebElement tab_casedetails;
-	
 	public void NavigateToCaseRecordButton() throws InterruptedException {
 		js.executeScript("window.scrollTo(0,5000)");
 		Thread.sleep(2000);
@@ -74,10 +74,6 @@ public class EstimateCreationFlowStep3 extends CommonFunctions {
 		tab_casedetails.isEnabled();
 		
 	}
-	
-	 
-	@FindBy(xpath = "//div[contains(text(), '.docx')]")
-	WebElement text_docx;
 	
 	public void VerifyEstimateDocumentVersions() throws InterruptedException {
 		Thread.sleep(5000);

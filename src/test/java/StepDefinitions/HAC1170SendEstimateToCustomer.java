@@ -120,8 +120,7 @@ public class HAC1170SendEstimateToCustomer extends CommonFunctions {
 	@When("HAC1170 select values on estimate flow step1")
 	public void HAC1170_select_values_on_estimate_flow_step1() throws InterruptedException, IOException {
 		estimateCreationFlowStep1 = new EstimateCreationFlowStep1();
-		estimateCreationFlowStep1.estimateFlowStep1("USA Domestic Market Rate", "Processing Estimate Matrix",
-				"BASIC Dual Spiral Ovens", "IO/Commissioning");
+		estimateCreationFlowStep1.estimateFlowStep1("USA Domestic Market Rate", "BASIC Dual Spiral Ovens", "IO/Commissioning");
 	}
 
 	@When("HAC1170 verify the field label number of tech")

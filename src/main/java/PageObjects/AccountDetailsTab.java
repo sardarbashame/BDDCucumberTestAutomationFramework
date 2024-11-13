@@ -34,11 +34,6 @@ public class AccountDetailsTab extends CommonFunctions {
 	boolean superregionpresent;
 	boolean saleschannelpresent;
 	JavascriptExecutor js = (JavascriptExecutor) driver;
-
-	public AccountDetailsTab() {
-		PageFactory.initElements(new AjaxElementLocatorFactory(driver, 10), this);
-	}
-
 	@FindBy(xpath = "//ul//li//a[text()='Details']")
 	public WebElement clk_details;
 
@@ -191,6 +186,12 @@ public class AccountDetailsTab extends CommonFunctions {
 	WebElement clk_closeToasterMsg;
 	
 	boolean boolvalue;
+
+	public AccountDetailsTab() {
+		PageFactory.initElements(new AjaxElementLocatorFactory(driver, 10), this);
+	}
+
+	
 	
 	By Wait_toastMessage = By.xpath("//span[contains(@class,'toastMessage')]//a//div");
 	By Wait_stageChange = By
@@ -410,10 +411,11 @@ public class AccountDetailsTab extends CommonFunctions {
 		js.executeScript(
 				"var result = document.evaluate(\"(//span[text()='Move to Chosen'])[1]\", document.body, null, XPathResult.ANY_TYPE, null);     var input = result.iterateNext();input.scrollIntoView(); input.click();");
 		accountsavebtn.click();
-		Thread.sleep(1000);
-		elementToBePresent(Wait_stageChange, 30);
+        Thread.sleep(1000);
 		drawHighlight(clk_closeToasterMsg);
-		clk_closeToasterMsg.click();
+		elementToBePresent(Wait_toastMessage, 30);
+		clk_closeToasterMsg.click();	
+		
 	}
 
 	public void validateNewAccountCreatedInDetailsAndAccType(String accType, String accCnt)

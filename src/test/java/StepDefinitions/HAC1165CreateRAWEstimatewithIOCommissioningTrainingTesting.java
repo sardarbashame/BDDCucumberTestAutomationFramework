@@ -121,8 +121,7 @@ public class HAC1165CreateRAWEstimatewithIOCommissioningTrainingTesting extends 
 	@When("HAC1165RCTT select values on estimate flow step1")
 	public void HAC1165RCTT_select_values_on_estimate_flow_step1() throws InterruptedException, IOException {
 		estimateCreationFlowStep1 = new EstimateCreationFlowStep1();
-		estimateCreationFlowStep1.estimateFlowStep1("CANADA Domestic MPA-PEPSICO (FRITOLAY)", "RAW Estimate Matrix",
-				"10 PSB BIN STORAGE SYSTEM", "IO/Commissioning + Training + Testing");
+		estimateCreationFlowStep1.estimateFlowStep1("CANADA Domestic MPA-PEPSICO (FRITOLAY)", "10 PSB BIN STORAGE SYSTEM", "IO/Commissioning + Training + Testing");
 	}
 
 	@When("HAC1165RCTT verify the field label number of tech")

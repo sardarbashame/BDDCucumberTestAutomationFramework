@@ -31,7 +31,7 @@ import PageObjects.HomePage;
 import PageObjects.Login;
 import PageObjects.SelectApplication;
 import PageObjects.ServiceAppointmentRelatedTab;
-import PageObjects.ServiceAppointments;
+import PageObjects.ServiceAppointmentDetailsTab;
 import PageObjects.WorkOrder;
 import PageObjects.WorkOrderRelatedListQuickLinks;
 import commonutilities.BaseTest;
@@ -47,7 +47,7 @@ public class HAC1478AssignProcessingServiceAppointment extends CommonFunctions {
 	EstimateCreationFlowStep3 estimateCreationFlowStep3;
 	CaseRelatedListQuickLinks caseRelatedListQuickLinks;
 	WorkOrderRelatedListQuickLinks workOrderrelatedlist;
-	ServiceAppointments serviceappointments;
+	ServiceAppointmentDetailsTab serviceappointments;
 	ServiceAppointmentRelatedTab serviceappointmentrelatedtab;
 	WorkOrder workOrder;
 	HomePage homePage;
@@ -105,8 +105,7 @@ public class HAC1478AssignProcessingServiceAppointment extends CommonFunctions {
 	@When("HAC1478 select values on estimate flow step1")
 	public void HAC1478_select_values_on_estimate_flow_step1() throws InterruptedException, IOException {
 		estimateCreationFlowStep1 = new EstimateCreationFlowStep1();
-		estimateCreationFlowStep1.estimateFlowStep1("USA Domestic Market Rate", "Processing Estimate Matrix",
-				"BASIC Dual Spiral Ovens", "IO/Commissioning");
+		estimateCreationFlowStep1.estimateFlowStep1("USA Domestic Market Rate", "BASIC Dual Spiral Ovens", "IO/Commissioning");
 	}
 
 	@When("HAC1478 verify the field label number of tech")
@@ -187,26 +186,26 @@ public class HAC1478AssignProcessingServiceAppointment extends CommonFunctions {
 
 	@Then("HAC1478 select a service appointment")
 	public void HAC1478_select_a_service_appointment() throws InterruptedException, IOException {
-		serviceappointments = new ServiceAppointments();
+		serviceappointments = new ServiceAppointmentDetailsTab();
 		serviceappointments.SelectServiceAppointment();
 	}
 	
 	@Then("HAC1478 select a schedule start date")
 	public void HAC1478_select_a_schedule_start_date() throws InterruptedException, IOException {
-		serviceappointments = new ServiceAppointments();
+		serviceappointments = new ServiceAppointmentDetailsTab();
 		serviceappointments.UpdateSAScheduleStartDate();
 	}
 	
 	@Then("HAC1478 select a schedule end date")
 	public void HAC1478_select_a_schedule_end_date() throws InterruptedException, IOException {
-		serviceappointments = new ServiceAppointments();
+		serviceappointments = new ServiceAppointmentDetailsTab();
 		serviceappointments.UpdateSAScheduleEndDate();
 		serviceappointments.ClickSaveButton();
 	}
 	
 	@Then("HAC1478 click related tab")
 	public void HAC1478_click_related_tab() throws InterruptedException, IOException {
-		serviceappointments = new ServiceAppointments();
+		serviceappointments = new ServiceAppointmentDetailsTab();
 		serviceappointments.ClickRelatedTab();
 		Thread.sleep(5000);
 	}
@@ -219,10 +218,10 @@ public class HAC1478AssignProcessingServiceAppointment extends CommonFunctions {
 	
 	@Then("HAC1478 update sa status to dispatched")
 	public void HAC1478_update_sa_satus_to_dispatched() throws InterruptedException, IOException {
-		serviceappointments = new ServiceAppointments();
+		serviceappointments = new ServiceAppointmentDetailsTab();
 		serviceappointments.ClickDetailsTab();
-		serviceappointments.UpdateSAStatus();
-		serviceappointments.ClickSaveButton();
+		serviceappointments.UpdateSAStatus("Dispatched");
+	//	serviceappointments.ClickSaveButton();
 	}
 	
 	@Then("HAC1478 logout as service scheduler")
@@ -252,7 +251,7 @@ public class HAC1478AssignProcessingServiceAppointment extends CommonFunctions {
 	
 	@Then("HAC1478 select all service appointments listview")
 	public void HAC1478_select_all_service_appointments_listview() throws InterruptedException, IOException {
-		serviceappointments = new ServiceAppointments();
+		serviceappointments = new ServiceAppointmentDetailsTab();
 		serviceappointments.clickServiceAppointmentListViewButton();
 		serviceappointments.clickAllServiceAppointmentsListView();
 		
@@ -261,7 +260,7 @@ public class HAC1478AssignProcessingServiceAppointment extends CommonFunctions {
 	
 	@Then("HAC1478 select dispatched service appointment")
 	public void HAC1478_select_dispatched_service_appointment() throws InterruptedException, IOException {
-		serviceappointments = new ServiceAppointments();
+		serviceappointments = new ServiceAppointmentDetailsTab();
 		serviceappointments.SelectDispatchedServiceAppointment();;
 		
 		

@@ -31,7 +31,7 @@ import PageObjects.HomePage;
 import PageObjects.Login;
 import PageObjects.SelectApplication;
 import PageObjects.ServiceAppointmentRelatedTab;
-import PageObjects.ServiceAppointments;
+import PageObjects.ServiceAppointmentDetailsTab;
 import PageObjects.WorkOrder;
 import PageObjects.WorkOrderRelatedListQuickLinks;
 import commonutilities.BaseTest;
@@ -47,7 +47,7 @@ public class HAC1478AssignPackageServiceAppointment extends CommonFunctions {
 	EstimateCreationFlowStep3 estimateCreationFlowStep3;
 	CaseRelatedListQuickLinks caseRelatedListQuickLinks;
 	WorkOrderRelatedListQuickLinks workOrderrelatedlist;
-	ServiceAppointments serviceappointments;
+	ServiceAppointmentDetailsTab serviceappointments;
 	ServiceAppointmentRelatedTab serviceappointmentrelatedtab;
 	WorkOrder workOrder;
 	HomePage homePage;
@@ -105,8 +105,7 @@ public class HAC1478AssignPackageServiceAppointment extends CommonFunctions {
 	@When("HAC1478pkg select values on estimate flow step1")
 	public void HAC1478pkg_select_values_on_estimate_flow_step1() throws InterruptedException, IOException {
 		estimateCreationFlowStep1 = new EstimateCreationFlowStep1();
-		estimateCreationFlowStep1.estimateFlowStep1("USA Domestic Market Rate", "Packaging Estimate Matrix",
-				"CCW", "IO/Commissioning");
+		estimateCreationFlowStep1.estimateFlowStep1("USA Domestic Market Rate", "CCW", "IO/Commissioning");
 	}
 	
 	@When("HAC1478pkg select pkg tab")
@@ -192,13 +191,13 @@ public class HAC1478AssignPackageServiceAppointment extends CommonFunctions {
 	
 	@Then("HAC1478pkg select a service appointment")
 	public void HAC1478pkg_select_a_service_appointment() throws InterruptedException, IOException {
-		serviceappointments = new ServiceAppointments();
+		serviceappointments = new ServiceAppointmentDetailsTab();
 		serviceappointments.SelectServiceAppointment();
 	}
 	
 	@Then("HAC1478pkg click related tab")
 	public void HAC1478pkg_click_related_tab() throws InterruptedException, IOException {
-		serviceappointments = new ServiceAppointments();
+		serviceappointments = new ServiceAppointmentDetailsTab();
 		serviceappointments.ClickRelatedTab();
 		Thread.sleep(5000);
 	}
