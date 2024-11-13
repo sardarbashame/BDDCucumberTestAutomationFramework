@@ -179,7 +179,7 @@ public class HAC1478AssignProcessingServiceAppointment extends CommonFunctions {
 		// workOrderrelatedlist = new WorkOrderRelatedListQuickLinks();
 		// workOrderrelatedlist.clickServiceAppointmentsLink();
 		Thread.sleep(8000);
-		serviceappointments = new ServiceAppointments();
+		serviceappointments = new ServiceAppointmentDetailsTab();
 		serviceappointments.lnkserviceAppointment();
 		Thread.sleep(6000);
 	}
