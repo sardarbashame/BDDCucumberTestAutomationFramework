@@ -61,13 +61,16 @@ public class CaseContactRoles extends CommonFunctions {
 	public void addContactRole(String contactname, String contactrole) throws InterruptedException {
 		Thread.sleep(0, 2000);
 		contactroleslink.click();
+		Thread.sleep(0, 2000);
 		newcontactrolebth.click();
+		Thread.sleep(0, 2000);
 		contacttxtbox.click();
 		contacttxtbox.sendKeys(contactname);
 		driver.findElement(By.xpath("//*[@title='" + contactname + "']")).click();
 		contactrolespicklist.click();
 		driver.findElement(By.xpath("//span[text()='" + contactrole + "']")).click();
 		casesavebtn.click();
+		Thread.sleep(0, 3000);
 	}
 
 	public void verifyContactRoles() throws InterruptedException {
