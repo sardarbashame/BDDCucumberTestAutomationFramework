@@ -338,7 +338,7 @@ public class HomePage extends CommonFunctions {
 		Thread.sleep(0, 4000);
 		js.executeScript("var result = document.evaluate(\"//span[text()='View profile']/..//span[@class='uiImage']\", document.body, null, XPathResult.ANY_TYPE, null);     var input = result.iterateNext();input.scrollIntoView(); input.click();");
 		Thread.sleep(0, 2000);
-		logoutlink.click();
+		javascriptClick(logoutlink);
 		Thread.sleep(0, 4000);
 	}
 	

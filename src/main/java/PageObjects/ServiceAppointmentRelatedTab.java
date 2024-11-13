@@ -34,28 +34,76 @@ public ServiceAppointmentRelatedTab() {
 	WebElement btn_save;
 	
 	
-	public void AssignResource() throws InterruptedException {
+	@FindBy(xpath = "//label[text() = 'Parent Record']//following-sibling::div//input")
+	WebElement ipt_preferredRecord;
+	
+	@FindBy(xpath = "//label[text() = 'Status']//following-sibling::div//button")
+	WebElement btn_Status;
+	
+	@FindBy(xpath = "//label[text() = 'Date']//following-sibling::div//input[@name = 'EarliestStartTime']")
+	WebElement ipt_esitmateDate;
+	
+	@FindBy(xpath = "//label[text() = 'Date']//following-sibling::div//input[@name = 'DueDate']")
+	WebElement ipt_dueDate;
+	
+	@FindBy(xpath = "(//button[text() = 'Save'])[last()]")
+	WebElement btn_saveSA;	
+	
+	@FindBy(xpath = "//button[text() = 'Today']")
+	WebElement clk_today;
+	
+	@FindBy(xpath = "//label[text() = 'Service Territory']//parent::lightning-grouped-combobox//following::input[@placeholder = 'Search Service Territories...']")
+	WebElement sel_serviceTerritory;
+	
+	@FindBy(xpath = "(//span[text() = 'Appointment Number']//ancestor::dt//following-sibling::dd//lightning-formatted-text)[last()]")
+	WebElement txt_ServiceAppmentName;
+	
+	By waitspinerDisAppear = By.xpath("(//div[@class = 'forceDotsSpinner'])[last()]");
+
+	public static String  ServiceAppmentName;
+	
+	public void AssignResource() throws Exception {
 		expWaitToBeClickable(btn_new);
 		btn_new.click();
 		heading_newresource.click();
 		txt_serviceresource.click();
-		txt_serviceresourceinput.sendKeys("Test Service Resource1");
-		Thread.sleep(3000);
-		res_serviceresource.click();
-		Thread.sleep(3000);
+		clickDrpDownAndSelValue(txt_serviceresourceinput, "Test Service Resource1");
+		//expWaitToBeClickable(res_serviceresource);
+		//res_serviceresource.click();
+		expWaitToBeClickable(btn_save);
 		btn_save.click();
+		Thread.sleep(3000);
 	}
 	
-	public void c() throws InterruptedException {
+	public void createNewServiceAppointment(String AccountID, String Status,String serviceTerritory) throws Exception {
+		Thread.sleep(3000);
+		JavascriptExecutor executor = (JavascriptExecutor) driver;
 		expWaitToBeClickable(btn_new);
 		btn_new.click();
-		heading_newresource.click();
-		txt_serviceresource.click();
-		txt_serviceresourceinput.sendKeys("Test Service Resource1");
-		Thread.sleep(3000);
-		res_serviceresource.click();
-		Thread.sleep(3000);
-		btn_save.click();
+		expWaitToBeClickable(ipt_preferredRecord);
+		clickDrpDownAndSelValue(ipt_preferredRecord, AccountID);
+		sel_serviceTerritory.click();
+		clickDrpDownAndSelValue(sel_serviceTerritory, serviceTerritory);
+		expWaitToBeClickable(btn_Status);
+		javascriptClick(btn_Status);
+		Thread.sleep(2000);
+		scrollIntoView(driver.findElement(By.xpath("(//records-lwc-detail-panel//span[text() = '"+Status+"'])[last()]//parent::span[@class = 'slds-media__body']")));
+		javascriptClick(driver.findElement(By.xpath("(//records-lwc-detail-panel//span[text() = '"+Status+"'])[last()]//parent::span[@class = 'slds-media__body']")));
+		scrollIntoView(ipt_esitmateDate);
+		expWaitToBeClickable(ipt_esitmateDate);
+		ipt_esitmateDate.click();
+		expWaitToBeClickable(clk_today);
+		clk_today.click();
+		ipt_dueDate.click();
+		executor.executeScript("document.body.style.zoom = '0.85'");
+		//expWaitToBeClickable(clk_today);
+		//mouseHover(clk_today);
+		moveToEle(clk_today);
+		expWaitToBeClickable(btn_saveSA);
+		javascriptClick(btn_saveSA);
+		waitForElementToDisAppear(waitspinerDisAppear, 30);
+		Thread.sleep(4000);
+		ServiceAppmentName = txt_ServiceAppmentName.getText();
 	}
 	
 

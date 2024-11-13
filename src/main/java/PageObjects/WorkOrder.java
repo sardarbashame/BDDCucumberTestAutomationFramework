@@ -53,7 +53,7 @@ public class WorkOrder extends CommonFunctions {
 	@FindBy(xpath = "//*[text()='Would You Like To Use This Address?']")
 	WebElement txt_address_msg;
 	
-	public void CreateWorkOrder() throws InterruptedException {
+	public void CreateWorkOrder() throws Exception {
 		Thread.sleep(2000);
 		expWaitToBeClickable(btn_New);
 		js = (JavascriptExecutor) driver;
@@ -61,9 +61,8 @@ public class WorkOrder extends CommonFunctions {
 		Thread.sleep(5000);
 		txt_worktype.click();
 		Thread.sleep(2000);
-		txt_worktype.sendKeys("Break Fix");
+		clickDrpDownAndSelValue(txt_worktype, "Break Fix");
 		Thread.sleep(4000);
-		res_worktype.click();
 		Thread.sleep(4000);
 		btn_save.click();
 		Thread.sleep(4000);
