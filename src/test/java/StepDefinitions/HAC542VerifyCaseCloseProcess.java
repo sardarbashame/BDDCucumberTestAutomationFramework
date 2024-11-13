@@ -87,6 +87,12 @@ public class HAC542VerifyCaseCloseProcess extends CommonFunctions {
 		caseDetailsTab = new CaseDetailsTab();
 		caseDetailsTab.CloseCaseWithReason();
 	}
+	
+	@Then("Add Asset and Verify Asset is displayed in the list view")
+	public void AddAssetVerifyAssetisdisplayed()throws InterruptedException, IOException {
+		caseDetailsTab = new CaseDetailsTab();
+		caseDetailsTab.AddAssetAndVerifyAssetIsDisplayed();
+	}
 
 	
 }

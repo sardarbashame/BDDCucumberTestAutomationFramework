@@ -1,7 +1,7 @@
 Feature: HAC_1482_Auto populate work order no in Expense record
-  @Test
+
   Scenario: Login as service user and HAC_1482_Auto populate work order no in Expense record
-    Given Login as SERVICE SCH USER NAME
+    Given Login as SERVICE TECHNICIAN USER NAME
     When select the Field Service application
     When close all the open tabs
     When click on Service Appointments tab

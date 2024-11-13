@@ -25,6 +25,38 @@ public class ServiceAppointments extends CommonFunctions {
 	@FindBy(xpath = "//a[text()='Related']")
 	WebElement tab_related;
 	
+	@FindBy(xpath="//span[text()='Edit Scheduled Start']")
+	WebElement clk_editschedulestartdate;
+	
+	@FindBy(xpath="//label[text() = 'Date']//following-sibling::div//input[@name='SchedStartTime']")
+	WebElement clk_schedulestartdate;
+	
+	@FindBy(xpath="//td[@data-value='2024-11-15']")
+	WebElement select_schedulestartdate;
+	
+	@FindBy(xpath="//ul//li//span[@title='Service Appointments']")
+	WebElement lnk_serviceAppointment;
+	
+	@FindBy(xpath="//span[text()='Edit Scheduled End']")
+	WebElement clk_editscheduleenddate;
+		
+	@FindBy(xpath="//label[text() = 'Date']//following-sibling::div//input[@name='SchedEndTime']")
+	WebElement clk_scheduleenddate;
+	
+	@FindBy(xpath="//td[@data-value='2024-11-16']")
+	WebElement select_scheduleenddate;
+	
+	@FindBy(xpath="//button[text()='Save']")
+	WebElement btn_save;
+	
+	@FindBy(xpath="//label[text()='Status']//..//button")
+	WebElement clk_sastatus;
+	
+	@FindBy(xpath="//span[@title='Dispatched']")
+	WebElement select_dispatchedoption;
+	
+	@FindBy(xpath = "//button[text() = 'Today']")
+	WebElement clk_today;
 	
 	public void SelectServiceAppointment() throws InterruptedException {
 		Thread.sleep(2000);
@@ -35,50 +67,43 @@ public class ServiceAppointments extends CommonFunctions {
 		expWaitToBeClickable(tab_details);
 		}
 	
-	@FindBy(xpath="//span[text()='Edit Scheduled Start']")
-	WebElement clk_editschedulestartdate;
-	
-	@FindBy(xpath="//input[@name='SchedStartTime']")
-	WebElement clk_schedulestartdate;
-	
-	@FindBy(xpath="//td[@data-value='2024-11-15']")
-	WebElement select_schedulestartdate;
-	
+	public void lnkserviceAppointment() throws InterruptedException {
+		expWaitToBeClickable(lnk_serviceAppointment);
+		javascriptClick(lnk_serviceAppointment);
+	}
+
 	public void UpdateSAScheduleStartDate() throws InterruptedException {
-		js.executeScript("window.scrollTo(0,750)");
+		JavascriptExecutor executor = (JavascriptExecutor) driver;
+		//executor.executeScript("document.body.style.zoom = '0.75'");
+		executor.executeScript("window.scrollTo(0,750)");
 		Thread.sleep(3000);
-	//	clk_editschedulestartdate.click();
-		js.executeScript("var result = document.evaluate(\"//button[@title='Edit Scheduled Start']\", document.body, null, XPathResult.ANY_TYPE, null);     var input = result.iterateNext();input.scrollIntoView(); input.click();");
+		executor.executeScript(
+				"var result = document.evaluate(\"//button[@title='Edit Scheduled Start']\", document.body, null, XPathResult.ANY_TYPE, null);     var input = result.iterateNext();input.scrollIntoView(); input.click();");
 		Thread.sleep(2000);
 		expWaitToBeClickable(clk_schedulestartdate);
 		Thread.sleep(2000);
-		clk_schedulestartdate.click();
+		expWaitToBeClickable(clk_schedulestartdate);
+		javascriptClick(clk_schedulestartdate);
 		Thread.sleep(2000);
-		select_schedulestartdate.click();
+		scrollIntoView(clk_today);
+		javascriptClick(clk_today);
 		Thread.sleep(2000);
-	//	expWaitToBeClickable(tab_details);
-		}
-	@FindBy(xpath="//span[text()='Edit Scheduled End']")
-	WebElement clk_editscheduleenddate;
-	
-	@FindBy(xpath="//input[@name='SchedEndTime']")
-	WebElement clk_scheduleenddate;
-	
-	@FindBy(xpath="//td[@data-value='2024-11-16']")
-	WebElement select_scheduleenddate;
-	
+	}
+
 	public void UpdateSAScheduleEndDate() throws InterruptedException {
+		JavascriptExecutor executor = (JavascriptExecutor) driver;
+		//executor.executeScript("document.body.style.zoom = '0.75'");
 		Thread.sleep(2000);
 		expWaitToBeClickable(clk_scheduleenddate);
 		Thread.sleep(2000);
-		clk_scheduleenddate.click();
+		javascriptClick(clk_scheduleenddate);
 		Thread.sleep(2000);
-		select_scheduleenddate.click();
-		}
-	
-	
-	@FindBy(xpath="//button[text()='Save']")
-	WebElement btn_save;
+		executor.executeScript("document.body.style.zoom = '0.85'");
+		scrollIntoView(clk_today);
+		javascriptClick(clk_today);
+		Thread.sleep(2000);
+	}
+
 	
 	public void ClickSaveButton() throws InterruptedException {
 		Thread.sleep(2000);
@@ -96,25 +121,22 @@ public class ServiceAppointments extends CommonFunctions {
 		js.executeScript("arguments[0].click();", tab_details);
 		Thread.sleep(3000);
 		}
-	
-	@FindBy(xpath="//label[text()='Status']//..//button")
-	WebElement clk_sastatus;
-	@FindBy(xpath="//span[@title='Dispatched']")
-	WebElement select_dispatchedoption;
+
 	
 	public void UpdateSAStatus() throws InterruptedException {
 		Thread.sleep(2000);
-	//	expWaitToBeClickable(clk_sastatus);
+		// expWaitToBeClickable(clk_sastatus);
 		Thread.sleep(2000);
-		js.executeScript("var result = document.evaluate(\"(//button[@title='Edit Status'])[last()]\", document.body, null, XPathResult.ANY_TYPE, null);     var input = result.iterateNext();input.scrollIntoView(); input.click();");
+		js.executeScript(
+				"var result = document.evaluate(\"(//button[@title='Edit Status'])[last()]\", document.body, null, XPathResult.ANY_TYPE, null);     var input = result.iterateNext();input.scrollIntoView(); input.click();");
 		Thread.sleep(2000);
 		js.executeScript("window.scrollTo(0,0)");
 		Thread.sleep(2000);
-		clk_sastatus.click();
+		javascriptClick(clk_sastatus);
 		Thread.sleep(2000);
-		select_dispatchedoption.click();
+		javascriptClick(select_dispatchedoption);
 		Thread.sleep(2000);
-		}
+	}
 	
 	public void ClickRelatedTab() throws InterruptedException {
 		Thread.sleep(2000);

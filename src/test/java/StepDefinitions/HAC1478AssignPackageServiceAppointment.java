@@ -168,7 +168,7 @@ public class HAC1478AssignPackageServiceAppointment extends CommonFunctions {
 	}
 	
 	@Then("HAC1478pkg create work order")
-	public void HAC1478pkg_create_work_order() throws InterruptedException, IOException {
+	public void HAC1478pkg_create_work_order() throws Exception {
 		workOrder = new WorkOrder();
 		workOrder.CreateWorkOrder();
 	}
@@ -204,13 +204,13 @@ public class HAC1478AssignPackageServiceAppointment extends CommonFunctions {
 	}
 	
 	@Then("HAC1478pkg assign service resource")
-	public void HAC1478pkg_assign_service_resource() throws InterruptedException, IOException {
+	public void HAC1478pkg_assign_service_resource() throws Exception {
 		serviceappointmentrelatedtab = new ServiceAppointmentRelatedTab();
 		serviceappointmentrelatedtab.AssignResource();
 	}
-	@When("Create New Service Appointment with {string}, {string}")
-	public void create_new_service_appointment_with(String string, String string2) throws Exception {
+	@When("Create New Service Appointment with {string}, {string}, {string}")
+	public void create_new_service_appointment_with(String AccountID, String Status,String serviceTerritory) throws Exception {
 		serviceappointmentrelatedtab = new ServiceAppointmentRelatedTab();
-		serviceappointmentrelatedtab.AssignResource();
+		serviceappointmentrelatedtab.createNewServiceAppointment(AccountID,Status,serviceTerritory);
 	}
 }

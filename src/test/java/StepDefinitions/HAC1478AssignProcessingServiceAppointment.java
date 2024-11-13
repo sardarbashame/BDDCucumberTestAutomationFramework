@@ -162,7 +162,7 @@ public class HAC1478AssignProcessingServiceAppointment extends CommonFunctions {
 	}
 	
 	@Then("HAC1478 create work order")
-	public void HAC1478_create_work_order() throws InterruptedException, IOException {
+	public void HAC1478_create_work_order() throws Exception {
 		workOrder = new WorkOrder();
 		workOrder.CreateWorkOrder();
 	}
@@ -177,13 +177,14 @@ public class HAC1478AssignProcessingServiceAppointment extends CommonFunctions {
 	
 	@Then("HAC1478 click service appointment link")
 	public void HAC1478_click_service_appointment_link() throws InterruptedException, IOException {
-//		workOrderrelatedlist = new WorkOrderRelatedListQuickLinks();
-//		workOrderrelatedlist.clickServiceAppointmentsLink();
+		// workOrderrelatedlist = new WorkOrderRelatedListQuickLinks();
+		// workOrderrelatedlist.clickServiceAppointmentsLink();
 		Thread.sleep(8000);
-		driver.findElement(By.xpath("//ul//li//span[@title='Service Appointments']")).click();
+		serviceappointments = new ServiceAppointments();
+		serviceappointments.lnkserviceAppointment();
 		Thread.sleep(6000);
 	}
-	
+
 	@Then("HAC1478 select a service appointment")
 	public void HAC1478_select_a_service_appointment() throws InterruptedException, IOException {
 		serviceappointments = new ServiceAppointments();
@@ -211,7 +212,7 @@ public class HAC1478AssignProcessingServiceAppointment extends CommonFunctions {
 	}
 	
 	@Then("HAC1478 assign service resource")
-	public void HAC1478_assign_service_resource() throws InterruptedException, IOException {
+	public void HAC1478_assign_service_resource() throws Exception {
 		serviceappointmentrelatedtab = new ServiceAppointmentRelatedTab();
 		serviceappointmentrelatedtab.AssignResource();
 	}
