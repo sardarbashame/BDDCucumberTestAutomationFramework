@@ -6,7 +6,7 @@ Feature: HAC_1121_Verify the contact list views
     When HAC1124 select the applicaton
     When HAC1124 close all the open tabs
     When HAC1124 close the bottom bar
-    When HAC1124 user is on contact home page
+ 		When HAC1124 user is on contact home page
     When HAC1124 click on contact list view button
     Then HAC1124 verify the customer contact list view
     Then HAC1124 verify the heat and control billing contacts list view

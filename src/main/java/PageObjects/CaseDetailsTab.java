@@ -272,6 +272,15 @@ public class CaseDetailsTab extends CommonFunctions {
 	@FindBy(xpath="//span[@title='General']")
 	WebElement casetypegeneral;
 	
+	@FindBy(xpath="//span[text()='Select Item 1']/..")
+	WebElement checkbox_asset1;
+	
+	@FindBy(xpath="//button[text()='Add Assets']")
+	WebElement btn_addassets;
+	
+	@FindBy(xpath="//h2[text()='Add Asset']")
+	WebElement heading_addasset;
+	
 	public CaseDetailsTab() {
 		PageFactory.initElements(new AjaxElementLocatorFactory(driver, 10), this);
 	}
@@ -300,8 +309,7 @@ public class CaseDetailsTab extends CommonFunctions {
 		clk_escalated.click();
 		Thread.sleep(2000);
 	}
-
-
+	
 	public void transferCase(String newowner) throws InterruptedException {
 		waitForElementToAppear(By.xpath("//ul/li/a[text()='Details']"),30);
 		Thread.sleep(5000);
@@ -349,23 +357,11 @@ public class CaseDetailsTab extends CommonFunctions {
 	}
 	
 	public void ClickAddAssetQuickAction() throws InterruptedException {
-	//	expWaitToBeClickable(quickactions_showmoreactions);
-		Thread.sleep(2000);
-		//js.executeScript("var result = document.evaluate(\"//span[text()='Show more actions']\", document.body, null, XPathResult.ANY_TYPE, null);     var input = result.iterateNext();input.scrollIntoView(); input.click();");
-		Thread.sleep(2000);
+		expWaitToBeClickable(btn_addasset);
+		Thread.sleep(3000);
 		btn_addasset.click();
 		Thread.sleep(2000);
-	
 	}
-	
-	@FindBy(xpath="//*[text()='Select Item 1']")
-	WebElement checkbox_asset1;
-	
-	@FindBy(xpath="//button[text()='Add Assets']")
-	WebElement btn_addassets;
-	
-	@FindBy(xpath="//h2[text()='Add Asset']")
-	WebElement heading_addasset;
 	
 	public void AddSingleAsset() throws InterruptedException {
 		expWaitToBeClickable(heading_addasset);

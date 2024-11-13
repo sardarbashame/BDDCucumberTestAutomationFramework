@@ -214,7 +214,9 @@ public class AccountDetailsTab extends CommonFunctions {
 
 
 	public boolean isShippingAddressPresent() throws InterruptedException {
-		Thread.sleep(1000);
+		Thread.sleep(2000);
+		js.executeScript("window.scrollTo(0,5000)");
+		Thread.sleep(2000);
 		boolvalue = label_shippingaddress.isDisplayed();
 		Thread.sleep(1000);
 		return boolvalue;

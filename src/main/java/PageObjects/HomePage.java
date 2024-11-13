@@ -258,7 +258,7 @@ public class HomePage extends CommonFunctions {
 		Thread.sleep(0, 4000);
 		waitForElementToAppear(wait_conatacts, 30);
 		expWaitToBeClickable(clk_contacts);
-		js.executeScript("arguments[0].click();", clk_contacts);
+		javascriptClick(clk_contacts);
 		Thread.sleep(0, 3000);
 	}	
 
