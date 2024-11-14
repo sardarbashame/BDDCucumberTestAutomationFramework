@@ -1,5 +1,7 @@
 package PageObjects;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -31,6 +33,12 @@ public class WorkOrder extends CommonFunctions {
 	
 	@FindBy(xpath = "(//button//span[text()='Save'])[last()]")
 	WebElement btn_save;
+	
+	@FindBy(xpath = "(//span[text() = 'Account'])[last()]//parent::label//following-sibling::div//a//span[@class = 'deleteIcon']")
+	List<WebElement> icon_deleteAccount;
+	
+	@FindBy(xpath = "(//span[text() = 'Account'])[last()]//parent::label//following-sibling::div//input")
+	WebElement ipt_AccountName;
 	
 	@FindBy(xpath = "//div//span[contains(@class, 'toastMessage')]//a")
 	WebElement toast_message;
@@ -64,6 +72,13 @@ public class WorkOrder extends CommonFunctions {
 		clickDrpDownAndSelValue(txt_worktype, "Break Fix");
 		Thread.sleep(4000);
 		Thread.sleep(4000);
+		scrollIntoView(ipt_AccountName);
+		if(icon_deleteAccount.size()>0)
+		{
+			icon_deleteAccount.get(0).click();
+		}
+		ipt_AccountName.click();
+		clickDrpDownAndSelValue(ipt_AccountName, "United Batter and Breading");
 		btn_save.click();
 		Thread.sleep(4000);
 		toast_message.click();
@@ -86,7 +101,9 @@ public class WorkOrder extends CommonFunctions {
 		txt_address_msg.click();
 		radiobtn_address_yes.click();
 		Thread.sleep(2000);
-		radiobtn_date_yes.click();
+		scrollIntoView(radiobtn_date_yes);
+		drawHighlight(radiobtn_date_yes);
+		javascriptClick(radiobtn_date_yes);
 		Thread.sleep(2000);
 		btn_Next.click();
 		Thread.sleep(6000);

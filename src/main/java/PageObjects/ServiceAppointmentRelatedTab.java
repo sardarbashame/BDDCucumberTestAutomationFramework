@@ -72,7 +72,7 @@ public ServiceAppointmentRelatedTab() {
 		//res_serviceresource.click();
 		expWaitToBeClickable(btn_save);
 		btn_save.click();
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 	}
 	
 	public void createNewServiceAppointment(String AccountID, String Status,String serviceTerritory) throws Exception {
