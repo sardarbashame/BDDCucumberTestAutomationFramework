@@ -1,15 +1,6 @@
-Feature: HAC_1012_ Territory Assignment
+Feature: HAC_1483 Auto populate work order no in Time Entry Record
 
-  @Test
-  Scenario: Login as service user and HAC_1012_ Territory Assignment
-    Given Login as SERVICE SCH USER NAME
-    When select the Field Service application
-    When HAC145 close all the open tabs
-    When click on Service Resources tab
-    When Click on recently created SA in the grid
-    Then Verify Service Territories list view is displayed
-
-  Scenario: Login as service user and HAC_1012_ Territory Assignment drag and Drop under Field Service
+  Scenario: Login as service Scheduler user and HAC_1483_Auto populate work order no in Time Entry Record
     Given Login as SERVICE SCH USER NAME
     When HAC1478 select the applicaton
     When HAC1478 close all the open tabs
@@ -36,8 +27,17 @@ Feature: HAC_1012_ Territory Assignment
     Then HAC1478 select a schedule end date
     Then HAC1478 click related tab
     Then HAC1478 assign service resource
-    #Step-3
-    When select the Field Service application
-    When close all the open tabs
-    When click on Field Service tab
-    When Select any one of appointment and Drag and Drop to gantt
+    Then HAC1478 update sa status to dispatched
+    #step-3
+    Then HAC1478 logout as service scheduler
+    Then HAC1478 login as service technician
+    Then HAC1478 select the field service applicaton
+    Then HAC1478 select the service appointments tab
+    Then HAC1478 select all service appointments listview
+    Then HAC1478 select dispatched service appointment
+    #step-4
+    When verify TLI number displayed under Service Appointments details tab
+    Then Change status to Travel to Customer Location
+    When Click on Timesheet & Expenses sub tab
+    Then Click on TimeSheet Entries and verify all the lables under details tab
+    Then Verify Work Order number under TimeSheet Details tab

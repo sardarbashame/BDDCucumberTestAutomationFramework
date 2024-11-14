@@ -462,15 +462,14 @@ public class CaseDetailsTab extends CommonFunctions {
 		casesubtypefeaturerequests.isDisplayed();
 		casesubtypenewequipment.isDisplayed();
 		casesubtypeother2.isDisplayed();
-	}
+	}	
 	public void VerifyCaseSubTypesForGeneralType() throws InterruptedException {
 		Thread.sleep(2000);
 		casetype.click();
 		Thread.sleep(2000);
 		casetypegeneral.click();
 		Thread.sleep(2000);
-	}
-	
+	}	
 
 	public void VerifyCaseSubTypesForJunkSpamType() throws InterruptedException {
 		Thread.sleep(2000);
@@ -479,7 +478,6 @@ public class CaseDetailsTab extends CommonFunctions {
 		casetypejunkspam.click();
 		Thread.sleep(2000);
 	}
-
 
 	public void VerifyCaseSubTypesForNewProjectSchedulingType() throws InterruptedException {
 		Thread.sleep(2000);

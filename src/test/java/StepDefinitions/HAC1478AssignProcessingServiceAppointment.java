@@ -21,6 +21,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import PageObjects.AccountDetailsTab;
+import PageObjects.AppnavigatorTabsPages;
 import PageObjects.CaseDetailsTab;
 import PageObjects.CaseRelatedListQuickLinks;
 import PageObjects.EstimateCreationFlowStep1;
@@ -56,7 +57,6 @@ public class HAC1478AssignProcessingServiceAppointment extends CommonFunctions {
 	boolean numberofhourspresent;
 	boolean pboption1;
 
-
 	@Given("^HAC1478 user enters (.*) and (.*)$")
 	public void HAC1478_user_enters_username_and_password(String userName, String password) throws IOException {
 		loginPO = new Login();
@@ -87,15 +87,13 @@ public class HAC1478AssignProcessingServiceAppointment extends CommonFunctions {
 	}
 
 	@When("HAC1478 create new case")
-	public void HAC1478_create_new_case() throws InterruptedException, IOException  {
+	public void HAC1478_create_new_case() throws InterruptedException, IOException {
 		homePage = new HomePage();
-		homePage.createNewCase(
-				ppty.getProperty("CASECONTACT"),
-				ppty.getProperty("CASEFIRSTNAME"),
-				ppty.getProperty("CASESUB")
-				);
+		homePage.createNewCase(ppty.getProperty("CASECONTACT"), ppty.getProperty("CASEFIRSTNAME"),
+				ppty.getProperty("CASESUB"));
 
 	}
+
 	@When("HAC1478 user is on estimate tab")
 	public void HAC1478_user_is_on_estimate_tab() throws InterruptedException, IOException {
 		estimateCreationFlowStep1 = new EstimateCreationFlowStep1();
@@ -105,7 +103,8 @@ public class HAC1478AssignProcessingServiceAppointment extends CommonFunctions {
 	@When("HAC1478 select values on estimate flow step1")
 	public void HAC1478_select_values_on_estimate_flow_step1() throws InterruptedException, IOException {
 		estimateCreationFlowStep1 = new EstimateCreationFlowStep1();
-		estimateCreationFlowStep1.estimateFlowStep1("USA Domestic Market Rate", "BASIC Dual Spiral Ovens", "IO/Commissioning");
+		estimateCreationFlowStep1.estimateFlowStep1("USA Domestic Market Rate", "BASIC Dual Spiral Ovens",
+				"IO/Commissioning");
 	}
 
 	@When("HAC1478 verify the field label number of tech")
@@ -152,14 +151,14 @@ public class HAC1478AssignProcessingServiceAppointment extends CommonFunctions {
 		estimateCreationFlowStep3 = new EstimateCreationFlowStep3();
 		estimateCreationFlowStep3.clickSaveButton();
 	}
-	
+
 	@Then("HAC1478 click on work order link")
 	public void HAC1478_click_on_work_order_link() throws InterruptedException, IOException {
 		caseRelatedListQuickLinks = new CaseRelatedListQuickLinks();
 		caseRelatedListQuickLinks.ScrollPageToTop();
 		caseRelatedListQuickLinks.clickWorkOrderLink();
 	}
-	
+
 	@Then("HAC1478 create work order")
 	public void HAC1478_create_work_order() throws Exception {
 		workOrder = new WorkOrder();
@@ -173,7 +172,7 @@ public class HAC1478AssignProcessingServiceAppointment extends CommonFunctions {
 		driver.navigate().refresh();
 		Thread.sleep(8000);
 	}
-	
+
 	@Then("HAC1478 click service appointment link")
 	public void HAC1478_click_service_appointment_link() throws InterruptedException, IOException {
 		// workOrderrelatedlist = new WorkOrderRelatedListQuickLinks();
@@ -189,80 +188,98 @@ public class HAC1478AssignProcessingServiceAppointment extends CommonFunctions {
 		serviceappointments = new ServiceAppointmentDetailsTab();
 		serviceappointments.SelectServiceAppointment();
 	}
-	
+
 	@Then("HAC1478 select a schedule start date")
 	public void HAC1478_select_a_schedule_start_date() throws InterruptedException, IOException {
 		serviceappointments = new ServiceAppointmentDetailsTab();
 		serviceappointments.UpdateSAScheduleStartDate();
 	}
-	
+
 	@Then("HAC1478 select a schedule end date")
 	public void HAC1478_select_a_schedule_end_date() throws InterruptedException, IOException {
 		serviceappointments = new ServiceAppointmentDetailsTab();
 		serviceappointments.UpdateSAScheduleEndDate();
 		serviceappointments.ClickSaveButton();
 	}
-	
+
 	@Then("HAC1478 click related tab")
 	public void HAC1478_click_related_tab() throws InterruptedException, IOException {
 		serviceappointments = new ServiceAppointmentDetailsTab();
 		serviceappointments.ClickRelatedTab();
 		Thread.sleep(5000);
 	}
-	
+
 	@Then("HAC1478 assign service resource")
 	public void HAC1478_assign_service_resource() throws Exception {
 		serviceappointmentrelatedtab = new ServiceAppointmentRelatedTab();
 		serviceappointmentrelatedtab.AssignResource();
 	}
-	
+
 	@Then("HAC1478 update sa status to dispatched")
 	public void HAC1478_update_sa_satus_to_dispatched() throws InterruptedException, IOException {
 		serviceappointments = new ServiceAppointmentDetailsTab();
 		serviceappointments.ClickDetailsTab();
 		serviceappointments.UpdateSAStatus("Dispatched");
-	//	serviceappointments.ClickSaveButton();
+		// serviceappointments.ClickSaveButton();
 	}
-	
+
 	@Then("HAC1478 logout as service scheduler")
 	public void HAC1478_logout_as_service_scheduler() throws InterruptedException, IOException {
 		homePage = new HomePage();
 		homePage.Logout();
 	}
-	
+
 	@Then("HAC1478 login as service technician")
 	public void HAC1478_login_as_service_technician() throws InterruptedException, IOException {
 		loginPO = new Login();
 		loginPO.LoginApp("jausterman@heatandcontrol.com.qa", "H@ctest1");
 	}
-	
+
 	@Then("HAC1478 select the field service applicaton")
 	public void HAC1478_select_the_field_service_applicaton() throws InterruptedException, IOException {
 		selectApplication = new SelectApplication();
 		selectApplication.selectApp("Field Service");
 	}
-	
+
 	@Then("HAC1478 select the service appointments tab")
 	public void HAC1478_select_the_service_appointments_tab() throws InterruptedException, IOException {
 		homePage = new HomePage();
 		homePage.clickServiceAppointmentsTab();
-		
+
 	}
-	
+
 	@Then("HAC1478 select all service appointments listview")
 	public void HAC1478_select_all_service_appointments_listview() throws InterruptedException, IOException {
 		serviceappointments = new ServiceAppointmentDetailsTab();
 		serviceappointments.clickServiceAppointmentListViewButton();
 		serviceappointments.clickAllServiceAppointmentsListView();
-		
-		
+
 	}
-	
+
 	@Then("HAC1478 select dispatched service appointment")
 	public void HAC1478_select_dispatched_service_appointment() throws InterruptedException, IOException {
 		serviceappointments = new ServiceAppointmentDetailsTab();
-		serviceappointments.SelectDispatchedServiceAppointment();;
-		
-		
+		serviceappointments.SelectDispatchedServiceAppointment();
+	}
+
+	@When("Click on recently created SA in the grid")
+	public void clickOnRecentlyCreateSA() throws Exception {
+		serviceappointments = new ServiceAppointmentDetailsTab();
+		serviceappointments.clkRecentServiceAppointment();
+	}
+
+	@When("Click on Daily Notes tab and create new daily notes")
+	public void createNewDailyNotes() throws Exception {
+		serviceappointments = new ServiceAppointmentDetailsTab();
+		serviceappointments.createNewDailyNotesAndSaveit();
+	}
+
+	@Then("Verify Notes and Punch list is created and displayed")
+	public void verifyNotesAndPunch() throws Exception {
+		serviceappointments = new ServiceAppointmentDetailsTab();
+		serviceappointments.verifyNotesAndPunchList();
+		serviceappointments = new ServiceAppointmentDetailsTab();
+		serviceappointments.SelectDispatchedServiceAppointment();
+
 	}
 }
