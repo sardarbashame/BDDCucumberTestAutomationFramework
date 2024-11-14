@@ -72,8 +72,8 @@ public class AppnavigatorTabs extends CommonFunctions {
 		appNavigatorObj = new AppnavigatorTabsPages();
 		appNavigatorObj.clkServiceResourceTab();
 	}
-	@When("Click on recently created SA in the grid")
-	public void clickOnRecentlyCreateSA() throws Exception {
+	@When("Click on recently created SR in the grid")
+	public void clickOnRecentlyCreateSR() throws Exception {
 		appNavigatorObj = new AppnavigatorTabsPages();
 		appNavigatorObj.clkRecentServiceResource();
 	}
@@ -93,6 +93,16 @@ public class AppnavigatorTabs extends CommonFunctions {
 		appNavigatorObj = new AppnavigatorTabsPages();
 		appNavigatorObj.selectAppointmentAndDragAndDrop();
 	}
+	@When("Search SA number and Click Edit")
+	public void SearchSAnumberandClickEdit() throws Exception {
+		appNavigatorObj = new AppnavigatorTabsPages();
+		appNavigatorObj.searchSAAndClickEdit();
+	}
+	@Then("Verify Resources Preference label and Count")
+	public void verifyResourcesPreferenceLabel() throws Exception {
+		appNavigatorObj = new AppnavigatorTabsPages();
+		appNavigatorObj.clkRelatedTabAndValidatedResourcesPref();
+	}
 	@When("Click on Timesheet & Expenses sub tab")
 	public void clickOnTimesheetAndExpenseSubTab() throws Exception {
 		appNavigatorObj = new AppnavigatorTabsPages();
@@ -108,6 +118,11 @@ public class AppnavigatorTabs extends CommonFunctions {
 	public void clickOnTimeSheetEntriesAndVerifyLabels() throws Exception {
 		appNavigatorObj = new AppnavigatorTabsPages();
 		appNavigatorObj.clickOnTimesheetEntriesAndVerifyLables();
+	}
+	@Then("Verify Work Order number under TimeSheet Details tab")
+	public void verifyWorkOrderUnderTimesheet() throws Exception {
+		appNavigatorObj = new AppnavigatorTabsPages();
+		appNavigatorObj.verifyWorkOrderNumberUnderTimeSheet();
 	}
 
 	@Then("Verify TLI number column under All Quotes and Estimates filter")

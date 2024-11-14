@@ -48,13 +48,21 @@ public class EstimateCreationFlowStep2 extends CommonFunctions {
 	@FindBy(xpath = "(//*[text()='From Date']/..//input)[last()]")
 	WebElement ipt_fromDate;
 
+<<<<<<< HEAD
 	@FindBy(xpath = "//tr/td[@data-value='2024-11-14']")
+=======
+	@FindBy(xpath = "//tr/td[@data-value='2024-11-15']")
+>>>>>>> 352c16cecdf7f0686b19e40c98bf4358f8575c47
 	WebElement ipt_dateValueFrom;
 
 	@FindBy(xpath = "(//*[text()='To Date']/..//input)[last()]")
 	WebElement ipt_toDate;
 
+<<<<<<< HEAD
 	@FindBy(xpath = "//tr/td[@data-value='2024-11-15'][last()]")
+=======
+	@FindBy(xpath = "//tr/td[@data-value='2024-11-20'][last()]")
+>>>>>>> 352c16cecdf7f0686b19e40c98bf4358f8575c47
 	WebElement ipt_dateValueTO;
 
 	@FindBy(xpath = "(//div[contains(@class, 'active ')]//label[text()='Number Of Tech'])[last()]")

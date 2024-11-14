@@ -61,6 +61,21 @@ public class AppnavigatorTabsPages extends CommonFunctions {
 	@FindBy(xpath = "//input[@id = 'TaskSearchFilterInput']")
 	WebElement ipt_searchServiceApment;
 	
+	@FindBy(xpath = "//div[@drag-service = 'service']//service-list-column[contains(text(), ':')]")
+	WebElement clk_SearchedSAOnDateFormat;
+	
+	@FindBy(xpath = "//div[@title = 'Edit']")
+	WebElement btn_editSA;
+	
+	@FindBy(xpath = "//button[contains(text(), 'Related')]")
+	WebElement clk_relatedTab;
+	
+	@FindBy(xpath = "//table//h3[text() = 'Resource Preferences']")
+	WebElement label_ResourcesPreference;
+	
+	@FindBy(xpath = "(//table//h3[text() = 'Resource Preferences']//ancestor::table//parent::div//following-sibling::div//tr//td//a[text() = 'Edit'])[1]")
+	WebElement clk_ResourcesPreference;
+	
 	@FindBy(xpath = "(//div[@class= 'SingleTask DraggableSingleTask']//input)[1]")
 	WebElement clk_DraggableSingleTask;
 
@@ -140,16 +155,19 @@ public class AppnavigatorTabsPages extends CommonFunctions {
 	public WebElement txt_durationInHrs;
 
 	@FindBy(xpath = "//flexipage-tab2[contains(@class, 'show')]//span[text() = 'Resource']")
-	public WebElement txt_resources;
+	WebElement txt_resources;
 
 	@FindBy(xpath = "//flexipage-tab2[contains(@class, 'show')]//span[text() = 'Type']")
-	public WebElement txt_types;
+	WebElement txt_types;
 
 	@FindBy(xpath = "//flexipage-tab2[contains(@class, 'show')]//span[text() = 'Status']")
-	public WebElement txt_status;
+	WebElement txt_status;
 
 	@FindBy(xpath = "//flexipage-tab2[contains(@class, 'show')]//span[text() = 'Work Order']")
-	public WebElement txt_workOrder;
+	WebElement txt_workOrder;
+	
+	@FindBy(xpath = "//flexipage-tab2[contains(@class, 'show')]//span[text() = 'Work Order']//ancestor::dt//following-sibling::dd//span//a")
+	WebElement txt_workOrdeNumber;
 
 	@FindBy(xpath = "//flexipage-tab2[contains(@class, 'show')]//span[text() = 'Work Order Line Item']")
 	WebElement txt_workOrderItems;
@@ -310,6 +328,38 @@ public class AppnavigatorTabsPages extends CommonFunctions {
 		waitForElementToDisAppear(wait_disapperLoading, 30);
 		Thread.sleep(4000);
 	}
+	public void searchSAAndClickEdit() throws Exception {
+		waitForElementToAppear(fieldServiceTabAppear, 40);
+		Thread.sleep(5000);
+		WebElement iframe = driver.findElement(By.xpath("//iframe[@title='Field Service']"));
+		driver.switchTo().frame(iframe);
+		JavascriptExecutor executor = (JavascriptExecutor) driver;
+		executor.executeScript("document.body.style.zoom = '0.55'");
+		drawHighlight(ipt_searchServiceApment);	
+		javascriptClick(ipt_searchServiceApment);
+		ipt_searchServiceApment.sendKeys(ServiceAppointmentDetailsTab.ServiceAppmentName);
+		ipt_searchServiceApment.sendKeys(Keys.ENTER);
+		expWaitToBeClickable(clk_SearchedSAOnDateFormat);
+		drawHighlight(clk_SearchedSAOnDateFormat);
+		javascriptClick(clk_SearchedSAOnDateFormat);
+		javascriptClick(btn_editSA);
+		Thread.sleep(4000);
+	}
+	public void clkRelatedTabAndValidatedResourcesPref() throws Exception {
+		int cnt = driver.findElements(By.tagName("iframe")).size();
+        System.out.println("Number of Frames on a Page:" + cnt);
+		Thread.sleep(5000);		
+		drawHighlight(clk_relatedTab);	
+		javascriptClick(clk_relatedTab);
+		int cnt2 = driver.findElements(By.tagName("iframe")).size();
+        System.out.println("Number of Frames on a Page:" + cnt2);
+        driver.switchTo().frame(9);
+		Assert.assertTrue(label_ResourcesPreference.isDisplayed());
+		javascriptClick(clk_ResourcesPreference);
+		switchToWindow();
+		String str = driver.getCurrentUrl();
+		Thread.sleep(4000);
+	}
 
 	public void clickOnTimesheetAndExpenseSubTab() throws Exception {
 		waitForElementToAppear(serviceAppoinmenttabAppear, 30);
@@ -371,6 +421,13 @@ public class AppnavigatorTabsPages extends CommonFunctions {
 		Assert.assertTrue(txt_workOrderItems.isDisplayed());
 	}
 
+	public void verifyWorkOrderNumberUnderTimeSheet() throws Exception {
+		waitForElementToAppear(serviceAppoinmenttabAppear, 30);
+		String str = txt_workOrdeNumber.getText();
+		System.out.println("Work order number - " + str);
+		Assert.assertTrue(txt_workOrdeNumber.isDisplayed());
+	}
+
 	public void verifyTLIColumniSDisplayed() throws Exception {
 		waitForElementToAppear(quoteTabAppear, 30);
 		Thread.sleep(4000);
@@ -403,7 +460,7 @@ public class AppnavigatorTabsPages extends CommonFunctions {
 		btn_save.click();
 		waitForElementToAppear(waitExpenseCreatedmsg, 30);
 		Assert.assertTrue(msg_expenseCreated.isDisplayed());
-		Thread.sleep(2000);		
+		Thread.sleep(2000);
 	}
 
 	public void verifyWorkOrderNumber() throws Exception {
@@ -417,6 +474,5 @@ public class AppnavigatorTabsPages extends CommonFunctions {
 		String str = txt_workOrderValue.getText();
 		Assert.assertTrue(str.contains("000"));
 		Assert.assertTrue(txt_workOrderValue.isDisplayed());
-
 	}
 }

@@ -298,7 +298,7 @@ public class HomePage extends CommonFunctions {
 		ipt_middlename.sendKeys(MiddleName);
 		expWaitToBeClickable(ipt_lastname);
 		ipt_lastname.click();
-		ipt_lastname.sendKeys(LastName);
+		ipt_lastname.sendKeys(ConcatCurrentDateTime(LastName));
 		js.executeScript(
 				"var result = document.evaluate(\"//input[@name='lastName']\", document.body, null, XPathResult.ANY_TYPE, null);     var input = result.iterateNext();input.scrollIntoView();");
 		ipt_accountname.click();
