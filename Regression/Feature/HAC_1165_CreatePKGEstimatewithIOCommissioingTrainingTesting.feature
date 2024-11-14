@@ -1,6 +1,6 @@
 Feature: HAC_1165_Verify packaging estimate creation with IO Commissioning+Training+Testing
 
- @Test 
+ @regtest
   Scenario Outline: Login as service scheduler and verify the packaging estimate creation
     Given HAC1165PKGCTT user enters <username> and <password>
     When HAC1165PKGCTT select the applicaton

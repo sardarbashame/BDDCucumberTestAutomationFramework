@@ -1,5 +1,5 @@
 Feature: HAC_1165_Verify raw estimate creation with IOcommissioning+Training+Testing
-@Test
+@regtest
   Scenario Outline: Login as service scheduler and verify the raw estimate creation
     Given HAC1165RCTT user enters <username> and <password>
     When HAC1165RCTT select the applicaton

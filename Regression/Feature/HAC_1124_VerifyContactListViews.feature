@@ -1,6 +1,6 @@
 Feature: HAC_1121_Verify the contact list views
 
-@Test2 
+@regtest
   Scenario: Login as service user and verify the contact list views
     Given HAC1124 login as service user
     When HAC1124 select the applicaton

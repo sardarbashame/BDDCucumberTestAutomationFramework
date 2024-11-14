@@ -54,7 +54,7 @@ public class ServiceAppointmentDetailsTab extends CommonFunctions {
 	WebElement btn_cancel;
 		
 
-	@FindBy(xpath="//label[text()='Status']//..//button")
+	@FindBy(xpath="//label[text()='Status']/parent::*//button")
 	WebElement clk_sastatus;
 	
 	@FindBy(xpath="//span[@title='Dispatched']")
@@ -182,18 +182,18 @@ public class ServiceAppointmentDetailsTab extends CommonFunctions {
 		expWaitToBeClickable(tab_details);
 		js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].click();", tab_details);
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 		}
 
 	public void UpdateSAStatus(String newstatus) throws InterruptedException {
-		Thread.sleep(2000);
-	//	expWaitToBeClickable(clk_sastatus);
-		Thread.sleep(2000);
+		Thread.sleep(4000);
 		js.executeScript("var result = document.evaluate(\"(//button[@title='Edit Status'])[last()]\", document.body, null, XPathResult.ANY_TYPE, null);     var input = result.iterateNext();input.scrollIntoView(); input.click();");
 		Thread.sleep(2000);
 		js.executeScript("window.scrollTo(0,0)");
-		Thread.sleep(2000);
-		clk_sastatus.click();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//label[text()='Status']")).click();
+		Thread.sleep(3000);
+		// clk_sastatus.click();
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//span[@title='"+newstatus+"']")).click();
 		Thread.sleep(3000);

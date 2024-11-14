@@ -139,6 +139,9 @@ public class HomePage extends CommonFunctions {
 	@FindBy(xpath = "//a[@title='Contacts']")
 	public WebElement clk_contacts;
 	
+	@FindBy(xpath = "//a[@title='Field Service']")
+	public WebElement clk_fieldservicetab;
+	
 	@FindBy(xpath = "//a//div[text()='New']")
 	WebElement newcontactbtn;
 
@@ -180,8 +183,12 @@ public class HomePage extends CommonFunctions {
 
 	@FindBy(xpath = "//button[text()='Save']")
 	WebElement contactsavebtn;
-
+	
+	@FindBy(xpath = "//button[text()='Gantt']")
+	WebElement ganttbtn;
+	
 	By wait_conatacts = By.xpath("//a[@title='Contacts']");
+	By wait_ganttbtn = By.xpath("//button[text()='Gantt']");
 
 	public HomePage() {
 		PageFactory.initElements(new AjaxElementLocatorFactory(driver, 10), this);
@@ -261,6 +268,19 @@ public class HomePage extends CommonFunctions {
 		javascriptClick(clk_contacts);
 		Thread.sleep(0, 3000);
 	}	
+	
+	// click on the Field Service tab
+		public void ClickFieldServiceTab() throws InterruptedException {
+			Thread.sleep(4000);
+			expWaitToBeClickable(clk_fieldservicetab);
+			javascriptClick(clk_fieldservicetab);
+			Thread.sleep(6000);
+			//WebElement frame1 = driver.findElement(By.xpath("//iframe[@name='GanttReactMapIframe']"));
+			WebElement frame1 = driver.findElement(By.xpath("//iframe[@title='Field Service']"));
+			driver.switchTo().frame(frame1);
+			expWaitToBeClickable(ganttbtn);
+		//	driver.switchTo().defaultContent();
+		}
 
 	// create a new contact
 	public void CreateNewContact(String FirstName, String MiddleName, String LastName, String AccountName, String Email,
@@ -287,11 +307,15 @@ public class HomePage extends CommonFunctions {
 		select_accountname.click();
 		ipt_contacttitle.sendKeys(title);
 		ipt_contactemail.sendKeys(Email);
+		Thread.sleep(2000);
 		ipt_contactphone.sendKeys(Phone);
+		Thread.sleep(2000);
 		ipt_contactotherphone.sendKeys(otherphone);
 		ipt_contactdepartment.sendKeys(dept);
 		contactsavebtn.click();
 		Thread.sleep(4000);
+		//contactsavebtn.click();
+		Thread.sleep(2000);
 		// waitForElementToDisAppear(Wait_toastMessage, 30);
 	}
 

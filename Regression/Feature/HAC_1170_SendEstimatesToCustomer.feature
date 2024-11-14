@@ -1,6 +1,6 @@
 Feature: HAC_1170_Send Estimates to Customer
 
-@Test
+@regtest
   Scenario Outline: Login as service scheduler and verify the processing estimate creation
     Given HAC1170 user enters <username> and <password>
     When HAC1170 select the applicaton

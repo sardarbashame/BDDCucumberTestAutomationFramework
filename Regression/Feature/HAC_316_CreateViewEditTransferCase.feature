@@ -1,6 +1,6 @@
 Feature: HAC_316_create view edit transfer a case
  
- @Test
+ @regtest
   Scenario Outline: Login as service technician and create a case
     Given HAC316 user enters <username> and <password>
     When HAC316 select the applicaton
@@ -12,7 +12,7 @@ Feature: HAC_316_create view edit transfer a case
     Examples: 
       | username                       | password |
       | testservicescheduler@gmail.com | H@ctest1 |
- @Test
+ @regtest
   Scenario Outline: Login as service technician and update the case status
     Given HAC316 user enters <username> and <password>
     When HAC316 select the applicaton
@@ -26,7 +26,7 @@ Feature: HAC_316_create view edit transfer a case
     Examples: 
       | username                       | password |
       | testservicescheduler@gmail.com | H@ctest1 |
- @Test
+ @regtest
   Scenario Outline: Login as service technician and transfer the case status
     Given HAC316 user enters <username> and <password>
     When HAC316 select the applicaton

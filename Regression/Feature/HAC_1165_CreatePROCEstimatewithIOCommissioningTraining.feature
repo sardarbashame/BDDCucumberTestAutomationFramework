@@ -1,6 +1,6 @@
 Feature: HAC_1165_Verify processing estimate creation with IOCommissioning + Training
 
-@Test
+@regtest
   Scenario Outline: Login as Service Scheduler and Verify the processing estimate creation
     Given HAC1165CT user enters <username> and <password>
     When HAC1165CT select the applicaton

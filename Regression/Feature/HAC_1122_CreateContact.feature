@@ -1,6 +1,6 @@
 Feature: HAC_1122_Verify contact creation
 
- @Test
+ @regtest
   Scenario Outline: Login as service scheduler and verify the contact creation
     Given HAC1122 user enters <username> and <password>
     When HAC1122 select the applicaton

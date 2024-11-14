@@ -1,5 +1,5 @@
 Feature: HAC_378 Verify Ability to Indicate Resource Preferences for an Account
-@Test
+@regtest
   Scenario Outline: HAC_378_Verify Able to indicate Resource Prefences on an Account
     Given Login as SERVICE SCH USER NAME
     When HAC145 select the applicaton
