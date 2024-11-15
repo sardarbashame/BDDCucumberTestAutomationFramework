@@ -1,5 +1,5 @@
 Feature: HAC_1166_Verify processing estimate creation in draft status
-@Test
+@regtest
    Scenario Outline: Login as service scheduler and verify the processing estimate creation in draft status
     Given HAC1166 user enters <username> and <password>
     When HAC1166 select the applicaton

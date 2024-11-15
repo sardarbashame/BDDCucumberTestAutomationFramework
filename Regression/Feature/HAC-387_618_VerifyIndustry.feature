@@ -1,6 +1,6 @@
 Feature: HAC_387_618_Verify the Industry field on the customer account
 
- @Test
+ @regtest
   Scenario Outline: Login as service user and verify the Industry field
     Given HAC387 user enters <username> and <password>
     When HAC387 select the applicaton

@@ -87,9 +87,4 @@ public class HAC408VerifyAddCaseTeam extends CommonFunctions {
 		caserelatedlistquicklinks = new CaseRelatedListQuickLinks();
 		caserelatedlistquicklinks.AddCaseTeam();
 	}
-
-	
-
-	
-	
 }

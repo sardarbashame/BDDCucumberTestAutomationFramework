@@ -1,6 +1,6 @@
 Feature: HAC_148_Verify the contact page layout fields
 
-  @Test
+  @regtest
   Scenario Outline: Login as service scheduler and verify the contact page layout fields
     Given HAC148 user enters <username> and <password>
     When HAC148 select the applicaton

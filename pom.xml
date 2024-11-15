@@ -85,18 +85,17 @@
 		</dependency>
 		<!--
 		https://mvnrepository.com/artifact/tech.grasshopper/extent-pdf-report -->
-		<!-- <dependency>
+	 <dependency>
     <groupId>tech.grasshopper</groupId>
     <artifactId>extent-pdf-report</artifactId>
     <version>2.1.0</version>
-</dependency> -->
+	</dependency>
 
-
-		<!-- <dependency>
+		<dependency>
 			<groupId>tech.grasshopper</groupId>
 			<artifactId>cucumber-pdf-report</artifactId>
 			<version>2.9.0</version>
-		</dependency> -->
+		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/net.rcarz/jira-client -->
 		<dependency>

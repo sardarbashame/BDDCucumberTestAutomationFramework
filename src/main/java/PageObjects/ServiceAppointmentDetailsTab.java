@@ -258,8 +258,8 @@ public class ServiceAppointmentDetailsTab extends CommonFunctions {
 		expWaitToBeClickable(tab_details);
 		js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].click();", tab_details);
-		Thread.sleep(3000);
-	}
+		Thread.sleep(5000);
+		}
 
 	public void UpdateSAStatus(String newstatus) throws InterruptedException {
 		Thread.sleep(2000);
@@ -273,6 +273,10 @@ public class ServiceAppointmentDetailsTab extends CommonFunctions {
 		javascriptClick(clk_sastatus);
 		Thread.sleep(2000);
 		zoomIN(1);
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//label[text()='Status']")).click();
+		Thread.sleep(3000);
+		// clk_sastatus.click();
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//span[@title='" + newstatus + "']")).click();
 		Thread.sleep(3000);

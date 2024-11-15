@@ -1,6 +1,6 @@
-Feature: Verify HAC_1165_CreateINSP Estimate Matrix
+Feature: Verify HAC_1165_CreateINSP Estimate Matrix with IOCommissioning
 
- @Test2 
+@regtest
   Scenario Outline: Login as service user and Verify HAC_1165_CreateINSP Estimate Matrix
     Given HAC1165 user enters <username> and <password>
     When HAC1165 select the applicaton

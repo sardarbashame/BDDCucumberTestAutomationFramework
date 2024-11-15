@@ -9,7 +9,8 @@ Feature: HAC_1478_Assign packaging service appointment to a service technician
    	When HAC1478 click on cases tab
    	When HAC1478 create new case
     When HAC1478 user is on estimate tab
-   	When HAC1478 select values on estimate flow step1
+   	When HAC1165PKGC select values on estimate flow step1
+   	When HAC1165PKGC select PKG tab
     When HAC1478 verify the field label number of tech
     When HAC1478 verify the field label number of days
     When HAC1478 verify the field label number of hours

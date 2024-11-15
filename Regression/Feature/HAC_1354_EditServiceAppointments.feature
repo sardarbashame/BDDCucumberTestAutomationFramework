@@ -1,5 +1,5 @@
 Feature: HAC_1354_Edit service appointments
-@Test
+@regtest
   Scenario Outline: Login as service technician and edit the service appointments
     
     Given HAC1478 user enters <testschedulerusername> and <password>

@@ -1,6 +1,6 @@
 Feature: HAC_622_Verify the Trade Name field on the customer account
 
-  @Test
+  @regtest
   Scenario Outline: Login as Service Users and Verify the Trade Name field
     Given HAC622 user enters <username> and <password>
     When HAC622 select the applicaton

@@ -1,5 +1,5 @@
 Feature: HAC_1367_Verify case assets creation by guided flow
-@Test
+@regtest
    Scenario Outline: Login as service scheduler and Verify case assets creation by guided flow
     Given HAC1367 user enters <username> and <password>
     When HAC1367 select the applicaton
@@ -7,8 +7,7 @@ Feature: HAC_1367_Verify case assets creation by guided flow
     When HAC1367 close the bottom bar
     When HAC1367 click on cases tab
     When HAC1367 create new case
-    When HAC1367 click on add asset quick action
-    Then HAC1367 add single asset
+    Then Add Asset and Verify Asset is displayed in the list view
     
 
     Examples: 

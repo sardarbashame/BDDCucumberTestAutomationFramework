@@ -38,22 +38,17 @@ public class HAC1124VerifyContactListViews extends CommonFunctions {
 
 	@When("HAC1124 close all the open tabs")
 	public void HAC1124_close_all_the_open_tabs() throws InterruptedException {
-		closeAllTabs();
-	}
+		closeAllTabs();	}
 
 	@When("HAC1124 close the bottom bar")
 	public void HAC387_close_the_bottom_bar() throws InterruptedException {
-		closeBottomeBar();
-	}
+		closeBottomeBar();}
 
 	// click on contacts tab
 	@When("HAC1124 user is on contact home page")
 	public void HAC1124_user_is_on_contact_home_page() throws InterruptedException, IOException {
 		homepage = new HomePage();
-		homepage.ClickContactsTab();
-		contactlistviews = new ContactListViews();
-		contactlistviews.clickcontactdetailsTab();
-	}
+		homepage.ClickContactsTab();}
 
 	// click on contacts list view button
 	@When("HAC1124 click on contact list view button")
@@ -100,61 +95,72 @@ public class HAC1124VerifyContactListViews extends CommonFunctions {
 		contactlistviews.clickCustomerContactsListView();
 	}
 
+	// select the heat and control billing contacts list view
+	@Then("HAC1124 select the heatandcontrolbilling contacts list view")
+	public void HAC1124_heatandcontrolbilling_contacts_list_view() throws InterruptedException, IOException {
+		contactlistviews = new ContactListViews();
+		contactlistviews.clickHACBillingContactsListView(); }
+
+	// select the heat and control sales contacts list view
+	@Then("HAC1124 select the heatandcontrolsales contacts list view")
+	public void HAC1124_heatandcontrolsales_contacts_list_view() throws InterruptedException, IOException {
+		contactlistviews = new ContactListViews();
+		contactlistviews.clickHACSalesContactsListView(); }
+
+	// select the vendor contacts list view
+	@Then("HAC1124 select the vendor contacts list view")
+	public void HAC1124_vendor_contacts_list_view() throws InterruptedException, IOException {
+		contactlistviews = new ContactListViews();
+		contactlistviews.clickVendorContactsListView();	}
+
 	// verify the name column in customer contacts list views
 	@Then("HAC1124 verify the name column in customer contact list view")
 	public void HAC1124_verify_the_name_column_in_customer_contact_list_view()
 			throws InterruptedException, IOException {
 		contactlistviews = new ContactListViews();
-		Assert.assertTrue(contactlistviews.txt_name.isDisplayed());
-	}
+		Assert.assertTrue(contactlistviews.txt_name.isDisplayed());	}
 
 	// verify the title column in customer contacts list views
 	@Then("HAC1124 verify the title column in customer contact list view")
 	public void HAC1124_verify_the_title_column_in_customer_contact_list_view()
 			throws InterruptedException, IOException {
 		contactlistviews = new ContactListViews();
-		Assert.assertTrue(contactlistviews.txt_title.isDisplayed());
-	}
+		Assert.assertTrue(contactlistviews.txt_title.isDisplayed()); }
 
 	// verify the account name column in customer contacts list views
 	@Then("HAC1124 verify the account name column in customer contact list view")
 	public void HAC1124_verify_the_account_name_column_in_customer_contact_list_view()
 			throws InterruptedException, IOException {
 		contactlistviews = new ContactListViews();
-		Assert.assertTrue(contactlistviews.txt_accountName.isDisplayed());
-	}
+		Assert.assertTrue(contactlistviews.txt_accountName.isDisplayed());	}
 
 	// verify the phone column in customer contacts list views
 	@Then("HAC1124 verify the phone column in customer contact list view")
 	public void HAC1124_verify_the_phone_column_in_customer_contact_list_view()
 			throws InterruptedException, IOException {
 		contactlistviews = new ContactListViews();
-		Assert.assertTrue(contactlistviews.txt_phone.isDisplayed());
-	}
+		Assert.assertTrue(contactlistviews.txt_phone.isDisplayed());}
 
 	// verify the mobile column in customer contacts list views
 	@Then("HAC1124 verify the mobile column in customer contact list view")
 	public void HAC1124_verify_the_mobile_column_in_customer_contact_list_view()
 			throws InterruptedException, IOException {
 		contactlistviews = new ContactListViews();
-		Assert.assertTrue(contactlistviews.txt_mobile.isDisplayed());
-	}
+		Assert.assertTrue(contactlistviews.txt_mobile.isDisplayed()); }
 
 	// verify the preferred phone column in customer contacts list views
 	@Then("HAC1124 verify the preferred phone column in customer contact list view")
 	public void HAC1124_verify_the_preferred_phone_column_in_customer_contact_list_view()
 			throws InterruptedException, IOException {
 		contactlistviews = new ContactListViews();
-		Assert.assertTrue(contactlistviews.txt_preferredPhone.isDisplayed());
-	}
+		Assert.assertTrue(contactlistviews.txt_preferredPhone.isDisplayed());	}
 
 	// verify the email column in customer contacts list views
 	@Then("HAC1124 verify the email column in customer contact list view")
 	public void HAC1124_verify_the_email_column_in_customer_contact_list_view()
 			throws InterruptedException, IOException {
 		contactlistviews = new ContactListViews();
-		Assert.assertTrue(contactlistviews.txt_email.isDisplayed());
-	}
+		Assert.assertTrue(contactlistviews.txt_email.isDisplayed());}
 
 	// verify the mailing city column in customer contacts list views
 	@Then("HAC1124 verify the mailing city column in customer contact list view")
@@ -169,15 +175,12 @@ public class HAC1124VerifyContactListViews extends CommonFunctions {
 	public void HAC1124_verify_the_shift_column_in_customer_contact_list_view()
 			throws InterruptedException, IOException {
 		contactlistviews = new ContactListViews();
-		Assert.assertTrue(contactlistviews.txt_shift.isDisplayed());
-	}
+		Assert.assertTrue(contactlistviews.txt_shift.isDisplayed()); }
 
 	// verify the location column in customer contacts list views
 	@Then("HAC1124 verify the location column in customer contact list view")
 	public void HAC1124_verify_the_location_column_in_customer_contact_list_view()
 			throws InterruptedException, IOException {
 		contactlistviews = new ContactListViews();
-		Assert.assertTrue(contactlistviews.txt_location.isDisplayed());
-	}
-
+		Assert.assertTrue(contactlistviews.txt_location.isDisplayed());	}
 }

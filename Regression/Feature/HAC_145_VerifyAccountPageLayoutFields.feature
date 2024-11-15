@@ -1,5 +1,5 @@
 Feature: HAC_145_Verify the customer account page layout fields
-@Test
+@regtest
   Scenario: Login as service user and verify the account page layout fields
     Given Login as service user
     When HAC145 select the applicaton

@@ -1,6 +1,6 @@
 Feature: HAC_146_create and verify the case contact roles
 
-  @Test
+  @regtest
   Scenario Outline: Login as service users and add engineer as case contact role
     Given HAC146 user enters <username> and <password>
     When HAC146 select the applicaton
@@ -14,7 +14,7 @@ Feature: HAC_146_create and verify the case contact roles
       | username                              | password    |
       | channelpartnermanagerusersarda@qa.hnc | M@shaallah2 |
       | testservicescheduler@gmail.com        | H@ctest1    |
-@Test
+@regtest
   Scenario Outline: Login as service users and add engineering manager as case contact role
     Given HAC146 user enters <username> and <password>
     When HAC146 select the applicaton
@@ -28,7 +28,7 @@ Feature: HAC_146_create and verify the case contact roles
       | username                              | password    |
       | channelpartnermanagerusersarda@qa.hnc | M@shaallah2 |
       | testservicescheduler@gmail.com        | H@ctest1    |
-@Test
+@regtest
   Scenario Outline: Login as service users and Verify the case contact roles
     Given HAC146 user enters <username> and <password>
     When HAC146 select the applicaton

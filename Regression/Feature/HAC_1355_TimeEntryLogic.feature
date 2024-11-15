@@ -1,5 +1,5 @@
 Feature: HAC-1355 Verify timesheet entry logic on service appointments
-@Test
+@regtest
   Scenario Outline: Login as service technician and verify the timesheet entries on service appointment
     
     Given HAC1478 user enters <testschedulerusername> and <password>

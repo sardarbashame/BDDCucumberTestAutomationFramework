@@ -1,5 +1,5 @@
 Feature: HAC_1021_Verify processing and packaging combination of estimate creation with IOCommissioning + Training
-@Test
+@regtest
  Scenario Outline: Login as service scheduler and verify the processing and packaging estimates creation
     Given HAC1165PICTT user enters <username> and <password>
     When HAC1165PICTT select the applicaton

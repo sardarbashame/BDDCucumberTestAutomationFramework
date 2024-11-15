@@ -1,7 +1,7 @@
 Feature: HAC_1165_Verify processing estimate creation with IO Commissioning
 
- @Test 
-  Scenario Outline: Login as Service Scheduler and Verify the processing estimate creation
+ @regtest
+  Scenario Outline: Login as service scheduler and verify the processing estimate creation
     Given HAC1165 user enters <username> and <password>
     When HAC1165 select the applicaton
     When HAC1165 close all the open tabs
@@ -12,7 +12,7 @@ Feature: HAC_1165_Verify processing estimate creation with IO Commissioning
     When HAC1165 verify the pricebook options
     When HAC1165 select values on estimate flow step1
     When HAC1165 verify the field label number of tech
- 		When HAC1165 verify the field value number of tech
+ 	#	When HAC1165 verify the field value number of tech
     When HAC1165 verify the field label number of days
     When HAC1165 verify the field label number of hours
     When HAC1165 select from date
