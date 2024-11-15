@@ -62,6 +62,11 @@ public class HAC145VerifyAccountLayout extends CommonFunctions {
 	public void HAC387_close_the_bottom_bar() throws InterruptedException {
 		closeBottomeBar();
 	}
+	
+	@When("close the bottom bar")
+	public void closeTheBottombar() throws InterruptedException {
+		closeBottomeBar();
+	}
 
 	@When("HAC145 user is on account details")
 	public void HAC145_user_is_on_account_details() throws InterruptedException, IOException {

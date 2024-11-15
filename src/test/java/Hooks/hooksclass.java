@@ -20,7 +20,7 @@ public class hooksclass extends CommonFunctions {
 	static Entry<String, String> lastfile;
 
 	@Before(order = 1)
-	public void setUp() throws IOException {
+	public void setUp() throws Exception {
 		intializeDriver();
 		actionInit();
 		webDriverWaitInit();
@@ -35,7 +35,7 @@ public class hooksclass extends CommonFunctions {
 				scenario.log("Current Page URL is " + driver.getCurrentUrl());
 				System.out.println("Current Page URL is " + driver.getCurrentUrl());
 				//messageHandler.log(TestCaseName + "is failed =  " + scenario.isFailed());
-				scenario.attach(embedScreenshot(), "image/png","Test");
+				scenario.attach(embedScreenshot(), "image/png","Refer Screenshot");
 				File currentDir = new File(System.getProperty("user.dir") + "/target/cucumberreports/Screenshots/");
 				map = new TreeMap<String, String>();
 				displayDirectoryContents(currentDir);

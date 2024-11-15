@@ -30,7 +30,7 @@ public class BaseTest {
 		if (browserName.equalsIgnoreCase("chrome")) {
 			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();
-		ppty = commonutilities.CommonFunctions.getObjDetails();
+			ppty = commonutilities.CommonFunctions.getObjDetails();
 			System.out.println("Aapplication Login");
 			driver.manage().window().maximize();
 			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));		
