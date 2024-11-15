@@ -2,12 +2,14 @@ package PageObjects;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 
 import commonutilities.CommonFunctions;
+import junit.framework.Assert;
 
 public class HomePage extends CommonFunctions {
 
@@ -73,6 +75,9 @@ public class HomePage extends CommonFunctions {
 	@FindBy(xpath = "//span[@title='Billing Dispute']")
 	WebElement casesubtypebillingdispute;
 	
+	@FindBy(xpath = "//span[@title='Assessment']")
+	WebElement casesubtypeAssessment;
+	
 	@FindBy(xpath = "//button[@title='Move to Chosen']")
 	WebElement movetochosenbtn;
 	
@@ -87,6 +92,9 @@ public class HomePage extends CommonFunctions {
 	
 	@FindBy(xpath = "//label[text()='Description']")
 	WebElement casedescription;
+	
+	@FindBy(xpath = "//input[@placeholder = 'Search Orders...']")
+	WebElement ipt_salesorder;
 	
 	@FindBy(xpath = "//button[text()='Save']")
 	WebElement casesavebtn;
@@ -180,6 +188,33 @@ public class HomePage extends CommonFunctions {
 
 	@FindBy(xpath = "//button[text()='Save']")
 	WebElement contactsavebtn;
+	
+	@FindBy(xpath="//a[text()='Log Out']")
+	WebElement logoutlink;
+	
+	@FindBy(xpath="//*[text()='Shipping Address']/..//input[@placeholder='Search Address']")
+	WebElement ipt_ShippingAddress;
+	
+	@FindBy(xpath="//span[@title='Brooklyn, NY, USA']")
+	WebElement clk_ShippingAddress;
+	
+	@FindBy(xpath="(//span[text() = 'TLI Number']//ancestor::dt//following-sibling::dd//a)[last()]")
+	WebElement txt_TLINumberValue;
+	
+	@FindBy(xpath="//div[text()= 'Add Work Order Lines']")
+	WebElement lnk_newWorkOrderLines;
+	
+	@FindBy(xpath="((//table)[last()]//td//lightning-primitive-cell-checkbox)[1]")
+	WebElement chk_selectLineItem;
+	
+	@FindBy(xpath="//button[text() = 'Add Work Order Lines']")
+	WebElement btn_AddWorkOrderLines;
+	
+	@FindBy(xpath="//span[text() = 'Work Order Line Items']")
+	WebElement lnk_workOrderLineItemsQuickLink;
+	
+	@FindBy(xpath="((//table)[last()]//a[contains(@title, '00')])[last()]")
+	WebElement lnk_selectCreatedWorkLineItems;
 
 	By wait_conatacts = By.xpath("//a[@title='Contacts']");
 
@@ -208,13 +243,7 @@ public class HomePage extends CommonFunctions {
 		js.executeScript("arguments[0].click();", serviceappointmentstab);
 		Thread.sleep(4000);
 	}
-	
-	@FindBy(xpath="//*[text()='Shipping Address']/..//input[@placeholder='Search Address']")
-	WebElement ipt_ShippingAddress;
-	
-	@FindBy(xpath="//span[@title='Brooklyn, NY, USA']")
-	WebElement clk_ShippingAddress;
-	
+		
 	public void createNewCustomerAccount(String accountname, String accountsite, String phone, String fax, String email, String website, String industryname, String tradename)
 			throws InterruptedException {
 		js = (JavascriptExecutor) driver;
@@ -295,6 +324,70 @@ public class HomePage extends CommonFunctions {
 		// waitForElementToDisAppear(Wait_toastMessage, 30);
 	}
 
+	public void createNewCaseWithRequiredData(String caseContact, String CaseType,String SalesOrder) throws Exception {
+		js = (JavascriptExecutor) driver;
+		waitForElementToAppear(By.xpath("//a//div[text()='New']"), 30);
+		expWaitToBeClickable(newcasebtn);
+		newcasebtn.click();
+		contactnametxtbox.click();
+		clickDrpDownAndSelValue(contactnametxtbox, caseContact);	
+		scrollIntoView(ipt_salesorder);
+		javascriptClick(ipt_salesorder);
+		clickDrpDownAndSelValue(ipt_salesorder, SalesOrder);
+		// scroll to Type field
+		js.executeScript(
+				"var result = document.evaluate(\"//label[text()='Sales Order']\", document.body, null, XPathResult.ANY_TYPE, null);var input = result.iterateNext();input.scrollIntoView();");
+		expWaitToBeClickable(casetype);
+		scrollIntoView(casetype);
+		javascriptClick(casetype);
+		Thread.sleep(2000);
+		scrollIntoView(driver.findElement(By.xpath("//span[@title='"+CaseType+"']")));
+		javascriptClick(driver.findElement(By.xpath("//span[@title='"+CaseType+"']")));
+		Thread.sleep(1000);
+		expWaitToBeClickable(casesubtypeAssessment);
+		javascriptClick(casesubtypeAssessment);
+		javascriptClick(movetochosenbtn);
+		js.executeScript("arguments[0].click();", caseorigin);
+		Thread.sleep(2000);
+		expWaitToBeClickable(email);
+		email.click();
+		// scroll to Subject field
+		js.executeScript(
+				"var result = document.evaluate(\"//label[text()='Case Origin']\", document.body, null, XPathResult.ANY_TYPE, null);var input = result.iterateNext();input.scrollIntoView();");
+		casesubject.click();
+		Thread.sleep(0, 3000);
+		casesubject.sendKeys("Test Automation");
+		expWaitToBeClickable(casedescription);
+		casedescription.click();
+		casesavebtn.click();
+		waitForElementToAppear(By.xpath("//a[text()='Details']"), 30);
+		Thread.sleep(0, 4000);
+	}
+	public void verifyTLINumberInCase() throws Exception
+	{
+		Thread.sleep(0, 4000);
+		expWaitToBeClickable(txt_TLINumberValue);
+		drawHighlight(txt_TLINumberValue);
+		Assert.assertTrue(txt_TLINumberValue.isDisplayed());
+	}
+
+	public void AddNewWorkOrderLineItem() throws Exception {
+		Thread.sleep(0, 4000);
+		expWaitToBeClickable(lnk_newWorkOrderLines);
+		lnk_newWorkOrderLines.click();
+		Thread.sleep(0, 4000);
+		expWaitToBeClickable(chk_selectLineItem);
+		drawHighlight(chk_selectLineItem);
+		chk_selectLineItem.click();
+		Thread.sleep(2000);
+		btn_AddWorkOrderLines.click();
+		Thread.sleep(4000);
+		drawHighlight(lnk_workOrderLineItemsQuickLink);
+		expWaitToBeClickable(lnk_selectCreatedWorkLineItems);
+		lnk_selectCreatedWorkLineItems.click();
+		Thread.sleep(0, 4000);
+	}
+	
 	public void createNewCase(String contname, String firstname, String sub) throws InterruptedException {
 		js = (JavascriptExecutor) driver;
 		waitForElementToAppear(By.xpath("//a//div[text()='New']"), 30);
@@ -331,8 +424,7 @@ public class HomePage extends CommonFunctions {
 		Thread.sleep(0, 4000);
 	}
 
-	@FindBy(xpath="//a[text()='Log Out']")
-	WebElement logoutlink;
+	
 	public void Logout() throws InterruptedException{
 		js = (JavascriptExecutor) driver;
 		Thread.sleep(0, 4000);

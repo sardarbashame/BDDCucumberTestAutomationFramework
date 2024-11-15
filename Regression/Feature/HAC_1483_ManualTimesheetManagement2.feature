@@ -1,6 +1,6 @@
-Feature: HAC_1483 Auto populate work order no in Time Entry Record
+Feature: HAC_1483 Manual Timesheet Management
 
-  Scenario: Login as service Scheduler user and HAC_1483_Auto populate work order no in Time Entry Record
+  Scenario: Login as service user and HAC_1483_Manual Timesheet Management
     Given Login as SERVICE SCH USER NAME
     When HAC1478 select the applicaton
     When HAC1478 close all the open tabs

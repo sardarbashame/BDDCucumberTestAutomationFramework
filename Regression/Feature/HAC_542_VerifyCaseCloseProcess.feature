@@ -1,6 +1,5 @@
 Feature: HAC_542_Verify the case closure process
 
-  @Test
   Scenario: Login as service manager and verify the case closure process
     Given HAC542 login as a service manager
     When HAC542 select the applicaton

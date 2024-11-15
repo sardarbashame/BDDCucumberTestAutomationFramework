@@ -25,6 +25,11 @@ public class AppnavigatorTabs extends CommonFunctions {
 		appNavigatorObj = new AppnavigatorTabsPages();
 		appNavigatorObj.clkRecentQuote();
 	}
+	
+	@When("close all the open tabs")
+	public void close_all_the_open_tabs() throws Exception {
+		closeAllTabs();
+	}
 
 	@When("select the Inquiries application")
 	public void selectInquiriesApplicationn() throws InterruptedException, IOException {

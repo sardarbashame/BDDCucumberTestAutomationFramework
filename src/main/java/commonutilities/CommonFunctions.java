@@ -1,5 +1,8 @@
 package commonutilities;
 
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -264,5 +267,38 @@ public class CommonFunctions extends BaseTest {
 	public static byte[] embedScreenshot() {
 		byte[] srcBytes = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
 		return srcBytes;
+	}
+
+	public void zoomOut(int cnt) {
+		Robot robot;
+		try {
+			robot = new Robot();
+
+			for (int i = 0; i < cnt; i++) {
+				robot.keyPress(KeyEvent.VK_CONTROL);
+				robot.keyPress(KeyEvent.VK_SUBTRACT);
+				robot.keyRelease(KeyEvent.VK_SUBTRACT);
+				robot.keyRelease(KeyEvent.VK_CONTROL);
+			}
+		} catch (AWTException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	public void zoomIN(int cnt) {
+		Robot robot;
+		try {
+			robot = new Robot();
+
+			for (int i = 0; i < cnt; i++) {
+				robot.keyPress(KeyEvent.VK_CONTROL);
+				robot.keyPress(KeyEvent.VK_ADD);
+				robot.keyRelease(KeyEvent.VK_ADD);
+				robot.keyRelease(KeyEvent.VK_CONTROL);
+			}
+		} catch (AWTException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 }

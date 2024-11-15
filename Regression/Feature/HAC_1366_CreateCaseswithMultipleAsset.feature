@@ -1,5 +1,4 @@
 Feature: Verify HAC_1366_Create Cases with Multiple Asset
-  @Test
   Scenario Outline: Login as service user and HAC_1366_Create Cases with Multiple Asset
     Given Login as SERVICE SCH USER NAME
     When HAC1165 select the applicaton

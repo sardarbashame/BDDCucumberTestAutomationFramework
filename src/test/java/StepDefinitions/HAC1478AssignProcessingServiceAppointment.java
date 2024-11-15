@@ -94,6 +94,24 @@ public class HAC1478AssignProcessingServiceAppointment extends CommonFunctions {
 
 	}
 
+	@When("Create new case with {string}, {string}, {string}")
+	public void hac1478_create_new_case_with(String caseContact, String CaseType,String SalesOrder) throws Exception {
+		homePage = new HomePage();
+		homePage.createNewCaseWithRequiredData(caseContact,CaseType,SalesOrder);
+	}
+
+	@Then("Verify TLI number is displayed under Case details tab")
+	public void verifyTLINumberDisplayed() throws Exception {
+		homePage = new HomePage();
+		homePage.verifyTLINumberInCase();
+	}
+	@When("Add New Work Order Line Items")
+	public void AddNewWorkOrderLineItem() throws Exception {
+		homePage = new HomePage();
+		homePage.AddNewWorkOrderLineItem();
+	}
+	
+
 	@When("HAC1478 user is on estimate tab")
 	public void HAC1478_user_is_on_estimate_tab() throws InterruptedException, IOException {
 		estimateCreationFlowStep1 = new EstimateCreationFlowStep1();
@@ -200,6 +218,11 @@ public class HAC1478AssignProcessingServiceAppointment extends CommonFunctions {
 		serviceappointments = new ServiceAppointmentDetailsTab();
 		serviceappointments.UpdateSAScheduleEndDate();
 		serviceappointments.ClickSaveButton();
+	}
+	@Then("Update Service Territory")
+	public void UpdateServiceTerritory() throws Exception {
+		serviceappointments = new ServiceAppointmentDetailsTab();
+		serviceappointments.UpdateserviceTerritory();
 	}
 
 	@Then("HAC1478 click related tab")

@@ -1,8 +1,8 @@
 Feature: Verify HAC_1165_CreateINSP Estimate Matrix
 
-  @Test
+ 
   Scenario Outline: Login as service user and HAC_1165_Create INSP Estimate Matrix  IO/comissioning+Training
-    Given HAC1165 user enters <username> and <password>
+    Given Login as SERVICE SCH USER NAME
     When HAC1165 select the applicaton
     When close all the open tabs
     When close the bottom bar
@@ -12,6 +12,7 @@ Feature: Verify HAC_1165_CreateINSP Estimate Matrix
     When Create Estimations with INSP "<Pricebook>", "<InspectionEstimateMatrix>", "<Estimateitem>"
     Then User click on INSP Tab
     When HAC1165 verify the field label number of tech
+    When HAC1165PKGC verify the field value number of tech
     When HAC1165 verify the field label number of days
     When HAC1165 verify the field label number of hours
     When HAC1165 select from date
@@ -22,5 +23,5 @@ Feature: Verify HAC_1165_CreateINSP Estimate Matrix
     Then Click on QuoteEstimates and verify quote is created in the details page
 
     Examples: 
-      | username                       | password    | CaseContact | CaseFirstName | CaseSub     | Pricebook                   | InspectionEstimateMatrix | Estimateitem                |
-      | mubeen.mohiuddin@gerent.com.qa | Strange@234 | FN6 MN6 LN6 | FN6           | TestCase100 | CANADA Domestic Market Rate | ISHIDA DACS              | IO/Commissioning + Training |
+      | CaseContact | CaseFirstName | CaseSub     | Pricebook                   | InspectionEstimateMatrix | Estimateitem                |
+      | FN6 MN6 LN6 | FN6           | TestCase100 | CANADA Domestic Market Rate | ISHIDA DACS              | IO/Commissioning + Training |

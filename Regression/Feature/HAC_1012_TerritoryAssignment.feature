@@ -1,12 +1,11 @@
 Feature: HAC_1012_ Territory Assignment
 
-  @Test
   Scenario: Login as service user and HAC_1012_ Territory Assignment
     Given Login as SERVICE SCH USER NAME
     When select the Field Service application
-    When HAC145 close all the open tabs
+    When close all the open tabs
     When click on Service Resources tab
-    When Click on recently created SA in the grid
+    When Click on recently created SR in the grid
     Then Verify Service Territories list view is displayed
 
   Scenario: Login as service user and HAC_1012_ Territory Assignment drag and Drop under Field Service
@@ -32,6 +31,7 @@ Feature: HAC_1012_ Territory Assignment
     Then HAC1478 create service appointments
     Then HAC1478 click service appointment link
     Then HAC1478 select a service appointment
+    Then Update Service Territory
     Then HAC1478 select a schedule start date
     Then HAC1478 select a schedule end date
     Then HAC1478 click related tab
@@ -40,4 +40,4 @@ Feature: HAC_1012_ Territory Assignment
     When select the Field Service application
     When close all the open tabs
     When click on Field Service tab
-    When Select any one of appointment and Drag and Drop to gantt
+    When Select any one of appointmentand Drag and Drop to gantt

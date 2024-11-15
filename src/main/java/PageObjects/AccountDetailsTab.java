@@ -413,7 +413,7 @@ public class AccountDetailsTab extends CommonFunctions {
 		accountsavebtn.click();
         Thread.sleep(1000);
 		drawHighlight(clk_closeToasterMsg);
-		elementToBePresent(Wait_toastMessage, 30);
+		//elementToBePresent(Wait_toastMessage, 30);
 		clk_closeToasterMsg.click();	
 		
 	}
