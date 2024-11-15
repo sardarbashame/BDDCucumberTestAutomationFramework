@@ -40,6 +40,9 @@ public class WorkOrder extends CommonFunctions {
 	@FindBy(xpath = "(//span[text() = 'Account'])[last()]//parent::label//following-sibling::div//input")
 	WebElement ipt_AccountName;
 	
+	@FindBy(xpath = "//label//span[text()='Title']/../..//input")
+	WebElement ipt_WorkStepTitle;
+	
 	@FindBy(xpath = "//div//span[contains(@class, 'toastMessage')]//a")
 	List<WebElement> toast_message;
 	
@@ -48,6 +51,9 @@ public class WorkOrder extends CommonFunctions {
 
 	@FindBy(xpath = "//button[text()='Next']")
 	WebElement btn_Next;
+	
+	@FindBy(xpath = "//span[text()='Next']")
+	WebElement btn_workstepNext;
 	
 	@FindBy(xpath = "//span[text()='Work Order']/..")
 	WebElement radiobtn_WorkOrder;
@@ -87,6 +93,50 @@ public class WorkOrder extends CommonFunctions {
 		Thread.sleep(4000);
 	}
 	
+	@FindBy(xpath="//label//span[text()='Work Plan']/../..//input")
+	WebElement ipt_workplan;
+	
+	@FindBy(xpath="//div[@title='Test']")
+	WebElement select_workplan;
+	
+	@FindBy(xpath="(//button//span[text()='Save'])[last()]")
+	WebElement btn_workstepsave;
+	
+	public void CreateNewWorkStep() throws Exception {
+		Thread.sleep(2000);
+		expWaitToBeClickable(btn_New);
+		js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", btn_New);
+		Thread.sleep(3000);
+		btn_workstepNext.click();
+		Thread.sleep(2000);
+		ipt_WorkStepTitle.sendKeys("TestWorkStepTitle");
+		ipt_workplan.click();
+		ipt_workplan.sendKeys("Test");
+		Thread.sleep(2000);
+		select_workplan.click();
+		Thread.sleep(2000);
+		btn_workstepsave.click();
+		
+//		txt_worktype.click();
+//		Thread.sleep(2000);
+//		clickDrpDownAndSelValue(txt_worktype, "Break Fix");
+//		Thread.sleep(4000);
+//		Thread.sleep(4000);
+//		scrollIntoView(ipt_AccountName);
+//		if(icon_deleteAccount.size()>0)
+//		{
+//			icon_deleteAccount.get(0).click();
+//		}
+//		ipt_AccountName.click();
+//		clickDrpDownAndSelValue(ipt_AccountName, "United Batter and Breading");
+//		btn_save.click();
+//		Thread.sleep(4000);
+//		if (toast_message.size() > 0) {
+//			toast_message.get(0).click();
+//		}
+//		Thread.sleep(4000);
+	}
 	
 	public void CreateServiceAppointments() throws InterruptedException {
 		Thread.sleep(2000);
