@@ -41,7 +41,7 @@ public class WorkOrder extends CommonFunctions {
 	WebElement ipt_AccountName;
 	
 	@FindBy(xpath = "//div//span[contains(@class, 'toastMessage')]//a")
-	WebElement toast_message;
+	List<WebElement> toast_message;
 	
 	@FindBy(xpath = "//div[@title='Create Service Appoinments']")
 	WebElement btn_createserviceappointments;
@@ -81,7 +81,9 @@ public class WorkOrder extends CommonFunctions {
 		clickDrpDownAndSelValue(ipt_AccountName, "United Batter and Breading");
 		btn_save.click();
 		Thread.sleep(4000);
-		toast_message.click();
+		if (toast_message.size() > 0) {
+			toast_message.get(0).click();
+		}
 		Thread.sleep(4000);
 	}
 	

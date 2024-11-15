@@ -49,17 +49,13 @@ public class ServiceAppointmentDetailsTab extends CommonFunctions {
 	@FindBy(xpath = "//td[@data-value='2024-11-16']")
 	WebElement select_scheduleenddate;
 
-	@FindBy(xpath = "//label[text()='Status']//..//button")
+	@FindBy(xpath = "//button[text()='Save']")
 	WebElement btn_save;
 
-<<<<<<< HEAD
-	@FindBy(xpath="//label[text()='Status']/parent::*//button")
-=======
 	@FindBy(xpath = "//button[text()='Cancel']")
 	WebElement btn_cancel;
 
 	@FindBy(xpath = "//label[text()='Status']//..//button")
->>>>>>> 352c16cecdf7f0686b19e40c98bf4358f8575c47
 	WebElement clk_sastatus;
 
 	@FindBy(xpath = "//span[@title='Dispatched']")
@@ -175,6 +171,9 @@ public class ServiceAppointmentDetailsTab extends CommonFunctions {
 
 	@FindBy(xpath = "//ul//li//span[@title='Service Appointments']")
 	WebElement lnk_serviceAppointment;
+	
+	@FindBy(xpath = "//label[text() = 'Service Territory']//parent::lightning-grouped-combobox//following::input[@placeholder = 'Search Service Territories...']")
+	WebElement sel_serviceTerritory;
 
 	By serviceAppoinmenttabAppear = By.xpath("//span[text() = 'Service Appointments']//parent::a");
 
@@ -207,7 +206,6 @@ public class ServiceAppointmentDetailsTab extends CommonFunctions {
 
 	public void UpdateSAScheduleStartDate() throws InterruptedException {
 		JavascriptExecutor executor = (JavascriptExecutor) driver;
-		// executor.executeScript("document.body.style.zoom = '0.75'");
 		executor.executeScript("window.scrollTo(0,750)");
 		Thread.sleep(3000);
 		executor.executeScript(
@@ -219,19 +217,17 @@ public class ServiceAppointmentDetailsTab extends CommonFunctions {
 		javascriptClick(clk_schedulestartdate);
 		Thread.sleep(2000);
 		scrollIntoView(clk_today);
+		mouseHover(clk_today);
 		javascriptClick(clk_today);
 		Thread.sleep(2000);
 	}
 
 	public void UpdateSAScheduleEndDate() throws InterruptedException {
-		JavascriptExecutor executor = (JavascriptExecutor) driver;
-		// executor.executeScript("document.body.style.zoom = '0.75'");
 		Thread.sleep(2000);
 		expWaitToBeClickable(clk_scheduleenddate);
 		Thread.sleep(2000);
 		javascriptClick(clk_scheduleenddate);
 		Thread.sleep(2000);
-		executor.executeScript("document.body.style.zoom = '0.85'");
 		scrollIntoView(clk_today);
 		javascriptClick(clk_today);
 		Thread.sleep(2000);
@@ -239,28 +235,31 @@ public class ServiceAppointmentDetailsTab extends CommonFunctions {
 
 	public void ClickSaveButton() throws InterruptedException {
 		Thread.sleep(4000);
-		btn_save.click();
+		expWaitToBeClickable(btn_save);
+		javascriptClick(btn_save);
 		Thread.sleep(4000);
 		js.executeScript("window.scrollTo(0,0)");
 		Thread.sleep(3000);
 		expWaitToBeClickable(tab_details);
 	}
 
+	public void UpdateserviceTerritory() throws Exception {
+		expWaitToBeClickable(sel_serviceTerritory);
+		Thread.sleep(4000);
+		sel_serviceTerritory.click();
+		clickDrpDownAndSelValue(sel_serviceTerritory, "US - Processing Pencil In");
+		Thread.sleep(3000);
+		btn_save.click();
+		Thread.sleep(4000);
+	}
+	
 	public void ClickDetailsTab() throws InterruptedException {
 		Thread.sleep(2000);
 		expWaitToBeClickable(tab_details);
 		js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].click();", tab_details);
-<<<<<<< HEAD
 		Thread.sleep(5000);
 		}
-
-	public void UpdateSAStatus(String newstatus) throws InterruptedException {
-		Thread.sleep(4000);
-		js.executeScript("var result = document.evaluate(\"(//button[@title='Edit Status'])[last()]\", document.body, null, XPathResult.ANY_TYPE, null);     var input = result.iterateNext();input.scrollIntoView(); input.click();");
-=======
-		Thread.sleep(3000);
-	}
 
 	public void UpdateSAStatus(String newstatus) throws InterruptedException {
 		Thread.sleep(2000);
@@ -268,9 +267,12 @@ public class ServiceAppointmentDetailsTab extends CommonFunctions {
 		Thread.sleep(2000);
 		js.executeScript(
 				"var result = document.evaluate(\"(//button[@title='Edit Status'])[last()]\", document.body, null, XPathResult.ANY_TYPE, null);     var input = result.iterateNext();input.scrollIntoView(); input.click();");
->>>>>>> 352c16cecdf7f0686b19e40c98bf4358f8575c47
 		Thread.sleep(2000);
 		js.executeScript("window.scrollTo(0,0)");
+		Thread.sleep(2000);
+		javascriptClick(clk_sastatus);
+		Thread.sleep(2000);
+		zoomIN(1);
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("//label[text()='Status']")).click();
 		Thread.sleep(3000);

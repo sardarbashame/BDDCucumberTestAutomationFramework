@@ -28,7 +28,7 @@ public class OrderPages extends CommonFunctions {
 	@FindBy(xpath = "//div[contains(@class, 'active ')]//a[text() = 'Related']")
     WebElement tab_related;
 	
-	@FindBy(xpath = "//div[contains(@class, 'active ')]//table//th//span//div//a[@title]")
+	@FindBy(xpath = "((//div[contains(@class, 'active ')]//span[text() = 'Order Products'])//ancestor::lst-list-view-manager-header//following-sibling::div)[last()]//table//th//span//div//a[@title]")
 	List<WebElement> lst_orderProduct;
 	
 	By orderTabAppear = By.xpath("//span[text() = 'Orders']//parent::a");

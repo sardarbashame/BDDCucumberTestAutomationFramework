@@ -76,6 +76,12 @@ public class AppnavigatorTabsPages extends CommonFunctions {
 	@FindBy(xpath = "(//table//h3[text() = 'Resource Preferences']//ancestor::table//parent::div//following-sibling::div//tr//td//a[text() = 'Edit'])[1]")
 	WebElement clk_ResourcesPreference;
 	
+	@FindBy(xpath = "//div[contains(@class, 'active ')]//label[text() = 'Preference Type']//following-sibling::div//button")
+	WebElement clk_preferenceType;
+	
+	@FindBy(xpath = "//div[contains(@class, 'active ')]//label[text() = 'Preference Type']//parent::div//descendant::lightning-base-combobox-item//span[not(contains(@title,'--None--')) and @class = 'slds-truncate']")
+	List<WebElement> sel_dropdownPreferenceTypeCnt;
+	
 	@FindBy(xpath = "(//div[@class= 'SingleTask DraggableSingleTask']//input)[1]")
 	WebElement clk_DraggableSingleTask;
 
@@ -220,7 +226,7 @@ public class AppnavigatorTabsPages extends CommonFunctions {
 	By quoteTabAppear = By.xpath("//span[text() = 'Quotes']//parent::a");
 	By workOrderstabAppear = By.xpath("//span[text() = 'Work Orders']//parent::a");
 	By serviceAppoinmenttabAppear = By.xpath("//span[text() = 'Service Appointments']//parent::a");
-	By inquiriesTabAppear = By.xpath("//span[text() = 'Recently Viewed | Inquiries']//parent::a");
+	By inquiriesTabAppear = By.xpath("//span[text() = 'Recently Viewed | Inquiries' or text() = 'Inquiries']//parent::a");
 	By TLINoTabAppear = By.xpath("(//span[text() = 'TLI Number'])[last()]");
 	By serviceResourcestabAppear = By.xpath("//span[text() = 'Service Resources']//parent::a");
 	By fieldServiceTabAppear = By.xpath("//span[text() = 'Field Service']//parent::a");
@@ -322,20 +328,22 @@ public class AppnavigatorTabsPages extends CommonFunctions {
 		executor.executeScript("document.body.style.zoom = '0.55'");
 		drawHighlight(ipt_searchServiceApment);	
 		javascriptClick(ipt_searchServiceApment);
-		ipt_searchServiceApment.sendKeys(ServiceAppointmentRelatedTab.ServiceAppmentName);
+		ipt_searchServiceApment.sendKeys(ServiceAppointmentDetailsTab.ServiceAppmentName);
 		ipt_searchServiceApment.sendKeys(Keys.ENTER);
 		draganddropJscript(DraggableSingleTask, dropGantt);
 		waitForElementToDisAppear(wait_disapperLoading, 30);
 		Thread.sleep(4000);
 	}
+
 	public void searchSAAndClickEdit() throws Exception {
+		Thread.sleep(0, 5000);
 		waitForElementToAppear(fieldServiceTabAppear, 40);
 		Thread.sleep(5000);
 		WebElement iframe = driver.findElement(By.xpath("//iframe[@title='Field Service']"));
 		driver.switchTo().frame(iframe);
 		JavascriptExecutor executor = (JavascriptExecutor) driver;
 		executor.executeScript("document.body.style.zoom = '0.55'");
-		drawHighlight(ipt_searchServiceApment);	
+		drawHighlight(ipt_searchServiceApment);
 		javascriptClick(ipt_searchServiceApment);
 		ipt_searchServiceApment.sendKeys(ServiceAppointmentDetailsTab.ServiceAppmentName);
 		ipt_searchServiceApment.sendKeys(Keys.ENTER);
@@ -345,20 +353,26 @@ public class AppnavigatorTabsPages extends CommonFunctions {
 		javascriptClick(btn_editSA);
 		Thread.sleep(4000);
 	}
+
 	public void clkRelatedTabAndValidatedResourcesPref() throws Exception {
 		int cnt = driver.findElements(By.tagName("iframe")).size();
-        System.out.println("Number of Frames on a Page:" + cnt);
-		Thread.sleep(5000);		
-		drawHighlight(clk_relatedTab);	
+		System.out.println("Number of Frames on a Page:" + cnt);
+		Thread.sleep(5000);
+		drawHighlight(clk_relatedTab);
 		javascriptClick(clk_relatedTab);
 		int cnt2 = driver.findElements(By.tagName("iframe")).size();
-        System.out.println("Number of Frames on a Page:" + cnt2);
-        driver.switchTo().frame(9);
+		System.out.println("Number of Frames on a Page:" + cnt2);
+		WebElement iframe = driver.findElement(By.xpath("//iframe[contains(@ng-show, 'relatedList')]"));
+		driver.switchTo().frame(iframe);
 		Assert.assertTrue(label_ResourcesPreference.isDisplayed());
 		javascriptClick(clk_ResourcesPreference);
 		switchToWindow();
-		String str = driver.getCurrentUrl();
-		Thread.sleep(4000);
+		driver.switchTo().defaultContent();
+		Thread.sleep(5000);
+		expWaitToBeClickable(clk_preferenceType);
+		javascriptClick(clk_preferenceType);
+		int cnt3 = sel_dropdownPreferenceTypeCnt.size();
+		Assert.assertEquals(cnt3, 3);
 	}
 
 	public void clickOnTimesheetAndExpenseSubTab() throws Exception {
@@ -391,7 +405,9 @@ public class AppnavigatorTabsPages extends CommonFunctions {
 			javascriptClick(edit_StatusTimesheet);
 			expWaitToBeClickable(clk_timesheetStatusDropDown);
 			clk_timesheetStatusDropDown.click();
-			driver.findElement(By.xpath("//span[text()='Travel - Customer Location']")).click();
+			drawHighlight(driver.findElement(By.xpath("//span[@title='Travel - Customer Location']")));
+			javascriptClick(driver.findElement(By.xpath("//span[@title='Travel - Customer Location']")));
+			//driver.findElement(By.xpath("//span[text()='Travel - Customer Location']")).click();
 			expWaitToBeClickable(btn_save);
 			btn_save.click();
 			Thread.sleep(4000);

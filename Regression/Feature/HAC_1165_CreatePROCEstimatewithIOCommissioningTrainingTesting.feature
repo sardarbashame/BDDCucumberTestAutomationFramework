@@ -1,8 +1,9 @@
 Feature: HAC_1165_Verify processing estimate creation with IOcommissioing+Training+Testing
 
-@regtest
-  Scenario Outline: Login as Service Scheduler and Verify the processing estimate creation
-    Given HAC1165CTT user enters <username> and <password>
+
+@Test
+  Scenario: Login as Service Scheduler and Verify the processing estimate creation
+   Given Login as SERVICE SCH USER NAME
     When HAC1165CTT select the applicaton
     When HAC1165CTT close all the open tabs
     When HAC1165CTT close the bottom bar
@@ -20,6 +21,4 @@ Feature: HAC_1165_Verify processing estimate creation with IOcommissioing+Traini
     When HAC1165CTT select view confirmation
     Then HAC1165CTT generate estimate pdf
 
-    Examples: 
-      | username                       | password | casename      |
-      | testservicescheduler@gmail.com | H@ctest1 | PROCAutoCase1 |
+  

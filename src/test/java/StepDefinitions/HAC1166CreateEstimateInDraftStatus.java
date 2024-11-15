@@ -82,6 +82,11 @@ public class HAC1166CreateEstimateInDraftStatus extends CommonFunctions {
 		homePage = new HomePage();
 		homePage.clickCasesTab();
 	}
+	@When("click on cases tab")
+	public void click_on_cases_tab() throws InterruptedException {
+		homePage = new HomePage();
+		homePage.clickCasesTab();
+	}
 
 	@When("HAC1166 create new case")
 	public void HAC1166_create_new_case() throws InterruptedException, IOException  {
