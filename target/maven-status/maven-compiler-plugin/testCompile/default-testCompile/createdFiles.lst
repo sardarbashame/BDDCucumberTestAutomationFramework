@@ -1,0 +1,12 @@
+StepDefinitions\HAC146VerifyCaseContactRoles.class
+Hooks\hooksclass.class
+Runner\MyRunner.class
+StepDefinitions\HAC137VerifyAccountListViews.class
+StepDefinitions\HAC145VerifyAccountLayout.class
+StepDefinitions\HAC387VerifyIndustry.class
+StepDefinitions\HAC622VerifyTradeName.class
+StepDefinitions\HAC1124VerifyContactListViews.class
+testcomponents\BaseTest.class
+testcomponents\Listeners.class
+StepDefinitions\HAC_AccountCreation.class
+StepDefinitions\HAC1165CreateProcessingEstimate.class
