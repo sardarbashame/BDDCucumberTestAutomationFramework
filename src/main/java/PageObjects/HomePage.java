@@ -279,8 +279,7 @@ public class HomePage extends CommonFunctions {
 		driver.findElement(By.xpath("//ul/li//span[text()='" + industryname + "']")).click();
 		js.executeScript(
 				"var result = document.evaluate(\"(//span[text()='Move to Chosen'])[1]\", document.body, null, XPathResult.ANY_TYPE, null);     var input = result.iterateNext();input.scrollIntoView(); input.click();");
-		
-		
+				
 	//	ipt_ShippingAddress.sendKeys("100 1st street NY, USA");
 		Thread.sleep(3000);
 	//	clk_ShippingAddress.click();
@@ -301,7 +300,7 @@ public class HomePage extends CommonFunctions {
 	
 	// click on the Field Service tab
 		public void ClickFieldServiceTab() throws InterruptedException {
-			Thread.sleep(4000);
+			Thread.sleep(2000);
 			expWaitToBeClickable(clk_fieldservicetab);
 			javascriptClick(clk_fieldservicetab);
 			Thread.sleep(6000);
@@ -449,7 +448,6 @@ public class HomePage extends CommonFunctions {
 		Thread.sleep(0, 4000);
 	}
 
-	
 	public void Logout() throws InterruptedException{
 		js = (JavascriptExecutor) driver;
 		Thread.sleep(0, 4000);
