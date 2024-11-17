@@ -52,11 +52,11 @@ public class ServiceAppointmentDetailsTab extends CommonFunctions {
 	@FindBy(xpath = "//button[text()='Save']")
 	WebElement btn_save;
 
+	@FindBy(xpath="//label[text()='Status']/parent::*//button")
+	WebElement clk_sastatus;
+	
 	@FindBy(xpath = "//button[text()='Cancel']")
 	WebElement btn_cancel;
-
-	@FindBy(xpath = "//label[text()='Status']//..//button")
-	WebElement clk_sastatus;
 
 	@FindBy(xpath = "//span[@title='Dispatched']")
 	WebElement select_dispatchedoption;

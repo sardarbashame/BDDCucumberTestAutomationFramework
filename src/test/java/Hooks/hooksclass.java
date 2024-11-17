@@ -28,50 +28,55 @@ public class hooksclass extends CommonFunctions {
 	}
 
 	@After()
-	public void tearDown(Scenario scenario) throws IOException {
-		if (driver != null) {
-			if (scenario.isFailed()) {
-				String TestCaseName = scenario.getName();
-				scenario.log("Current Page URL is " + driver.getCurrentUrl());
-				System.out.println("Current Page URL is " + driver.getCurrentUrl());
-				//messageHandler.log(TestCaseName + "is failed =  " + scenario.isFailed());
-				scenario.attach(embedScreenshot(), "image/png","Refer Screenshot");
-				File currentDir = new File(System.getProperty("user.dir") + "/target/cucumberreports/Screenshots/");
-				map = new TreeMap<String, String>();
-				displayDirectoryContents(currentDir);
-				String path = printFileList();
-				ExtentCucumberAdapter.addTestStepScreenCaptureFromPath(path, "Test");
-				tearDownDriver();
-			}
-			//logger.info("Test Cases Completed");
-		}
+	public void tearDown() throws IOException 
+	{
 		tearDownDriver();
 	}
-
-	public static String printFileList() {
-		String str = null;
-		for (Entry<String, String> entry : map.entrySet()) {
-			String key = entry.getKey();
-			String value = entry.getValue();
-			System.out.println(key + "      " + value);
-			str = value;
-		}
-		lastfile = map.lastEntry();
-		System.out.println("last file is" + " " + lastfile);
-		return str;
-	}
-
-	public static void displayDirectoryContents(File dir) throws IOException {
-		String dateTime = "0000-00-00 00:00:00";
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-		File[] files = dir.listFiles();
-		for (File file : files) {
-			if (file.isDirectory()) {
-				displayDirectoryContents(file);
-			} else {
-				dateTime = sdf.format(new Date(file.lastModified()));
-				map.put(dateTime, file.toString());
-			}
-		}
-	}
+	
+//	public void tearDown(Scenario scenario) throws IOException {
+//		if (driver != null) {
+//			if (scenario.isFailed()) {
+//				String TestCaseName = scenario.getName();
+//				scenario.log("Current Page URL is " + driver.getCurrentUrl());
+//				System.out.println("Current Page URL is " + driver.getCurrentUrl());
+//				//messageHandler.log(TestCaseName + "is failed =  " + scenario.isFailed());
+//				scenario.attach(embedScreenshot(), "image/png","Refer Screenshot");
+//				File currentDir = new File(System.getProperty("user.dir") + "/target/cucumberreports/Screenshots/");
+//				map = new TreeMap<String, String>();
+//				displayDirectoryContents(currentDir);
+//				String path = printFileList();
+//				ExtentCucumberAdapter.addTestStepScreenCaptureFromPath(path, "Test");
+//				tearDownDriver();
+//			}
+//			//logger.info("Test Cases Completed");
+//		}
+//		tearDownDriver();
+//	}
+//
+//	public static String printFileList() {
+//		String str = null;
+//		for (Entry<String, String> entry : map.entrySet()) {
+//			String key = entry.getKey();
+//			String value = entry.getValue();
+//			System.out.println(key + "      " + value);
+//			str = value;
+//		}
+//		lastfile = map.lastEntry();
+//		System.out.println("last file is" + " " + lastfile);
+//		return str;
+//	}
+//
+//	public static void displayDirectoryContents(File dir) throws IOException {
+//		String dateTime = "0000-00-00 00:00:00";
+//		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+//		File[] files = dir.listFiles();
+//		for (File file : files) {
+//			if (file.isDirectory()) {
+//				displayDirectoryContents(file);
+//			} else {
+//				dateTime = sdf.format(new Date(file.lastModified()));
+//				map.put(dateTime, file.toString());
+//			}
+//		}
+//	}
 }

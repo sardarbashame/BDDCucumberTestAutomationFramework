@@ -1,4 +1,5 @@
 Feature: HAC_1473_Automate Create Punchlist from Daily Notes
+
   @Test
   Scenario: Login as service Technician and HAC_1473_Automate Create Punchlist from Daily Notes
     Given Login as SERVICE TECHNICIAN USER NAME

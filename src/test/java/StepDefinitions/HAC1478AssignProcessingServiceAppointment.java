@@ -301,8 +301,8 @@ public class HAC1478AssignProcessingServiceAppointment extends CommonFunctions {
 	public void verifyNotesAndPunch() throws Exception {
 		serviceappointments = new ServiceAppointmentDetailsTab();
 		serviceappointments.verifyNotesAndPunchList();
-		serviceappointments = new ServiceAppointmentDetailsTab();
-		serviceappointments.SelectDispatchedServiceAppointment();
+//		serviceappointments = new ServiceAppointmentDetailsTab();
+//		serviceappointments.SelectDispatchedServiceAppointment();
 
 	}
 }

@@ -33,7 +33,7 @@ import PageObjects.SelectApplication;
 import commonutilities.BaseTest;
 import commonutilities.CommonFunctions;
 
-public class HAC1367CreateCaseAssetsbyGuidedFlow extends CommonFunctions {
+public class HAC1368DisplaySalesOrderonCaseAssets extends CommonFunctions {
 	GlobalSearch globalSearch;
 	Login loginPO;
 	CaseDetailsTab caseDetailsTab;
@@ -55,37 +55,37 @@ public class HAC1367CreateCaseAssetsbyGuidedFlow extends CommonFunctions {
 	boolean pboption6;
 	boolean pboption7;
 
-	@Given("^HAC1367 user enters (.*) and (.*)$")
-	public void HAC1367_user_enters_username_and_password(String userName, String password) throws IOException {
+	@Given("^HAC1368 user enters (.*) and (.*)$")
+	public void HAC1368_user_enters_username_and_password(String userName, String password) throws IOException {
 		loginPO = new Login();
 		loginPO.goTo(ppty.getProperty("HAC_URL"));
 		loginPO.LoginApp(userName, password);
 	}
 
-	@When("HAC1367 select the applicaton")
-	public void HAC1367_select_the_applicaton() throws InterruptedException, IOException {
+	@When("HAC1368 select the applicaton")
+	public void HAC1368_select_the_applicaton() throws InterruptedException, IOException {
 		selectApplication = new SelectApplication();
 		selectApplication.selectApp(ppty.getProperty("APPNAME"));
 	}
 
-	@When("HAC1367 close all the open tabs")
-	public void HAC1367_close_all_the_open_tabs() throws InterruptedException {
+	@When("HAC1368 close all the open tabs")
+	public void HAC1368_close_all_the_open_tabs() throws InterruptedException {
 		closeAllTabs();
 	}
 
-	@When("HAC1367 close the bottom bar")
-	public void HAC1367_close_the_bottom_bar() throws InterruptedException {
+	@When("HAC1368 close the bottom bar")
+	public void HAC1368_close_the_bottom_bar() throws InterruptedException {
 		closeBottomeBar();
 	}
 
-	@When("HAC1367 click on cases tab")
-	public void HAC1367_click_on_cases_tab() throws InterruptedException {
+	@When("HAC1368 click on cases tab")
+	public void HAC1368_click_on_cases_tab() throws InterruptedException {
 		homePage = new HomePage();
 		homePage.clickCasesTab();
 	}
 
-	@When("HAC1367 create new case")
-	public void HAC1367_create_new_case() throws InterruptedException, IOException  {
+	@When("HAC1368 create new case")
+	public void HAC1368_create_new_case() throws InterruptedException, IOException  {
 		homePage = new HomePage();
 		homePage.createNewCase(
 				getObjDetails().getProperty("CASECONTACT"),
@@ -94,15 +94,15 @@ public class HAC1367CreateCaseAssetsbyGuidedFlow extends CommonFunctions {
 				);
 	}
 	
-	@When("HAC1367 click on add asset quick action")
-	public void HAC1367_click_on_add_asset_quick_action() throws InterruptedException, IOException  {
+	@When("HAC1368 click on add asset quick action")
+	public void HAC1368_click_on_add_asset_quick_action() throws InterruptedException, IOException  {
 		casedetailstab = new CaseDetailsTab();
 		casedetailstab.ClickAddAssetQuickAction();
 		
 	}
 	
-	@Then("HAC1367 add single asset")
-	public void HAC1367_add_single_asset() throws InterruptedException, IOException  {
+	@Then("HAC1368 add single asset")
+	public void HAC1368_add_single_asset() throws InterruptedException, IOException  {
 		casedetailstab = new CaseDetailsTab();
 		casedetailstab.AddSingleAsset();
 		

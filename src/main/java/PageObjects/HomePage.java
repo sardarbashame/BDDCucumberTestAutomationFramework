@@ -279,8 +279,7 @@ public class HomePage extends CommonFunctions {
 		driver.findElement(By.xpath("//ul/li//span[text()='" + industryname + "']")).click();
 		js.executeScript(
 				"var result = document.evaluate(\"(//span[text()='Move to Chosen'])[1]\", document.body, null, XPathResult.ANY_TYPE, null);     var input = result.iterateNext();input.scrollIntoView(); input.click();");
-		
-		
+				
 	//	ipt_ShippingAddress.sendKeys("100 1st street NY, USA");
 		Thread.sleep(3000);
 	//	clk_ShippingAddress.click();
@@ -301,7 +300,7 @@ public class HomePage extends CommonFunctions {
 	
 	// click on the Field Service tab
 		public void ClickFieldServiceTab() throws InterruptedException {
-			Thread.sleep(4000);
+			Thread.sleep(2000);
 			expWaitToBeClickable(clk_fieldservicetab);
 			javascriptClick(clk_fieldservicetab);
 			Thread.sleep(6000);
@@ -397,10 +396,10 @@ public class HomePage extends CommonFunctions {
 	}
 
 	public void AddNewWorkOrderLineItem() throws Exception {
-		Thread.sleep(0, 4000);
+		Thread.sleep(4000);
 		expWaitToBeClickable(lnk_newWorkOrderLines);
 		lnk_newWorkOrderLines.click();
-		Thread.sleep(0, 4000);
+		Thread.sleep(4000);
 		expWaitToBeClickable(chk_selectLineItem);
 		drawHighlight(chk_selectLineItem);
 		chk_selectLineItem.click();
@@ -410,7 +409,7 @@ public class HomePage extends CommonFunctions {
 		drawHighlight(lnk_workOrderLineItemsQuickLink);
 		expWaitToBeClickable(lnk_selectCreatedWorkLineItems);
 		lnk_selectCreatedWorkLineItems.click();
-		Thread.sleep(0, 4000);
+		Thread.sleep(4000);
 	}
 	
 	public void createNewCase(String contname, String firstname, String sub) throws InterruptedException {
@@ -449,7 +448,6 @@ public class HomePage extends CommonFunctions {
 		Thread.sleep(0, 4000);
 	}
 
-	
 	public void Logout() throws InterruptedException{
 		js = (JavascriptExecutor) driver;
 		Thread.sleep(0, 4000);
