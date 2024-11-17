@@ -147,7 +147,7 @@ public class CommonFunctions extends BaseTest {
 		// Closing all the open tabs
 		By wait_appOpen = By
 				.xpath("//div[contains(@class,'oneUtilityBar slds-utility-bar_container oneUtilityBarContent')]");
-		waitForElementToAppear(wait_appOpen, 10);
+		waitForElementToAppear(wait_appOpen, 1000);
 		Thread.sleep(2000);
 		js = (JavascriptExecutor) driver;
 		js.executeScript(

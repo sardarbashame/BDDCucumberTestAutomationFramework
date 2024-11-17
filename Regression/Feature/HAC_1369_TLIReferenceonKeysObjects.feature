@@ -10,6 +10,7 @@ Feature: HAC_1369_TLIReferenceonKeysObjects
     When select the Inquiries application
     When verify TLI number displayed under Inquiries details tab
     When click on Orders tab
+    When Search order number "00000100"
     Then verify TLI number displayed under Order details tab
     When click on Orders Related tab
     Then verify TLI number displayed under Order product details tab

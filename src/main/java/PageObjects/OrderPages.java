@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -30,6 +31,9 @@ public class OrderPages extends CommonFunctions {
 	
 	@FindBy(xpath = "((//div[contains(@class, 'active ')]//span[text() = 'Order Products'])//ancestor::lst-list-view-manager-header//following-sibling::div)[last()]//table//th//span//div//a[@title]")
 	List<WebElement> lst_orderProduct;
+	
+	@FindBy(xpath = "//input[@name= 'Order-search-input']")
+    WebElement ipt_searchOrder;
 	
 	By orderTabAppear = By.xpath("//span[text() = 'Orders']//parent::a");
 	By inquiriesTabAppear = By.xpath("//span[text() = 'Recently Viewed | Inquiries']//parent::a");
@@ -64,6 +68,12 @@ public class OrderPages extends CommonFunctions {
 		scrollIntoView(txt_TLINoLabel);
 		drawHighlight(txt_TLINoLabel);
 		Assert.assertTrue(txt_TLINoLabel.isDisplayed(), "TLI Number is not displayed under Order Product Details tab");
+	}
+	public void searchOrder(String str) throws InterruptedException {
+		waitForElementToAppear(orderTabAppear, 30);
+		ipt_searchOrder.sendKeys(str);
+		ipt_searchOrder.sendKeys(Keys.ENTER);
+		Thread.sleep(2000);
 	}
 	
 }

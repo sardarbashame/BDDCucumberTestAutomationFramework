@@ -19,7 +19,6 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import PageObjects.AccountDetailsTab;
-import PageObjects.CaseRelatedListQuickLinks;
 import PageObjects.ContactDetailsTab;
 import PageObjects.GlobalSearch;
 import PageObjects.HomePage;
@@ -36,7 +35,6 @@ public class HAC148VerifyContactPageLayoutFields extends CommonFunctions {
 	SelectApplication selectApplication;
 	HomePage homepage;
 	ContactDetailsTab contactDetailsTab;
-	CaseRelatedListQuickLinks caseRelatedListQuickLinks;
 	boolean name;
 	String contname;
 	String contactaccountname;
@@ -206,8 +204,6 @@ public class HAC148VerifyContactPageLayoutFields extends CommonFunctions {
 		name = contactDetailsTab.isMailingAddressPresent();
 		Assert.assertTrue(name);
 	}
-	
-
 	@Then("HAC148 verify contact related list quick links")
 	public void hac148_verify_contact_related_list_quick_links() throws InterruptedException {
 		contactDetailsTab = new ContactDetailsTab();

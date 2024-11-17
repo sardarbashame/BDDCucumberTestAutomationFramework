@@ -56,25 +56,25 @@ public class HAC1367CreateCaseAssetsbyGuidedFlow extends CommonFunctions {
 	boolean pboption7;
 
 	@Given("^HAC1367 user enters (.*) and (.*)$")
-	public void HAC1367_user_enters_username_and_password(String userName, String password) throws IOException {
+	public void HAC145_user_enters_username_and_password(String userName, String password) throws IOException {
 		loginPO = new Login();
 		loginPO.goTo(ppty.getProperty("HAC_URL"));
 		loginPO.LoginApp(userName, password);
 	}
 
 	@When("HAC1367 select the applicaton")
-	public void HAC1367_select_the_applicaton() throws InterruptedException, IOException {
+	public void HAC145_select_the_applicaton() throws InterruptedException, IOException {
 		selectApplication = new SelectApplication();
 		selectApplication.selectApp(ppty.getProperty("APPNAME"));
 	}
 
 	@When("HAC1367 close all the open tabs")
-	public void HAC1367_close_all_the_open_tabs() throws InterruptedException {
+	public void HAC145_close_all_the_open_tabs() throws InterruptedException {
 		closeAllTabs();
 	}
 
 	@When("HAC1367 close the bottom bar")
-	public void HAC1367_close_the_bottom_bar() throws InterruptedException {
+	public void HAC387_close_the_bottom_bar() throws InterruptedException {
 		closeBottomeBar();
 	}
 

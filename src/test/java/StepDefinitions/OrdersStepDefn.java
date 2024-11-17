@@ -38,4 +38,11 @@ public class OrdersStepDefn extends CommonFunctions {
 		ordersObj = new OrderPages();
 		ordersObj.clkOrderProduct();
 	}
+	@When("Search order number {string}")
+	public void search_order_number(String str) throws Exception {
+		ordersObj = new OrderPages();
+		ordersObj.searchOrder(str);
+	}
+
+
 }

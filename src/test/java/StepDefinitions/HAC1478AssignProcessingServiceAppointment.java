@@ -300,9 +300,9 @@ public class HAC1478AssignProcessingServiceAppointment extends CommonFunctions {
 	@Then("Verify Notes and Punch list is created and displayed")
 	public void verifyNotesAndPunch() throws Exception {
 		serviceappointments = new ServiceAppointmentDetailsTab();
+		driver.navigate().refresh();
+		serviceappointments.clickdailyNotesTab();
 		serviceappointments.verifyNotesAndPunchList();
-//		serviceappointments = new ServiceAppointmentDetailsTab();
-//		serviceappointments.SelectDispatchedServiceAppointment();
-
+		
 	}
 }

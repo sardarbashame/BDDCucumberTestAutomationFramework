@@ -4,14 +4,15 @@ import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
+import org.testng.Assert;
 
 import commonutilities.CommonFunctions;
-import junit.framework.Assert;
 
 public class ServiceAppointmentDetailsTab extends CommonFunctions {
 	public static String ServiceAppmentName;
@@ -52,11 +53,11 @@ public class ServiceAppointmentDetailsTab extends CommonFunctions {
 	@FindBy(xpath = "//button[text()='Save']")
 	WebElement btn_save;
 
-	@FindBy(xpath="//label[text()='Status']/parent::*//button")
-	WebElement clk_sastatus;
-	
 	@FindBy(xpath = "//button[text()='Cancel']")
 	WebElement btn_cancel;
+
+	@FindBy(xpath = "//label[text()='Status']//..//button")
+	WebElement clk_sastatus;
 
 	@FindBy(xpath = "//span[@title='Dispatched']")
 	WebElement select_dispatchedoption;
@@ -171,11 +172,51 @@ public class ServiceAppointmentDetailsTab extends CommonFunctions {
 
 	@FindBy(xpath = "//ul//li//span[@title='Service Appointments']")
 	WebElement lnk_serviceAppointment;
-	
+
 	@FindBy(xpath = "//label[text() = 'Service Territory']//parent::lightning-grouped-combobox//following::input[@placeholder = 'Search Service Territories...']")
 	WebElement sel_serviceTerritory;
 
+	@FindBy(xpath = "//span[text() = 'Service Appointments']//parent::a")
+	public WebElement clk_serviceAppoinmenttab;
+
+	@FindBy(xpath = "//input[@id = 'TaskSearchFilterInput']")
+	WebElement ipt_searchServiceApment;
+
+	@FindBy(xpath = "(//div[@class= 'SingleTask DraggableSingleTask']//div[@title= 'None'])[1]")
+	WebElement DraggableSingleTask;
+
+	@FindBy(xpath = "//div[@drag-service = 'service']//service-list-column[contains(text(), ':')]")
+	WebElement clk_SearchedSAOnDateFormat;
+
+	@FindBy(xpath = "//div[@title = 'Edit']")
+	WebElement btn_editSA;
+
+	@FindBy(xpath = "(//div[@class= 'dhx_marked_timespan gray_section'])[3]")
+	WebElement dropGantt;
+
+	@FindBy(xpath = "(//span[text() = 'TLI Number'])[last()]")
+	WebElement txt_TLINoLabel;
+
+	@FindBy(xpath = "(//table[@aria-label= 'Recently Viewed'])[last()]//th//a[@title]")
+	List<WebElement> lst_recentInQuiries;
+
+	@FindBy(xpath = "//table[@aria-label= 'Recently Viewed']//a[contains(@title, '0')]")
+	List<WebElement> lst_recentQuote;
+
+	@FindBy(xpath = "(//table[@aria-label= 'Recently Viewed'])[last()]//th//a[@title]")
+	List<WebElement> lst_recentWorkOrder;
+
+	@FindBy(xpath = "//span[text() = 'Work Orders']//parent::a")
+	public WebElement clk_WorkOrderstab;
+
 	By serviceAppoinmenttabAppear = By.xpath("//span[text() = 'Service Appointments']//parent::a");
+	By fieldServiceTabAppear = By.xpath("//span[text() = 'Field Service']//parent::a");
+	By wait_disapperLoading = By.xpath("//div[@id = 'activeRequests' and @class = 'ng-hide']");
+	By TLINoTabAppear = By.xpath("(//span[text() = 'TLI Number'])[last()]");
+	By quoteTabAppear = By.xpath("//span[text() = 'Quotes']//parent::a");
+	By inquiriesTabAppear = By
+			.xpath("//span[text() = 'Recently Viewed | Inquiries' or text() = 'Inquiries']//parent::a");
+	By workOrderstabAppear = By.xpath("//span[text() = 'Work Orders']//parent::a");
 
 	public ServiceAppointmentDetailsTab() {
 		PageFactory.initElements(new AjaxElementLocatorFactory(driver, 10), this);
@@ -252,14 +293,14 @@ public class ServiceAppointmentDetailsTab extends CommonFunctions {
 		btn_save.click();
 		Thread.sleep(4000);
 	}
-	
+
 	public void ClickDetailsTab() throws InterruptedException {
 		Thread.sleep(2000);
 		expWaitToBeClickable(tab_details);
 		js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].click();", tab_details);
 		Thread.sleep(5000);
-		}
+	}
 
 	public void UpdateSAStatus(String newstatus) throws InterruptedException {
 		Thread.sleep(2000);
@@ -273,10 +314,6 @@ public class ServiceAppointmentDetailsTab extends CommonFunctions {
 		javascriptClick(clk_sastatus);
 		Thread.sleep(2000);
 		zoomIN(1);
-		Thread.sleep(3000);
-		driver.findElement(By.xpath("//label[text()='Status']")).click();
-		Thread.sleep(3000);
-		// clk_sastatus.click();
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//span[@title='" + newstatus + "']")).click();
 		Thread.sleep(3000);
@@ -349,6 +386,11 @@ public class ServiceAppointmentDetailsTab extends CommonFunctions {
 		Thread.sleep(4000);
 	}
 
+	public void clickdailyNotesTab(){
+		waitForElementToAppear(serviceAppoinmenttabAppear, 30);
+		expWaitToBeClickable(clk_dailyNotes);
+		javascriptClick(clk_dailyNotes);	
+	}
 	public void createNewDailyNotesAndSaveit() throws Exception {
 		waitForElementToAppear(serviceAppoinmenttabAppear, 30);
 		expWaitToBeClickable(clk_dailyNotes);
@@ -383,12 +425,97 @@ public class ServiceAppointmentDetailsTab extends CommonFunctions {
 	}
 
 	public void verifyNotesAndPunchList() throws Exception {
+		Thread.sleep(3000);
 		// Notes
 		drawHighlight(lst_dailyNotesGrid.get(0));
 		Assert.assertTrue(lst_dailyNotesGrid.get(0).isDisplayed());
 		// Punch list
 		drawHighlight(lst_dailyNotesGrid.get(1));
 		Assert.assertTrue(lst_dailyNotesGrid.get(1).isDisplayed());
+	}
+
+	public void clkserviceAppoinmentTab() throws Exception {
+		waitForElementToAppear(serviceAppoinmenttabAppear, 30);
+		javascriptClick(clk_serviceAppoinmenttab);
+		Thread.sleep(4000);
+	}
+
+	public void selectAppointmentAndDragAndDrop() throws Exception {
+		waitForElementToAppear(fieldServiceTabAppear, 30);
+		Thread.sleep(5000);
+		WebElement iframe = driver.findElement(By.xpath("//iframe[@title='Field Service']"));
+		driver.switchTo().frame(iframe);
+		JavascriptExecutor executor = (JavascriptExecutor) driver;
+		executor.executeScript("document.body.style.zoom = '0.55'");
+		drawHighlight(ipt_searchServiceApment);
+		javascriptClick(ipt_searchServiceApment);
+		ipt_searchServiceApment.sendKeys(ServiceAppointmentDetailsTab.ServiceAppmentName);
+		ipt_searchServiceApment.sendKeys(Keys.ENTER);
+		draganddropJscript(DraggableSingleTask, dropGantt);
+		waitForElementToDisAppear(wait_disapperLoading, 30);
+		Thread.sleep(4000);
+	}
+
+	public void searchSAAndClickEdit() throws Exception {
+		Thread.sleep(0, 5000);
+		waitForElementToAppear(fieldServiceTabAppear, 40);
+		Thread.sleep(5000);
+		WebElement iframe = driver.findElement(By.xpath("//iframe[@title='Field Service']"));
+		driver.switchTo().frame(iframe);
+		JavascriptExecutor executor = (JavascriptExecutor) driver;
+		executor.executeScript("document.body.style.zoom = '0.55'");
+		drawHighlight(ipt_searchServiceApment);
+		javascriptClick(ipt_searchServiceApment);
+		ipt_searchServiceApment.sendKeys(ServiceAppointmentDetailsTab.ServiceAppmentName);
+		ipt_searchServiceApment.sendKeys(Keys.ENTER);
+		expWaitToBeClickable(clk_SearchedSAOnDateFormat);
+		drawHighlight(clk_SearchedSAOnDateFormat);
+		javascriptClick(clk_SearchedSAOnDateFormat);
+		javascriptClick(btn_editSA);
+		Thread.sleep(4000);
+	}
+
+	public void clickRecentServiceAppointment() throws Exception {
+		waitForElementToAppear(serviceAppoinmenttabAppear, 30);
+		javascriptClick(lst_recentServiceAppointment.get(0));
+		Thread.sleep(4000);
+		scrollIntoView(txt_TLINoLabel);
+		drawHighlight(txt_TLINoLabel);
+		waitForElementToAppear(TLINoTabAppear, 30);
+		Assert.assertTrue(txt_TLINoLabel.isDisplayed(), "TLI Number is not displayed under Quote Details tab");
+	}
+
+	public void clkRecentQuote() throws Exception {
+		waitForElementToAppear(quoteTabAppear, 30);
+		javascriptClick(lst_recentQuote.get(0));
+		Thread.sleep(4000);
+		scrollIntoView(txt_TLINoLabel);
+		drawHighlight(txt_TLINoLabel);
+		Assert.assertTrue(txt_TLINoLabel.isDisplayed(), "TLI Number is not displayed under Quote Details tab");
+	}
+
+	public void clkInQuiries() throws Exception {
+		waitForElementToAppear(inquiriesTabAppear, 30);
+		javascriptClick(lst_recentInQuiries.get(0));
+		Thread.sleep(4000);
+		scrollIntoView(txt_TLINoLabel);
+		drawHighlight(txt_TLINoLabel);
+		Assert.assertTrue(txt_TLINoLabel.isDisplayed(), "TLI Number is not displayed under Quote Details tab");
+	}
+
+	public void clkRecentWorkOrder() throws Exception {
+		waitForElementToAppear(workOrderstabAppear, 30);
+		javascriptClick(lst_recentWorkOrder.get(0));
+		Thread.sleep(4000);
+		scrollIntoView(txt_TLINoLabel);
+		drawHighlight(txt_TLINoLabel);
+		Assert.assertTrue(txt_TLINoLabel.isDisplayed(), "TLI Number is not displayed under Quote Details tab");
+	}
+
+	public void clkWorkOrderTab() throws Exception {
+		waitForElementToAppear(workOrderstabAppear, 30);
+		javascriptClick(clk_WorkOrderstab);
+		Thread.sleep(4000);
 	}
 
 }
