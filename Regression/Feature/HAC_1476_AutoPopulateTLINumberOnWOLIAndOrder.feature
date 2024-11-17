@@ -1,5 +1,6 @@
 Feature: HAC_1476_ Auto populate TLI Number on WOLI and Order
-@regtest
+
+  #author=Mubeen
   Scenario Outline: Login as service user and 1476_ Auto populate TLI Number on WOLI and Order
     Given Login as SERVICE SCH USER NAME
     When HAC1478 select the applicaton
