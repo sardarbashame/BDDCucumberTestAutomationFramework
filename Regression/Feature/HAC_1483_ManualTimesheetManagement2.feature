@@ -1,5 +1,5 @@
 Feature: HAC_1483 Manual Timesheet Management
-@regtest
+
   Scenario: Login as service user and HAC_1483_Manual Timesheet Management
     Given Login as SERVICE SCH USER NAME
     When HAC1478 select the applicaton

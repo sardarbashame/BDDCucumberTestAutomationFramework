@@ -1,59 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="128793" started-at="2024-11-05T20:18:34 EST" finished-at="2024-11-05T20:20:43 EST">
+  <suite name="Suite" duration-ms="76629" started-at="2024-11-16T20:12:14 EST" finished-at="2024-11-16T20:13:30 EST">
     <groups>
       <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.MyRunner@6cb43fd3]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.MyRunner@5f9f5487]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test name="Test" duration-ms="128793" started-at="2024-11-05T20:18:34 EST" finished-at="2024-11-05T20:20:43 EST">
+    <test name="Test" duration-ms="76629" started-at="2024-11-16T20:12:14 EST" finished-at="2024-11-16T20:13:30 EST">
       <class name="Runner.MyRunner">
-        <test-method status="PASS" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:Runner.MyRunner@6cb43fd3]" name="setUpClass" is-config="true" duration-ms="981" started-at="2024-11-05T20:18:34 EST" finished-at="2024-11-05T20:18:35 EST">
+        <test-method status="PASS" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:Runner.MyRunner@5f9f5487]" name="setUpClass" is-config="true" duration-ms="2050" started-at="2024-11-16T20:12:14 EST" finished-at="2024-11-16T20:12:16 EST">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@793f2b41]]>
+                <![CDATA[org.testng.TestRunner@191dd84a]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.MyRunner@6cb43fd3]" name="runScenario" duration-ms="58532" started-at="2024-11-05T20:18:35 EST" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-05T20:19:33 EST">
+        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.MyRunner@5f9f5487]" name="runScenario" duration-ms="65038" started-at="2024-11-16T20:12:16 EST" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-16T20:13:21 EST">
           <params>
             <param index="0">
               <value>
-                <![CDATA["Verify able to create customer account type"]]>
+                <![CDATA["Login as service scheduler and HAC_1473_Automate Create Punchlist from Daily Notes"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["Verify account types"]]>
+                <![CDATA["HAC_1473_Automate Create Punchlist from Daily Notes"]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.MyRunner@6cb43fd3]" name="runScenario" duration-ms="61307" started-at="2024-11-05T20:19:34 EST" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-05T20:20:35 EST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["Verify able to create supplier account type"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Verify account types"]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:Runner.MyRunner@6cb43fd3]" name="tearDownClass" is-config="true" duration-ms="7639" started-at="2024-11-05T20:20:35 EST" finished-at="2024-11-05T20:20:43 EST">
+        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:Runner.MyRunner@5f9f5487]" name="tearDownClass" is-config="true" duration-ms="9480" started-at="2024-11-16T20:13:21 EST" finished-at="2024-11-16T20:13:30 EST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->

@@ -1,7 +1,7 @@
 Feature: HAC_411_Verify the abiity to reopen the case
 
   Scenario Outline: Login as Service Users and Verify the ability t reopen the case
-    Given HAC411 user enters <username> and <password>
+    Given user enters <username> and <password>
     When HAC411 select the applicaton
     When HAC411 close all the open tabs
     When HAC411 close the bottom bar
@@ -15,6 +15,4 @@ Feature: HAC_411_Verify the abiity to reopen the case
       | username                              | password    |
       | hctestcsr@gmail.com                   | M@shaallah2 |
       | channelpartnermanagerusersarda@qa.hnc | M@shaallah2 |
-      | testservicescheduler@gmail.com        | H@ctest1 |
-
-  
+      | testservicescheduler@gmail.com        | H@ctest1    |

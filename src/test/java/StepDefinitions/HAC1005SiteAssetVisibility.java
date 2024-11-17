@@ -16,7 +16,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -73,13 +72,13 @@ public class HAC1005SiteAssetVisibility extends CommonFunctions {
 	@When("HAC1005 select usa packaging policy")
 	public void HAC1005_select_usa_packaging_policy() throws InterruptedException {
 		fieldserviceconsole = new FieldServiceConsole();
-		fieldserviceconsole.SelectPolicy("USA - Packaging");
+		fieldserviceconsole.SelectPolicy();
 	}
 	
-	@When("HAC1005 select service appointment filter")
+	@When("HAC1005 select sa type")
 	public void HAC1005_select_sa_type() throws InterruptedException {
 		fieldserviceconsole = new FieldServiceConsole();
-		fieldserviceconsole.SelectSAFilter("In Jeopardy");
+		fieldserviceconsole.SelectJeopardySA();
 	}
 	
 	@When("HAC1005 select service appointment")
@@ -98,12 +97,6 @@ public class HAC1005SiteAssetVisibility extends CommonFunctions {
 	public void HAC1005_click_related_tab_on_service_appointment() throws InterruptedException {
 		fieldserviceconsole = new FieldServiceConsole();
 		fieldserviceconsole.ClickSARelatedTab();
-	}
-	
-	@When("HAC1005 verify the assets on service appointment")
-	public void HAC1005_verify_the_assets_on_service_appointment() throws InterruptedException {
-		fieldserviceconsole = new FieldServiceConsole();
-		fieldserviceconsole.VerifyAssetOnSARelatedTab();
 	}
 	
 }
