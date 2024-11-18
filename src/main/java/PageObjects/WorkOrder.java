@@ -105,7 +105,7 @@ public class WorkOrder extends CommonFunctions {
 		Thread.sleep(4000);
 	}
 		
-	public void CreateNewWorkStep() throws Exception {
+	public void CreateNewWorkStep(String title, String workplan) throws Exception {
 		Thread.sleep(4000);
 		expWaitToBeClickable(btn_New);
 		js = (JavascriptExecutor) driver;
@@ -113,9 +113,9 @@ public class WorkOrder extends CommonFunctions {
 		Thread.sleep(5000);
 		btn_next.click();
 		Thread.sleep(2000);
-		ipt_worksteptitle.sendKeys("TestTitle");
+		ipt_worksteptitle.sendKeys(title);
 		Thread.sleep(2000);
-		ipt_workstepworkplan.sendKeys("TestPunchlist");
+		ipt_workstepworkplan.sendKeys(workplan);
 		Thread.sleep(2000);
 		result_workstepworkplan.click();
 		Thread.sleep(4000);

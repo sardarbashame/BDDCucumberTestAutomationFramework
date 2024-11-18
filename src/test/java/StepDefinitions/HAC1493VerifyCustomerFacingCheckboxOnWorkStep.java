@@ -50,8 +50,8 @@ public class HAC1493VerifyCustomerFacingCheckboxOnWorkStep extends CommonFunctio
 		workOrderRelatedListQuickLinks = new WorkOrderRelatedListQuickLinks();
 		workOrderRelatedListQuickLinks.clickWorkStepsLink();
 		workOrder = new WorkOrder();
-		workOrder.CreateNewWorkStep();
-		;
+		workOrder.CreateNewWorkStep("TestTitle", "TestPunchlist");
+		
 	}
 	
 	@Then("HAC1493 verify customer facing checkbox")
