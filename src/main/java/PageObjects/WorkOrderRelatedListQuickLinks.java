@@ -15,14 +15,16 @@ public class WorkOrderRelatedListQuickLinks extends CommonFunctions {
 	By waitforelementtoappear;
 	String actualmessage;
 	JavascriptExecutor js;
-	public WebDriver driver;
+	
+	@FindBy(xpath = "//ul//li//span[@title='Service Appointments']")
+	WebElement lnk_serviceappointments;
+	
+	@FindBy(xpath = "//ul//li//span[@title='Work Steps']")
+	WebElement lnk_worksteps;
 	
 	public WorkOrderRelatedListQuickLinks() {
 		PageFactory.initElements(new AjaxElementLocatorFactory(driver, 10), this);
 	}
-
-	@FindBy(xpath = "//ul//li//span[@title='Service Appointments']")
-	WebElement lnk_serviceappointments;
 
 	public void ScrollPageToTop() throws InterruptedException {
 		Thread.sleep(4000);
@@ -33,10 +35,14 @@ public class WorkOrderRelatedListQuickLinks extends CommonFunctions {
 
 	public void clickServiceAppointmentsLink() throws InterruptedException {
 		Thread.sleep(6000);
-	//	expWaitToBeClickable(lnk_serviceappointments);
-//		js = (JavascriptExecutor) driver;
-//		js.executeScript("arguments[0].click();", lnk_serviceappointments);
 		lnk_serviceappointments.click();
+		Thread.sleep(6000);
+	}
+	
+	public void clickWorkStepsLink() throws InterruptedException {
+		Thread.sleep(6000);
+		expWaitToBeClickable(lnk_worksteps);
+		lnk_worksteps.click();
 		Thread.sleep(6000);
 	}
 
