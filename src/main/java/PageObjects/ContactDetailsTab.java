@@ -32,6 +32,7 @@ public class ContactDetailsTab extends CommonFunctions {
 	boolean superregionpresent;
 	boolean saleschannelpresent;
 	JavascriptExecutor js = (JavascriptExecutor) driver;
+	EstimateCreationFlowStep1 estimateCreationFlowStep1;
 
 	public ContactDetailsTab() {
 		PageFactory.initElements(new AjaxElementLocatorFactory(driver, 10), this);
@@ -127,7 +128,7 @@ public class ContactDetailsTab extends CommonFunctions {
 	@FindBy(xpath = "//span[text()='Email']/../../..//emailui-formatted-email-wrapper//a")
 	public WebElement get_email;
 
-	@FindBy(xpath = "//a[text()='Show All']")
+	@FindBy(xpath = "(//lst-related-list-quick-links-grid//a)[last()]")
 	WebElement lnk_showall;
 
 	@FindBy(xpath = "(//h2[text()='Related List Quick Links']/../..//slot[contains(text(), 'Related Accounts')])")
@@ -349,7 +350,11 @@ public class ContactDetailsTab extends CommonFunctions {
 	
 	public void VerifyContactRelatedListQuickLinks() throws InterruptedException {
 		Thread.sleep(2000);
-		// lnk_showall.click();
+		if(lnk_showall.isDisplayed()) {
+			estimateCreationFlowStep1 = new EstimateCreationFlowStep1();
+			estimateCreationFlowStep1.clickShowAllQuickLink();
+		}
+		
 		Thread.sleep(3000);
 		lnk_relatedaccounts.isDisplayed();
 		lnk_cases.isDisplayed();
@@ -359,7 +364,7 @@ public class ContactDetailsTab extends CommonFunctions {
 		lnk_files.isDisplayed();
 		lnk_notes.isDisplayed();
 		Thread.sleep(1000);
-
+		
 	}
 
 }
