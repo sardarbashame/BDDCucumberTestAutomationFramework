@@ -269,6 +269,9 @@ public class CaseDetailsTab extends CommonFunctions {
 	@FindBy(xpath="(//strong[text() = 'Case Assets']//ancestor::runtime_omnistudio_flexcards-flex-card-state//runtime_omnistudio_common-output-field//span[contains(@title, 'Ass')])[last()]")
 	WebElement txt_AssetNameInListView;
 	
+	@FindBy(xpath="(//strong[text() = 'Case Assets']//ancestor::runtime_omnistudio_flexcards-flex-card-state//runtime_omnistudio_common-output-field//span[contains(@title, '00000')])[last()]")
+	WebElement txt_SalesOrderInListView;
+	
 	@FindBy(xpath="//span[@title='General']")
 	WebElement casetypegeneral;
 	
@@ -548,6 +551,7 @@ public class CaseDetailsTab extends CommonFunctions {
 		mouseHover(tab_caseAssets);
 		Assert.assertTrue(tab_caseAssets.isDisplayed());
 		Assert.assertTrue(txt_AssetNameInListView.isDisplayed());
+		Assert.assertTrue(txt_SalesOrderInListView.isDisplayed());
 		Thread.sleep(3000);
 	}
 }
