@@ -290,6 +290,13 @@ public class HAC1478AssignProcessingServiceAppointment extends CommonFunctions {
 		serviceappointments = new ServiceAppointmentDetailsTab();
 		serviceappointments.clkRecentServiceAppointment();
 	}
+	
+	@When("Click on recently created Assets in the grid")
+	public void clickOnRecentlyCreatedAssets() throws Exception {
+		serviceappointments = new ServiceAppointmentDetailsTab();
+		serviceappointments.clkRecentAssets();
+	}
+
 
 	@When("Click on Daily Notes tab and create new daily notes")
 	public void createNewDailyNotes() throws Exception {

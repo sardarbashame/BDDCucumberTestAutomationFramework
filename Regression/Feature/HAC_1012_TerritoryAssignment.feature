@@ -31,7 +31,7 @@ Feature: HAC_1012_ Territory Assignment
     Then HAC1478 create service appointments
     Then HAC1478 click service appointment link
     Then HAC1478 select a service appointment
-    #Then Update Service Territory
+    Then Update Service Territory
     Then HAC1478 select a schedule start date
     Then HAC1478 select a schedule end date
     Then HAC1478 click related tab

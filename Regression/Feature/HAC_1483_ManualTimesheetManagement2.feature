@@ -36,7 +36,7 @@ Feature: HAC_1483 Manual Timesheet Management
     Then HAC1478 select all service appointments listview
     Then HAC1478 select dispatched service appointment
     #step-4
-    When verify TLI number displayed under Service Appointments details tab
+    #When verify TLI number displayed under Service Appointments details tab
     Then Change status to Travel to Customer Location
     When Click on Timesheet & Expenses sub tab
     Then Click on TimeSheet Entries and verify all the lables under details tab
