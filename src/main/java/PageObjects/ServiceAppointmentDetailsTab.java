@@ -68,6 +68,9 @@ public class ServiceAppointmentDetailsTab extends CommonFunctions {
 	@FindBy(xpath = "(//table[@aria-label= 'Recently Viewed'])[last()]//th//a[@title]")
 	List<WebElement> lst_recentServiceAppointment;
 
+	@FindBy(xpath = "(//table[@aria-label= 'Recently Viewed'])[last()]//th//a[@title]")
+	List<WebElement> lst_recentAssets;
+	
 	@FindBy(xpath = "//a[text() = 'Daily Notes']")
 	WebElement clk_dailyNotes;
 
@@ -176,6 +179,9 @@ public class ServiceAppointmentDetailsTab extends CommonFunctions {
 	@FindBy(xpath = "//label[text() = 'Service Territory']//parent::lightning-grouped-combobox//following::input[@placeholder = 'Search Service Territories...']")
 	WebElement sel_serviceTerritory;
 
+	@FindBy(xpath = "//span[text() = 'Service Territory']//parent::dt//following::dd//button[@title = 'Edit Service Territory']")
+	WebElement btn_EditServiceTerritory;
+	
 	@FindBy(xpath = "//span[text() = 'Service Appointments']//parent::a")
 	public WebElement clk_serviceAppoinmenttab;
 
@@ -217,6 +223,7 @@ public class ServiceAppointmentDetailsTab extends CommonFunctions {
 	By inquiriesTabAppear = By
 			.xpath("//span[text() = 'Recently Viewed | Inquiries' or text() = 'Inquiries']//parent::a");
 	By workOrderstabAppear = By.xpath("//span[text() = 'Work Orders']//parent::a");
+	By AssetstabAppear = By.xpath("//a[contains(@title, 'Assets') ]//parent::a");
 
 	public ServiceAppointmentDetailsTab() {
 		PageFactory.initElements(new AjaxElementLocatorFactory(driver, 10), this);
@@ -285,6 +292,9 @@ public class ServiceAppointmentDetailsTab extends CommonFunctions {
 	}
 
 	public void UpdateserviceTerritory() throws Exception {
+		Thread.sleep(4000);
+		expWaitToBeClickable(btn_EditServiceTerritory);
+		javascriptClick(btn_EditServiceTerritory);
 		expWaitToBeClickable(sel_serviceTerritory);
 		Thread.sleep(4000);
 		sel_serviceTerritory.click();
@@ -385,6 +395,11 @@ public class ServiceAppointmentDetailsTab extends CommonFunctions {
 		javascriptClick(lst_recentServiceAppointment.get(0));
 		Thread.sleep(4000);
 	}
+	public void clkRecentAssets() throws Exception {
+		waitForElementToAppear(AssetstabAppear, 30);
+		javascriptClick(lst_recentAssets.get(0));
+		Thread.sleep(4000);
+	}
 
 	public void clickdailyNotesTab(){
 		waitForElementToAppear(serviceAppoinmenttabAppear, 30);
@@ -446,7 +461,7 @@ public class ServiceAppointmentDetailsTab extends CommonFunctions {
 		WebElement iframe = driver.findElement(By.xpath("//iframe[@title='Field Service']"));
 		driver.switchTo().frame(iframe);
 		JavascriptExecutor executor = (JavascriptExecutor) driver;
-		executor.executeScript("document.body.style.zoom = '0.55'");
+//		executor.executeScript("document.body.style.zoom = '0.55'");
 		drawHighlight(ipt_searchServiceApment);
 		javascriptClick(ipt_searchServiceApment);
 		ipt_searchServiceApment.sendKeys(ServiceAppointmentDetailsTab.ServiceAppmentName);
@@ -463,7 +478,7 @@ public class ServiceAppointmentDetailsTab extends CommonFunctions {
 		WebElement iframe = driver.findElement(By.xpath("//iframe[@title='Field Service']"));
 		driver.switchTo().frame(iframe);
 		JavascriptExecutor executor = (JavascriptExecutor) driver;
-		executor.executeScript("document.body.style.zoom = '0.55'");
+		//executor.executeScript("document.body.style.zoom = '0.55'");
 		drawHighlight(ipt_searchServiceApment);
 		javascriptClick(ipt_searchServiceApment);
 		ipt_searchServiceApment.sendKeys(ServiceAppointmentDetailsTab.ServiceAppmentName);

@@ -48,55 +48,72 @@ public class HAC1005SiteAssetVisibility extends CommonFunctions {
 	}
 
 	@When("HAC1005 select the applicaton")
-	public void HAC1005_select_the_application() throws InterruptedException, IOException {
+	public void HAC1005_select_the_application() throws Exception, IOException {
 		selectApplication = new SelectApplication();
 		selectApplication.selectApp("Field Service");
 	}
 
 	@When("HAC1005 close all the open tabs")
-	public void HAC1005_close_all_the_open_tabs() throws InterruptedException {
+	public void HAC1005_close_all_the_open_tabs() throws Exception {
 		closeAllTabs();
 	}
 
 	@When("HAC1005 close the bottom bar")
-	public void HAC387_close_the_bottom_bar() throws InterruptedException {
+	public void HAC387_close_the_bottom_bar() throws Exception {
 		closeBottomeBar();
 	}
 	
 	@When("HAC1005 click on field service tab")
-	public void HAC1005_click_on_field_service_tab() throws InterruptedException {
+	public void HAC1005_click_on_field_service_tab() throws Exception {
 		homePage = new HomePage();
 		homePage.ClickFieldServiceTab();
 	}
 	
 	@When("HAC1005 select usa packaging policy")
-	public void HAC1005_select_usa_packaging_policy() throws InterruptedException {
+	public void HAC1005_select_usa_packaging_policy() throws Exception {
 		fieldserviceconsole = new FieldServiceConsole();
 		fieldserviceconsole.SelectPolicy();
 	}
 	
 	@When("HAC1005 select sa type")
-	public void HAC1005_select_sa_type() throws InterruptedException {
+	public void HAC1005_select_sa_type() throws Exception {
 		fieldserviceconsole = new FieldServiceConsole();
 		fieldserviceconsole.SelectJeopardySA();
 	}
 	
 	@When("HAC1005 select service appointment")
-	public void HAC1005_select_service_appointment() throws InterruptedException {
+	public void HAC1005_select_service_appointment() throws Exception {
 		fieldserviceconsole = new FieldServiceConsole();
 		fieldserviceconsole.SelectSAFromFieldServiceConsole();
 	}
 
 	@When("HAC1005 click edit button from service appointment")
-	public void HAC1005_click_edit_button_from_service_appointment() throws InterruptedException {
+	public void HAC1005_click_edit_button_from_service_appointment() throws Exception {
 		fieldserviceconsole = new FieldServiceConsole();
 		fieldserviceconsole.EditSAFromFieldServiceConsole();
 	}
-	
+
 	@When("HAC1005 click related tab on service appointment")
-	public void HAC1005_click_related_tab_on_service_appointment() throws InterruptedException {
+	public void HAC1005_click_related_tab_on_service_appointment() throws Exception {
 		fieldserviceconsole = new FieldServiceConsole();
 		fieldserviceconsole.ClickSARelatedTab();
 	}
-	
+
+	@When("Click on Related Records tab")
+	public void ClickRelatedRecordstab() throws Exception {
+		fieldserviceconsole = new FieldServiceConsole();
+		fieldserviceconsole.ClickAssetsRelatedTab();
+	}
+
+	@When("Create New Pnuch List Items")
+	public void createNewPunchList() throws Exception {
+		fieldserviceconsole = new FieldServiceConsole();
+		fieldserviceconsole.createNewPunchListItems();
+	}
+
+	@Then("Verify Punch List Items created and displayed")
+	public void verifyNewPunchList() throws Exception {
+		fieldserviceconsole = new FieldServiceConsole();
+		fieldserviceconsole.verifyPunchListCreated();
+	}	
 }

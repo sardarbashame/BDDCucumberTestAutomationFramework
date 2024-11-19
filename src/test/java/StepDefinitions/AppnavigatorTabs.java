@@ -36,6 +36,11 @@ public class AppnavigatorTabs extends CommonFunctions {
 		selectApplication = new SelectApplication();
 		selectApplication.selectApp(ppty.getProperty("FieldServiceAPPNAME"));
 	}
+	@When("select the Assets application")
+	public void selectAssetsApplicationn() throws InterruptedException, IOException {
+		selectApplication = new SelectApplication();
+		selectApplication.selectApp(ppty.getProperty("AssetsAPPNAME"));
+	}
 	
 	@When("click on Service Resources tab")
 	public void clickOnServiceResourcesTab() throws Exception {
