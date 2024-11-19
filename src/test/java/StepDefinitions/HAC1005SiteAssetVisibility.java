@@ -87,11 +87,6 @@ public class HAC1005SiteAssetVisibility extends CommonFunctions {
 		fieldserviceconsole.SelectSAFromFieldServiceConsole();
 	}
 	
-	@When("HAC1005 select sa type")
-	public void HAC1005_select_sa_type_filter() throws Exception {
-		fieldserviceconsole = new FieldServiceConsole();
-		fieldserviceconsole.SelectJeopardySA();
-	}
 
 	@When("HAC1005 click edit button from service appointment")
 	public void HAC1005_click_edit_button_from_service_appointment() throws Exception {
@@ -104,7 +99,6 @@ public class HAC1005SiteAssetVisibility extends CommonFunctions {
 		fieldserviceconsole = new FieldServiceConsole();
 		fieldserviceconsole.ClickSARelatedTab();
 	}
-
 
 	@When("Click on Related Records tab")
 	public void ClickRelatedRecordstab() throws Exception {
@@ -123,7 +117,6 @@ public class HAC1005SiteAssetVisibility extends CommonFunctions {
 		fieldserviceconsole = new FieldServiceConsole();
 		fieldserviceconsole.verifyPunchListCreated();
 	}	
-
 	
 	@Then("HAC1005 verify site asset on service appointment")
 	public void HAC1005_verify_site_asset_on_service_appointment() throws InterruptedException {

@@ -1,6 +1,6 @@
 Feature: HAC_1473_Automate Create Punchlist from Daily Notes
 
-
+@regtest
   Scenario: Login as service scheduler and HAC_1473_Automate Create Punchlist from Daily Notes
     Given Login as SERVICE TECHNICIAN USER NAME
     When select the Field Service application

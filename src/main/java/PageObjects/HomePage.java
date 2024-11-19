@@ -397,10 +397,10 @@ public class HomePage extends CommonFunctions {
 	}
 
 	public void AddNewWorkOrderLineItem() throws Exception {
-		Thread.sleep(0, 4000);
+		Thread.sleep(4000);
 		expWaitToBeClickable(lnk_newWorkOrderLines);
 		lnk_newWorkOrderLines.click();
-		Thread.sleep(0, 4000);
+		Thread.sleep(4000);
 		expWaitToBeClickable(chk_selectLineItem);
 		drawHighlight(chk_selectLineItem);
 		chk_selectLineItem.click();
@@ -408,9 +408,11 @@ public class HomePage extends CommonFunctions {
 		btn_AddWorkOrderLines.click();
 		Thread.sleep(4000);
 		drawHighlight(lnk_workOrderLineItemsQuickLink);
-		expWaitToBeClickable(lnk_selectCreatedWorkLineItems);
+		expWaitToBeClickable(lnk_workOrderLineItemsQuickLink);
+		lnk_workOrderLineItemsQuickLink.click();
+		Thread.sleep(4000);
 		lnk_selectCreatedWorkLineItems.click();
-		Thread.sleep(0, 4000);
+		Thread.sleep(4000);
 	}
 	
 	public void createNewCase(String contname, String firstname, String sub) throws InterruptedException {
