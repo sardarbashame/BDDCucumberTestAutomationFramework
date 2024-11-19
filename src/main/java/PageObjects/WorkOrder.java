@@ -61,6 +61,24 @@ public class WorkOrder extends CommonFunctions {
 	@FindBy(xpath = "//*[text()='Would You Like To Use This Address?']")
 	WebElement txt_address_msg;
 	
+	@FindBy(xpath="//span[text()='Next']")
+	WebElement btn_next;
+	
+	@FindBy(xpath="(//span[text()='Title']/../..//input)[last()]")
+	WebElement ipt_worksteptitle;
+	
+	@FindBy(xpath="(//span[text()='Work Plan']/../..//input)[last()]")
+	WebElement ipt_workstepworkplan;
+	
+	@FindBy(xpath="//div[@title='TestPunchlist']")
+	WebElement result_workstepworkplan;
+	
+	@FindBy(xpath="(//span[text()='Save'])[last()]")
+	WebElement btn_workstepsave;
+	
+	@FindBy(xpath="//span[text()='Customer Facing']/../..//*[@aria-checked='true']")
+	WebElement chckbox_customerfacing;
+	
 	public void CreateWorkOrder() throws Exception {
 		Thread.sleep(2000);
 		expWaitToBeClickable(btn_New);
@@ -86,7 +104,32 @@ public class WorkOrder extends CommonFunctions {
 		}
 		Thread.sleep(4000);
 	}
+		
+	public void CreateNewWorkStep(String title, String workplan) throws Exception {
+		Thread.sleep(4000);
+		expWaitToBeClickable(btn_New);
+		js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", btn_New);
+		Thread.sleep(5000);
+		btn_next.click();
+		Thread.sleep(2000);
+		ipt_worksteptitle.sendKeys(title);
+		Thread.sleep(2000);
+		ipt_workstepworkplan.sendKeys(workplan);
+		Thread.sleep(2000);
+		result_workstepworkplan.click();
+		Thread.sleep(4000);
+		btn_workstepsave.click();
+		Thread.sleep(4000);
+		if (toast_message.size() > 0) {
+			toast_message.get(0).click();
+		}
+	}
 	
+	public void VerifyCustomerFacingCheckboxOnWorkStep() throws Exception {
+		Thread.sleep(4000);
+		chckbox_customerfacing.isDisplayed();
+	}
 	
 	public void CreateServiceAppointments() throws InterruptedException {
 		Thread.sleep(2000);

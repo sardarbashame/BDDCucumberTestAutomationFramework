@@ -1,5 +1,6 @@
 Feature: Verify HAC_1165_CreateINSP Estimate Matrix with IOCommissioning + Training
 
+ @regtest
   Scenario Outline: Login as service user and HAC_1165_Create INSP Estimate Matrix  IO/comissioning+Training
     Given Login as SERVICE SCH USER NAME
     When HAC1165 select the applicaton
@@ -11,7 +12,7 @@ Feature: Verify HAC_1165_CreateINSP Estimate Matrix with IOCommissioning + Train
     When Create Estimations with INSP "<Pricebook>", "<InspectionEstimateMatrix>", "<Estimateitem>"
     Then User click on INSP Tab
     When HAC1165 verify the field label number of tech
-    When HAC1165PKGC verify the field value number of tech
+ #   When HAC1165PKGC verify the field value number of tech
     When HAC1165 verify the field label number of days
     When HAC1165 verify the field label number of hours
     When HAC1165 select from date

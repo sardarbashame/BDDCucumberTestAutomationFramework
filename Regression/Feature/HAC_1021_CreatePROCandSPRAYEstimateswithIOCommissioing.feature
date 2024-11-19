@@ -1,6 +1,6 @@
 Feature: HAC_1021_Verify processing and spray combination of estimate creation with IOCommissioning
 
- @regtest 
+ @regtest
   Scenario Outline: Login as service scheduler and verify the processing and spray estimates creation
     Given HAC1165PICT user enters <username> and <password>
     When HAC1165PICT select the applicaton
