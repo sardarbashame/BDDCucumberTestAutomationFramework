@@ -23,7 +23,7 @@ public class FieldServiceConsole extends CommonFunctions {
 	WebElement dropdwnclick_policy;
 	
 
-	@FindBy(xpath="//a[contains(text(),'Related Records')]")
+	@FindBy(xpath="//button[contains(text(),'Related')]")
 	WebElement SA_RelatedTab;
 	
 	@FindBy(xpath="//a[contains(text(),'Related Records')]")
@@ -85,18 +85,6 @@ public class FieldServiceConsole extends CommonFunctions {
 		Thread.sleep(3000);
 	}	
 		
-	public void SelectJeopardySA() throws InterruptedException {
-		Thread.sleep(4000);
-//		WebElement frame1 = driver.findElement(By.xpath("//iframe[@title='Field Service']"));
-//		driver.switchTo().frame(frame1);
-		expWaitToBeClickable(dropdwn_predefinedfilter);
-		Thread.sleep(4000);
-		select = new Select(dropdwn_predefinedfilter);
-		Thread.sleep(4000);
-		select.selectByVisibleText("In Jeopardy");
-
-	}
-	
 	public void SelectPolicy(String policy) throws InterruptedException {
 		Thread.sleep(2000);
 		select = new Select(dropdwnclick_policy);
@@ -124,7 +112,6 @@ public class FieldServiceConsole extends CommonFunctions {
 
 	}	
 	
-
 	public void EditSAFromFieldServiceConsole() throws InterruptedException {
 		Thread.sleep(2000);
 		expWaitToBeClickable(click_SAEditbtn);
@@ -134,11 +121,9 @@ public class FieldServiceConsole extends CommonFunctions {
 	}	
 	
 	public void ClickSARelatedTab() throws InterruptedException {
-
 		Thread.sleep(4000);
-
 		Thread.sleep(3000);
-	 expWaitToBeClickable(SA_RelatedTab);
+		expWaitToBeClickable(SA_RelatedTab);
 		Thread.sleep(2000);
 		SA_RelatedTab.click();
 		Thread.sleep(3000);
@@ -171,8 +156,6 @@ public class FieldServiceConsole extends CommonFunctions {
 		Assert.assertTrue(cnt>0);				
 	}
 
-
-	
 	public void VerifySiteAssetOnSA() throws InterruptedException {
 		driver.switchTo().frame(frame1);
 		Thread.sleep(2000);

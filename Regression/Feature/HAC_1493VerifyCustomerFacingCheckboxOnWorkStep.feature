@@ -1,5 +1,5 @@
 Feature: HAC_1493_verify customer facing checkbox on work step
-
+@regtest
  Scenario Outline: Login as service scheduler and verify the customer facing checkbox
     Given HAC1478 user enters <username> and <password>
     When HAC1478 select the applicaton
