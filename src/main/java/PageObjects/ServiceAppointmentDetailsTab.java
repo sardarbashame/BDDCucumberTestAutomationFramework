@@ -460,12 +460,13 @@ public class ServiceAppointmentDetailsTab extends CommonFunctions {
 		Thread.sleep(5000);
 		WebElement iframe = driver.findElement(By.xpath("//iframe[@title='Field Service']"));
 		driver.switchTo().frame(iframe);
+		FieldServiceConsole	fieldserviceconsole = new FieldServiceConsole();
+		fieldserviceconsole.SelectSAPredefinedFilter("All Service Appointments");
 		JavascriptExecutor executor = (JavascriptExecutor) driver;
-//		executor.executeScript("document.body.style.zoom = '0.55'");
 		drawHighlight(ipt_searchServiceApment);
 		javascriptClick(ipt_searchServiceApment);
 		ipt_searchServiceApment.sendKeys(ServiceAppointmentDetailsTab.ServiceAppmentName);
-		ipt_searchServiceApment.sendKeys(Keys.ENTER);
+		//ipt_searchServiceApment.sendKeys(Keys.ENTER);
 		draganddropJscript(DraggableSingleTask, dropGantt);
 		waitForElementToDisAppear(wait_disapperLoading, 30);
 		Thread.sleep(4000);

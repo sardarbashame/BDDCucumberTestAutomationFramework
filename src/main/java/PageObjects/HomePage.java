@@ -408,6 +408,10 @@ public class HomePage extends CommonFunctions {
 		btn_AddWorkOrderLines.click();
 		Thread.sleep(4000);
 		drawHighlight(lnk_workOrderLineItemsQuickLink);
+		mouseHover(lnk_workOrderLineItemsQuickLink);
+		Thread.sleep(4000);
+		moveToEle(lnk_workOrderLineItemsQuickLink);
+		expWaitToBeClickable(lnk_selectCreatedWorkLineItems);
 		expWaitToBeClickable(lnk_workOrderLineItemsQuickLink);
 		lnk_workOrderLineItemsQuickLink.click();
 		Thread.sleep(4000);
