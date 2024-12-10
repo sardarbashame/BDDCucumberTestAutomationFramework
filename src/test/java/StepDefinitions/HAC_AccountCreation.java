@@ -16,8 +16,8 @@ public class HAC_AccountCreation extends CommonFunctions {
 	public void login_as_service_sch_user_name() {
 		loginPO = new Login();
 		loginPO.goTo(ppty.getProperty("HAC_URL"));
-		String Uname = ppty.getProperty("SERVICE_SCH_USER_NAME");
-		String pwd = ppty.getProperty("SERVICE_SCH_PASSWORD");
+		String Uname =getUserName("SERVICE_SCH_USER_NAME");
+		String pwd = getPassword("SERVICE_SCH_PASSWORD");
 		loginPO.LoginApp(Uname, pwd);
 	   
 	}
@@ -26,8 +26,8 @@ public class HAC_AccountCreation extends CommonFunctions {
 	public void login_as_service_tech_user_name() {
 		loginPO = new Login();
 		loginPO.goTo(ppty.getProperty("HAC_URL"));
-		String Uname = ppty.getProperty("SERVICE_TECHNICIAN_USERNAME");
-		String pwd = ppty.getProperty("SERVICE_TECHNICIAN_PASSWORD");
+		String Uname = getUserName("SERVICE_TECHNICIAN_USERNAME");
+		String pwd = getPassword("SERVICE_TECHNICIAN_PASSWORD");
 		loginPO.LoginApp(Uname, pwd);
 	   
 	}
@@ -36,8 +36,8 @@ public class HAC_AccountCreation extends CommonFunctions {
 	public void login_as_service_rep_user_name() {
 		loginPO = new Login();
 		loginPO.goTo(ppty.getProperty("HAC_URL"));
-		String Uname = ppty.getProperty("SERVICE_REP_USER_NAME");
-		String pwd = ppty.getProperty("SERVICE_REP_PASSWORD");
+		String Uname = getUserName("SERVICE_REP_USER_NAME");
+		String pwd = getPassword("SERVICE_REP_PASSWORD");
 		loginPO.LoginApp(Uname, pwd);
 	   
 	}

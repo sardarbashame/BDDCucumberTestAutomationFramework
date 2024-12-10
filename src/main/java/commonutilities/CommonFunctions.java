@@ -40,7 +40,8 @@ public class CommonFunctions extends BaseTest {
 	public static Actions actions;
 	public static FileReader reader;
 	public static ClassLoader basedir;
-
+	public static Properties props;
+	
 	public By waitForElementToAppear(By by, int timeOut) {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeOut));
 		wait.until(ExpectedConditions.visibilityOfElementLocated(by));
@@ -178,7 +179,7 @@ public class CommonFunctions extends BaseTest {
 
 	public static Properties getObjDetails() throws IOException {
 		reader = new FileReader(System.getProperty("user.dir") + "//src//test//resources//GlobalData.properties");
-		Properties props = new Properties();
+		props = new Properties();
 		props.load(reader);
 		return props;
 
@@ -300,5 +301,50 @@ public class CommonFunctions extends BaseTest {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+	public static void loadBaseURL() throws Exception {
+		String env = System.getProperty("env");
+		switch (env.toUpperCase()) {
+		case "QA":
+			driver.get("https://heatandcontrol--qa.sandbox.lightning.force.com/");
+			break;
+
+		case "DEV4":
+			driver.get("https://heatandcontrol--dev4box.sandbox.my.salesforce.com/");
+			break;
+			
+		case "DEV5":
+			driver.get("https://heatandcontrol--dev5box.sandbox.my.salesforce.com/");
+			break;
+
+		default:
+			throw new Exception("Environment Not Defined");
+		}
+		Thread.sleep(3000);
+	}
+
+	public static String getUserName(String userName) {
+		String Uname = null;
+		String env = System.getProperty("env");
+		String str = env + "_" + userName;
+
+		if (env.toUpperCase().equals("QA")) {
+			Uname = ppty.getProperty(str);
+		} else if (env.toUpperCase().equals("DEV4")) {
+			Uname = ppty.getProperty(str);
+		}
+		return Uname;
+	}
+	public static String getPassword(String password) {
+		String pwd = null;
+		String env = System.getProperty("env");
+		String str = env + "_" + password;
+
+		if (env.toUpperCase().equals("QA")) {
+			pwd = ppty.getProperty(str);
+		} else if (env.toUpperCase().equals("DEV4")) {
+			pwd = ppty.getProperty(str);
+		}
+		return pwd;
 	}
 }

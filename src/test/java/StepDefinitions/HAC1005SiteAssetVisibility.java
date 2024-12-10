@@ -87,6 +87,11 @@ public class HAC1005SiteAssetVisibility extends CommonFunctions {
 		fieldserviceconsole.SelectSAFromFieldServiceConsole();
 	}
 	
+	@When("HAC1005 select sa type")
+	public void HAC1005_select_sa_type_filter() throws Exception {
+		fieldserviceconsole = new FieldServiceConsole();
+		fieldserviceconsole.SelectJeopardySA();
+	}
 
 	@When("HAC1005 click edit button from service appointment")
 	public void HAC1005_click_edit_button_from_service_appointment() throws Exception {
@@ -100,22 +105,47 @@ public class HAC1005SiteAssetVisibility extends CommonFunctions {
 		fieldserviceconsole.ClickSARelatedTab();
 	}
 
+
 	@When("Click on Related Records tab")
 	public void ClickRelatedRecordstab() throws Exception {
 		fieldserviceconsole = new FieldServiceConsole();
 		fieldserviceconsole.ClickAssetsRelatedTab();
 	}
 
-	@When("Create New Pnuch List Items")
+	@When("Create New Punch List Items")
 	public void createNewPunchList() throws Exception {
 		fieldserviceconsole = new FieldServiceConsole();
 		fieldserviceconsole.createNewPunchListItems();
+	}
+	
+	@When("Create New Punch List Items under Field Service")
+	public void createNewPunchListUnderFieldService() throws Exception {
+		fieldserviceconsole = new FieldServiceConsole();
+		fieldserviceconsole.createNewPunchListItemsUnderFieldService();
+	}
+	@When("Create Daily Notes under Field Service")
+	public void createDailyNotesUnderFieldService() throws Exception {
+		fieldserviceconsole = new FieldServiceConsole();
+		fieldserviceconsole.createDailyNotesUnderFieldService();
+	}
+	
+	
+	@When("Click on Daily Notes tab")
+	public void ClickOnDailyNotestab() throws Exception {
+		fieldserviceconsole = new FieldServiceConsole();
+		fieldserviceconsole.ClickOnDaiyNotesTab();
 	}
 
 	@Then("Verify Punch List Items created and displayed")
 	public void verifyNewPunchList() throws Exception {
 		fieldserviceconsole = new FieldServiceConsole();
 		fieldserviceconsole.verifyPunchListCreated();
+	}	
+
+	@Then("Verify Punch List Items created and displayed Under Field Service")
+	public void verifyNewPunchListUnderFA() throws Exception {
+		fieldserviceconsole = new FieldServiceConsole();
+		fieldserviceconsole.verifyPunchListCreatedUnderFA();
 	}	
 	
 	@Then("HAC1005 verify site asset on service appointment")

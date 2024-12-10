@@ -44,7 +44,7 @@ public class HAC145VerifyAccountLayout extends CommonFunctions {
 	public void HAC145_user_enters_username_and_password() throws IOException {
 		loginPO = new Login();
 		loginPO.goTo(ppty.getProperty("HAC_URL"));
-		loginPO.LoginApp(getObjDetails().getProperty("SERVICE_SCH_USER_NAME"), getObjDetails().getProperty("SERVICE_SCH_PASSWORD"));
+		loginPO.LoginApp(getUserName("SERVICE_SCH_USER_NAME"), getPassword("SERVICE_SCH_PASSWORD"));
 	}
 
 	@When("HAC145 select the applicaton")
