@@ -20,6 +20,7 @@
 	</properties>
 
 	<dependencies>
+
 		<!--
 		https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
 		<dependency>
@@ -27,6 +28,7 @@
 			<artifactId>selenium-java</artifactId>
 			<version>4.8.2</version>
 		</dependency>
+
 
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
@@ -61,7 +63,11 @@
 			<version>7.13.0</version>
 		</dependency>
 
-
+<dependency>
+  <groupId>org.projectlombok</groupId>
+  <artifactId>lombok</artifactId>
+  <version>1.18.28</version>
+</dependency>
 		<dependency>
 			<groupId>log4j</groupId>
 			<artifactId>log4j</artifactId>
@@ -83,19 +89,19 @@
 			<artifactId>extentreports-cucumber7-adapter</artifactId>
 			<version>1.7.0</version>
 		</dependency>
-		<!--
-		https://mvnrepository.com/artifact/tech.grasshopper/extent-pdf-report -->
-	 <dependency>
+<!-- https://mvnrepository.com/artifact/tech.grasshopper/extent-pdf-report -->
+<!-- <dependency>
     <groupId>tech.grasshopper</groupId>
     <artifactId>extent-pdf-report</artifactId>
     <version>2.1.0</version>
-	</dependency>
+</dependency> -->
 
-		<dependency>
+
+		<!-- <dependency>
 			<groupId>tech.grasshopper</groupId>
 			<artifactId>cucumber-pdf-report</artifactId>
 			<version>2.9.0</version>
-		</dependency>
+		</dependency> -->
 
 		<!-- https://mvnrepository.com/artifact/net.rcarz/jira-client -->
 		<dependency>
@@ -103,13 +109,7 @@
 			<artifactId>jira-client</artifactId>
 			<version>0.5</version>
 		</dependency>
-<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
-<dependency>
-    <groupId>org.projectlombok</groupId>
-    <artifactId>lombok</artifactId>
-    <version>1.18.24</version>
-    <scope>provided</scope>
-</dependency>
+
 	</dependencies>
 
 	<build>
@@ -137,6 +137,26 @@
 						--add-opens java.base/java.lang=ALL-UNNAMED</argLine>
 				</configuration>
 			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>3.1.0</version>
+			</plugin>
 		</plugins>
+		<resources>
+			<resource>
+				<directory>src/test/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
 	</build>
+	<profiles>
+		<profile>
+			<id>ProfileDEV4</id>
+			<properties>
+				<env>DEV4</env>
+			</properties>
+		</profile>
+		
+		</profiles>
 </project>

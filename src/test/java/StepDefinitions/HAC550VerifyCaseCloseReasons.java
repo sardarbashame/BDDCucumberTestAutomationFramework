@@ -39,7 +39,7 @@ public class HAC550VerifyCaseCloseReasons extends CommonFunctions {
 	public void HAC550_login_as_a_service_manager() throws IOException {
 		loginPO = new Login();
 		loginPO.goTo(ppty.getProperty("HAC_URL"));
-		loginPO.LoginApp(ppty.getProperty("SERVICE_MANAGER_USER_NAME"),ppty.getProperty("SERVICE_MANAGER_PASSWORD"));
+		loginPO.LoginApp(getUserName("SERVICE_MANAGER_USER_NAME"),getPassword("SERVICE_MANAGER_PASSWORD"));
 	}
 
 	@When("HAC550 select the applicaton")

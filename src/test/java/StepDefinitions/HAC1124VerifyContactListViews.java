@@ -26,8 +26,8 @@ public class HAC1124VerifyContactListViews extends CommonFunctions {
 	public void hac1124_login_as_service_user() throws IOException {
 		loginPO = new Login();
 		loginPO.goTo(ppty.getProperty("HAC_URL"));
-		loginPO.LoginApp(getObjDetails().getProperty("SERVICE_MANAGER_USER_NAME"),
-				getObjDetails().getProperty("SERVICE_MANAGER_PASSWORD"));
+		loginPO.LoginApp(getUserName("SERVICE_MANAGER_USER_NAME"),
+				getPassword("SERVICE_MANAGER_PASSWORD"));
 	}
 
 	@When("HAC1124 select the applicaton")

@@ -1,7 +1,7 @@
 Feature: HAC-1355 Verify timesheet entry logic on service appointments
 @regtest
   Scenario Outline: Login as service technician and verify the timesheet entries on service appointment
-   # Step1
+   # Login as service scheduler and create service appointments 
     Given HAC1478 user enters <testschedulerusername> and <password>
     When HAC1478 select the applicaton
     When HAC1478 close all the open tabs
@@ -28,7 +28,7 @@ Feature: HAC-1355 Verify timesheet entry logic on service appointments
     Then HAC1478 assign service resource
     Then HAC1478 update sa status to dispatched
     Then HAC1478 logout as service scheduler
-   #Step2 
+   #Step2 Login as service technician 
     When HAC1355 login as service technician
 	 	When HAC1355 select the field service applicaton
     When HAC1355 close all the open tabs

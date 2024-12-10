@@ -26,7 +26,13 @@ public class Login extends CommonFunctions {
 
 	public void goTo(String URL) {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-		driver.get(URL);
+		try {
+			loadBaseURL();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		//driver.get(URL);
 		//driver.navigate().to(URL);
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.manage().window().maximize();

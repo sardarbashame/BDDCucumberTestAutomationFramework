@@ -2,7 +2,7 @@ Feature: HAC_1121_Verify the contact list views
 
 @regtest
   Scenario: Login as service user and verify the contact list views
-    Given HAC1124 login as service user
+    Given Login as SERVICE SCH USER NAME
     When HAC1124 select the applicaton
     When HAC1124 close all the open tabs
     When HAC1124 close the bottom bar
