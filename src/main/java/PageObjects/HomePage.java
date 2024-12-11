@@ -416,6 +416,12 @@ public class HomePage extends CommonFunctions {
 		Thread.sleep(0, 4000);
 	}
 	
+	@FindBy(xpath="//button[@aria-label='Product Family']")
+	WebElement clkproductfamily;
+	
+	@FindBy(xpath="//span[text()='PROC']")
+	WebElement clkprocoption;
+	
 	public void createNewCase(String contname, String firstname, String sub) throws InterruptedException {
 		js = (JavascriptExecutor) driver;
 		waitForElementToAppear(By.xpath("//a//div[text()='New']"), 30);
@@ -424,6 +430,9 @@ public class HomePage extends CommonFunctions {
 		contactnametxtbox.click();
 		contactnametxtbox.sendKeys(contname);
 		driver.findElement(By.xpath("//ul//li//*[text()='" + firstname + "']")).click();
+		Thread.sleep(1000);
+		clkproductfamily.click();
+		clkprocoption.click();
 		// scroll to Type field
 		js.executeScript(
 				"var result = document.evaluate(\"//label[text()='Sales Order']\", document.body, null, XPathResult.ANY_TYPE, null);var input = result.iterateNext();input.scrollIntoView();");
@@ -455,11 +464,11 @@ public class HomePage extends CommonFunctions {
 	
 	public void Logout() throws InterruptedException{
 		js = (JavascriptExecutor) driver;
-		Thread.sleep(0, 4000);
+		Thread.sleep(2000);
 		js.executeScript("var result = document.evaluate(\"//span[text()='View profile']/..//span[@class='uiImage']\", document.body, null, XPathResult.ANY_TYPE, null);     var input = result.iterateNext();input.scrollIntoView(); input.click();");
-		Thread.sleep(0, 2000);
+		Thread.sleep(2000);
 		javascriptClick(logoutlink);
-		Thread.sleep(0, 4000);
+		Thread.sleep(4000);
 	}
 	
 	
