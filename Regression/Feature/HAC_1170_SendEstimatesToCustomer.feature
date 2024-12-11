@@ -1,8 +1,8 @@
 Feature: HAC_1170_Send Estimates to Customer
 
 @regtest
-  Scenario Outline: Login as service scheduler and verify the processing estimate creation
-    Given HAC1170 user enters <username> and <password>
+  Scenario: Login as service scheduler and verify the processing estimate creation
+    Given Login as SERVICE SCH USER NAME
     When HAC1170 select the applicaton
     When HAC1170 close all the open tabs
     When HAC1170 close the bottom bar
@@ -21,6 +21,3 @@ Feature: HAC_1170_Send Estimates to Customer
     Then HAC1170 navigate back to case record
     Then HAC1170 verify the estimate version
 
-    Examples: 
-      | username                       | password | casename      |
-      | testservicescheduler@gmail.com | H@ctest1 | PROCAutoCase1 |

@@ -62,13 +62,9 @@ public class HAC387VerifyIndustry extends CommonFunctions {
 		homepage = new HomePage();
 		homepage.createNewCustomerAccount(
 				getObjDetails().getProperty("ACCTNAME") + Math.random(), 
-				getObjDetails().getProperty("ACCTSITE"),
 				getObjDetails().getProperty("ACCTPHONE"),
-				getObjDetails().getProperty("ACCTFAX"),
 				getObjDetails().getProperty("ACCTEMAIL"),
-				getObjDetails().getProperty("ACCTWEBSITE"),
-				getObjDetails().getProperty("INDUSTRY"),
-				getObjDetails().getProperty("TRADENAME"));
+				getObjDetails().getProperty("INDUSTRY") );
 	}
 
 	// validate industry name on account details

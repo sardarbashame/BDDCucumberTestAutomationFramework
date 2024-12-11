@@ -252,7 +252,7 @@ public class HomePage extends CommonFunctions {
 		Thread.sleep(4000);
 	}
 		
-	public void createNewCustomerAccount(String accountname, String accountsite, String phone, String fax, String email, String website, String industryname, String tradename)
+	public void createNewCustomerAccount(String accountname, String phone, String email, String industryname)
 			throws InterruptedException {
 		js = (JavascriptExecutor) driver;
 		Thread.sleep(4000);
@@ -261,21 +261,19 @@ public class HomePage extends CommonFunctions {
 		nextbtn.click();
 		accountnametxtbox.click();
 		accountnametxtbox.sendKeys(accountname);
-		txtbox_accountsite.click();
-		txtbox_accountsite.sendKeys(accountsite);
+	//	txtbox_accountsite.click();
+	//	txtbox_accountsite.sendKeys(accountsite);
 		txtbox_phone.click();
 		txtbox_phone.sendKeys(phone);
-		txtbox_fax.click();
-		txtbox_fax.sendKeys(fax);
+	//	txtbox_fax.click();
+	//	txtbox_fax.sendKeys(fax);
 		txtbox_email.click();
 		txtbox_email.sendKeys(email);
-		txtbox_website.click();
-		txtbox_website.sendKeys(website);
-		tradenametxtbox.click();
-		tradenametxtbox.sendKeys(tradename);
-		// scroll to Language field
-		js.executeScript(
-				"var result = document.evaluate(\"//label[text()='Language']\", document.body, null, XPathResult.ANY_TYPE, null);var input = result.iterateNext();input.scrollIntoView();");
+	//	txtbox_website.click();
+	//	txtbox_website.sendKeys(website);
+	//	tradenametxtbox.click();
+//		tradenametxtbox.sendKeys(tradename);
+		Thread.sleep(2000);
 		driver.findElement(By.xpath("//ul/li//span[text()='" + industryname + "']")).click();
 		js.executeScript(
 				"var result = document.evaluate(\"(//span[text()='Move to Chosen'])[1]\", document.body, null, XPathResult.ANY_TYPE, null);     var input = result.iterateNext();input.scrollIntoView(); input.click();");

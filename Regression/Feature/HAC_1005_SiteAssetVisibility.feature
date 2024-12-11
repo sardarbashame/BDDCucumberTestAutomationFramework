@@ -1,8 +1,7 @@
 Feature: HAC_1005_View Site Asset from Service Appointment
 
-@regtest
   Scenario Outline: Login as service user and HAC_1005_View Site Asset from Service Appointment
-    Given HAC1005 user enters <username> and <password>
+    Given Login as SERVICE SCH USER NAME
     When HAC1005 select the applicaton
     When HAC1005 close all the open tabs
     When HAC1005 click on field service tab

@@ -1,8 +1,8 @@
-Feature: HAC-1211 Verify service time and travel time on field service report tab
+Feature: HAC-1210 Verify service time and travel time on field service report tab
 
-  Scenario Outline: Login as service technician and verify the timesheet entries on service appointment
+  Scenario: Login as service technician and verify the timesheet entries on service appointment
    # Step1
-    Given HAC1478 user enters <testschedulerusername> and <password>
+    Given Login as SERVICE SCH USER NAME
     When HAC1478 select the applicaton
     When HAC1478 close all the open tabs
     When HAC1478 close the bottom bar
@@ -50,6 +50,3 @@ Feature: HAC-1211 Verify service time and travel time on field service report ta
    	Then HAC1211 verify travel time section
    	Then HAC1211 verify service charge section
 
-    Examples: 
-      | testschedulerusername          | password | casename      |
-      | testservicescheduler@gmail.com | H@ctest1 | PROCAutoCase1 |

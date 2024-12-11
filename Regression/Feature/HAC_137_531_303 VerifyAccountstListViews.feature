@@ -1,8 +1,8 @@
 Feature: HAC_137_531_303_Verify the account list views
 
 @regtest
-  Scenario Outline: Login as service users and verify the account list views
-    Given HAC137 user enters <username> and <password>
+  Scenario: Login as service users and verify the account list views
+    Given Login as SERVICE SCH USER NAME
     When HAC137 select the applicaton
     When HAC137 close all the open tabs
     When HAC137 close the bottom bar
@@ -66,7 +66,5 @@ Feature: HAC_137_531_303_Verify the account list views
     Then HAC137 verify the shipping stateprovince name header in all accounts list view
     Then HAC137 verify the shipping country header in all accounts list view
     Then HAC137 verify the super region header in all accounts list view
-   Examples: 
-      | username                       | password |
-      | testservicescheduler@gmail.com | H@ctest1 |
+
     

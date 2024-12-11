@@ -1,7 +1,7 @@
 Feature: HAC_1166_Verify processing estimate creation in draft status
 @regtest
    Scenario Outline: Login as service scheduler and verify the processing estimate creation in draft status
-    Given HAC1166 user enters <username> and <password>
+    Given Login as SERVICE SCH USER NAME
     When HAC1166 select the applicaton
     When HAC1166 close all the open tabs
     When HAC1166 close the bottom bar
@@ -20,6 +20,4 @@ Feature: HAC_1166_Verify processing estimate creation in draft status
     Then HAC1166 select quoteestimate related list
     Then HAC1166 verify estimate is in draft status
 
-    Examples: 
-      | username                       | password | casename      |
-      | testservicescheduler@gmail.com | H@ctest1 | PROCAutoCase1 |
+

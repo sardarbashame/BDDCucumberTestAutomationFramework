@@ -1,8 +1,8 @@
 Feature: HAC_1354_Edit service appointments
 @regtest
-  Scenario Outline: Login as service technician and edit the service appointments
+  Scenario: Login as service technician and edit the service appointments
     
-    Given HAC1478 user enters <testschedulerusername> and <password>
+    Given Login as SERVICE SCH USER NAME
     When HAC1478 select the applicaton
     When HAC1478 close all the open tabs
     When HAC1478 close the bottom bar
@@ -39,6 +39,3 @@ Feature: HAC_1354_Edit service appointments
     Then HAC1354 update the service appointment status to In Progress
     Then HAC1354 update the service appointment status to completed
 
-    Examples: 
-      | testschedulerusername          | password | casename      |
-      | testservicescheduler@gmail.com | H@ctest1 | PROCAutoCase1 |

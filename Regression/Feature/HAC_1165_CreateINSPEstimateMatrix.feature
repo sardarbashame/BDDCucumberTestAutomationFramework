@@ -2,7 +2,7 @@ Feature: Verify HAC_1165_CreateINSP Estimate Matrix with IOCommissioning
 
 @regtest
   Scenario Outline: Login as service user and Verify HAC_1165_CreateINSP Estimate Matrix
-    Given HAC1165 user enters <username> and <password>
+    Given Login as SERVICE SCH USER NAME
     When HAC1165 select the applicaton
     When HAC1165 close all the open tabs
     When HAC1165 close the bottom bar

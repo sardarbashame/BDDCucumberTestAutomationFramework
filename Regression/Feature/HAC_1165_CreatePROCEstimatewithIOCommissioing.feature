@@ -1,8 +1,8 @@
 Feature: HAC_1165_Verify processing estimate creation with IO Commissioning
 
  @regtest
-  Scenario Outline: Login as service scheduler and verify the processing estimate creation
-    Given HAC1165 user enters <username> and <password>
+  Scenario: Login as service scheduler and verify the processing estimate creation
+    Given Login as SERVICE SCH USER NAME
     When HAC1165 select the applicaton
     When HAC1165 close all the open tabs
     When HAC1165 close the bottom bar
@@ -20,6 +20,3 @@ Feature: HAC_1165_Verify processing estimate creation with IO Commissioning
     When HAC1165 select view confirmation
     Then HAC1165 generate estimate pdf
 
-    Examples: 
-      | username                       | password | casename      |
-      | testservicescheduler@gmail.com | H@ctest1 | PROCAutoCase1 |

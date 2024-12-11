@@ -248,4 +248,38 @@ public class ServiceAppointmentFieldServiceReportTab extends CommonFunctions {
 		Thread.sleep(3000);
 		}
 
+	@FindBy(xpath = "//button[@title='Download PDF']")
+	WebElement button_pdfdownload;
+	
+	public void ClickPDFIcon() throws InterruptedException {
+		Thread.sleep(2000);
+		js.executeScript("window.scrollTo(0,0)");
+		Thread.sleep(2000);
+		expWaitToBeClickable(button_pdfdownload);
+		button_pdfdownload.click();
+		Thread.sleep(3000);
+
+		}
+	
+	@FindBy(xpath = "//h2//slot[text()='FSR PDF Generated.']")
+	WebElement successmsg_PDFGenerated;
+	
+	@FindBy(xpath = "//slot[text()='Please check the files section for generated FSR in PDF format.']")
+	WebElement successmsg_checkfilessection;
+	
+	By pdfdownloadsuccessmessagetoappear = By.xpath("//h2//slot[text()='FSR PDF Generated.']");
+	
+	public void VerifyPDFDownloadSuccessMessage() throws InterruptedException {
+		Thread.sleep(2000);
+		js.executeScript("window.scrollTo(0,0)");
+		Thread.sleep(2000);
+		expWaitToBeClickable(button_pdfdownload);
+		button_pdfdownload.click();
+		waitForElementToAppear(pdfdownloadsuccessmessagetoappear, 30);
+		successmsg_PDFGenerated.isDisplayed();
+		successmsg_checkfilessection.isDisplayed();
+	
+
+		}
+
 }

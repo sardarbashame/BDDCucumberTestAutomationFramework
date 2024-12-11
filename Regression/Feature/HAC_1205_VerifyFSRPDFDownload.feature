@@ -1,6 +1,6 @@
-Feature: HAC-1173 Verify service charges and expenses on field service report tab
+Feature: HAC-1205 Verify pdf download of field service report
 
-  Scenario: Login as service technician and verify the service charge and expenes on FSR
+  Scenario: Login as service technician and verify field service report pdf format download
    # Step1
     Given Login as SERVICE SCH USER NAME
     When HAC1478 select the applicaton
@@ -50,4 +50,6 @@ Feature: HAC-1173 Verify service charges and expenses on field service report ta
    	Then HAC1211 verify travel time section
    	Then HAC1211 verify service charge section
    	Then HAC1211 verify expenses section
+   #Step4
+   	Then HAC1205 verify fsr pdf download
 

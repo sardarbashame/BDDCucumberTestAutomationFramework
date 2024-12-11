@@ -1,8 +1,8 @@
 Feature: HAC-1015 Verify financial visibility from field service report tab
 
-  Scenario Outline: Login as service technician and verify the financial visibility from FSR tab on service appointment
+  Scenario: Login as service technician and verify the financial visibility from FSR tab on service appointment
    # Step1
-    Given HAC1478 user enters <testschedulerusername> and <password>
+    Given Login as SERVICE SCH USER NAME
     When HAC1478 select the applicaton
     When HAC1478 close all the open tabs
     When HAC1478 close the bottom bar
@@ -50,6 +50,4 @@ Feature: HAC-1015 Verify financial visibility from field service report tab
    	Then HAC1211 verify travel time section
    	Then HAC1211 verify service charge section
 
-    Examples: 
-      | testschedulerusername          | password | casename      |
-      | testservicescheduler@gmail.com | H@ctest1 | PROCAutoCase1 |
+
