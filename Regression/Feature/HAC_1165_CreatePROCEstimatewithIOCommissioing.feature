@@ -19,4 +19,3 @@ Feature: HAC_1165_Verify processing estimate creation with IO Commissioning
     When HAC1165 select to date
     When HAC1165 select view confirmation
     Then HAC1165 generate estimate pdf
- 

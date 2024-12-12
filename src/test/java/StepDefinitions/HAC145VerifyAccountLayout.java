@@ -93,13 +93,10 @@ public class HAC145VerifyAccountLayout extends CommonFunctions {
 		homepage = new HomePage();
 		homepage.createNewCustomerAccount(
 				getObjDetails().getProperty("ACCTNAME") + Math.random(), 
-				getObjDetails().getProperty("ACCTSITE"),
 				getObjDetails().getProperty("ACCTPHONE"),
-				getObjDetails().getProperty("ACCTFAX"),
 				getObjDetails().getProperty("ACCTEMAIL"),
-				getObjDetails().getProperty("ACCTWEBSITE"),
-				getObjDetails().getProperty("INDUSTRY"),
-				getObjDetails().getProperty("TRADENAME"));
+				getObjDetails().getProperty("INDUSTRY")
+				);
 	}
 
 	@Then("HAC145 verify type")

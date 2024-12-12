@@ -252,7 +252,7 @@ public class HomePage extends CommonFunctions {
 		Thread.sleep(4000);
 	}
 		
-	public void createNewCustomerAccount(String accountname, String accountsite, String phone, String fax, String email, String website, String industryname, String tradename)
+	public void createNewCustomerAccount(String accountname, String phone, String email, String industryname)
 			throws InterruptedException {
 		js = (JavascriptExecutor) driver;
 		Thread.sleep(4000);
@@ -261,21 +261,19 @@ public class HomePage extends CommonFunctions {
 		nextbtn.click();
 		accountnametxtbox.click();
 		accountnametxtbox.sendKeys(accountname);
-		txtbox_accountsite.click();
-		txtbox_accountsite.sendKeys(accountsite);
+	//	txtbox_accountsite.click();
+	//	txtbox_accountsite.sendKeys(accountsite);
 		txtbox_phone.click();
 		txtbox_phone.sendKeys(phone);
-		txtbox_fax.click();
-		txtbox_fax.sendKeys(fax);
+	//	txtbox_fax.click();
+	//	txtbox_fax.sendKeys(fax);
 		txtbox_email.click();
 		txtbox_email.sendKeys(email);
-		txtbox_website.click();
-		txtbox_website.sendKeys(website);
-		tradenametxtbox.click();
-		tradenametxtbox.sendKeys(tradename);
-		// scroll to Language field
-		js.executeScript(
-				"var result = document.evaluate(\"//label[text()='Language']\", document.body, null, XPathResult.ANY_TYPE, null);var input = result.iterateNext();input.scrollIntoView();");
+	//	txtbox_website.click();
+	//	txtbox_website.sendKeys(website);
+	//	tradenametxtbox.click();
+//		tradenametxtbox.sendKeys(tradename);
+		Thread.sleep(2000);
 		driver.findElement(By.xpath("//ul/li//span[text()='" + industryname + "']")).click();
 		js.executeScript(
 				"var result = document.evaluate(\"(//span[text()='Move to Chosen'])[1]\", document.body, null, XPathResult.ANY_TYPE, null);     var input = result.iterateNext();input.scrollIntoView(); input.click();");
@@ -416,6 +414,12 @@ public class HomePage extends CommonFunctions {
 		Thread.sleep(0, 4000);
 	}
 	
+	@FindBy(xpath="//button[@aria-label='Product Family']")
+	WebElement clkproductfamily;
+	
+	@FindBy(xpath="//span[text()='PROC']")
+	WebElement clkprocoption;
+	
 	public void createNewCase(String contname, String firstname, String sub) throws InterruptedException {
 		js = (JavascriptExecutor) driver;
 		waitForElementToAppear(By.xpath("//a//div[text()='New']"), 30);
@@ -424,6 +428,9 @@ public class HomePage extends CommonFunctions {
 		contactnametxtbox.click();
 		contactnametxtbox.sendKeys(contname);
 		driver.findElement(By.xpath("//ul//li//*[text()='" + firstname + "']")).click();
+		Thread.sleep(1000);
+		clkproductfamily.click();
+		clkprocoption.click();
 		// scroll to Type field
 		js.executeScript(
 				"var result = document.evaluate(\"//label[text()='Sales Order']\", document.body, null, XPathResult.ANY_TYPE, null);var input = result.iterateNext();input.scrollIntoView();");
@@ -455,11 +462,11 @@ public class HomePage extends CommonFunctions {
 	
 	public void Logout() throws InterruptedException{
 		js = (JavascriptExecutor) driver;
-		Thread.sleep(0, 4000);
+		Thread.sleep(2000);
 		js.executeScript("var result = document.evaluate(\"//span[text()='View profile']/..//span[@class='uiImage']\", document.body, null, XPathResult.ANY_TYPE, null);     var input = result.iterateNext();input.scrollIntoView(); input.click();");
-		Thread.sleep(0, 2000);
+		Thread.sleep(2000);
 		javascriptClick(logoutlink);
-		Thread.sleep(0, 4000);
+		Thread.sleep(4000);
 	}
 	
 	

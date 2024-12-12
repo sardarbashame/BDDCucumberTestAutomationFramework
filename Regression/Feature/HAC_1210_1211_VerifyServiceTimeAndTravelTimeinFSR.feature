@@ -1,7 +1,7 @@
-Feature: HAC-1355 Verify timesheet entry logic on service appointments
-@regtest
+Feature: HAC-1210 Verify service time and travel time on field service report tab
+
   Scenario: Login as service technician and verify the timesheet entries on service appointment
-   # Login as service scheduler and create service appointments 
+   # Step1
     Given Login as SERVICE SCH USER NAME
     When HAC1478 select the applicaton
     When HAC1478 close all the open tabs
@@ -28,7 +28,7 @@ Feature: HAC-1355 Verify timesheet entry logic on service appointments
     Then HAC1478 assign service resource
     Then HAC1478 update sa status to dispatched
     Then HAC1478 logout as service scheduler
-   #Step2 Login as service technician 
+   #Step2 
     When HAC1355 login as service technician
 	 	When HAC1355 select the field service applicaton
     When HAC1355 close all the open tabs
@@ -39,4 +39,14 @@ Feature: HAC-1355 Verify timesheet entry logic on service appointments
     Then HAC1355 update the service appointment status to completed
     Then HAC1355 click on timesheet and expenses tab
     Then HAC1355 verify the timesheet entry for labor time
+    #Step3
+    Then HAC1211 click field service report tab
+    Then HAC1211 verify customer information section
+    Then HAC1211 verify order details section
+    Then HAC1211 verify equipment information section
+    Then HAC1211 verify summary of visit section
+    Then HAC1211 verify daily notes section
+   	Then HAC1211 verify service time section
+   	Then HAC1211 verify travel time section
+   	Then HAC1211 verify service charge section
 

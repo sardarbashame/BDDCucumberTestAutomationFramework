@@ -211,6 +211,9 @@ public class ServiceAppointmentDetailsTab extends CommonFunctions {
 
 	@FindBy(xpath = "(//table[@aria-label= 'Recently Viewed'])[last()]//th//a[@title]")
 	List<WebElement> lst_recentWorkOrder;
+	
+	@FindBy(xpath = "(//a[text()='Field Service Report'])[last()]")
+	WebElement tab_FieldServiceReport;
 
 	@FindBy(xpath = "//span[text() = 'Work Orders']//parent::a")
 	public WebElement clk_WorkOrderstab;
@@ -452,6 +455,12 @@ public class ServiceAppointmentDetailsTab extends CommonFunctions {
 	public void clkserviceAppoinmentTab() throws Exception {
 		waitForElementToAppear(serviceAppoinmenttabAppear, 30);
 		javascriptClick(clk_serviceAppoinmenttab);
+		Thread.sleep(4000);
+	}
+	
+	public void clkFieldServiceReportTab() throws Exception {
+		waitForElementToAppear(serviceAppoinmenttabAppear, 30);
+		javascriptClick(tab_FieldServiceReport);
 		Thread.sleep(4000);
 	}
 

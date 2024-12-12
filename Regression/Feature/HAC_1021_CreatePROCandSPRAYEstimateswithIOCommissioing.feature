@@ -22,3 +22,4 @@ Feature: HAC_1021_Verify processing and spray combination of estimate creation w
     When HAC1165PICT select to date for SPRAY
     When HAC1165PICT select view confirmation
     Then HAC1165PICT generate estimate pdf
+

@@ -26,7 +26,7 @@ public class BaseTest {
 
 	public static WebDriver intializeDriver() throws IOException {
 		String browserName = "chrome";
-		CommonFunctions.loadClassLoader();
+	//	CommonFunctions.loadClassLoader();
 		if (browserName.equalsIgnoreCase("chrome")) {
 			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();
