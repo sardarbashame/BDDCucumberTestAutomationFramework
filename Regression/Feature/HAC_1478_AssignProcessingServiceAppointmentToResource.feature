@@ -1,8 +1,8 @@
 Feature: HAC_1478_Assign processing service appointment to a service technician
 
 @regtest
-  Scenario Outline: Login as service scheduler and assign processing service appointment to a service technician
-    Given HAC1478 user enters <username> and <password>
+  Scenario: Login as service scheduler and assign processing service appointment to a service technician
+    Given Login as SERVICE SCH USER NAME
     When HAC1478 select the applicaton
     When HAC1478 close all the open tabs
     When HAC1478 close the bottom bar
@@ -33,9 +33,4 @@ Feature: HAC_1478_Assign processing service appointment to a service technician
     Then HAC1478 select the field service applicaton
     Then HAC1478 select the service appointments tab
     Then HAC1478 select all service appointments listview
-    Then HAC1478 select dispatched service appointment
-    
-
-    Examples: 
-      | username                       | password    | casename      |
-      | testservicescheduler@gmail.com | H@ctest1 | PROCAutoCase1 |
+    Then HAC1478 select dispatched service appointment   

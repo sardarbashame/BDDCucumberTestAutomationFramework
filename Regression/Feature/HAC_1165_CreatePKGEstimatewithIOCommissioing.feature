@@ -1,8 +1,8 @@
 Feature: HAC_1165_Verify packaging estimate creation with IO Commissioning
 
  @regtest
-  Scenario Outline: Login as service scheduler and verify the packaging estimate creation
-    Given HAC1165PKGC user enters <username> and <password>
+  Scenario: Login as service scheduler and verify the packaging estimate creation
+    Given Login as SERVICE SCH USER NAME
     When HAC1165PKGC select the applicaton
     When HAC1165PKGC close all the open tabs
     When HAC1165PKGC close the bottom bar
@@ -19,8 +19,4 @@ Feature: HAC_1165_Verify packaging estimate creation with IO Commissioning
     When HAC1165PKGC select from date
     When HAC1165PKGC select to date
     When HAC1165PKGC select view confirmation
-    Then HAC1165PKGC generate estimate pdf
-
-    Examples: 
-      | username                       | password | casename      |
-      | testservicescheduler@gmail.com | H@ctest1 | PROCAutoCase1 |
+    Then HAC1165PKGC generate estimate pdf 

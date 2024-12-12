@@ -1,8 +1,8 @@
 Feature: HAC_1021_Verify processing and spray combination of estimate creation with IOCommissioning
 
  @regtest
-  Scenario Outline: Login as service scheduler and verify the processing and spray estimates creation
-    Given HAC1165PICT user enters <username> and <password>
+  Scenario: Login as service scheduler and verify the processing and spray estimates creation
+    Given Login as SERVICE SCH USER NAME
     When HAC1165PICT select the applicaton
     When HAC1165PICT close all the open tabs
     When HAC1165PICT close the bottom bar
@@ -22,7 +22,3 @@ Feature: HAC_1021_Verify processing and spray combination of estimate creation w
     When HAC1165PICT select to date for SPRAY
     When HAC1165PICT select view confirmation
     Then HAC1165PICT generate estimate pdf
-
-    Examples: 
-      | username                       | password | casename      |
-      | testservicescheduler@gmail.com | H@ctest1 | PROCAutoCase1 |

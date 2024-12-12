@@ -2,7 +2,7 @@ Feature: HAC_146_create and verify the case contact roles
 
   @regtest
   Scenario Outline: Login as service users and add engineer as case contact role
-    Given HAC146 user enters <username> and <password>
+    Given Login as SERVICE SCH USER NAME
     When HAC146 select the applicaton
     When HAC146 close all the open tabs
     When HAC146 close the bottom bar
@@ -16,7 +16,7 @@ Feature: HAC_146_create and verify the case contact roles
       | testservicescheduler@gmail.com        | H@ctest1    |
 @regtest
   Scenario Outline: Login as service users and add engineering manager as case contact role
-    Given HAC146 user enters <username> and <password>
+    Given Login as SERVICE SCH USER NAME
     When HAC146 select the applicaton
     When HAC146 close all the open tabs
     When HAC146 close the bottom bar
@@ -30,7 +30,7 @@ Feature: HAC_146_create and verify the case contact roles
       | testservicescheduler@gmail.com        | H@ctest1    |
 @regtest
   Scenario Outline: Login as service users and Verify the case contact roles
-    Given HAC146 user enters <username> and <password>
+    Given Login as SERVICE SCH USER NAME
     When HAC146 select the applicaton
     When HAC146 close all the open tabs
     When HAC146 close the bottom bar

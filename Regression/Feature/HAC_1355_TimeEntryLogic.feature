@@ -1,8 +1,8 @@
 Feature: HAC-1355 Verify timesheet entry logic on service appointments
 @regtest
-  Scenario Outline: Login as service technician and verify the timesheet entries on service appointment
+  Scenario: Login as service technician and verify the timesheet entries on service appointment
    # Login as service scheduler and create service appointments 
-    Given HAC1478 user enters <testschedulerusername> and <password>
+    Given Login as SERVICE SCH USER NAME
     When HAC1478 select the applicaton
     When HAC1478 close all the open tabs
     When HAC1478 close the bottom bar
@@ -39,7 +39,3 @@ Feature: HAC-1355 Verify timesheet entry logic on service appointments
     Then HAC1355 update the service appointment status to completed
     Then HAC1355 click on timesheet and expenses tab
     Then HAC1355 verify the timesheet entry for labor time
-
-    Examples: 
-      | testschedulerusername          | password | casename      |
-      | testservicescheduler@gmail.com | H@ctest1 | PROCAutoCase1 |

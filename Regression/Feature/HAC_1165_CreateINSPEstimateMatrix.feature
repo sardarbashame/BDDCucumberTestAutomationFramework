@@ -1,8 +1,8 @@
 Feature: Verify HAC_1165_CreateINSP Estimate Matrix with IOCommissioning
 
-@regtest
+  @regtest
   Scenario Outline: Login as service user and Verify HAC_1165_CreateINSP Estimate Matrix
-    Given HAC1165 user enters <username> and <password>
+    Given Login as SERVICE SCH USER NAME
     When HAC1165 select the applicaton
     When HAC1165 close all the open tabs
     When HAC1165 close the bottom bar
@@ -21,5 +21,5 @@ Feature: Verify HAC_1165_CreateINSP Estimate Matrix with IOCommissioning
     Then HAC1165 generate estimate pdf
 
     Examples: 
-      | username                       | password | CaseContact | CaseFirstName | CaseSub     | Pricebook                           | InspectionEstimateMatrix | Estimateitem     |
-      | testservicescheduler@gmail.com | H@ctest1 | FN6 MN6 LN6 | FN6           | TestCase110 | USA Domestic MPA-PEPSICO (FritoLay) | CEIA Drop Through        | IO/Commissioning |
+      | CaseContact | CaseFirstName | CaseSub     | Pricebook                           | InspectionEstimateMatrix | Estimateitem     |
+      | FN6 MN6 LN6 | FN6           | TestCase110 | USA Domestic MPA-PEPSICO (FritoLay) | CEIA Drop Through        | IO/Commissioning |

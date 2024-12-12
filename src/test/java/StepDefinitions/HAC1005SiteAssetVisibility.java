@@ -123,17 +123,26 @@ public class HAC1005SiteAssetVisibility extends CommonFunctions {
 		fieldserviceconsole = new FieldServiceConsole();
 		fieldserviceconsole.createNewPunchListItemsUnderFieldService();
 	}
+	@When("Create New Equipment Information under Field Service")
+	public void createNewEquipmentInformationUnderFieldService() throws Exception {
+		fieldserviceconsole = new FieldServiceConsole();
+		fieldserviceconsole.createNewEquipmentInformationInFieldService();
+	}
 	@When("Create Daily Notes under Field Service")
 	public void createDailyNotesUnderFieldService() throws Exception {
 		fieldserviceconsole = new FieldServiceConsole();
 		fieldserviceconsole.createDailyNotesUnderFieldService();
-	}
-	
+	}	
 	
 	@When("Click on Daily Notes tab")
 	public void ClickOnDailyNotestab() throws Exception {
 		fieldserviceconsole = new FieldServiceConsole();
 		fieldserviceconsole.ClickOnDaiyNotesTab();
+	}
+	@When("Click on Field Service Report tab")
+	public void ClickOnFieldServiceReporttab() throws Exception {
+		fieldserviceconsole = new FieldServiceConsole();
+		fieldserviceconsole.ClickOnFieldServiceReportTab();
 	}
 
 	@Then("Verify Punch List Items created and displayed")
@@ -153,6 +162,10 @@ public class HAC1005SiteAssetVisibility extends CommonFunctions {
 		fieldserviceconsole = new FieldServiceConsole();
 		fieldserviceconsole.VerifySiteAssetOnSA();
 	}
-	
+	@Then("Verify Equipment Information created and displayed Under Field Service")
+	public void verifyEquipmentInformationUnderFA() throws Exception {
+		fieldserviceconsole = new FieldServiceConsole();
+		fieldserviceconsole.verifyEquipmentInformationCreatedUnderFA();
+	}
 	
 }

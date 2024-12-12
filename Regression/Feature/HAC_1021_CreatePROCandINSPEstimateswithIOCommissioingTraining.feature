@@ -1,8 +1,8 @@
 Feature: HAC_1021_Verify processing and inspection combination of estimate creation with IOCommissioning + Training
 
  @regtest
-  Scenario Outline: Login as service scheduler and verify the processing and inspection estimates creation
-    Given HAC1165PIC user enters <username> and <password>
+  Scenario: Login as service scheduler and verify the processing and inspection estimates creation
+    Given Login as SERVICE SCH USER NAME
     When HAC1165PIC select the applicaton
     When HAC1165PIC close all the open tabs
     When HAC1165PIC close the bottom bar
@@ -21,8 +21,4 @@ Feature: HAC_1021_Verify processing and inspection combination of estimate creat
     When HAC1165PIC select from date for INSP
     When HAC1165PIC select to date for INSP
     When HAC1165PIC select view confirmation
-    Then HAC1165PIC generate estimate pdf
-
-    Examples: 
-      | username                       | password | casename      |
-      | testservicescheduler@gmail.com | H@ctest1 | PROCAutoCase1 |
+    Then HAC1165PIC generate estimate pdf   

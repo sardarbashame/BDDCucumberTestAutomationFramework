@@ -1,8 +1,8 @@
 Feature: HAC_1478_Assign packaging service appointment to a service technician
 
 @regtest
-  Scenario Outline: Login as service scheduler and assign packaging service appointments
-    Given HAC1478 user enters <username> and <password>
+  Scenario: Login as service scheduler and assign packaging service appointments
+    Given Login as SERVICE SCH USER NAME
     When HAC1478 select the applicaton
     When HAC1478 close all the open tabs
     When HAC1478 close the bottom bar
@@ -25,8 +25,3 @@ Feature: HAC_1478_Assign packaging service appointment to a service technician
     Then HAC1478 select a service appointment
     Then HAC1478 click related tab
     Then HAC1478 assign service resource
-    
-
-    Examples: 
-      | username                       | password    | casename      |
-      | testservicescheduler@gmail.com | H@ctest1 | PROCAutoCase1 |

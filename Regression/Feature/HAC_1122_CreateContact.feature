@@ -1,8 +1,8 @@
 Feature: HAC_1122_Verify contact creation
 
  @regtest
-  Scenario Outline: Login as service scheduler and verify the contact creation
-    Given HAC1122 user enters <username> and <password>
+  Scenario: Login as service scheduler and verify the contact creation
+    Given Login as SERVICE SCH USER NAME
     When HAC1122 select the applicaton
     When HAC1122 close all the open tabs
     When HAC1122 close the bottom bar
@@ -27,9 +27,3 @@ Feature: HAC_1122_Verify contact creation
     Then HAC1122 verify shift field label
     Then HAC1122 verify donotcall field label
     Then HAC1122 verify emailoptout field label
-
-    Examples: 
-      | username                              | password    |
-      | testservicescheduler@gmail.com        | H@ctest1 |
-
-  
