@@ -1,15 +1,15 @@
 Feature: HAC_1354_Edit service appointments
-@regtest
+
+  @regtest
   Scenario: Login as service technician and edit the service appointments
-    
-    Given Login as SERVICE SCH USER NAME
+    Given Login as SERVICE TECHNICIAN USER NAME
     When HAC1478 select the applicaton
     When HAC1478 close all the open tabs
     When HAC1478 close the bottom bar
-   	When HAC1478 click on cases tab
-   	When HAC1478 create new case
+    When HAC1478 click on cases tab
+    When HAC1478 create new case
     When HAC1478 user is on estimate tab
-   	When HAC1478 select values on estimate flow step1
+    When HAC1478 select values on estimate flow step1
     When HAC1478 verify the field label number of tech
     When HAC1478 verify the field label number of days
     When HAC1478 verify the field label number of hours
@@ -28,9 +28,8 @@ Feature: HAC_1354_Edit service appointments
     Then HAC1478 assign service resource
     Then HAC1478 update sa status to dispatched
     Then HAC1478 logout as service scheduler
-        
     When HAC1354 login as service technician
-	 	When HAC1354 select the field service applicaton
+    When HAC1354 select the field service applicaton
     When HAC1354 close all the open tabs
     Then HAC1354 select the service appointments tab
     Then HAC1354 select all service appointments listview
@@ -38,4 +37,3 @@ Feature: HAC_1354_Edit service appointments
     Then HAC1354 verify service appointment statuses
     Then HAC1354 update the service appointment status to In Progress
     Then HAC1354 update the service appointment status to completed
-

@@ -1,7 +1,7 @@
 Feature: HAC_411_Verify the abiity to reopen the case
 
-  Scenario Outline: Login as Service Users and Verify the ability t reopen the case
-    Given user enters <username> and <password>
+  Scenario: Login as Service Users and Verify the ability t reopen the case
+    Given HAC542 login as a service manager
     When HAC411 select the applicaton
     When HAC411 close all the open tabs
     When HAC411 close the bottom bar
@@ -11,8 +11,13 @@ Feature: HAC_411_Verify the abiity to reopen the case
     When HAC411 click save
     Then HAC411 verify validation message
 
-    Examples: 
-      | username                              | password    |
-      | hctestcsr@gmail.com                   | M@shaallah2 |
-      | channelpartnermanagerusersarda@qa.hnc | M@shaallah2 |
-      | testservicescheduler@gmail.com        | H@ctest1    |
+  Scenario: Login as Service Users and Verify the ability t reopen the case
+    Given Login as SERVICE SCH USER NAME
+    When HAC411 select the applicaton
+    When HAC411 close all the open tabs
+    When HAC411 close the bottom bar
+    When HAC411 user is on case details
+    When HAC411 edit the case status
+    When HAC411 update case status to new
+    When HAC411 click save
+    Then HAC411 verify validation message

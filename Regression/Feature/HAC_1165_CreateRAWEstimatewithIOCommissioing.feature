@@ -18,5 +18,4 @@ Feature: HAC_1165_Verify raw estimate creation with IOcommissioning
     When HAC1165RC select from date
     When HAC1165RC select to date
     When HAC1165RC select view confirmation
-    Then HAC1165RC generate estimate pdf
-
+    Then HAC1165RC generate estimate pdf  

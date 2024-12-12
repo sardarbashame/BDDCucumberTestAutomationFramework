@@ -21,4 +21,3 @@ Feature: HAC_1021_Verify processing and packaging combination of estimate creati
     When HAC1165PICTT select to date for PKG
     When HAC1165PICTT select view confirmation
     Then HAC1165PICTT generate estimate pdf
-

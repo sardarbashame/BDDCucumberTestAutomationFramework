@@ -21,5 +21,6 @@ Feature: HAC_1021_Verify processing and inspection combination of estimate creat
     When HAC1165PIC select from date for INSP
     When HAC1165PIC select to date for INSP
     When HAC1165PIC select view confirmation
-    Then HAC1165PIC generate estimate pdf
+    Then HAC1165PIC generate estimate pdf   
+   
 

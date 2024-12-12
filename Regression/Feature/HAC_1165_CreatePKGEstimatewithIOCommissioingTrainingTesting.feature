@@ -1,6 +1,6 @@
 Feature: HAC_1165_Verify packaging estimate creation with IO Commissioning+Training+Testing
 
- @regtest
+  @regtest
   Scenario: Login as service scheduler and verify the packaging estimate creation
     Given Login as SERVICE SCH USER NAME
     When HAC1165PKGCTT select the applicaton
@@ -13,11 +13,10 @@ Feature: HAC_1165_Verify packaging estimate creation with IO Commissioning+Train
     When HAC1165PKGCTT select values on estimate flow step1
     When HAC1165PKGCTT select PKG tab
     When HAC1165PKGCTT verify the field label number of tech
- #   When HAC1165PKGCTT verify the field value number of tech
+    #   When HAC1165PKGCTT verify the field value number of tech
     When HAC1165PKGCTT verify the field label number of days
     When HAC1165PKGCTT verify the field label number of hours
     When HAC1165PKGCTT select from date
     When HAC1165PKGCTT select to date
     When HAC1165PKGCTT select view confirmation
     Then HAC1165PKGCTT generate estimate pdf
-

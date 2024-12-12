@@ -40,4 +40,3 @@ Feature: HAC-1355 Verify timesheet entry logic on service appointments
     Then HAC1355 click on timesheet and expenses tab
     Then HAC1355 verify the timesheet entry for labor time
 
-

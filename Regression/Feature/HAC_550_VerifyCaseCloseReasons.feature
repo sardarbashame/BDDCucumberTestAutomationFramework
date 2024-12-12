@@ -10,9 +10,3 @@ Feature: HAC_550_Verify the case close reasons
     When HAC550 create new case
     Then HAC550 click case close quick action
     Then HAC550 verify case close reasons
-
-
- 
-    
-
-  

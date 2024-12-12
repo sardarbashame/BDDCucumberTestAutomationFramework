@@ -1,7 +1,6 @@
-Feature: HAC_1208 _1010_FSRPunchListViewAndDailyNotes
+Feature: HAC_1208 -FSR Punchlist view
 
-
-  Scenario: Login as service scheduler and HAC_1208_1010 -FSR Punchlist view and Daily Notes 
+  Scenario: Login as service scheduler and HAC_1208 -FSR Punchlist view
     Given Login as SERVICE TECHNICIAN USER NAME
     When select the Field Service application
     When close all the open tabs

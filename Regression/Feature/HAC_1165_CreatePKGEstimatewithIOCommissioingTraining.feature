@@ -20,4 +20,3 @@ Feature: HAC_1165_Verify packaging estimate creation with IO Commissioning+Train
     When HAC1165PKGCT select to date
     When HAC1165PKGCT select view confirmation
     Then HAC1165PKGCT generate estimate pdf
-

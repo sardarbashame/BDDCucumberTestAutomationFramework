@@ -18,5 +18,4 @@ Feature: HAC_1165_Verify processing estimate creation with IOCommissioning + Tra
     When HAC1165CT select from date
     When HAC1165CT select to date
     When HAC1165CT select view confirmation
-    Then HAC1165CT generate estimate pdf
-
+    Then HAC1165CT generate estimate pdf   

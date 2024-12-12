@@ -1,7 +1,7 @@
 Feature: HAC_1493_verify customer facing checkbox on work step
 
- Scenario Outline: Login as service scheduler and verify the customer facing checkbox
-    Given HAC1478 user enters <username> and <password>
+ Scenario: Login as service scheduler and verify the customer facing checkbox
+    Given Login as SERVICE SCH USER NAME
     When HAC1478 select the applicaton
     When HAC1478 close all the open tabs
     When HAC1478 close the bottom bar
@@ -19,10 +19,4 @@ Feature: HAC_1493_verify customer facing checkbox on work step
     Then HAC1478 click on work order link
     Then HAC1478 create work order
     Then HAC1493 create work step
-    Then HAC1493 verify customer facing checkbox
- 
-    
-
-    Examples: 
-      | username                       | password    | casename      |
-      | testservicescheduler@gmail.com | H@ctest1 | PROCAutoCase1 |
+    Then HAC1493 verify customer facing checkbox 

@@ -20,4 +20,3 @@ Feature: HAC_1170_Send Estimates to Customer
     Then HAC1170 generate estimate pdf
     Then HAC1170 navigate back to case record
     Then HAC1170 verify the estimate version
-

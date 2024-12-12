@@ -7,6 +7,4 @@ Feature: HAC_1368_Display Sales Order On Case Assets
     When HAC1367 close the bottom bar
     When HAC1367 click on cases tab
     When HAC1367 create new case
-    Then Add Asset and Verify Asset is displayed in the list view
-    
-
+    Then Add Asset and Verify Asset is displayed in the list view 
