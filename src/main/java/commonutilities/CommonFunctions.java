@@ -303,7 +303,7 @@ public class CommonFunctions extends BaseTest {
 		}
 	}
 	public static void loadBaseURL() throws Exception {
-		String env = ppty.getProperty("env");
+		String env = System.getProperty("env");
 		switch (env.toUpperCase()) {
 		case "QA":
 			driver.get("https://heatandcontrol--qa.sandbox.lightning.force.com/");
@@ -325,7 +325,7 @@ public class CommonFunctions extends BaseTest {
 
 	public static String getUserName(String userName) {
 		String Uname = null;
-		String env = ppty.getProperty("env");
+		String env = System.getProperty("env");
 		String str = env + "_" + userName;
 
 		if (env.toUpperCase().equals("QA")) {
@@ -337,7 +337,7 @@ public class CommonFunctions extends BaseTest {
 	}
 	public static String getPassword(String password) {
 		String pwd = null;
-		String env = ppty.getProperty("env");
+		String env = System.getProperty("env");
 		String str = env + "_" + password;
 
 		if (env.toUpperCase().equals("QA")) {
