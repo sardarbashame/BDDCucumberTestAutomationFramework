@@ -18,6 +18,7 @@ PageObjects\EstimateCreationFlowStep2.class
 PageObjects\FieldServiceConsole.class
 PageObjects\OrderPages.class
 PageObjects\SelectApplication.class
+PageObjects\ServiceAppointmentFieldServiceReportTab.class
 PageObjects\HomePage.class
 PageObjects\ServiceAppointmentTimesheetExpensesTab.class
 commonutilities\BaseTest.class
