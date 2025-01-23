@@ -1,5 +1,5 @@
 Feature: HAC-1015 Verify financial visibility from field service report tab
-
+@regtest
   Scenario: Login as service technician and verify the financial visibility from FSR tab on service appointment
    # Step1
     Given Login as SERVICE SCH USER NAME

@@ -1,5 +1,5 @@
 Feature: HAC-1205 Verify pdf download of field service report
-
+@regtest
   Scenario: Login as service technician and verify field service report pdf format download
    # Step1
     Given Login as SERVICE SCH USER NAME

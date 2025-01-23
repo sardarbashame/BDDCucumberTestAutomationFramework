@@ -1,6 +1,7 @@
 E:\SeleniumWorkSpace\HeatAndControlAutomation\src\main\java\PageObjects\ServiceAppointmentRelatedTab.java
 E:\SeleniumWorkSpace\HeatAndControlAutomation\src\main\java\PageObjects\EstimateCreationFlowStep3.java
 E:\SeleniumWorkSpace\HeatAndControlAutomation\src\main\java\resources\ExtentReporterNG.java
+E:\SeleniumWorkSpace\HeatAndControlAutomation\src\main\java\PageObjects\AssetListViews.java
 E:\SeleniumWorkSpace\HeatAndControlAutomation\src\main\java\PageObjects\ServiceAppointmentTimesheetExpensesTab.java
 E:\SeleniumWorkSpace\HeatAndControlAutomation\src\main\java\PageObjects\GlobalSearch.java
 E:\SeleniumWorkSpace\HeatAndControlAutomation\src\main\java\PageObjects\EstimateCreationFlowStep1.java
@@ -15,6 +16,7 @@ E:\SeleniumWorkSpace\HeatAndControlAutomation\src\main\java\commonutilities\Reus
 E:\SeleniumWorkSpace\HeatAndControlAutomation\src\main\java\PageObjects\SelectApplication.java
 E:\SeleniumWorkSpace\HeatAndControlAutomation\src\main\java\PageObjects\FieldServiceConsole.java
 E:\SeleniumWorkSpace\HeatAndControlAutomation\src\main\java\PageObjects\ContactListViews.java
+E:\SeleniumWorkSpace\HeatAndControlAutomation\src\main\java\PageObjects\Inquiries.java
 E:\SeleniumWorkSpace\HeatAndControlAutomation\src\main\java\PageObjects\OrderPages.java
 E:\SeleniumWorkSpace\HeatAndControlAutomation\src\main\java\PageObjects\ServiceAppointmentDetailsTab.java
 E:\SeleniumWorkSpace\HeatAndControlAutomation\src\main\java\PageObjects\ServiceAppointmentFieldServiceReportTab.java
@@ -25,4 +27,5 @@ E:\SeleniumWorkSpace\HeatAndControlAutomation\src\main\java\commonutilities\Base
 E:\SeleniumWorkSpace\HeatAndControlAutomation\src\main\java\PageObjects\ContactDetailsTab.java
 E:\SeleniumWorkSpace\HeatAndControlAutomation\src\main\java\PageObjects\AppnavigatorTabsPages.java
 E:\SeleniumWorkSpace\HeatAndControlAutomation\src\main\java\PageObjects\EstimateCreationFlowStep2.java
+E:\SeleniumWorkSpace\HeatAndControlAutomation\src\main\java\PageObjects\AssetDetailsTab.java
 E:\SeleniumWorkSpace\HeatAndControlAutomation\src\main\java\PageObjects\CreateNewContact.java

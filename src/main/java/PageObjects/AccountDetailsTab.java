@@ -185,6 +185,12 @@ public class AccountDetailsTab extends CommonFunctions {
 	@FindBy(xpath="//button[contains(@class, 'toastClose')]")
 	WebElement clk_closeToasterMsg;
 	
+	@FindBy(xpath="(//li//a[@data-label='Related'])[last()]")
+	WebElement tab_relatedtab;
+	
+	@FindBy(xpath="//a//span[text()='Supplier Assets']")
+	WebElement relatedlst_supplierassets;
+	
 	boolean boolvalue;
 
 	public AccountDetailsTab() {
@@ -197,6 +203,21 @@ public class AccountDetailsTab extends CommonFunctions {
 	By Wait_stageChange = By
 			.xpath("//span[contains(@class, 'toastMessage slds-text-heading--small forceActionsText')]");
 
+	
+	public void ClickAccountRelatedTab() throws InterruptedException {
+		Thread.sleep(4000);
+		tab_relatedtab.click();
+		Thread.sleep(4000);
+	}
+	
+	
+	public void VerifySupplierAssetsRelatedList() throws InterruptedException {
+		Thread.sleep(4000);
+		relatedlst_supplierassets.isDisplayed();
+		Thread.sleep(4000);
+	}
+	
+	
 	public void clickcontactdetailsTab() throws InterruptedException {
 		Thread.sleep(0, 2000);
 		waitForElementToDisAppear(Wait_toastMessage, 30);

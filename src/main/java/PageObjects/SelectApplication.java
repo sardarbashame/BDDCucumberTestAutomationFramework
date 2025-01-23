@@ -12,16 +12,15 @@ import commonutilities.CommonFunctions;
 
 public class SelectApplication extends CommonFunctions {
 
-
-	public SelectApplication() {
-		PageFactory.initElements(new AjaxElementLocatorFactory(driver, 10), this);
-	}
-
 	@FindBy(xpath = "//span[text()='App Launcher']/..")
 	WebElement clk_AppLauncher;
 
 	@FindBy(xpath = "//input[@placeholder='Search apps and items...' or @placeholder='Search apps or items...']")
 	WebElement ipt_SearchAppsAndItems;
+
+	public SelectApplication() {
+		PageFactory.initElements(new AjaxElementLocatorFactory(driver, 10), this);
+	}
 
 	public void selectApp(String appname) throws InterruptedException {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
@@ -31,6 +30,6 @@ public class SelectApplication extends CommonFunctions {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 		driver.findElement(By.xpath("//p[.//*[text()='" + appname + "']]")).click();
 		Thread.sleep(12000);
-		zoomOut(3);
+		zoomOut(2);
 	}
 }

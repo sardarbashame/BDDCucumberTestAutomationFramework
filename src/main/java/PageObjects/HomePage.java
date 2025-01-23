@@ -101,6 +101,9 @@ public class HomePage extends CommonFunctions {
 	
 	@FindBy(xpath = "//a[@title='Cases']")
 	WebElement clk_cases;
+	
+	@FindBy(xpath = "//a[@title='Assets']")
+	WebElement clk_assets;
 
 	@FindBy(xpath = "//a//div[text()='New']")
 	WebElement clk_casesNew;
@@ -134,13 +137,15 @@ public class HomePage extends CommonFunctions {
 
 	@FindBy(xpath = "//a[text()='Details']")
 	WebElement clk_details;
+	
+	By detailstab = By.xpath("//a[text()='Details']");
 
 	@FindBy(xpath = "//*[@field-label='Type']//button[@aria-label='Type']")
 	WebElement ipt_type;
 
 	@FindBy(xpath = "//a[@title='Accounts']")
 	WebElement accountstab;
-
+	
 	@FindBy(xpath = "//a[@title='Cases']")
 	WebElement casestab;
 
@@ -222,9 +227,80 @@ public class HomePage extends CommonFunctions {
 	@FindBy(xpath = "//button[text()='Gantt']")
 	WebElement ganttbtn;
 	
-
+	@FindBy(xpath = "//div[text()='New Customer']")
+	WebElement btn_newcustomer;
+	
+	@FindBy(xpath="//button[@aria-label='Product Family']")
+	WebElement clkproductfamily;
+	
+	@FindBy(xpath="//span[text()='PROC']")
+	WebElement clkprocoption;
+	
 	By wait_conatacts = By.xpath("//a[@title='Contacts']");
 	By wait_ganttbtn = By.xpath("//button[text()='Gantt']");
+	
+	@FindBy(xpath = "//span[text()='Request Type']")
+	WebElement label_requesttype;
+	
+	@FindBy(xpath = "//span[text()='Group Type']")
+	WebElement label_grouptype;
+	
+	@FindBy(xpath = "//span[text()='Quote']")
+	WebElement label_quote;
+	
+	@FindBy(xpath = "//span[text()='Sales']")
+	WebElement label_sales;
+	
+	@FindBy(xpath = "//span[text()='Full Partner']")
+	WebElement label_fullpartner;
+	
+	@FindBy(xpath = "//span[text()='Bill To/Payer']")
+	WebElement label_billtopayer;
+	
+	@FindBy(xpath = "//span[text()='Ship To/End User']")
+	WebElement label_shiptoenduser;
+	
+	@FindBy(xpath = "//span[text()='Full Legal Name']")
+	WebElement label_fulllegalname;
+	
+	@FindBy(xpath = "//span[text()='PO Box']")
+	WebElement label_pobox;
+	
+	@FindBy(xpath = "//label[text()='Phone']")
+	WebElement label_phone;
+	
+	@FindBy(xpath = "//label[text()='Search Address...']")
+	WebElement label_searchaddress;
+	
+	@FindBy(xpath = "//label[text()='Email']")
+	WebElement label_email;
+	
+	@FindBy(xpath = "//label[text()='Country']")
+	WebElement label_country;
+	
+	@FindBy(xpath = "//span[text()='Tax Number']")
+	WebElement label_taxnumber;
+	
+	@FindBy(xpath = "//label[text()='Street']")
+	WebElement label_street;
+	
+	@FindBy(xpath = "//input[@name='Full_Legal_Name']")
+	WebElement ipt_fulllegalname;
+	
+	@FindBy(xpath = "//input[@name='PO Box']")
+	WebElement ipt_pobox;
+	
+	@FindBy(xpath = "//label[text()='Phone']/../..//input")
+	WebElement ipt_phone;
+	
+	@FindBy(xpath = "//button[text()='Save']")
+	WebElement btn_savenewrequest;
+	
+	@FindBy(xpath = "//button[text()='Finish']")
+	WebElement btn_finish;
+	
+	@FindBy(xpath = "//span[text()='The new account has been created/updated.']")
+	WebElement message_success;
 
 	public HomePage() {
 		PageFactory.initElements(new AjaxElementLocatorFactory(driver, 10), this);
@@ -238,13 +314,22 @@ public class HomePage extends CommonFunctions {
 		js.executeScript("arguments[0].click();", clk_cases);
 		Thread.sleep(4000);
 	}
+	
+	public void clickAssetsTab() throws InterruptedException {
+		js = (JavascriptExecutor) driver;
+		Thread.sleep(3000);
+		waitForElementToAppear(By.xpath("//a[@title='Assets']"), 30);
+		Thread.sleep(3000);
+		js.executeScript("arguments[0].click();", clk_assets);
+		Thread.sleep(4000);
+	}
 
 	public void clickAccountsTab() throws InterruptedException {
 		js = (JavascriptExecutor) driver;
 		waitForElementToAppear(By.xpath("//a[@title='Accounts']"), 30);
 		js.executeScript("arguments[0].click();", accountstab);
 	}
-
+	
 	public void clickServiceAppointmentsTab() throws InterruptedException {
 		js = (JavascriptExecutor) driver;
 		waitForElementToAppear(By.xpath("//a[@title='Service Appointments']"), 30);
@@ -287,6 +372,43 @@ public class HomePage extends CommonFunctions {
 		waitForElementToAppear(By.xpath("//a[text()='Details']"), 30);
 	}
 
+	public void CreateNewCustomerAccountRequest() throws InterruptedException {
+		js = (JavascriptExecutor) driver;
+		Thread.sleep(4000);
+		waitForElementToAppear(By.xpath("//a//div[text()='New Customer']"), 30);
+		btn_newcustomer.click();
+		waitForElementToAppear(By.xpath("//span[text()='Request Type']"), 30);
+		label_requesttype.isDisplayed();
+		label_grouptype.isDisplayed();
+		label_quote.isDisplayed();
+		label_sales.isDisplayed();
+		label_fullpartner.isDisplayed();
+		label_billtopayer.isDisplayed();
+		label_shiptoenduser.isDisplayed();
+		label_fulllegalname.isDisplayed();
+		label_pobox.isDisplayed();
+		label_phone.isDisplayed();
+		label_searchaddress.isDisplayed();
+		label_email.isDisplayed();
+		label_country.isDisplayed();
+		label_taxnumber.isDisplayed();
+		label_street.isDisplayed();
+		Thread.sleep(2000);
+		label_quote.click();
+		Thread.sleep(2000);
+		label_fullpartner.click();
+		Thread.sleep(2000);
+		ipt_fulllegalname.sendKeys("Test Full Legal Name");
+		Thread.sleep(2000);
+		ipt_phone.sendKeys("1235554444");
+		Thread.sleep(2000);
+		btn_savenewrequest.click();
+		Thread.sleep(4000);
+		message_success.isDisplayed();
+		btn_finish.click();
+		waitForElementToAppear(detailstab, 20);
+	}
+	
 	// click on the Contacts tab
 	public void ClickContactsTab() throws InterruptedException {
 		js = (JavascriptExecutor) driver;
@@ -386,6 +508,7 @@ public class HomePage extends CommonFunctions {
 		waitForElementToAppear(By.xpath("//a[text()='Details']"), 30);
 		Thread.sleep(0, 4000);
 	}
+	
 	public void verifyTLINumberInCase() throws Exception
 	{
 		Thread.sleep(0, 4000);
@@ -413,12 +536,6 @@ public class HomePage extends CommonFunctions {
 		lnk_selectCreatedWorkLineItems.click();
 		Thread.sleep(0, 4000);
 	}
-	
-	@FindBy(xpath="//button[@aria-label='Product Family']")
-	WebElement clkproductfamily;
-	
-	@FindBy(xpath="//span[text()='PROC']")
-	WebElement clkprocoption;
 	
 	public void createNewCase(String contname, String firstname, String sub) throws InterruptedException {
 		js = (JavascriptExecutor) driver;
@@ -458,7 +575,6 @@ public class HomePage extends CommonFunctions {
 		waitForElementToAppear(By.xpath("//a[text()='Details']"), 30);
 		Thread.sleep(0, 4000);
 	}
-
 	
 	public void Logout() throws InterruptedException{
 		js = (JavascriptExecutor) driver;

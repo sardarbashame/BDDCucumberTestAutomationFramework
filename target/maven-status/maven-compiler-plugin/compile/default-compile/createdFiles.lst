@@ -1,13 +1,16 @@
 PageObjects\Login.class
 PageObjects\EstimateCreationFlowStep1.class
 PageObjects\AccountListViews.class
+PageObjects\AssetListViews.class
 PageObjects\WorkOrder.class
 PageObjects\WorkOrderRelatedListQuickLinks.class
 PageObjects\CaseDetailsTab.class
 resources\ExtentReporterNG.class
+PageObjects\AssetDetailsTab.class
 PageObjects\ServiceAppointmentDetailsTab.class
 PageObjects\EstimateCreationFlowStep3.class
 commonutilities\ReusableUtility.class
+PageObjects\Inquiries.class
 PageObjects\ContactDetailsTab.class
 PageObjects\AccountDetailsTab.class
 PageObjects\CaseRelatedListQuickLinks.class

@@ -22,6 +22,16 @@ public class HAC_AccountCreation extends CommonFunctions {
 	   
 	}
 	
+	@Given("Login as system administrator")
+	public void login_as_system_administrator() {
+		loginPO = new Login();
+		loginPO.goTo(ppty.getProperty("HAC_URL"));
+		String Uname =getUserName("SYS_ADMIN_USERNAME");
+		String pwd = getPassword("SYS_ADMIN_PASSWORD");
+		loginPO.LoginApp(Uname, pwd);
+	   
+	}
+	
 	@Given("Login as SERVICE TECHNICIAN USER NAME")
 	public void login_as_service_tech_user_name() {
 		loginPO = new Login();
