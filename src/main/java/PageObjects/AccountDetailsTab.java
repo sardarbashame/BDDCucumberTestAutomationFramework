@@ -473,19 +473,8 @@ public class AccountDetailsTab extends CommonFunctions {
 		clk_closeToasterMsg.click();
 		Thread.sleep(1000);
 	}
-
-	public void createdNewTask() throws Exception {
-		expWaitToBeClickable(clk_newTask);
-		javascriptClick(clk_newTask);
-		clickDrpDownAndSelValue(ipt_subjectTask, "Call");
-		btn_saveTask.click();
-		Thread.sleep(1000);
-		drawHighlight(clk_closeToasterMsg);
-		elementToBePresent(Wait_toastMessage, 30);
-		clk_closeToasterMsg.click();
-		Thread.sleep(2000);
-	}
-
+	
+	
 	public void createdNewEvent() throws Exception {
 		expWaitToBeClickable(clk_newEvent);
 		javascriptClick(clk_newEvent);
@@ -532,6 +521,144 @@ public class AccountDetailsTab extends CommonFunctions {
 		Thread.sleep(1000);
 		accountsavebtn.click();
 		elementToBePresent(Wait_stageChange, 30);
+	}
+	
+	
+	public void createdNewTask() throws Exception {
+		expWaitToBeClickable(clk_newTask);
+		javascriptClick(clk_newTask);
+		clickDrpDownAndSelValue(ipt_subjectTask, "Call");
+		btn_saveTask.click();
+		Thread.sleep(1000);
+		drawHighlight(clk_closeToasterMsg);
+		elementToBePresent(Wait_toastMessage, 30);
+		clk_closeToasterMsg.click();
+		Thread.sleep(2000);
+	}
+	
+	
+	@FindBy(xpath="//button[text()='Add / Update / Approve Name or Address Change']")
+	WebElement btn_addupdateapprove;
+	
+	By txt_addupdateapproveheading = By.xpath("//h2[text()='Add / Update / Approve Name or Address Change']");
+
+	
+	@FindBy(xpath="//span[text()='Change Request Type']")
+	WebElement txt_changerequesttype;
+
+	@FindBy(xpath="//span[text()='Name Change']")
+	WebElement option_namechange;
+	
+	@FindBy(xpath="//span[text()='Name And Tax ID Change']")
+	WebElement option_nameandtaxidchange;
+	
+	@FindBy(xpath="//span[text()='Address Change']")
+	WebElement option_addresschange;
+	
+	@FindBy(xpath="//span[text()='Submit for Approval']")
+	WebElement option_submitforapproval;
+	
+	@FindBy(xpath="//input[@name='Account_Name_NameChange']")
+	WebElement txtbox_newname;
+	
+	@FindBy(xpath="//input[@name='Account_Name_NameTaxIDChange']")
+	WebElement txtbox_newname1;
+	
+	@FindBy(xpath="//input[@name='Tax_Number_NameTaxIDChange']")
+	WebElement txtbox_taxnumber;
+	
+	@FindBy(xpath="//button[text()='Submit Request']")
+	WebElement btn_submitrequest;
+	
+	@FindBy(xpath="//span[text()='Your request for Name And Tax ID Change has been submitted.']")
+	WebElement successmsg_nameandtaxidchange;
+	
+	
+	public void AccountNameChangeRequest() throws Exception {
+		expWaitToBeClickable(clk_details);
+		javascriptClick(btn_addupdateapprove);
+		elementToBePresent(txt_addupdateapproveheading, 30);
+		txt_changerequesttype.isDisplayed();
+		option_namechange.isDisplayed();
+		option_nameandtaxidchange.isDisplayed();
+		option_addresschange.isDisplayed();
+		option_submitforapproval.isDisplayed();
+		Thread.sleep(1000);
+		option_namechange.click();
+		Thread.sleep(2000);
+		txtbox_newname.sendKeys("New Name");
+		btn_submitrequest.click();
+	}
+	
+	public void AccountNameAndTaxIDChangeRequest() throws Exception {
+		expWaitToBeClickable(clk_details);
+		javascriptClick(btn_addupdateapprove);
+		elementToBePresent(txt_addupdateapproveheading, 30);
+		txt_changerequesttype.isDisplayed();
+		option_namechange.isDisplayed();
+		option_nameandtaxidchange.isDisplayed();
+		option_addresschange.isDisplayed();
+		option_submitforapproval.isDisplayed();
+		Thread.sleep(1000);
+		option_nameandtaxidchange.click();
+		Thread.sleep(2000);
+		txtbox_newname1.sendKeys("New Name");
+		Thread.sleep(1000);
+		txtbox_taxnumber.sendKeys("123456");
+		btn_submitrequest.click();
+	String	accountnameandtaxidchangesuccessmsg = successmsg_nameandtaxidchange.getText();
+		Assert.assertEquals(accountnameandtaxidchangesuccessmsg, "Your request for Name And Tax ID Change has been submitted.");
+	}
+	
+
+	
+	@FindBy(xpath="//input[@name='country']")
+	WebElement clk_countrypicklist;
+	
+	@FindBy(xpath="//span[text()='United States']")
+	WebElement clk_countryvalue;
+	
+	@FindBy(xpath="//textarea[@name='street]")
+	WebElement txt_street;
+	
+	@FindBy(xpath="//textarea[@name='city]")
+	WebElement txt_city;
+	
+	@FindBy(xpath="//input[@name='province']")
+	WebElement clk_statepicklist;
+	
+	@FindBy(xpath="//span[text()='New York']")
+	WebElement clk_statevalue;
+	
+	@FindBy(xpath="//input[@name='postalCode']")
+	WebElement txt_postalcode;
+	
+	@FindBy(xpath="//*[text()='Your request for Address Change has been submitted.']")
+	WebElement successmsg_addresschange;
+	
+	public void AccountAddressChangeRequest() throws Exception {
+		expWaitToBeClickable(clk_details);
+		javascriptClick(btn_addupdateapprove);
+		elementToBePresent(txt_addupdateapproveheading, 30);
+		txt_changerequesttype.isDisplayed();
+		option_namechange.isDisplayed();
+		option_nameandtaxidchange.isDisplayed();
+		option_addresschange.isDisplayed();
+		option_submitforapproval.isDisplayed();
+		Thread.sleep(1000);
+		option_addresschange.click();
+		Thread.sleep(2000);
+		clk_countrypicklist.click();
+		clk_countryvalue.click();
+		txt_street.sendKeys("100 1st street");
+		txt_city.sendKeys("Brooklyn");
+		clk_statepicklist.click();
+		clk_statevalue.click();
+		Thread.sleep(2000);
+		Thread.sleep(2000);
+		btn_submitrequest.click();
+	String	accountaddresschangesuccessmsg = successmsg_addresschange.getText();
+		Assert.assertEquals(accountaddresschangesuccessmsg, "Your request for Address Change has been submitted.");
 	}
 
 }

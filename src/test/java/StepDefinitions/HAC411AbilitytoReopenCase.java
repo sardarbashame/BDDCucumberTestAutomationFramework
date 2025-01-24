@@ -51,7 +51,7 @@ public class HAC411AbilitytoReopenCase extends CommonFunctions {
 	public void HAC411_user_is_on_case_details() throws InterruptedException, IOException {
 		globalSearch = new GlobalSearch();
 		globalSearch = new GlobalSearch();
-		globalSearch.selectcasefromglobalsearch("PROCAutoCase1");
+		globalSearch.SelectFromGlobalSearch("PROCAutoCase1");
 	}
 
 	@When("HAC411 edit the case status")

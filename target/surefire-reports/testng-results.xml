@@ -1,43 +1,94 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-01-01T19:44:31 IST" name="Suite" finished-at="2025-01-01T19:46:07 IST" duration-ms="96264">
+  <suite started-at="2025-01-24T20:08:00 IST" name="Suite" finished-at="2025-01-24T20:09:24 IST" duration-ms="84109">
     <groups>
       <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.MyRunner@433cec3b]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.MyRunner@12b4dc17]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2025-01-01T19:44:31 IST" name="Test" finished-at="2025-01-01T19:46:07 IST" duration-ms="96264">
+    <test started-at="2025-01-24T20:08:00 IST" name="Test" finished-at="2025-01-24T20:09:24 IST" duration-ms="84109">
       <class name="Runner.MyRunner">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:Runner.MyRunner@433cec3b]" started-at="2025-01-01T19:44:31 IST" name="setUpClass" finished-at="2025-01-01T19:44:33 IST" duration-ms="1968" status="PASS">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:Runner.MyRunner@12b4dc17]" started-at="2025-01-24T20:08:00 IST" name="setUpClass" finished-at="2025-01-24T20:08:02 IST" duration-ms="1388" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@2d770b7a]]>
+                <![CDATA[org.testng.TestRunner@21f67596]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.MyRunner@433cec3b]" started-at="2025-01-01T19:44:33 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-01-01T19:46:06 IST" duration-ms="93668" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.MyRunner@12b4dc17]" started-at="2025-01-24T20:08:02 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-01-24T20:09:24 IST" duration-ms="82254" status="FAIL">
           <params>
             <param index="0">
               <value>
-                <![CDATA["New account creation request in SF"]]>
+                <![CDATA["account address change request from SF"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["HAC_1561 New Account Creation Request from SF to SAP"]]>
+                <![CDATA["HAC_1561 Account Address Change Request"]]>
               </value>
             </param>
           </params>
+          <exception class="org.openqa.selenium.InvalidSelectorException">
+            <message>
+              <![CDATA[invalid selector
+from javascript error: {"status":32,"value":"Unable to locate an element with the xpath expression //textarea[@name='street] because of the following error:\nSyntaxError: Failed to execute 'evaluate' on 'Document': The string '//textarea[@name='street]' is not a valid XPath expression."}
+  (Session info: chrome=131.0.6778.265)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#invalid_selector_exception
+Build info: version: '4.8.2', revision: '826dbfc730'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [f477e1dd9834d5ddc2f33aa4becfde73, findElement {using=xpath, value=//textarea[@name='street]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.265, chrome: {chromedriverVersion: 131.0.6778.264 (2d05e315153..., userDataDir: C:\Users\DELL\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61923}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:61923/devtoo..., se:cdpVersion: 131.0.6778.265, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: f477e1dd9834d5ddc2f33aa4becfde73]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.InvalidSelectorException: invalid selector
+from javascript error: {"status":32,"value":"Unable to locate an element with the xpath expression //textarea[@name='street] because of the following error:\nSyntaxError: Failed to execute 'evaluate' on 'Document': The string '//textarea[@name='street]' is not a valid XPath expression."}
+  (Session info: chrome=131.0.6778.265)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#invalid_selector_exception
+Build info: version: '4.8.2', revision: '826dbfc730'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [f477e1dd9834d5ddc2f33aa4becfde73, findElement {using=xpath, value=//textarea[@name='street]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.265, chrome: {chromedriverVersion: 131.0.6778.264 (2d05e315153..., userDataDir: C:\Users\DELL\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61923}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:61923/devtoo..., se:cdpVersion: 131.0.6778.265, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: f477e1dd9834d5ddc2f33aa4becfde73
+at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:193)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:183)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:158)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
+at org.openqa.selenium.support.pagefactory.AjaxElementLocator.access$001(AjaxElementLocator.java:39)
+at org.openqa.selenium.support.pagefactory.AjaxElementLocator$SlowLoadingElement.isLoaded(AjaxElementLocator.java:165)
+at org.openqa.selenium.support.ui.SlowLoadableComponent.get(SlowLoadableComponent.java:51)
+at org.openqa.selenium.support.pagefactory.AjaxElementLocator.findElement(AjaxElementLocator.java:95)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
+at jdk.proxy7/jdk.proxy7.$Proxy59.sendKeys(Unknown Source)
+at PageObjects.AccountDetailsTab.AccountAddressChangeRequest(AccountDetailsTab.java:653)
+at StepDefinitions.HAC1561NewAccountCreationRequest.hac1561_submit_account_address_change_request(HAC1561NewAccountCreationRequest.java:73)
+at ✽.HAC1561 submit account address change request(file:///E:/SeleniumWorkSpace/HeatAndControlAutomation/Regression/Feature/HAC_1561_AccountAddressChangeRequest.feature:9)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.InvalidSelectorException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:Runner.MyRunner@433cec3b]" started-at="2025-01-01T19:46:06 IST" name="tearDownClass" finished-at="2025-01-01T19:46:07 IST" duration-ms="582" status="FAIL">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:Runner.MyRunner@12b4dc17]" started-at="2025-01-24T20:09:24 IST" name="tearDownClass" finished-at="2025-01-24T20:09:24 IST" duration-ms="420" status="FAIL">
           <exception class="com.google.gson.JsonIOException">
             <message>
               <![CDATA[Failed making field 'java.lang.Throwable#detailMessage' accessible; either increase its visibility or write a custom TypeAdapter for its declaring type.]]>
@@ -146,7 +197,7 @@ at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.jav
 at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:201)
 at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:361)
 at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:314)
-Caused by: java.lang.reflect.InaccessibleObjectException: Unable to make field private java.lang.String java.lang.Throwable.detailMessage accessible: module java.base does not "opens java.lang" to unnamed module @209a0c7
+Caused by: java.lang.reflect.InaccessibleObjectException: Unable to make field private java.lang.String java.lang.Throwable.detailMessage accessible: module java.base does not "opens java.lang" to unnamed module @1645fba9
 at java.base/java.lang.reflect.AccessibleObject.throwInaccessibleObjectException(AccessibleObject.java:388)
 at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:364)
 at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:312)
