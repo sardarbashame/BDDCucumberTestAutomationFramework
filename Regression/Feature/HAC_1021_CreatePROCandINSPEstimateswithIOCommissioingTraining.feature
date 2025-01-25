@@ -1,6 +1,6 @@
 Feature: HAC_1021_Verify processing and inspection combination of estimate creation with IOCommissioning + Training
 
- @regtest
+ @test3
   Scenario: Login as service scheduler and verify the processing and inspection estimates creation
     Given Login as SERVICE SCH USER NAME
     When HAC1165PIC select the applicaton

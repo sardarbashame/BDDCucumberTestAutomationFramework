@@ -549,8 +549,7 @@ public class HomePage extends CommonFunctions {
 		clkproductfamily.click();
 		clkprocoption.click();
 		// scroll to Type field
-		js.executeScript(
-				"var result = document.evaluate(\"//label[text()='Sales Order']\", document.body, null, XPathResult.ANY_TYPE, null);var input = result.iterateNext();input.scrollIntoView();");
+//		js.executeScript("var result = document.evaluate(\"//label[text()='Sales Order']\", document.body, null, XPathResult.ANY_TYPE, null);var input = result.iterateNext();input.scrollIntoView();");
 		expWaitToBeClickable(casetype);
 		casetype.click();
 		Thread.sleep(1000);

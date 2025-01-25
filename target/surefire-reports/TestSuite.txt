@@ -1,21 +1,20 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 84.654 s <<< FAILURE! - in TestSuite
-runScenario(Runner.MyRunner)  Time elapsed: 82.26 s  <<< FAILURE!
-org.openqa.selenium.InvalidSelectorException: 
-invalid selector
-from javascript error: {"status":32,"value":"Unable to locate an element with the xpath expression //textarea[@name='street] because of the following error:\nSyntaxError: Failed to execute 'evaluate' on 'Document': The string '//textarea[@name='street]' is not a valid XPath expression."}
+Tests run: 2, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 125.682 s <<< FAILURE! - in TestSuite
+runScenario(Runner.MyRunner)  Time elapsed: 123.068 s  <<< FAILURE!
+org.openqa.selenium.NoSuchWindowException: 
+no such window: target window already closed
+from unknown error: web view not found
   (Session info: chrome=131.0.6778.265)
-For documentation on this error, please visit: https://selenium.dev/exceptions/#invalid_selector_exception
 Build info: version: '4.8.2', revision: '826dbfc730'
 System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.2'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [f477e1dd9834d5ddc2f33aa4becfde73, findElement {using=xpath, value=//textarea[@name='street]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.265, chrome: {chromedriverVersion: 131.0.6778.264 (2d05e315153..., userDataDir: C:\Users\DELL\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61923}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:61923/devtoo..., se:cdpVersion: 131.0.6778.265, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: f477e1dd9834d5ddc2f33aa4becfde73
+Command: [e5aafbe1145e8b19aeb3097a4644d6fa, findElement {using=xpath, value=//span[text()='CANADA Domestic Market Rate']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.265, chrome: {chromedriverVersion: 131.0.6778.264 (2d05e315153..., userDataDir: C:\Users\DELL\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51074}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:51074/devtoo..., se:cdpVersion: 131.0.6778.265, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e5aafbe1145e8b19aeb3097a4644d6fa
 
-tearDownClass(Runner.MyRunner)  Time elapsed: 82.683 s  <<< FAILURE!
+tearDownClass(Runner.MyRunner)  Time elapsed: 123.715 s  <<< FAILURE!
 com.google.gson.JsonIOException: Failed making field 'java.lang.Throwable#detailMessage' accessible; either increase its visibility or write a custom TypeAdapter for its declaring type.
-Caused by: java.lang.reflect.InaccessibleObjectException: Unable to make field private java.lang.String java.lang.Throwable.detailMessage accessible: module java.base does not "opens java.lang" to unnamed module @1645fba9
+Caused by: java.lang.reflect.InaccessibleObjectException: Unable to make field private java.lang.String java.lang.Throwable.detailMessage accessible: module java.base does not "opens java.lang" to unnamed module @3b36f8b0
 

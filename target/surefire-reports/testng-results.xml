@@ -2,62 +2,60 @@
 <testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-01-24T20:08:00 IST" name="Suite" finished-at="2025-01-24T20:09:24 IST" duration-ms="84109">
+  <suite started-at="2025-01-25T17:44:00 IST" name="Suite" finished-at="2025-01-25T17:46:05 IST" duration-ms="125143">
     <groups>
       <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.MyRunner@12b4dc17]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.MyRunner@5ffc4a57]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2025-01-24T20:08:00 IST" name="Test" finished-at="2025-01-24T20:09:24 IST" duration-ms="84109">
+    <test started-at="2025-01-25T17:44:00 IST" name="Test" finished-at="2025-01-25T17:46:05 IST" duration-ms="125143">
       <class name="Runner.MyRunner">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:Runner.MyRunner@12b4dc17]" started-at="2025-01-24T20:08:00 IST" name="setUpClass" finished-at="2025-01-24T20:08:02 IST" duration-ms="1388" status="PASS">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:Runner.MyRunner@5ffc4a57]" started-at="2025-01-25T17:44:00 IST" name="setUpClass" finished-at="2025-01-25T17:44:01 IST" duration-ms="1388" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@21f67596]]>
+                <![CDATA[org.testng.TestRunner@216af451]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.MyRunner@12b4dc17]" started-at="2025-01-24T20:08:02 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-01-24T20:09:24 IST" duration-ms="82254" status="FAIL">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.MyRunner@5ffc4a57]" started-at="2025-01-25T17:44:01 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-01-25T17:46:04 IST" duration-ms="123060" status="FAIL">
           <params>
             <param index="0">
               <value>
-                <![CDATA["account address change request from SF"]]>
+                <![CDATA["Login as service scheduler and verify the processing and inspection estimates creation"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["HAC_1561 Account Address Change Request"]]>
+                <![CDATA["HAC_1021_Verify processing and inspection combination of estimate creation with IOCommissioning + Training"]]>
               </value>
             </param>
           </params>
-          <exception class="org.openqa.selenium.InvalidSelectorException">
+          <exception class="org.openqa.selenium.NoSuchWindowException">
             <message>
-              <![CDATA[invalid selector
-from javascript error: {"status":32,"value":"Unable to locate an element with the xpath expression //textarea[@name='street] because of the following error:\nSyntaxError: Failed to execute 'evaluate' on 'Document': The string '//textarea[@name='street]' is not a valid XPath expression."}
+              <![CDATA[no such window: target window already closed
+from unknown error: web view not found
   (Session info: chrome=131.0.6778.265)
-For documentation on this error, please visit: https://selenium.dev/exceptions/#invalid_selector_exception
 Build info: version: '4.8.2', revision: '826dbfc730'
 System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.2'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [f477e1dd9834d5ddc2f33aa4becfde73, findElement {using=xpath, value=//textarea[@name='street]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.265, chrome: {chromedriverVersion: 131.0.6778.264 (2d05e315153..., userDataDir: C:\Users\DELL\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61923}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:61923/devtoo..., se:cdpVersion: 131.0.6778.265, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: f477e1dd9834d5ddc2f33aa4becfde73]]>
+Command: [e5aafbe1145e8b19aeb3097a4644d6fa, findElement {using=xpath, value=//span[text()='CANADA Domestic Market Rate']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.265, chrome: {chromedriverVersion: 131.0.6778.264 (2d05e315153..., userDataDir: C:\Users\DELL\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51074}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:51074/devtoo..., se:cdpVersion: 131.0.6778.265, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e5aafbe1145e8b19aeb3097a4644d6fa]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.InvalidSelectorException: invalid selector
-from javascript error: {"status":32,"value":"Unable to locate an element with the xpath expression //textarea[@name='street] because of the following error:\nSyntaxError: Failed to execute 'evaluate' on 'Document': The string '//textarea[@name='street]' is not a valid XPath expression."}
+              <![CDATA[org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
   (Session info: chrome=131.0.6778.265)
-For documentation on this error, please visit: https://selenium.dev/exceptions/#invalid_selector_exception
 Build info: version: '4.8.2', revision: '826dbfc730'
 System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.2'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [f477e1dd9834d5ddc2f33aa4becfde73, findElement {using=xpath, value=//textarea[@name='street]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.265, chrome: {chromedriverVersion: 131.0.6778.264 (2d05e315153..., userDataDir: C:\Users\DELL\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61923}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:61923/devtoo..., se:cdpVersion: 131.0.6778.265, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: f477e1dd9834d5ddc2f33aa4becfde73
+Command: [e5aafbe1145e8b19aeb3097a4644d6fa, findElement {using=xpath, value=//span[text()='CANADA Domestic Market Rate']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.265, chrome: {chromedriverVersion: 131.0.6778.264 (2d05e315153..., userDataDir: C:\Users\DELL\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51074}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:51074/devtoo..., se:cdpVersion: 131.0.6778.265, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e5aafbe1145e8b19aeb3097a4644d6fa
 at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
 at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
 at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
@@ -75,20 +73,20 @@ at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:3
 at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
 at org.openqa.selenium.support.pagefactory.AjaxElementLocator.access$001(AjaxElementLocator.java:39)
 at org.openqa.selenium.support.pagefactory.AjaxElementLocator$SlowLoadingElement.isLoaded(AjaxElementLocator.java:165)
-at org.openqa.selenium.support.ui.SlowLoadableComponent.get(SlowLoadableComponent.java:51)
+at org.openqa.selenium.support.ui.SlowLoadableComponent.get(SlowLoadableComponent.java:72)
 at org.openqa.selenium.support.pagefactory.AjaxElementLocator.findElement(AjaxElementLocator.java:95)
 at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
-at jdk.proxy7/jdk.proxy7.$Proxy59.sendKeys(Unknown Source)
-at PageObjects.AccountDetailsTab.AccountAddressChangeRequest(AccountDetailsTab.java:653)
-at StepDefinitions.HAC1561NewAccountCreationRequest.hac1561_submit_account_address_change_request(HAC1561NewAccountCreationRequest.java:73)
-at ✽.HAC1561 submit account address change request(file:///E:/SeleniumWorkSpace/HeatAndControlAutomation/Regression/Feature/HAC_1561_AccountAddressChangeRequest.feature:9)
+at jdk.proxy7/jdk.proxy7.$Proxy59.isDisplayed(Unknown Source)
+at PageObjects.EstimateCreationFlowStep1.verifyPriceBookOption1(EstimateCreationFlowStep1.java:250)
+at StepDefinitions.HAC1021CreatePROCandINSPEstimateswithIOCommissioningTraining.HAC1165PIC_verify_the_pricebook_options(HAC1021CreatePROCandINSPEstimateswithIOCommissioningTraining.java:102)
+at ✽.HAC1165PIC verify the pricebook options(file:///E:/SeleniumWorkSpace/HeatAndControlAutomation/Regression/Feature/HAC_1021_CreatePROCandINSPEstimateswithIOCommissioingTraining.feature:12)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.InvalidSelectorException -->
+          </exception> <!-- org.openqa.selenium.NoSuchWindowException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:Runner.MyRunner@12b4dc17]" started-at="2025-01-24T20:09:24 IST" name="tearDownClass" finished-at="2025-01-24T20:09:24 IST" duration-ms="420" status="FAIL">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:Runner.MyRunner@5ffc4a57]" started-at="2025-01-25T17:46:04 IST" name="tearDownClass" finished-at="2025-01-25T17:46:05 IST" duration-ms="645" status="FAIL">
           <exception class="com.google.gson.JsonIOException">
             <message>
               <![CDATA[Failed making field 'java.lang.Throwable#detailMessage' accessible; either increase its visibility or write a custom TypeAdapter for its declaring type.]]>
@@ -197,7 +195,7 @@ at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.jav
 at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:201)
 at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:361)
 at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:314)
-Caused by: java.lang.reflect.InaccessibleObjectException: Unable to make field private java.lang.String java.lang.Throwable.detailMessage accessible: module java.base does not "opens java.lang" to unnamed module @1645fba9
+Caused by: java.lang.reflect.InaccessibleObjectException: Unable to make field private java.lang.String java.lang.Throwable.detailMessage accessible: module java.base does not "opens java.lang" to unnamed module @3b36f8b0
 at java.base/java.lang.reflect.AccessibleObject.throwInaccessibleObjectException(AccessibleObject.java:388)
 at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:364)
 at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:312)
