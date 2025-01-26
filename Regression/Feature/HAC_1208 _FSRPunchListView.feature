@@ -1,5 +1,5 @@
 Feature: HAC_1208 -FSR Punchlist view
-
+@regtest
   Scenario: Login as service scheduler and HAC_1208 -FSR Punchlist view
     Given Login as SERVICE TECHNICIAN USER NAME
     When select the Field Service application

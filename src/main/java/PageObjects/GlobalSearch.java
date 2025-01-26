@@ -39,15 +39,20 @@ public class GlobalSearch extends CommonFunctions {
 		Thread.sleep(5000);
 	}
 
-	public void selectcasefromglobalsearch(String tstcase) throws InterruptedException {
+	public void SelectFromGlobalSearch(String tstcase) throws InterruptedException {
 		expWaitToBeClickable(btn_search);
 		btn_search.click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//*[text()='Search by object type']/..//input")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//span[@title='Accounts']")).click();
+		Thread.sleep(2000);
 		Thread.sleep(3000);
 		sel_searchAccountAndSelect.sendKeys(tstcase);
 		Thread.sleep(3000);
-		driver.findElement(By.xpath("//span//mark[text()='" + tstcase + "']")).click();
+		driver.findElement(By.xpath("//span[@title='" + tstcase + "']")).click();
 		Thread.sleep(2000);
-		waitforelementtodisappear = waitForElementToAppear(wait_details, 30);
+		waitForElementToAppear(wait_details, 30);
 		Thread.sleep(2000);
 	}
 

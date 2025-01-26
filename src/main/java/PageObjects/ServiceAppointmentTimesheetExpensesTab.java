@@ -30,12 +30,16 @@ public class ServiceAppointmentTimesheetExpensesTab extends CommonFunctions {
 	
 	@FindBy(xpath="//button[text()='Cancel']")
 	WebElement btn_cancel;
+	
+	@FindBy(xpath="//a[contains(text(), 'TSE')]")
+	WebElement timesheetentry_tse;
+	@FindBy(xpath="//span[text()='Customer Site']")
+	WebElement link_customersite;
 		
 	public ServiceAppointmentTimesheetExpensesTab() {
 		PageFactory.initElements(new AjaxElementLocatorFactory(driver, 10), this);
 	}
 
-	
 	public void ClickTimesheetandExpensesTab() throws InterruptedException {
 		Thread.sleep(2000);
 		expWaitToBeClickable(tab_timesheetandexpenses);
@@ -43,12 +47,7 @@ public class ServiceAppointmentTimesheetExpensesTab extends CommonFunctions {
 		js.executeScript("arguments[0].click();", tab_timesheetandexpenses);
 		Thread.sleep(3000);
 		}
-	
-	@FindBy(xpath="//a[contains(text(), 'TSE')]")
-	WebElement timesheetentry_tse;
-	@FindBy(xpath="//span[text()='Customer Site']")
-	WebElement link_customersite;
-	
+
 	public void VerifyLaborTimeEntry() throws InterruptedException {
 		Thread.sleep(2000);
 		expWaitToBeClickable(timesheetentry_tse);
@@ -64,6 +63,5 @@ public class ServiceAppointmentTimesheetExpensesTab extends CommonFunctions {
 		js.executeScript("arguments[0].click();", tab_related);
 		Thread.sleep(3000);
 		}
-	
 	
 }

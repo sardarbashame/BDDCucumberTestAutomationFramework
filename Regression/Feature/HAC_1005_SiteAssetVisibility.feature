@@ -1,6 +1,6 @@
 Feature: HAC_1005_View Site Asset from Service Appointment
 
-  @regtest
+@regtest
   Scenario: Login as service user and HAC_1005_View Site Asset from Service Appointment
     Given Login as SERVICE SCH USER NAME
     When HAC1005 select the applicaton

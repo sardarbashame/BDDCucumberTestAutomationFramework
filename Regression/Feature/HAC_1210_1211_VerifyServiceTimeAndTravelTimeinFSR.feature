@@ -1,5 +1,5 @@
 Feature: HAC-1210 Verify service time and travel time on field service report tab
-
+@regtest
   Scenario: Login as service technician and verify the timesheet entries on service appointment
    # Step1
     Given Login as SERVICE SCH USER NAME

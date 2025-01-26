@@ -308,6 +308,10 @@ public class CommonFunctions extends BaseTest {
 		case "QA":
 			driver.get("https://heatandcontrol--qa.sandbox.lightning.force.com/");
 			break;
+		
+		case "DEV":
+			driver.get("https://heatandcontrol--dev.sandbox.lightning.force.com/");
+			break;
 
 		case "DEV4":
 			driver.get("https://heatandcontrol--dev4box.sandbox.my.salesforce.com/");
@@ -332,6 +336,8 @@ public class CommonFunctions extends BaseTest {
 			Uname = ppty.getProperty(str);
 		} else if (env.toUpperCase().equals("DEV4")) {
 			Uname = ppty.getProperty(str);
+		} else if (env.toUpperCase().equals("DEV")) {
+			Uname = ppty.getProperty(str);
 		}
 		return Uname;
 	}
@@ -343,6 +349,9 @@ public class CommonFunctions extends BaseTest {
 		if (env.toUpperCase().equals("QA")) {
 			pwd = ppty.getProperty(str);
 		} else if (env.toUpperCase().equals("DEV4")) {
+			pwd = ppty.getProperty(str);
+		}
+		else if (env.toUpperCase().equals("DEV")) {
 			pwd = ppty.getProperty(str);
 		}
 		return pwd;
