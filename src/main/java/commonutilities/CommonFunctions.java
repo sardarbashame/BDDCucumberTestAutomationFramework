@@ -177,6 +177,26 @@ public class CommonFunctions extends BaseTest {
 		return System.getProperty("user.dir") + "//reports//" + testCaseName + ".png";
 	}
 
+	public static String getTestData(String testdata) throws IOException {
+		reader = new FileReader(System.getProperty("user.dir") + "//src//test//resources//GlobalData.properties");
+		props = new Properties();
+		props.load(reader);
+		
+		String tdata = null;
+		String env = System.getProperty("env");
+		String str = env + "_" + testdata;
+
+		if (env.toUpperCase().equals("QA")) {
+			tdata = ppty.getProperty(str);
+		} else if (env.toUpperCase().equals("DEV4")) {
+			tdata = ppty.getProperty(str);
+		} else if (env.toUpperCase().equals("DEV")) {
+			tdata = ppty.getProperty(str);
+		}
+		return tdata;
+
+	}
+	
 	public static Properties getObjDetails() throws IOException {
 		reader = new FileReader(System.getProperty("user.dir") + "//src//test//resources//GlobalData.properties");
 		props = new Properties();

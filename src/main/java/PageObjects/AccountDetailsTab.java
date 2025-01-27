@@ -58,7 +58,7 @@ public class AccountDetailsTab extends CommonFunctions {
 	@FindBy(xpath = "//span[text()='Employees']")
 	public WebElement txt_employess;
 
-	@FindBy(xpath = "(//span[text()='Regional Settings'])[2]")
+	@FindBy(xpath = "(//span[text()='Regional Settings'])")
 	public WebElement txt_regionalSettings;
 
 	@FindBy(xpath = "//span[text()='Super Region']")
@@ -618,10 +618,10 @@ public class AccountDetailsTab extends CommonFunctions {
 	@FindBy(xpath="//span[text()='United States']")
 	WebElement clk_countryvalue;
 	
-	@FindBy(xpath="//textarea[@name='street]")
+	@FindBy(xpath="//textarea[@name='street']")
 	WebElement txt_street;
 	
-	@FindBy(xpath="//textarea[@name='city]")
+	@FindBy(xpath="//input[@name='city']")
 	WebElement txt_city;
 	
 	@FindBy(xpath="//input[@name='province']")
@@ -649,12 +649,14 @@ public class AccountDetailsTab extends CommonFunctions {
 		option_addresschange.click();
 		Thread.sleep(2000);
 		clk_countrypicklist.click();
-		clk_countryvalue.click();
+		Thread.sleep(3000);
+		javascriptClick(clk_countryvalue);
 		txt_street.sendKeys("100 1st street");
 		txt_city.sendKeys("Brooklyn");
 		clk_statepicklist.click();
-		clk_statevalue.click();
+		javascriptClick(clk_statevalue);
 		Thread.sleep(2000);
+		txt_postalcode.sendKeys("12345");
 		Thread.sleep(2000);
 		btn_submitrequest.click();
 	String	accountaddresschangesuccessmsg = successmsg_addresschange.getText();

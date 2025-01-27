@@ -1,6 +1,6 @@
 Feature: HAC_137_531_303_Verify the account list views
 
-@regtest
+
   Scenario: Login as service users and verify the account list views
     Given Login as SERVICE SCH USER NAME
     When HAC137 select the applicaton

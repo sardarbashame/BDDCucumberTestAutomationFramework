@@ -50,9 +50,9 @@ public class HAC1561NewAccountCreationRequest extends CommonFunctions {
 	}
 		
 	@When("HAC1561 select an account from global search")
-	public void hac1561_select_an_account_from_global_search() throws InterruptedException {
+	public void hac1561_select_an_account_from_global_search() throws InterruptedException, IOException {
 		globalSearch = new GlobalSearch();
-		globalSearch.SelectFromGlobalSearch("Aljawad Alraqia Company");
+		globalSearch.SelectFromGlobalSearch(getTestData("ACCOUNT_NAME"));
 	}
 	
 	@When("HAC1561 submit name change request")

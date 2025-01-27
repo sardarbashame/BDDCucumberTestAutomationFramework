@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="TestSuite" time="125.682" tests="2" errors="0" skipped="0" failures="2">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="TestSuite" time="65.088" tests="2" errors="0" skipped="0" failures="2">
   <properties>
     <property name="java.specification.version" value="22"/>
     <property name="webdriver.chrome.driver" value="C:\Users\DELL\.cache\selenium\chromedriver\win64\131.0.6778.264\chromedriver.exe"/>
@@ -58,50 +58,48 @@
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
     <property name="env" value="DEV"/>
     <property name="sun.os.patch.level" value=""/>
-    <property name="m2e.build.project.data.socket.port" value="51063"/>
+    <property name="m2e.build.project.data.socket.port" value="50904"/>
     <property name="native.encoding" value="Cp1252"/>
     <property name="java.library.path" value="C:\Users\DELL\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_22.0.2.v20240802-1626\jre\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:/Users/DELL/.p2/pool/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_22.0.2.v20240802-1626/jre/bin/server;C:/Users/DELL/.p2/pool/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_22.0.2.v20240802-1626/jre/bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Java\jdk-21\bin;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Program Files\nodejs\node_modules;C:\Users\DELL\AppData\Local\Microsoft\WindowsApps;C:\Users\DELL\AppData\Roaming\npm;C:\Windows\System32;;."/>
     <property name="java.vm.info" value="mixed mode"/>
     <property name="stderr.encoding" value="UTF-8"/>
     <property name="java.vendor" value="Eclipse Adoptium"/>
     <property name="java.vm.version" value="22.0.2+9"/>
-    <property name="classworlds.conf" value="E:\SeleniumWorkSpace\.metadata\.plugins\org.eclipse.m2e.launching\launches\m2conf16142558794177618834.tmp"/>
+    <property name="classworlds.conf" value="E:\SeleniumWorkSpace\.metadata\.plugins\org.eclipse.m2e.launching\launches\m2conf13933780650229997526.tmp"/>
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="66.0"/>
   </properties>
-  <testcase name="runScenario" classname="Runner.MyRunner" time="123.068">
-    <failure message="no such window: target window already closed&#10;from unknown error: web view not found&#10;  (Session info: chrome=131.0.6778.265)&#10;Build info: version: &apos;4.8.2&apos;, revision: &apos;826dbfc730&apos;&#10;System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;22.0.2&apos;&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [e5aafbe1145e8b19aeb3097a4644d6fa, findElement {using=xpath, value=//span[text()=&apos;CANADA Domestic Market Rate&apos;]}]&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.265, chrome: {chromedriverVersion: 131.0.6778.264 (2d05e315153..., userDataDir: C:\Users\DELL\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51074}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:51074/devtoo..., se:cdpVersion: 131.0.6778.265, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}&#10;Session ID: e5aafbe1145e8b19aeb3097a4644d6fa" type="org.openqa.selenium.NoSuchWindowException">org.openqa.selenium.NoSuchWindowException: 
+  <testcase name="runScenario" classname="Runner.MyRunner" time="62.251">
+    <failure message="no such window: target window already closed&#10;from unknown error: web view not found&#10;  (Session info: chrome=131.0.6778.265)&#10;Build info: version: &apos;4.8.2&apos;, revision: &apos;826dbfc730&apos;&#10;System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;22.0.2&apos;&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [2b5c4d3fad212d0397ef5d7cf0924200, findElement {using=xpath, value=//div[contains(@class, &apos;active &apos;)]//label[text() = &apos;Type&apos;]//parent::div//descendant::div[@class = &apos;slds-combobox_container&apos;]//button}]&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.265, chrome: {chromedriverVersion: 131.0.6778.264 (2d05e315153..., userDataDir: C:\Users\DELL\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50912}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:50912/devtoo..., se:cdpVersion: 131.0.6778.265, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}&#10;Session ID: 2b5c4d3fad212d0397ef5d7cf0924200" type="org.openqa.selenium.NoSuchWindowException">org.openqa.selenium.NoSuchWindowException: 
 no such window: target window already closed
 from unknown error: web view not found
   (Session info: chrome=131.0.6778.265)
 Build info: version: '4.8.2', revision: '826dbfc730'
 System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.2'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [e5aafbe1145e8b19aeb3097a4644d6fa, findElement {using=xpath, value=//span[text()='CANADA Domestic Market Rate']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.265, chrome: {chromedriverVersion: 131.0.6778.264 (2d05e315153..., userDataDir: C:\Users\DELL\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51074}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:51074/devtoo..., se:cdpVersion: 131.0.6778.265, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: e5aafbe1145e8b19aeb3097a4644d6fa
+Command: [2b5c4d3fad212d0397ef5d7cf0924200, findElement {using=xpath, value=//div[contains(@class, 'active ')]//label[text() = 'Type']//parent::div//descendant::div[@class = 'slds-combobox_container']//button}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.265, chrome: {chromedriverVersion: 131.0.6778.264 (2d05e315153..., userDataDir: C:\Users\DELL\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50912}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:50912/devtoo..., se:cdpVersion: 131.0.6778.265, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 2b5c4d3fad212d0397ef5d7cf0924200
 </failure>
     <system-out><![CDATA[
 @test3
-Scenario: Login as service scheduler and verify the processing and inspection estimates creation &amp#27;[90m# Regression/Feature/HAC_1021_CreatePROCandINSPEstimateswithIOCommissioingTraining.feature:4&amp#27;[0m
-Aapplication Login
-  &amp#27;[32mGiven &amp#27;[0m&amp#27;[32mLogin as SERVICE SCH USER NAME&amp#27;[0m                                                           &amp#27;[90m# StepDefinitions.HAC_AccountCreation.login_as_service_sch_user_name()&amp#27;[0m
-  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32mHAC1165PIC select the applicaton&amp#27;[0m                                                          &amp#27;[90m# StepDefinitions.HAC1021CreatePROCandINSPEstimateswithIOCommissioningTraining.HAC1165PIC_select_the_application()&amp#27;[0m
-  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32mHAC1165PIC close all the open tabs&amp#27;[0m                                                        &amp#27;[90m# StepDefinitions.HAC1021CreatePROCandINSPEstimateswithIOCommissioningTraining.HAC145_close_all_the_open_tabs()&amp#27;[0m
-  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32mHAC1165PIC close the bottom bar&amp#27;[0m                                                           &amp#27;[90m# StepDefinitions.HAC1021CreatePROCandINSPEstimateswithIOCommissioningTraining.HAC387_close_the_bottom_bar()&amp#27;[0m
-  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32mHAC1165PIC click on cases tab&amp#27;[0m                                                             &amp#27;[90m# StepDefinitions.HAC1021CreatePROCandINSPEstimateswithIOCommissioningTraining.HAC1165PIC_click_on_cases_tab()&amp#27;[0m
-  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32mHAC1165PIC create new case&amp#27;[0m                                                                &amp#27;[90m# StepDefinitions.HAC1021CreatePROCandINSPEstimateswithIOCommissioningTraining.HAC1165PIC_create_new_case()&amp#27;[0m
-  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32mHAC1165PIC user is on estimate tab&amp#27;[0m                                                        &amp#27;[90m# StepDefinitions.HAC1021CreatePROCandINSPEstimateswithIOCommissioningTraining.HAC1165PIC_user_is_on_estimate_tab()&amp#27;[0m
-  &amp#27;[31mWhen &amp#27;[0m&amp#27;[31mHAC1165PIC verify the pricebook options&amp#27;[0m                                                   &amp#27;[90m# StepDefinitions.HAC1021CreatePROCandINSPEstimateswithIOCommissioningTraining.HAC1165PIC_verify_the_pricebook_options()&amp#27;[0m
+Scenario Outline: HAC_136_Verify Allow Activities to Create Log, Task and Event for Customer Account                                &amp#27;[90m# Regression/Feature/HAC_136_AllowActivitiesAccountsAndContacts.feature:16&amp#27;[0m
+Application Login
+  &amp#27;[32mGiven &amp#27;[0m&amp#27;[32mLogin as SERVICE SCH USER NAME&amp#27;[0m                                                                                              &amp#27;[90m# StepDefinitions.HAC_AccountCreation.login_as_service_sch_user_name()&amp#27;[0m
+  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32mHAC145 select the applicaton&amp#27;[0m                                                                                                 &amp#27;[90m# StepDefinitions.HAC145VerifyAccountLayout.HAC145_select_the_applicaton()&amp#27;[0m
+  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32mHAC145 close all the open tabs&amp#27;[0m                                                                                               &amp#27;[90m# StepDefinitions.HAC145VerifyAccountLayout.HAC145_close_all_the_open_tabs()&amp#27;[0m
+  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32mHAC145 close the bottom bar&amp#27;[0m                                                                                                  &amp#27;[90m# StepDefinitions.HAC145VerifyAccountLayout.HAC387_close_the_bottom_bar()&amp#27;[0m
+  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32mHAC145 select accounts tab&amp#27;[0m                                                                                                   &amp#27;[90m# StepDefinitions.HAC145VerifyAccountLayout.HAC145_select_accounts_tab()&amp#27;[0m
+  &amp#27;[31mWhen &amp#27;[0m&amp#27;[31mHAC145 create new Account based on Type &amp#27;[0m&amp#27;[31m&amp#27;[1m"Customer"&amp#27;[0m&amp#27;[31m, &amp#27;[0m&amp#27;[31m&amp#27;[1m"AutoTestCustomer"&amp#27;[0m&amp#27;[31m, &amp#27;[0m&amp#27;[31m&amp#27;[1m"TestTrade"&amp#27;[0m&amp#27;[31m, &amp#27;[0m&amp#27;[31m&amp#27;[1m"Automotive"&amp#27;[0m&amp#27;[31m, &amp#27;[0m&amp#27;[31m&amp#27;[1m"Customer,Prospect,Other"&amp#27;[0m &amp#27;[90m# StepDefinitions.HAC_AccountCreation.hac145_create_new_account_based_on_type(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)&amp#27;[0m
       &amp#27;[31morg.openqa.selenium.NoSuchWindowException: no such window: target window already closed
 from unknown error: web view not found
   (Session info: chrome=131.0.6778.265)
 Build info: version: '4.8.2', revision: '826dbfc730'
 System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.2'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [e5aafbe1145e8b19aeb3097a4644d6fa, findElement {using=xpath, value=//span[text()='CANADA Domestic Market Rate']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.265, chrome: {chromedriverVersion: 131.0.6778.264 (2d05e315153..., userDataDir: C:\Users\DELL\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51074}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:51074/devtoo..., se:cdpVersion: 131.0.6778.265, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: e5aafbe1145e8b19aeb3097a4644d6fa
+Command: [2b5c4d3fad212d0397ef5d7cf0924200, findElement {using=xpath, value=//div[contains(@class, 'active ')]//label[text() = 'Type']//parent::div//descendant::div[@class = 'slds-combobox_container']//button}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.265, chrome: {chromedriverVersion: 131.0.6778.264 (2d05e315153..., userDataDir: C:\Users\DELL\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50912}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:50912/devtoo..., se:cdpVersion: 131.0.6778.265, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 2b5c4d3fad212d0397ef5d7cf0924200
 	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
@@ -119,34 +117,36 @@ Session ID: e5aafbe1145e8b19aeb3097a4644d6fa
 	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
 	at org.openqa.selenium.support.pagefactory.AjaxElementLocator.access$001(AjaxElementLocator.java:39)
 	at org.openqa.selenium.support.pagefactory.AjaxElementLocator$SlowLoadingElement.isLoaded(AjaxElementLocator.java:165)
-	at org.openqa.selenium.support.ui.SlowLoadableComponent.get(SlowLoadableComponent.java:72)
+	at org.openqa.selenium.support.ui.SlowLoadableComponent.get(SlowLoadableComponent.java:61)
 	at org.openqa.selenium.support.pagefactory.AjaxElementLocator.findElement(AjaxElementLocator.java:95)
 	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
-	at jdk.proxy7/jdk.proxy7.$Proxy59.isDisplayed(Unknown Source)
-	at PageObjects.EstimateCreationFlowStep1.verifyPriceBookOption1(EstimateCreationFlowStep1.java:250)
-	at StepDefinitions.HAC1021CreatePROCandINSPEstimateswithIOCommissioningTraining.HAC1165PIC_verify_the_pricebook_options(HAC1021CreatePROCandINSPEstimateswithIOCommissioningTraining.java:102)
-	at ✽.HAC1165PIC verify the pricebook options(file:///E:/SeleniumWorkSpace/HeatAndControlAutomation/Regression/Feature/HAC_1021_CreatePROCandINSPEstimateswithIOCommissioingTraining.feature:12)
+	at jdk.proxy7/jdk.proxy7.$Proxy59.getWrappedElement(Unknown Source)
+	at org.openqa.selenium.remote.internal.WebElementToJsonConverter.apply(WebElementToJsonConverter.java:52)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:212)
+	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:1024)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:556)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:546)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:265)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:702)
+	at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:477)
+	at commonutilities.CommonFunctions.javascriptClick(CommonFunctions.java:104)
+	at PageObjects.AccountDetailsTab.createNewAccount(AccountDetailsTab.java:412)
+	at StepDefinitions.HAC_AccountCreation.hac145_create_new_account_based_on_type(HAC_AccountCreation.java:59)
+	at ✽.HAC145 create new Account based on Type "Customer", "AutoTestCustomer", "TestTrade", "Automotive", "Customer,Prospect,Other"(file:///E:/SeleniumWorkSpace/HeatAndControlAutomation/Regression/Feature/HAC_136_AllowActivitiesAccountsAndContacts.feature:9)
 &amp#27;[0m
-  &amp#27;[36mWhen &amp#27;[0m&amp#27;[36mHAC1165PIC select processing and inspection values on estimate flow step1&amp#27;[0m                 &amp#27;[90m# StepDefinitions.HAC1021CreatePROCandINSPEstimateswithIOCommissioningTraining.HAC1165PIC_select_processing_and_inspection_values_on_estimate_flow_step1()&amp#27;[0m
-  &amp#27;[36mWhen &amp#27;[0m&amp#27;[36mHAC1165PIC verify the field label number of tech&amp#27;[0m                                          &amp#27;[90m# StepDefinitions.HAC1021CreatePROCandINSPEstimateswithIOCommissioningTraining.HAC1165PIC_verify_the_field_label_number_of_tech()&amp#27;[0m
-  &amp#27;[36mWhen &amp#27;[0m&amp#27;[36mHAC1165PIC verify the field label number of days&amp#27;[0m                                          &amp#27;[90m# StepDefinitions.HAC1021CreatePROCandINSPEstimateswithIOCommissioningTraining.HAC1165PIC_verify_the_field_label_number_of_days()&amp#27;[0m
-  &amp#27;[36mWhen &amp#27;[0m&amp#27;[36mHAC1165PIC verify the field label number of hours&amp#27;[0m                                         &amp#27;[90m# StepDefinitions.HAC1021CreatePROCandINSPEstimateswithIOCommissioningTraining.HAC1165PIC_verify_the_field_label_number_of_hours()&amp#27;[0m
-  &amp#27;[36mWhen &amp#27;[0m&amp#27;[36mHAC1165PIC select from date&amp#27;[0m                                                               &amp#27;[90m# StepDefinitions.HAC1021CreatePROCandINSPEstimateswithIOCommissioningTraining.HAC1165PIC_seelct_from_date()&amp#27;[0m
-  &amp#27;[36mWhen &amp#27;[0m&amp#27;[36mHAC1165PIC select to date&amp#27;[0m                                                                 &amp#27;[90m# StepDefinitions.HAC1021CreatePROCandINSPEstimateswithIOCommissioningTraining.HAC1165PIC_seelct_to_date()&amp#27;[0m
-  &amp#27;[36mThen &amp#27;[0m&amp#27;[36mHAC1165PIC user click on INSP Tab&amp#27;[0m                                                         &amp#27;[90m# StepDefinitions.HAC1021CreatePROCandINSPEstimateswithIOCommissioningTraining.HAC1165PIC_user_click_on_INSP_Tab()&amp#27;[0m
-  &amp#27;[36mWhen &amp#27;[0m&amp#27;[36mHAC1165PIC select from date for INSP&amp#27;[0m                                                      &amp#27;[90m# StepDefinitions.HAC1021CreatePROCandINSPEstimateswithIOCommissioningTraining.HAC1165PIC_seelct_from_date_for_INSP()&amp#27;[0m
-  &amp#27;[36mWhen &amp#27;[0m&amp#27;[36mHAC1165PIC select to date for INSP&amp#27;[0m                                                        &amp#27;[90m# StepDefinitions.HAC1021CreatePROCandINSPEstimateswithIOCommissioningTraining.HAC1165PIC_seelct_to_date_for_INSP()&amp#27;[0m
-  &amp#27;[36mWhen &amp#27;[0m&amp#27;[36mHAC1165PIC select view confirmation&amp#27;[0m                                                       &amp#27;[90m# StepDefinitions.HAC1021CreatePROCandINSPEstimateswithIOCommissioningTraining.HAC1165PIC_seelct_view_confirmation()&amp#27;[0m
-  &amp#27;[36mThen &amp#27;[0m&amp#27;[36mHAC1165PIC generate estimate pdf&amp#27;[0m                                                          &amp#27;[90m# StepDefinitions.HAC1021CreatePROCandINSPEstimateswithIOCommissioningTraining.HAC1165PIC_generate_estimate_pdf()&amp#27;[0m
+  &amp#27;[36mWhen &amp#27;[0m&amp#27;[36mclick on Log a call&amp#27;[0m                                                                                                          &amp#27;[90m# StepDefinitions.HAC_AccountCreation.click_on_log_a_call()&amp#27;[0m
+  &amp#27;[36mWhen &amp#27;[0m&amp#27;[36mclick on Create New task&amp#27;[0m                                                                                                     &amp#27;[90m# StepDefinitions.HAC_AccountCreation.click_on_create_new_task()&amp#27;[0m
+  &amp#27;[36mWhen &amp#27;[0m&amp#27;[36mclick on Create New Event&amp#27;[0m                                                                                                    &amp#27;[90m# StepDefinitions.HAC_AccountCreation.click_on_create_new_event()&amp#27;[0m
       &amp#27;[31morg.openqa.selenium.NoSuchWindowException: no such window: target window already closed
 from unknown error: web view not found
   (Session info: chrome=131.0.6778.265)
 Build info: version: '4.8.2', revision: '826dbfc730'
 System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.2'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [e5aafbe1145e8b19aeb3097a4644d6fa, getCurrentUrl {}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.265, chrome: {chromedriverVersion: 131.0.6778.264 (2d05e315153..., userDataDir: C:\Users\DELL\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51074}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:51074/devtoo..., se:cdpVersion: 131.0.6778.265, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: e5aafbe1145e8b19aeb3097a4644d6fa
+Command: [2b5c4d3fad212d0397ef5d7cf0924200, getCurrentUrl {}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.265, chrome: {chromedriverVersion: 131.0.6778.264 (2d05e315153..., userDataDir: C:\Users\DELL\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50912}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:50912/devtoo..., se:cdpVersion: 131.0.6778.265, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 2b5c4d3fad212d0397ef5d7cf0924200
 	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
@@ -169,19 +169,19 @@ SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
 log4j:WARN No appenders could be found for logger (io.netty.util.internal.logging.InternalLoggerFactory).
 log4j:WARN Please initialize the log4j system properly.
 log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
-Starting ChromeDriver 131.0.6778.264 (2d05e31515360f4da764174f7c448b33e36da871-refs/branch-heads/6778@{#4323}) on port 18534
+Starting ChromeDriver 131.0.6778.264 (2d05e31515360f4da764174f7c448b33e36da871-refs/branch-heads/6778@{#4323}) on port 46231
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
-ChromeDriver was started successfully on port 18534.
-Jan 25, 2025 5:44:04 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+ChromeDriver was started successfully on port 46231.
+Jan 27, 2025 8:11:43 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find CDP implementation matching 131
-Jan 25, 2025 5:44:04 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$3
+Jan 27, 2025 8:11:43 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$3
 WARNING: Unable to find version of CDP to use for . You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.8.2` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
 ]]></system-err>
   </testcase>
-  <testcase name="tearDownClass" classname="Runner.MyRunner" time="123.715">
+  <testcase name="tearDownClass" classname="Runner.MyRunner" time="62.972">
     <failure message="Failed making field &apos;java.lang.Throwable#detailMessage&apos; accessible; either increase its visibility or write a custom TypeAdapter for its declaring type." type="com.google.gson.JsonIOException">com.google.gson.JsonIOException: Failed making field 'java.lang.Throwable#detailMessage' accessible; either increase its visibility or write a custom TypeAdapter for its declaring type.
-Caused by: java.lang.reflect.InaccessibleObjectException: Unable to make field private java.lang.String java.lang.Throwable.detailMessage accessible: module java.base does not "opens java.lang" to unnamed module @3b36f8b0
+Caused by: java.lang.reflect.InaccessibleObjectException: Unable to make field private java.lang.String java.lang.Throwable.detailMessage accessible: module java.base does not "opens java.lang" to unnamed module @74f37601
 </failure>
   </testcase>
 </testsuite>

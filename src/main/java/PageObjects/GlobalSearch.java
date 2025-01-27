@@ -48,6 +48,7 @@ public class GlobalSearch extends CommonFunctions {
 		driver.findElement(By.xpath("//span[@title='Accounts']")).click();
 		Thread.sleep(2000);
 		Thread.sleep(3000);
+		System.out.println(tstcase);
 		sel_searchAccountAndSelect.sendKeys(tstcase);
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("//span[@title='" + tstcase + "']")).click();

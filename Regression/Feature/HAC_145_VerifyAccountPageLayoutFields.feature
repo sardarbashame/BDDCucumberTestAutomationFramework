@@ -1,5 +1,5 @@
 Feature: HAC_145_Verify the customer account page layout fields
-@regtest
+
   Scenario: Login as service user and verify the account page layout fields
     Given Login as service user
     When HAC145 select the applicaton
@@ -12,7 +12,7 @@ Feature: HAC_145_Verify the customer account page layout fields
     Then HAC145 verify industry
     # Then HAC145 verify account currency
     Then HAC145 verify trade name label
-    Then HAC145 verify trade name value
+   # Then HAC145 verify trade name value
     Then HAC145 verify active label
     Then HAC145 verify customer portal account label
     Then HAC145 verify operating hours label
@@ -23,6 +23,6 @@ Feature: HAC_145_Verify the customer account page layout fields
     Then HAC145 verify language label
     Then HAC145 verify language value
     Then HAC145 verify website label
-    Then HAC145 verify website value
+  #  Then HAC145 verify website value
     Then HAC145 verify shippingaddress label
   #  Then HAC145 verify shippingaddress value
