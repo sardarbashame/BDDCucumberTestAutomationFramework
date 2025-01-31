@@ -7,5 +7,3 @@ Feature: HAC_1545_Verify asset list views
     When HAC1122 close the bottom bar
     When HAC1546 select assets tab
     Then HAC1545 verify assets list views
-
-    

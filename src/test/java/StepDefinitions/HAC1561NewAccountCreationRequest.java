@@ -58,13 +58,13 @@ public class HAC1561NewAccountCreationRequest extends CommonFunctions {
 	@When("HAC1561 submit name change request")
 	public void hac1561_submit_name_change_request() throws Exception {
 		accountDetailsTab = new AccountDetailsTab();
-		accountDetailsTab.AccountNameChangeRequest();
+		accountDetailsTab.AccountNameChangeRequest("New Name");
 	}
 	
 	@When("HAC1561 submit name and tax id change request")
 	public void hac1561_submit_name_and_tax_id_change_request() throws Exception {
 		accountDetailsTab = new AccountDetailsTab();
-		accountDetailsTab.AccountNameAndTaxIDChangeRequest();
+		accountDetailsTab.AccountNameAndTaxIDChangeRequest("New Name","123456");
 	}
 	
 	@When("HAC1561 submit account address change request")

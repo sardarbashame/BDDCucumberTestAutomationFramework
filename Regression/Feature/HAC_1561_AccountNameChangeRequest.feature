@@ -1,5 +1,5 @@
 Feature: HAC_1561 Account Name Change Request
-
+@test3
  Scenario: account name change request from SF
     Given Login as system administrator
     When HAC387 select the applicaton

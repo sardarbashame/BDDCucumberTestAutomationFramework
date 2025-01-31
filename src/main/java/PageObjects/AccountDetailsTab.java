@@ -574,7 +574,7 @@ public class AccountDetailsTab extends CommonFunctions {
 	WebElement successmsg_nameandtaxidchange;
 	
 	
-	public void AccountNameChangeRequest() throws Exception {
+	public void AccountNameChangeRequest(String newname) throws Exception {
 		expWaitToBeClickable(clk_details);
 		javascriptClick(btn_addupdateapprove);
 		elementToBePresent(txt_addupdateapproveheading, 30);
@@ -586,11 +586,11 @@ public class AccountDetailsTab extends CommonFunctions {
 		Thread.sleep(1000);
 		option_namechange.click();
 		Thread.sleep(2000);
-		txtbox_newname.sendKeys("New Name");
+		txtbox_newname.sendKeys(newname);
 		btn_submitrequest.click();
 	}
 	
-	public void AccountNameAndTaxIDChangeRequest() throws Exception {
+	public void AccountNameAndTaxIDChangeRequest(String newname, String taxid) throws Exception {
 		expWaitToBeClickable(clk_details);
 		javascriptClick(btn_addupdateapprove);
 		elementToBePresent(txt_addupdateapproveheading, 30);
@@ -602,10 +602,11 @@ public class AccountDetailsTab extends CommonFunctions {
 		Thread.sleep(1000);
 		option_nameandtaxidchange.click();
 		Thread.sleep(2000);
-		txtbox_newname1.sendKeys("New Name");
+		txtbox_newname1.sendKeys(newname);
 		Thread.sleep(1000);
-		txtbox_taxnumber.sendKeys("123456");
+		txtbox_taxnumber.sendKeys(taxid);
 		btn_submitrequest.click();
+		Thread.sleep(3000);
 	String	accountnameandtaxidchangesuccessmsg = successmsg_nameandtaxidchange.getText();
 		Assert.assertEquals(accountnameandtaxidchangesuccessmsg, "Your request for Name And Tax ID Change has been submitted.");
 	}

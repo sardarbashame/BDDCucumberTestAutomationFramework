@@ -1,5 +1,5 @@
 Feature: HAC_136 Verify Allow Activities to create Log, Task and Event for Customer Account
-@test3
+
   Scenario Outline: HAC_136_Verify Allow Activities to Create Log, Task and Event for Customer Account
     Given Login as SERVICE SCH USER NAME
     When HAC145 select the applicaton
