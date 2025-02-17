@@ -652,11 +652,14 @@ public class AccountDetailsTab extends CommonFunctions {
 		clk_countrypicklist.click();
 		Thread.sleep(3000);
 		javascriptClick(clk_countryvalue);
+		txt_street.clear();
 		txt_street.sendKeys("100 1st street");
+		txt_city.clear();
 		txt_city.sendKeys("Brooklyn");
 		clk_statepicklist.click();
 		javascriptClick(clk_statevalue);
 		Thread.sleep(2000);
+		txt_postalcode.clear();
 		txt_postalcode.sendKeys("12345");
 		Thread.sleep(2000);
 		btn_submitrequest.click();
