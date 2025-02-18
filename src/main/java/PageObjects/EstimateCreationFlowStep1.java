@@ -17,13 +17,16 @@ public class EstimateCreationFlowStep1 extends CommonFunctions {
 	By waitforelementtodisappear;
 	By waitforelementtoappear;
 	String actualmessage;
-	boolean pricebookoption1;
-	boolean pricebookoption2;
-	boolean pricebookoption3;
-	boolean pricebookoption4;
-	boolean pricebookoption5;
-	boolean pricebookoption6;
-	boolean pricebookoption7;
+	JavascriptExecutor	js = (JavascriptExecutor) driver;
+	@FindBy(xpath="//button[@name='productFamily']")
+	WebElement clk_productfamily;
+	
+	@FindBy(xpath="//button[@name='productCategory']")
+	WebElement clk_productcategory;
+	
+	@FindBy(xpath="//button[@aria-label='Purpose']")
+	WebElement clk_purpose;
+
 	@FindBy(xpath="//*[text()='Processing Estimate Matrix']/../..//button")
 	WebElement dropdownclick_processingestimatematrix;
 	
@@ -42,7 +45,7 @@ public class EstimateCreationFlowStep1 extends CommonFunctions {
 	@FindBy(xpath = "//li//a[text()='Estimations']")
 	WebElement clk_estimations;
 
-	@FindBy(xpath = "//*[text()='Price Book']/../..//button")
+	@FindBy(xpath = "//span[text()='Select Pricebook...']")
 	WebElement clk_priceBook;
 
 	@FindBy(xpath = "//button[text()='Next']")
@@ -119,45 +122,52 @@ public class EstimateCreationFlowStep1 extends CommonFunctions {
 	public void clickEstimatesTab() throws InterruptedException {
 		expWaitToBeClickable(clk_estimations);
 		clk_estimations.click();
-		Thread.sleep(0, 2000);
+		Thread.sleep(2000);
 		driver.findElement(By.xpath("//li//a[text()='Estimations']")).click();
 		Thread.sleep(4000);
 	}
 
-	public void estimateFlowStep1(String pricebook, String estimatematrixoption,
-			String estimateitem) throws InterruptedException {
-		js = (JavascriptExecutor) driver;
+	public void estimateFlowStep1(String pricebook,String productfamily, String productcategory,
+			String purpose) throws InterruptedException {
 		expWaitToBeClickable(clk_priceBook);
 		clk_priceBook.click();
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("//span[text()='" + pricebook + "']")).click();
-		dropdownclick_processingestimatematrix.click();
-		driver.findElement(By.xpath("//span[text()='" + estimatematrixoption + "']")).click();
-		expWaitToBeClickable(clk_estimateItems);
-		clk_estimateItems.click();
+		
+		clk_productfamily.click();
+		driver.findElement(By.xpath("//span[text()='" + productfamily + "']")).click();
+		
+		clk_productcategory.click();
+		driver.findElement(By.xpath("//span[text()='" + productcategory + "']")).click();
+		
+		expWaitToBeClickable(clk_purpose);
+		clk_purpose.click();
 		Thread.sleep(3000);
-		driver.findElement(By.xpath("//span[text()='" + estimateitem + "']")).click();
+		driver.findElement(By.xpath("//span[text()='" + purpose + "']")).click();
 		Thread.sleep(3000);
-		btn_next.click();
-		Thread.sleep(0, 4000);
 	}
 	
-	public void RAWestimateFlowStep1(String pricebook, String estimatematrixoption,
-			String estimateitem) throws InterruptedException {
+	public void RAWestimateFlowStep1(String pricebook,String productfamily, String productcategory,
+			String purpose) throws InterruptedException {
 		js = (JavascriptExecutor) driver;
 		expWaitToBeClickable(clk_priceBook);
 		clk_priceBook.click();
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("//span[text()='" + pricebook + "']")).click();
-		dropdownclick_rawestimatematrix.click();
-		driver.findElement(By.xpath("//span[text()='" + estimatematrixoption + "']")).click();
-		expWaitToBeClickable(clk_estimateItems);
-		clk_estimateItems.click();
+		
+		clk_productfamily.click();
+		driver.findElement(By.xpath("//span[text()='" + productfamily + "']")).click();
+		
+		expWaitToBeClickable(clk_productcategory);
+		clk_productcategory.click();
 		Thread.sleep(3000);
-		driver.findElement(By.xpath("//span[text()='" + estimateitem + "']")).click();
+		driver.findElement(By.xpath("//span[text()='" + productcategory + "']")).click();
+		
+		expWaitToBeClickable(clk_purpose);
+		clk_purpose.click();
 		Thread.sleep(3000);
-		btn_next.click();
-		Thread.sleep(0, 4000);
+		driver.findElement(By.xpath("//span[text()='" + purpose + "']")).click();
+		Thread.sleep(3000);
 	}
 	
 	public void PKGEstimateFlowStep1(String pricebook, String estimatematrixoption,
@@ -178,46 +188,52 @@ public class EstimateCreationFlowStep1 extends CommonFunctions {
 		Thread.sleep(0, 4000);
 	}
 	
-	public void PROCINSPEstimateFlowStep1(String pricebook, String processingestimatematrixoption, String inspectionestimatematrixoption,
-			String estimateitem) throws InterruptedException {
+	public void PROCINSPEstimateFlowStep1(String pricebook, String productfamily1, String productfamily2, String processingestimatematrixoption, String inspectionestimatematrixoption,
+			String purpose) throws InterruptedException {
 		js = (JavascriptExecutor) driver;
 		expWaitToBeClickable(clk_priceBook);
 		clk_priceBook.click();
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("//span[text()='" + pricebook + "']")).click();
-		dropdownclick_processingestimatematrix.click();
+		clk_productfamily.click();
+		driver.findElement(By.xpath("//span[text()='" + productfamily1 + "']")).click();
+		clk_productfamily.click();
+		driver.findElement(By.xpath("//span[text()='" + productfamily2 + "']")).click();
+		clk_productcategory.click();
 		driver.findElement(By.xpath("//span[text()='" + processingestimatematrixoption + "']")).click();
-		dropdownclick_inspectionestimatematrix.click();
 		Thread.sleep(2000);
-		driver.findElement(By.xpath("//span[text()='" + inspectionestimatematrixoption + "']")).click();
-		expWaitToBeClickable(clk_estimateItems);
-		clk_estimateItems.click();
+		clk_productcategory.click();
+		WebElement productcategory2 = driver.findElement(By.xpath("//span[text()='" + inspectionestimatematrixoption + "']"));
+		javascriptClick(productcategory2);
+		expWaitToBeClickable(clk_purpose);
+		clk_purpose.click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//span[text()='" + purpose + "']")).click();
 		Thread.sleep(3000);
-		driver.findElement(By.xpath("//span[text()='" + estimateitem + "']")).click();
-		Thread.sleep(3000);
-		btn_next.click();
-		Thread.sleep(0, 4000);
 	}
 	
-	public void PROCPKGEstimateFlowStep1(String pricebook, String processingestimatematrixoption, String packagingestimatematrixoption,
-			String estimateitem) throws InterruptedException {
+	public void PROCPKGEstimateFlowStep1(String pricebook, String productfamily1, String productfamily2, String processingestimatematrixoption, String packagingestimatematrixoption,
+			String purpose) throws InterruptedException {
 		js = (JavascriptExecutor) driver;
 		expWaitToBeClickable(clk_priceBook);
 		clk_priceBook.click();
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("//span[text()='" + pricebook + "']")).click();
-		dropdownclick_processingestimatematrix.click();
+		clk_productfamily.click();
+		driver.findElement(By.xpath("//span[text()='" + productfamily1 + "']")).click();
+		clk_productfamily.click();
+		driver.findElement(By.xpath("//span[text()='" + productfamily2 + "']")).click();
+		clk_productcategory.click();
 		driver.findElement(By.xpath("//span[text()='" + processingestimatematrixoption + "']")).click();
-		dropdownclick_packagingstimatematrix.click();
 		Thread.sleep(2000);
-		driver.findElement(By.xpath("//span[text()='" + packagingestimatematrixoption + "']")).click();
-		expWaitToBeClickable(clk_estimateItems);
-		clk_estimateItems.click();
+		clk_productcategory.click();
+		WebElement productcategory2 = driver.findElement(By.xpath("//span[text()='" + packagingestimatematrixoption + "']"));
+		javascriptClick(productcategory2);
+		expWaitToBeClickable(clk_purpose);
+		clk_purpose.click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//span[text()='" + purpose + "']")).click();
 		Thread.sleep(3000);
-		driver.findElement(By.xpath("//span[text()='" + estimateitem + "']")).click();
-		Thread.sleep(3000);
-		btn_next.click();
-		Thread.sleep(0, 4000);
 	}
 	
 	public void PROCSPRAYEstimateFlowStep1(String pricebook, String processingestimatematrixoption, String sprayestimatematrixoption,
@@ -241,53 +257,21 @@ public class EstimateCreationFlowStep1 extends CommonFunctions {
 		Thread.sleep(0, 4000);
 	}
 
-	public boolean verifyPriceBookOption1() throws InterruptedException {
+	public void VerifyPriceBookOptions() throws InterruptedException {
 		js = (JavascriptExecutor) driver;
 		Thread.sleep(1000);
 		expWaitToBeClickable(clk_priceBook);
 		clk_priceBook.click();
-		Thread.sleep(1000);
-		pricebookoption1 = txt_candaMarketRate.isDisplayed();
-		return pricebookoption1;
-
-	}
-
-	public boolean verifyPriceBookOption2() throws InterruptedException {
-		Thread.sleep(1000);
-		return pricebookoption2 = txt_candaPepsico.isDisplayed();
-	}
-
-	public boolean verifyPriceBookOption3() throws InterruptedException {
-		Thread.sleep(1000);
-		pricebookoption3 = txt_usMarketRate.isDisplayed();
-		return pricebookoption3;
-
-	}
-
-	public boolean verifyPriceBookOption4() throws InterruptedException {
-		Thread.sleep(1000);
-		return pricebookoption4 = txt_usMarketRatePrepay.isDisplayed();
-
-	}
-
-	public boolean verifyPriceBookOption5() throws InterruptedException {
-		Thread.sleep(1000);
-		pricebookoption5 = txt_usMarketRatePepsico.isDisplayed();
-		return pricebookoption5;
-
-	}
-
-	public boolean verifyPriceBookOption6() throws InterruptedException {
-		Thread.sleep(1000);
-		pricebookoption6 = txt_usInterNationalMarketRatePrepay.isDisplayed();
-		return pricebookoption6;
-	}
-
-	public boolean verifyPriceBookOption7() throws InterruptedException {
-		Thread.sleep(1000);
-		pricebookoption7 = txt_usInterNationalPepsico.isDisplayed();
+		Thread.sleep(2000);
+		txt_candaMarketRate.isDisplayed();
+		txt_candaPepsico.isDisplayed();
+		txt_usMarketRate.isDisplayed();
+		txt_usMarketRatePrepay.isDisplayed();
+		txt_usMarketRatePepsico.isDisplayed();
+		txt_usInterNationalMarketRatePrepay.isDisplayed();
+		txt_usInterNationalPepsico.isDisplayed();
 		clk_priceBook.click();
-		return pricebookoption7;
+		Thread.sleep(2000);
 	}
 
 	public void createEstimationINSP(String pricebook, String InspectionEstimateMatrix, String Estimateitem)

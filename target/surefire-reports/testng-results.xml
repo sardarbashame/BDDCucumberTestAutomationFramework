@@ -2,35 +2,35 @@
 <testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-02-17T19:48:50 IST" name="Suite" finished-at="2025-02-17T19:51:20 IST" duration-ms="150318">
+  <suite started-at="2025-02-18T21:56:12 IST" name="Suite" finished-at="2025-02-18T21:58:49 IST" duration-ms="156596">
     <groups>
       <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.MyRunner@7ec8e029]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.MyRunner@25f7bd70]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2025-02-17T19:48:50 IST" name="Test" finished-at="2025-02-17T19:51:20 IST" duration-ms="150318">
+    <test started-at="2025-02-18T21:56:12 IST" name="Test" finished-at="2025-02-18T21:58:49 IST" duration-ms="156596">
       <class name="Runner.MyRunner">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:Runner.MyRunner@7ec8e029]" started-at="2025-02-17T19:48:50 IST" name="setUpClass" finished-at="2025-02-17T19:48:51 IST" duration-ms="1281" status="PASS">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:Runner.MyRunner@25f7bd70]" started-at="2025-02-18T21:56:12 IST" name="setUpClass" finished-at="2025-02-18T21:56:14 IST" duration-ms="1425" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@4cb06abe]]>
+                <![CDATA[org.testng.TestRunner@bcfebfe]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.MyRunner@7ec8e029]" started-at="2025-02-17T19:48:51 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-02-17T19:51:20 IST" duration-ms="148330" status="FAIL">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.MyRunner@25f7bd70]" started-at="2025-02-18T21:56:14 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-02-18T21:58:49 IST" duration-ms="154584" status="FAIL">
           <params>
             <param index="0">
               <value>
-                <![CDATA["New account creation request in SF"]]>
+                <![CDATA["Login as service scheduler and verify the processing and packaging estimates creation"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["HAC_1561 New Account Creation Request from SF to SAP"]]>
+                <![CDATA["HAC_1021_Verify processing and packaging combination of estimate creation with IOCommissioning + Training"]]>
               </value>
             </param>
           </params>
@@ -40,18 +40,18 @@
 Build info: version: '4.8.2', revision: '826dbfc730'
 System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.2'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [ee2b62445194535e01f97d424e0f0e64, findElement {using=xpath, value=//span[text()='The new account has been created/updated.']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.98, chrome: {chromedriverVersion: 133.0.6943.98 (da53563ceb66..., userDataDir: C:\Users\DELL\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64130}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:64130/devtoo..., se:cdpVersion: 133.0.6943.98, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: ee2b62445194535e01f97d424e0f0e64]]>
+Command: [f7fff4fffbcf580ef3df7205b064abf9, findElement {using=xpath, value=(//label[text()='From']/..//input)[@name='INSP']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.98, chrome: {chromedriverVersion: 133.0.6943.98 (da53563ceb66..., userDataDir: C:\Users\DELL\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52535}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:52535/devtoo..., se:cdpVersion: 133.0.6943.98, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: f7fff4fffbcf580ef3df7205b064abf9]]>
             </message>
             <full-stacktrace>
               <![CDATA[org.openqa.selenium.remote.UnreachableBrowserException: Error communicating with the remote browser. It may have died.
 Build info: version: '4.8.2', revision: '826dbfc730'
 System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.2'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [ee2b62445194535e01f97d424e0f0e64, findElement {using=xpath, value=//span[text()='The new account has been created/updated.']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.98, chrome: {chromedriverVersion: 133.0.6943.98 (da53563ceb66..., userDataDir: C:\Users\DELL\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64130}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:64130/devtoo..., se:cdpVersion: 133.0.6943.98, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: ee2b62445194535e01f97d424e0f0e64
+Command: [f7fff4fffbcf580ef3df7205b064abf9, findElement {using=xpath, value=(//label[text()='From']/..//input)[@name='INSP']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.98, chrome: {chromedriverVersion: 133.0.6943.98 (da53563ceb66..., userDataDir: C:\Users\DELL\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52535}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:52535/devtoo..., se:cdpVersion: 133.0.6943.98, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: f7fff4fffbcf580ef3df7205b064abf9
 at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:567)
 at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
 at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
@@ -60,13 +60,21 @@ at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:3
 at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
 at org.openqa.selenium.support.pagefactory.AjaxElementLocator.access$001(AjaxElementLocator.java:39)
 at org.openqa.selenium.support.pagefactory.AjaxElementLocator$SlowLoadingElement.isLoaded(AjaxElementLocator.java:165)
-at org.openqa.selenium.support.ui.SlowLoadableComponent.get(SlowLoadableComponent.java:51)
+at org.openqa.selenium.support.ui.SlowLoadableComponent.get(SlowLoadableComponent.java:61)
 at org.openqa.selenium.support.pagefactory.AjaxElementLocator.findElement(AjaxElementLocator.java:95)
 at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
 at jdk.proxy7/jdk.proxy7.$Proxy59.isDisplayed(Unknown Source)
-at PageObjects.HomePage.CreateNewCustomerAccountRequest(HomePage.java:534)
-at StepDefinitions.HAC1561NewAccountCreationRequest.HAC1561_create_new_account_request(HAC1561NewAccountCreationRequest.java:50)
-at ✽.HAC1561 create new account request(file:///E:/SeleniumWorkSpace/HeatAndControlAutomation/Regression/Feature/HAC_1561_NewAccountCreateRequest.feature:9)
+at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:307)
+at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:40)
+at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:293)
+at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
+at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:660)
+at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:656)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:208)
+at commonutilities.CommonFunctions.expWaitToBeClickable(CommonFunctions.java:69)
+at PageObjects.EstimateCreationFlowStep2.selectFromDateINSP(EstimateCreationFlowStep2.java:151)
+at StepDefinitions.HAC1021CreatePROCandPKGEstimateswithIOCommissioningTrainingTesting.HAC1165PICTT_seelct_from_date_for_INSP(HAC1021CreatePROCandPKGEstimateswithIOCommissioningTrainingTesting.java:152)
+at ✽.HAC1165PICTT select from date for PKG(file:///E:/SeleniumWorkSpace/HeatAndControlAutomation/Regression/Feature/HAC_1021_CreatePROCandPKGEstimateswithIOCommissioingTrainingTesting.feature:20)
 Caused by: java.io.UncheckedIOException: java.net.SocketException: Connection reset
 at org.openqa.selenium.remote.http.netty.NettyHttpHandler.makeCall(NettyHttpHandler.java:73)
 at org.openqa.selenium.remote.http.AddSeleniumUserAgent.lambda$apply$0(AddSeleniumUserAgent.java:42)
@@ -86,12 +94,20 @@ at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:3
 at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
 at org.openqa.selenium.support.pagefactory.AjaxElementLocator.access$001(AjaxElementLocator.java:39)
 at org.openqa.selenium.support.pagefactory.AjaxElementLocator$SlowLoadingElement.isLoaded(AjaxElementLocator.java:165)
-at org.openqa.selenium.support.ui.SlowLoadableComponent.get(SlowLoadableComponent.java:51)
+at org.openqa.selenium.support.ui.SlowLoadableComponent.get(SlowLoadableComponent.java:61)
 at org.openqa.selenium.support.pagefactory.AjaxElementLocator.findElement(AjaxElementLocator.java:95)
 at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
 at jdk.proxy7/jdk.proxy7.$Proxy59.isDisplayed(Unknown Source)
-at PageObjects.HomePage.CreateNewCustomerAccountRequest(HomePage.java:534)
-at StepDefinitions.HAC1561NewAccountCreationRequest.HAC1561_create_new_account_request(HAC1561NewAccountCreationRequest.java:50)
+at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:307)
+at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:40)
+at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:293)
+at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
+at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:660)
+at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:656)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:208)
+at commonutilities.CommonFunctions.expWaitToBeClickable(CommonFunctions.java:69)
+at PageObjects.EstimateCreationFlowStep2.selectFromDateINSP(EstimateCreationFlowStep2.java:151)
+at StepDefinitions.HAC1021CreatePROCandPKGEstimateswithIOCommissioningTrainingTesting.HAC1165PICTT_seelct_from_date_for_INSP(HAC1021CreatePROCandPKGEstimateswithIOCommissioningTrainingTesting.java:152)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at io.cucumber.java.Invoker.doInvoke(Invoker.java:66)
@@ -194,7 +210,7 @@ at java.base/java.lang.Thread.run(Thread.java:1570)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:Runner.MyRunner@7ec8e029]" started-at="2025-02-17T19:51:20 IST" name="tearDownClass" finished-at="2025-02-17T19:51:20 IST" duration-ms="671" status="FAIL">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:Runner.MyRunner@25f7bd70]" started-at="2025-02-18T21:58:49 IST" name="tearDownClass" finished-at="2025-02-18T21:58:49 IST" duration-ms="549" status="FAIL">
           <exception class="com.google.gson.JsonIOException">
             <message>
               <![CDATA[Failed making field 'java.lang.Throwable#detailMessage' accessible; either increase its visibility or write a custom TypeAdapter for its declaring type.]]>
@@ -303,7 +319,7 @@ at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.jav
 at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:201)
 at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:361)
 at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:314)
-Caused by: java.lang.reflect.InaccessibleObjectException: Unable to make field private java.lang.String java.lang.Throwable.detailMessage accessible: module java.base does not "opens java.lang" to unnamed module @15731d4f
+Caused by: java.lang.reflect.InaccessibleObjectException: Unable to make field private java.lang.String java.lang.Throwable.detailMessage accessible: module java.base does not "opens java.lang" to unnamed module @196a703f
 at java.base/java.lang.reflect.AccessibleObject.throwInaccessibleObjectException(AccessibleObject.java:388)
 at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:364)
 at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:312)

@@ -71,8 +71,7 @@ public class HAC408VerifyAddCaseTeam extends CommonFunctions {
 		homepage = new HomePage();
 		homepage.createNewCase(
 				ppty.getProperty("CASECONTACT"),
-				ppty.getProperty("CASEFIRSTNAME"),
-				ppty.getProperty("CASESUB")
+				ppty.getProperty("CASEFIRSTNAME")
 				);
 	}
 	

@@ -19,7 +19,7 @@ public class HomePage extends CommonFunctions {
 
 	WebElement webele;
 	By Wait_toastMessage = By.xpath("//span[contains(@class,'toastMessage')]//a//div");
-	JavascriptExecutor js;
+	JavascriptExecutor js = (JavascriptExecutor) driver;
 
 	@FindBy(xpath = "//a//div[text()='New']")
 	WebElement newaccountbtn;
@@ -139,7 +139,8 @@ public class HomePage extends CommonFunctions {
 	WebElement clk_details;
 
 	By detailstab = By.xpath("//a[text()='Details']");
-
+	By casestab1 = By.xpath("//a[@title='Cases']");
+	
 	@FindBy(xpath = "//*[@field-label='Type']//button[@aria-label='Type']")
 	WebElement ipt_type;
 
@@ -373,16 +374,13 @@ public class HomePage extends CommonFunctions {
 	}
 
 	public void clickCasesTab() throws InterruptedException {
-		js = (JavascriptExecutor) driver;
-		Thread.sleep(0, 2000);
-		waitForElementToAppear(By.xpath("//a[@title='Cases']"), 30);
-		Thread.sleep(0, 3000);
+		waitForElementToAppear(casestab1, 30);
+		Thread.sleep(3000);
 		js.executeScript("arguments[0].click();", clk_cases);
 		Thread.sleep(4000);
 	}
 
 	public void clickAssetsTab() throws InterruptedException {
-		js = (JavascriptExecutor) driver;
 		Thread.sleep(3000);
 		waitForElementToAppear(By.xpath("//a[@title='Assets']"), 30);
 		Thread.sleep(3000);
@@ -634,7 +632,7 @@ public class HomePage extends CommonFunctions {
 		casedescription.click();
 		casesavebtn.click();
 		waitForElementToAppear(By.xpath("//a[text()='Details']"), 30);
-		Thread.sleep(0, 4000);
+		Thread.sleep(4000);
 	}
 
 	public void verifyTLINumberInCase() throws Exception {
@@ -664,14 +662,13 @@ public class HomePage extends CommonFunctions {
 		Thread.sleep(0, 4000);
 	}
 
-	public void createNewCase(String contname, String firstname, String sub) throws InterruptedException {
-		js = (JavascriptExecutor) driver;
+	public void createNewCase(String contname, String sub) throws InterruptedException {
 		waitForElementToAppear(By.xpath("//a//div[text()='New']"), 30);
 		expWaitToBeClickable(newcasebtn);
 		newcasebtn.click();
 		contactnametxtbox.click();
 		contactnametxtbox.sendKeys(contname);
-		driver.findElement(By.xpath("//ul//li//*[text()='" + firstname + "']")).click();
+		driver.findElement(By.xpath("//ul//li//*[@title ='" + contname + "']")).click();
 		Thread.sleep(1000);
 		clkproductfamily.click();
 		clkprocoption.click();
@@ -699,7 +696,7 @@ public class HomePage extends CommonFunctions {
 		casedescription.click();
 		casesavebtn.click();
 		waitForElementToAppear(By.xpath("//a[text()='Details']"), 30);
-		Thread.sleep(0, 4000);
+		Thread.sleep(4000);
 	}
 
 	public void Logout() throws InterruptedException {

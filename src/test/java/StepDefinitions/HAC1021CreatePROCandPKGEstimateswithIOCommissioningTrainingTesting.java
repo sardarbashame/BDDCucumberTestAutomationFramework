@@ -44,13 +44,6 @@ public class HAC1021CreatePROCandPKGEstimateswithIOCommissioningTrainingTesting 
 	boolean numberoftechpresent;
 	boolean numberofdayspresent;
 	boolean numberofhourspresent;
-	boolean pboption1;
-	boolean pboption2;
-	boolean pboption3;
-	boolean pboption4;
-	boolean pboption5;
-	boolean pboption6;
-	boolean pboption7;
 	String numberoftech;
 
 	@Given("^HAC1165PICTT user enters (.*) and (.*)$")
@@ -85,8 +78,7 @@ public class HAC1021CreatePROCandPKGEstimateswithIOCommissioningTrainingTesting 
 	@When("HAC1165PICTT create new case")
 	public void HAC1165PICTT_create_new_case() throws InterruptedException, IOException {
 		homePage = new HomePage();
-		homePage.createNewCase(ppty.getProperty("CASECONTACT"), ppty.getProperty("CASEFIRSTNAME"),
-				ppty.getProperty("CASESUB"));
+		homePage.createNewCase(ppty.getProperty("CASECONTACT"), ppty.getProperty("CASEFIRSTNAME"));
 
 	}
 
@@ -99,33 +91,20 @@ public class HAC1021CreatePROCandPKGEstimateswithIOCommissioningTrainingTesting 
 	@When("HAC1165PICTT verify the pricebook options")
 	public void HAC1165PICTT_verify_the_pricebook_options() throws InterruptedException, IOException {
 		estimateCreationFlowStep1 = new EstimateCreationFlowStep1();
-		pboption1 = estimateCreationFlowStep1.verifyPriceBookOption1();
-		Assert.assertTrue(pboption1);
-		pboption2 = estimateCreationFlowStep1.verifyPriceBookOption2();
-		Assert.assertTrue(pboption2);
-		pboption3 = estimateCreationFlowStep1.verifyPriceBookOption3();
-		Assert.assertTrue(pboption3);
-		pboption4 = estimateCreationFlowStep1.verifyPriceBookOption4();
-		Assert.assertTrue(pboption4);
-		pboption5 = estimateCreationFlowStep1.verifyPriceBookOption5();
-		Assert.assertTrue(pboption5);
-		pboption6 = estimateCreationFlowStep1.verifyPriceBookOption6();
-		Assert.assertTrue(pboption6);
-		pboption7 = estimateCreationFlowStep1.verifyPriceBookOption7();
-		Assert.assertTrue(pboption7);
+		estimateCreationFlowStep1.VerifyPriceBookOptions();
 
 	}
 
-	@When("HAC1165PICTT select processing and inspection values on estimate flow step1")
-	public void HAC1165PICTT_select_processing_and_inspection_values_on_estimate_flow_step1() throws InterruptedException, IOException {
+	@When("HAC1165PICTT select processing and packaging values on estimate flow step1")
+	public void HAC1165PICTT_select_processing_and_packaging_values_on_estimate_flow_step1() throws InterruptedException, IOException {
 		estimateCreationFlowStep1 = new EstimateCreationFlowStep1();
-		estimateCreationFlowStep1.PROCPKGEstimateFlowStep1("USA Domestic Market Rate", "BASIC Dual Spiral Ovens","CCW", "IO/Commissioning + Training + Testing");
+		estimateCreationFlowStep1.PROCPKGEstimateFlowStep1("USA Domestic Market Rate", "PROC","PKG","BASIC Dual Spiral Ovens","CCW", "IO/Commissioning + Training + Testing");
 	}
 
 	@When("HAC1165PICTT verify the field label number of tech")
 	public void HAC1165PICTT_verify_the_field_label_number_of_tech() throws InterruptedException, IOException {
 		estimateCreationFlowStep2 = new EstimateCreationFlowStep2();
-		numberoftechpresent = estimateCreationFlowStep2.isNumberOfTechPresent();
+		numberoftechpresent = estimateCreationFlowStep2.PROCNumberOfTech();
 		Assert.assertTrue(numberoftechpresent);
 	}
 
@@ -138,14 +117,14 @@ public class HAC1021CreatePROCandPKGEstimateswithIOCommissioningTrainingTesting 
 	@When("HAC1165PICTT verify the field label number of days")
 	public void HAC1165PICTT_verify_the_field_label_number_of_days() throws InterruptedException, IOException {
 		estimateCreationFlowStep2 = new EstimateCreationFlowStep2();
-		numberofdayspresent = estimateCreationFlowStep2.isNumberOfDaysPresent();
+		numberofdayspresent = estimateCreationFlowStep2.PROCNumberOfDays();
 		Assert.assertTrue(numberofdayspresent);
 	}
 
 	@When("HAC1165PICTT verify the field label number of hours")
 	public void HAC1165PICTT_verify_the_field_label_number_of_hours() throws InterruptedException, IOException {
 		estimateCreationFlowStep2 = new EstimateCreationFlowStep2();
-		numberofhourspresent = estimateCreationFlowStep2.isNumberOfHrsPresent();
+		numberofhourspresent = estimateCreationFlowStep2.PROCNumberOfHrs();
 		Assert.assertTrue(numberofhourspresent);
 	}
 
@@ -168,15 +147,15 @@ public class HAC1021CreatePROCandPKGEstimateswithIOCommissioningTrainingTesting 
 	}
 	
 	@When("HAC1165PICTT select from date for PKG")
-	public void HAC1165PICTT_seelct_from_date_for_INSP() throws InterruptedException, IOException {
+	public void HAC1165PICTT_seelct_from_date_for_PKG() throws InterruptedException, IOException {
 		estimateCreationFlowStep2 = new EstimateCreationFlowStep2();
-		estimateCreationFlowStep2.selectFromDateINSP();
+		estimateCreationFlowStep2.selectFromDatePKG();
 	}
 
 	@When("HAC1165PICTT select to date for PKG")
-	public void HAC1165PICTT_seelct_to_date_for_INSP() throws InterruptedException, IOException {
+	public void HAC1165PICTT_seelct_to_date_for_PKG() throws InterruptedException, IOException {
 		estimateCreationFlowStep2 = new EstimateCreationFlowStep2();
-		estimateCreationFlowStep2.selectToDateINSP();
+		estimateCreationFlowStep2.selectToDatePKG();
 	}
 
 	@When("HAC1165PICTT select view confirmation")

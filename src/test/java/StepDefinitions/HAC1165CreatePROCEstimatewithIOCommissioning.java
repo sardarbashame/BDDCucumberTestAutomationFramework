@@ -85,8 +85,7 @@ public class HAC1165CreatePROCEstimatewithIOCommissioning extends CommonFunction
 	@When("HAC1165 create new case")
 	public void HAC1165_create_new_case() throws InterruptedException, IOException {
 		homePage = new HomePage();
-		homePage.createNewCase(ppty.getProperty("CASECONTACT"), ppty.getProperty("CASEFIRSTNAME"),
-				ppty.getProperty("CASESUB"));
+		homePage.createNewCase(getTestData("CONTACT_NAME"), getTestData("CASE_SUB"));
 
 	}
 
@@ -99,34 +98,20 @@ public class HAC1165CreatePROCEstimatewithIOCommissioning extends CommonFunction
 	@When("HAC1165 verify the pricebook options")
 	public void HAC1165_verify_the_pricebook_options() throws InterruptedException, IOException {
 		estimateCreationFlowStep1 = new EstimateCreationFlowStep1();
-		pboption1 = estimateCreationFlowStep1.verifyPriceBookOption1();
-		Assert.assertTrue(pboption1);
-		pboption2 = estimateCreationFlowStep1.verifyPriceBookOption2();
-		Assert.assertTrue(pboption2);
-		pboption3 = estimateCreationFlowStep1.verifyPriceBookOption3();
-		Assert.assertTrue(pboption3);
-		pboption4 = estimateCreationFlowStep1.verifyPriceBookOption4();
-		Assert.assertTrue(pboption4);
-		pboption5 = estimateCreationFlowStep1.verifyPriceBookOption5();
-		Assert.assertTrue(pboption5);
-		pboption6 = estimateCreationFlowStep1.verifyPriceBookOption6();
-		Assert.assertTrue(pboption6);
-		pboption7 = estimateCreationFlowStep1.verifyPriceBookOption7();
-		Assert.assertTrue(pboption7);
-
-	}
+		estimateCreationFlowStep1.VerifyPriceBookOptions();
+		}
 
 	@When("HAC1165 select values on estimate flow step1")
 	public void HAC1165_select_values_on_estimate_flow_step1() throws InterruptedException, IOException {
 		estimateCreationFlowStep1 = new EstimateCreationFlowStep1();
-		estimateCreationFlowStep1.estimateFlowStep1("USA Domestic Market Rate",
+		estimateCreationFlowStep1.estimateFlowStep1("USA Domestic Market Rate", "PROC",
 				"BASIC Dual Spiral Ovens", "IO/Commissioning");
 	}
 
 	@When("HAC1165 verify the field label number of tech")
 	public void HAC1165_verify_the_field_label_number_of_tech() throws InterruptedException, IOException {
 		estimateCreationFlowStep2 = new EstimateCreationFlowStep2();
-		numberoftechpresent = estimateCreationFlowStep2.isNumberOfTechPresent();
+		numberoftechpresent = estimateCreationFlowStep2.PROCNumberOfTech();
 		Assert.assertTrue(numberoftechpresent);
 	}
 
@@ -139,14 +124,14 @@ public class HAC1165CreatePROCEstimatewithIOCommissioning extends CommonFunction
 	@When("HAC1165 verify the field label number of days")
 	public void HAC1165_verify_the_field_label_number_of_days() throws InterruptedException, IOException {
 		estimateCreationFlowStep2 = new EstimateCreationFlowStep2();
-		numberofdayspresent = estimateCreationFlowStep2.isNumberOfDaysPresent();
+		numberofdayspresent = estimateCreationFlowStep2.PROCNumberOfDays();
 		Assert.assertTrue(numberofdayspresent);
 	}
 
 	@When("HAC1165 verify the field label number of hours")
 	public void HAC1165_verify_the_field_label_number_of_hours() throws InterruptedException, IOException {
 		estimateCreationFlowStep2 = new EstimateCreationFlowStep2();
-		numberofhourspresent = estimateCreationFlowStep2.isNumberOfHrsPresent();
+		numberofhourspresent = estimateCreationFlowStep2.PROCNumberOfHrs();
 		Assert.assertTrue(numberofhourspresent);
 	}
 
@@ -167,6 +152,12 @@ public class HAC1165CreatePROCEstimatewithIOCommissioning extends CommonFunction
 		estimateCreationFlowStep3 = new EstimateCreationFlowStep3();
 		estimateCreationFlowStep3.clickViewConfirmation();
 	}
+	
+	@When("HAC1165 save the estimate")
+	public void HAC1165_save_the_estimate() throws InterruptedException, IOException {
+		estimateCreationFlowStep3 = new EstimateCreationFlowStep3();
+		estimateCreationFlowStep3.clickSaveButton();
+	}
 
 	@Then("HAC1165 generate estimate pdf")
 	public void HAC1165_generate_estimate_pdf() throws InterruptedException, IOException {
@@ -177,7 +168,7 @@ public class HAC1165CreatePROCEstimatewithIOCommissioning extends CommonFunction
 	@When("Create new case with help of {string}, {string}, {string}")
 	public void createnewcase(String CaseContact, String CaseFirstName, String CaseSub) throws Exception {
 		homePage = new HomePage();
-		homePage.createNewCase(CaseContact, CaseFirstName, CaseSub);
+		homePage.createNewCase(CaseContact, CaseSub);
 	}
 
 	@When("Create Estimations with INSP {string}, {string}, {string}")

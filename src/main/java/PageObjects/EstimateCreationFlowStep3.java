@@ -44,11 +44,11 @@ public class EstimateCreationFlowStep3 extends CommonFunctions {
 	
 	
 	public void clickViewConfirmation() throws InterruptedException {
-		Thread.sleep(0, 2000);
+		Thread.sleep(2000);
 		expWaitToBeClickable(btn_viewConfirmation);
 		btn_viewConfirmation.click();
 		Thread.sleep(2000);
-		waitforelementtoappear = waitForElementToAppear(By.xpath("(//button[text()='Create PDF'])[1]"), 30);
+		//waitforelementtoappear = waitForElementToAppear(By.xpath("(//button[text()='Create PDF'])[1]"), 30);
 	}
 
 	public void clickCreatePDF() throws InterruptedException {

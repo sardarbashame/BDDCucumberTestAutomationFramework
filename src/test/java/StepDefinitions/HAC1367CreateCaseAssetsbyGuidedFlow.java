@@ -89,8 +89,7 @@ public class HAC1367CreateCaseAssetsbyGuidedFlow extends CommonFunctions {
 		homePage = new HomePage();
 		homePage.createNewCase(
 				getObjDetails().getProperty("CASECONTACT"),
-				getObjDetails().getProperty("CASEFIRSTNAME"),
-				getObjDetails().getProperty("CASESUB")
+				getObjDetails().getProperty("CASEFIRSTNAME")
 				);
 	}
 	
