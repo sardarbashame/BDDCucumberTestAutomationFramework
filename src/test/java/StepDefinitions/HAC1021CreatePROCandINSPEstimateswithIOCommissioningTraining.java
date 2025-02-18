@@ -85,8 +85,7 @@ public class HAC1021CreatePROCandINSPEstimateswithIOCommissioningTraining extend
 	@When("HAC1165PIC create new case")
 	public void HAC1165PIC_create_new_case() throws InterruptedException, IOException {
 		homePage = new HomePage();
-		homePage.createNewCase(ppty.getProperty("CASECONTACT"), ppty.getProperty("CASEFIRSTNAME"),
-				ppty.getProperty("CASESUB"));
+		homePage.createNewCase(ppty.getProperty("CASECONTACT"), ppty.getProperty("CASEFIRSTNAME"));
 
 	}
 
@@ -99,33 +98,21 @@ public class HAC1021CreatePROCandINSPEstimateswithIOCommissioningTraining extend
 	@When("HAC1165PIC verify the pricebook options")
 	public void HAC1165PIC_verify_the_pricebook_options() throws InterruptedException, IOException {
 		estimateCreationFlowStep1 = new EstimateCreationFlowStep1();
-		pboption1 = estimateCreationFlowStep1.verifyPriceBookOption1();
-		Assert.assertTrue(pboption1);
-		pboption2 = estimateCreationFlowStep1.verifyPriceBookOption2();
-		Assert.assertTrue(pboption2);
-		pboption3 = estimateCreationFlowStep1.verifyPriceBookOption3();
-		Assert.assertTrue(pboption3);
-		pboption4 = estimateCreationFlowStep1.verifyPriceBookOption4();
-		Assert.assertTrue(pboption4);
-		pboption5 = estimateCreationFlowStep1.verifyPriceBookOption5();
-		Assert.assertTrue(pboption5);
-		pboption6 = estimateCreationFlowStep1.verifyPriceBookOption6();
-		Assert.assertTrue(pboption6);
-		pboption7 = estimateCreationFlowStep1.verifyPriceBookOption7();
-		Assert.assertTrue(pboption7);
+		estimateCreationFlowStep1.VerifyPriceBookOptions();
+
 
 	}
 
 	@When("HAC1165PIC select processing and inspection values on estimate flow step1")
 	public void HAC1165PIC_select_processing_and_inspection_values_on_estimate_flow_step1() throws InterruptedException, IOException {
 		estimateCreationFlowStep1 = new EstimateCreationFlowStep1();
-		estimateCreationFlowStep1.PROCINSPEstimateFlowStep1("USA Domestic Market Rate", "BASIC Dual Spiral Ovens","ISHIDA DACS", "IO/Commissioning + Training");
+		estimateCreationFlowStep1.PROCINSPEstimateFlowStep1("USA Domestic Market Rate", "PROC","INSP","BASIC Dual Spiral Ovens","ISHIDA DACS", "IO/Commissioning + Training");
 	}
 
 	@When("HAC1165PIC verify the field label number of tech")
 	public void HAC1165PIC_verify_the_field_label_number_of_tech() throws InterruptedException, IOException {
 		estimateCreationFlowStep2 = new EstimateCreationFlowStep2();
-		numberoftechpresent = estimateCreationFlowStep2.isNumberOfTechPresent();
+		numberoftechpresent = estimateCreationFlowStep2.PROCNumberOfTech();
 		Assert.assertTrue(numberoftechpresent);
 	}
 
@@ -138,14 +125,14 @@ public class HAC1021CreatePROCandINSPEstimateswithIOCommissioningTraining extend
 	@When("HAC1165PIC verify the field label number of days")
 	public void HAC1165PIC_verify_the_field_label_number_of_days() throws InterruptedException, IOException {
 		estimateCreationFlowStep2 = new EstimateCreationFlowStep2();
-		numberofdayspresent = estimateCreationFlowStep2.isNumberOfDaysPresent();
+		numberofdayspresent = estimateCreationFlowStep2.PROCNumberOfDays();
 		Assert.assertTrue(numberofdayspresent);
 	}
 
 	@When("HAC1165PIC verify the field label number of hours")
 	public void HAC1165PIC_verify_the_field_label_number_of_hours() throws InterruptedException, IOException {
 		estimateCreationFlowStep2 = new EstimateCreationFlowStep2();
-		numberofhourspresent = estimateCreationFlowStep2.isNumberOfHrsPresent();
+		numberofhourspresent = estimateCreationFlowStep2.PROCNumberOfHrs();
 		Assert.assertTrue(numberofhourspresent);
 	}
 

@@ -58,8 +58,7 @@ public class HAC316CreateViewEditTransferCase extends CommonFunctions {
 		homePage = new HomePage();
 		homePage.createNewCase(
 				ppty.getProperty("CASECONTACT"),
-				ppty.getProperty("CASEFIRSTNAME"),
-				ppty.getProperty("CASESUB")
+				ppty.getProperty("CASEFIRSTNAME")
 				);
 	}
 	

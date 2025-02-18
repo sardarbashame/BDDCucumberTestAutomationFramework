@@ -49,19 +49,19 @@ public class HAC1561NewAccountCreationRequest extends CommonFunctions {
 
 		homePage.CreateNewCustomerAccountRequest(
 				ConcatCurrentDateTime(getTestData("NEW_CUST_NAME")), 
-				getTestData("NEW_CUST_PHONE"),
-				getTestData("NEW_CUST_PO"),
-				ConcatCurrentDateTime(getTestData("NEW_CUST_EMAIL")),
-				getTestData("NEW_CUST_TAX_NUM"),
+				Math.random()+getTestData("NEW_CUST_PHONE"),
+				Math.random()+getTestData("NEW_CUST_PO"),
+				Math.random()+getTestData("NEW_CUST_EMAIL"),
+				Math.random()+getTestData("NEW_CUST_TAX_NUM"),
 				getTestData("NEW_CUST_STREET"),
 				getTestData("NEW_CUST_CITY"),
 				getTestData("NEW_CUST_PC"),
 				ConcatCurrentDateTime(getTestData("NEW_PART_NAME")),
-				getTestData("NEW_PART_PHONE"),
-				getTestData("NEW_PART_PO"),
-				getTestData("NEW_PART_EMAIL"),
-				getTestData("NEW_PART_TAX_NUM"),
-				getTestData("NEW_PART_STREET"),
+				Math.random()+getTestData("NEW_PART_PHONE"),
+				Math.random()+getTestData("NEW_PART_PO"),
+				Math.random()+getTestData("NEW_PART_EMAIL"),
+				Math.random()+getTestData("NEW_PART_TAX_NUM"),
+				Math.random()+getTestData("NEW_PART_STREET"),
 				getTestData("NEW_PART_CITY"),
 				getTestData("NEW_PART_PC")	);
 	}

@@ -69,8 +69,7 @@ public class HAC322VerifyCasePageLayout extends CommonFunctions {
 		homepage = new HomePage();
 		homepage.createNewCase(
 				ppty.getProperty("CASECONTACT"),
-				ppty.getProperty("CASEFIRSTNAME"),
-				ppty.getProperty("CASESUB")
+				ppty.getProperty("CASEFIRSTNAME")
 				);
 	}
 
