@@ -58,7 +58,7 @@ public class AccountDetailsTab extends CommonFunctions {
 	@FindBy(xpath = "//span[text()='Employees']")
 	public WebElement txt_employess;
 
-	@FindBy(xpath = "(//span[text()='Regional Settings'])[2]")
+	@FindBy(xpath = "(//span[text()='Regional Settings'])")
 	public WebElement txt_regionalSettings;
 
 	@FindBy(xpath = "//span[text()='Super Region']")
@@ -574,7 +574,7 @@ public class AccountDetailsTab extends CommonFunctions {
 	WebElement successmsg_nameandtaxidchange;
 	
 	
-	public void AccountNameChangeRequest() throws Exception {
+	public void AccountNameChangeRequest(String newname) throws Exception {
 		expWaitToBeClickable(clk_details);
 		javascriptClick(btn_addupdateapprove);
 		elementToBePresent(txt_addupdateapproveheading, 30);
@@ -586,11 +586,11 @@ public class AccountDetailsTab extends CommonFunctions {
 		Thread.sleep(1000);
 		option_namechange.click();
 		Thread.sleep(2000);
-		txtbox_newname.sendKeys("New Name");
+		txtbox_newname.sendKeys(newname);
 		btn_submitrequest.click();
 	}
 	
-	public void AccountNameAndTaxIDChangeRequest() throws Exception {
+	public void AccountNameAndTaxIDChangeRequest(String newname, String taxid) throws Exception {
 		expWaitToBeClickable(clk_details);
 		javascriptClick(btn_addupdateapprove);
 		elementToBePresent(txt_addupdateapproveheading, 30);
@@ -602,10 +602,11 @@ public class AccountDetailsTab extends CommonFunctions {
 		Thread.sleep(1000);
 		option_nameandtaxidchange.click();
 		Thread.sleep(2000);
-		txtbox_newname1.sendKeys("New Name");
+		txtbox_newname1.sendKeys(newname);
 		Thread.sleep(1000);
-		txtbox_taxnumber.sendKeys("123456");
+		txtbox_taxnumber.sendKeys(taxid);
 		btn_submitrequest.click();
+		Thread.sleep(3000);
 	String	accountnameandtaxidchangesuccessmsg = successmsg_nameandtaxidchange.getText();
 		Assert.assertEquals(accountnameandtaxidchangesuccessmsg, "Your request for Name And Tax ID Change has been submitted.");
 	}
@@ -618,10 +619,10 @@ public class AccountDetailsTab extends CommonFunctions {
 	@FindBy(xpath="//span[text()='United States']")
 	WebElement clk_countryvalue;
 	
-	@FindBy(xpath="//textarea[@name='street]")
+	@FindBy(xpath="//textarea[@name='street']")
 	WebElement txt_street;
 	
-	@FindBy(xpath="//textarea[@name='city]")
+	@FindBy(xpath="//input[@name='city']")
 	WebElement txt_city;
 	
 	@FindBy(xpath="//input[@name='province']")
@@ -649,12 +650,17 @@ public class AccountDetailsTab extends CommonFunctions {
 		option_addresschange.click();
 		Thread.sleep(2000);
 		clk_countrypicklist.click();
-		clk_countryvalue.click();
+		Thread.sleep(3000);
+		javascriptClick(clk_countryvalue);
+		txt_street.clear();
 		txt_street.sendKeys("100 1st street");
+		txt_city.clear();
 		txt_city.sendKeys("Brooklyn");
 		clk_statepicklist.click();
-		clk_statevalue.click();
+		javascriptClick(clk_statevalue);
 		Thread.sleep(2000);
+		txt_postalcode.clear();
+		txt_postalcode.sendKeys("12345");
 		Thread.sleep(2000);
 		btn_submitrequest.click();
 	String	accountaddresschangesuccessmsg = successmsg_addresschange.getText();

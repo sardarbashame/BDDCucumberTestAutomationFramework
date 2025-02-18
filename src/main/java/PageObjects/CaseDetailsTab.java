@@ -254,7 +254,7 @@ public class CaseDetailsTab extends CommonFunctions {
 	@FindBy(xpath="//span[@title='Junk/Spam']")
 	WebElement casetypejunkspam;
 	
-	@FindBy(xpath="//button[@name = 'Case.Add_Asset']")
+	@FindBy(xpath="//button[@name = 'Case.Add_Assets']")
 	WebElement btn_AddAsset;
 	
 	@FindBy(xpath="//lightning-primitive-cell-checkbox")

@@ -1,5 +1,5 @@
 Feature: HAC_1561 New Account Creation Request from SF to SAP
-
+@test3
  Scenario: New account creation request in SF
     Given Login as system administrator
     When HAC387 select the applicaton

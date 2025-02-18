@@ -9,4 +9,3 @@ Feature: HAC_1546_Verify asset compact layout
     When HAC1546 select all active assets list view
     When HAC1546 select a asset
     Then HAC1546 verify the compact layout fields
-    

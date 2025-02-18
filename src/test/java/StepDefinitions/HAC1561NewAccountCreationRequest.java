@@ -46,25 +46,42 @@ public class HAC1561NewAccountCreationRequest extends CommonFunctions {
 	@When("HAC1561 create new account request")
 	public void HAC1561_create_new_account_request() throws InterruptedException, IOException {
 		homePage = new HomePage();
-		homePage.CreateNewCustomerAccountRequest();
+
+		homePage.CreateNewCustomerAccountRequest(
+				ConcatCurrentDateTime(getTestData("NEW_CUST_NAME")), 
+				getTestData("NEW_CUST_PHONE"),
+				getTestData("NEW_CUST_PO"),
+				ConcatCurrentDateTime(getTestData("NEW_CUST_EMAIL")),
+				getTestData("NEW_CUST_TAX_NUM"),
+				getTestData("NEW_CUST_STREET"),
+				getTestData("NEW_CUST_CITY"),
+				getTestData("NEW_CUST_PC"),
+				ConcatCurrentDateTime(getTestData("NEW_PART_NAME")),
+				getTestData("NEW_PART_PHONE"),
+				getTestData("NEW_PART_PO"),
+				getTestData("NEW_PART_EMAIL"),
+				getTestData("NEW_PART_TAX_NUM"),
+				getTestData("NEW_PART_STREET"),
+				getTestData("NEW_PART_CITY"),
+				getTestData("NEW_PART_PC")	);
 	}
 		
 	@When("HAC1561 select an account from global search")
-	public void hac1561_select_an_account_from_global_search() throws InterruptedException {
+	public void hac1561_select_an_account_from_global_search() throws InterruptedException, IOException {
 		globalSearch = new GlobalSearch();
-		globalSearch.SelectFromGlobalSearch("Aljawad Alraqia Company");
+		globalSearch.SelectFromGlobalSearch(getTestData("ACCOUNT_NAME"));
 	}
 	
 	@When("HAC1561 submit name change request")
 	public void hac1561_submit_name_change_request() throws Exception {
 		accountDetailsTab = new AccountDetailsTab();
-		accountDetailsTab.AccountNameChangeRequest();
+		accountDetailsTab.AccountNameChangeRequest("New Name");
 	}
 	
 	@When("HAC1561 submit name and tax id change request")
 	public void hac1561_submit_name_and_tax_id_change_request() throws Exception {
 		accountDetailsTab = new AccountDetailsTab();
-		accountDetailsTab.AccountNameAndTaxIDChangeRequest();
+		accountDetailsTab.AccountNameAndTaxIDChangeRequest("New Name","123456");
 	}
 	
 	@When("HAC1561 submit account address change request")

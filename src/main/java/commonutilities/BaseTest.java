@@ -26,12 +26,16 @@ public class BaseTest {
 
 	public static WebDriver intializeDriver() throws IOException {
 		String browserName = "chrome";
+		String tdata;
 	//	CommonFunctions.loadClassLoader();
 		if (browserName.equalsIgnoreCase("chrome")) {
 			WebDriverManager.chromedriver().setup();
-			driver = new ChromeDriver();
+			
+			ChromeOptions co = new ChromeOptions();
+			co.addArguments("--disable-notifications");
+			driver = new ChromeDriver(co);
 			ppty = commonutilities.CommonFunctions.getObjDetails();
-			System.out.println("Aapplication Login");
+			System.out.println("Application Login");
 			driver.manage().window().maximize();
 			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));		
 
