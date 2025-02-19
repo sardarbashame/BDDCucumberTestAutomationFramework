@@ -34,13 +34,13 @@ public class EstimateCreationFlowStep2 extends CommonFunctions {
 	@FindBy(xpath = "(//div[text()='#Tech'])[1]")
 	WebElement proc_label_noOfTech;
 	
-	@FindBy(xpath = "(//div[text()='#Days'])[4]")
+	@FindBy(xpath = "(//div[text()='#Days'])[2]")
 	WebElement raw_label_noOfDays;
 
-	@FindBy(xpath = "(//div[text()='#hrs/Day'])[4]")
+	@FindBy(xpath = "(//div[text()='#hrs/Day'])[2]")
 	WebElement raw_label_noOfHrsDay;
 	
-	@FindBy(xpath = "(//div[text()='#Tech'])[4]")
+	@FindBy(xpath = "(//div[text()='#Tech'])[2]")
 	WebElement raw_label_noOfTech;
 	
 	@FindBy(xpath = "(//div[text()='#Days'])[2]")
