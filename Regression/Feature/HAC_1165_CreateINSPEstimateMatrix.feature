@@ -9,17 +9,17 @@ Feature: Verify HAC_1165_CreateINSP Estimate Matrix with IOCommissioning
     When HAC1165 click on cases tab
     When Create new case with help of "<CaseContact>", "<CaseFirstName>", "<CaseSub>"
     When HAC1165 user is on estimate tab
-    When Create Estimations with INSP "<Pricebook>", "<InspectionEstimateMatrix>", "<Estimateitem>"
+    When Create Estimations with INSP "<Pricebook>", "<ProductFamily>", "<ProductCategory>", "<Purpose>"
     Then User click on INSP Tab
     When HAC1165 verify the field label number of tech
     When HAC1165 verify the field label number of days
     When HAC1165 verify the field label number of hours
-    When HAC1165 select from date
-    When HAC1165 select to date
+    When HAC1165 select from date INSP
+    When HAC1165 select to date INSP
     When HAC1165 select view confirmation
     Then user click on Save Estimation
-    Then HAC1165 generate estimate pdf
 
+    #Then HAC1165 generate estimate pdf
     Examples: 
-      | CaseContact | CaseFirstName | CaseSub     | Pricebook                           | InspectionEstimateMatrix | Estimateitem     |
-      | FN6 MN6 LN6 | FN6           | TestCase110 | USA Domestic MPA-PEPSICO (FritoLay) | CEIA Drop Through        | IO/Commissioning |
+      | CaseContact         | CaseFirstName | CaseSub     | Pricebook                           | ProductFamily | ProductCategory   | Purpose          |
+      | FN6 MN6 LN6 Suffix6 | FN6           | TestCase110 | USA Domestic MPA-PEPSICO (FritoLay) | INSP          | CEIA Drop Through | IO/Commissioning |

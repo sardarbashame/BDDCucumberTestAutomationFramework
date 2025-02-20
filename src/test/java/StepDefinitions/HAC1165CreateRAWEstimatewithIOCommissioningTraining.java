@@ -76,7 +76,7 @@ public class HAC1165CreateRAWEstimatewithIOCommissioningTraining extends CommonF
 	@When("HAC1165RCT verify the field value number of tech")
 	public void HAC1165RCT_verify_the_field_value_number_of_tech() throws InterruptedException, IOException {
 		estimateCreationFlowStep2 = new EstimateCreationFlowStep2();
-		numberoftech = estimateCreationFlowStep2.NumberOfTech();
+		numberoftech = estimateCreationFlowStep2.NumberOfTechValue();
 		Assert.assertEquals(numberoftech,"2");
 	}
 	@When("HAC1165RCT verify the field label number of days")
