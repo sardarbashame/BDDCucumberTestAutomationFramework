@@ -675,7 +675,7 @@ public class HomePage extends CommonFunctions {
 		// scroll to Type field
 //		js.executeScript("var result = document.evaluate(\"//label[text()='Sales Order']\", document.body, null, XPathResult.ANY_TYPE, null);var input = result.iterateNext();input.scrollIntoView();");
 		expWaitToBeClickable(casetype);
-		casetype.click();
+		javascriptClick(casetype);
 		Thread.sleep(1000);
 		casetypebilling.click();
 		Thread.sleep(1000);
