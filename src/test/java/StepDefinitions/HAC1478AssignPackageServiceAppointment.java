@@ -116,7 +116,7 @@ public class HAC1478AssignPackageServiceAppointment extends CommonFunctions {
 	@When("HAC1478pkg verify the field label number of tech")
 	public void HAC1478pkg_verify_the_field_label_number_of_tech() throws InterruptedException, IOException {
 		estimateCreationFlowStep2 = new EstimateCreationFlowStep2();
-		numberoftechpresent = estimateCreationFlowStep2.PROCNumberOfTech();
+		numberoftechpresent = estimateCreationFlowStep2.NumberOfTech();
 		Assert.assertTrue(numberoftechpresent);
 	}
 

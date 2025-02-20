@@ -104,14 +104,14 @@ public class HAC1021CreatePROCandPKGEstimateswithIOCommissioningTrainingTesting 
 	@When("HAC1165PICTT verify the field label number of tech")
 	public void HAC1165PICTT_verify_the_field_label_number_of_tech() throws InterruptedException, IOException {
 		estimateCreationFlowStep2 = new EstimateCreationFlowStep2();
-		numberoftechpresent = estimateCreationFlowStep2.PROCNumberOfTech();
+		numberoftechpresent = estimateCreationFlowStep2.NumberOfTech();
 		Assert.assertTrue(numberoftechpresent);
 	}
 
 	@When("HAC1165PICTT verify the field value number of tech")
 	public void HAC1165PICTT_verify_the_field_value_number_of_tech() throws InterruptedException, IOException {
 		estimateCreationFlowStep2 = new EstimateCreationFlowStep2();
-		numberoftech = estimateCreationFlowStep2.NumberOfTech();
+		numberoftech = estimateCreationFlowStep2.NumberOfTechValue();
 		Assert.assertEquals(numberoftech,"2");
 	}
 	@When("HAC1165PICTT verify the field label number of days")

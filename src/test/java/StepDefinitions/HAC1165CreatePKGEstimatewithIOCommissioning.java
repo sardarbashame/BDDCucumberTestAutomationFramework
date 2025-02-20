@@ -98,7 +98,7 @@ public class HAC1165CreatePKGEstimatewithIOCommissioning extends CommonFunctions
 	@When("HAC1165PKGC select values on estimate flow step1")
 	public void HAC1165PKGC_select_values_on_estimate_flow_step1() throws InterruptedException, IOException {
 		estimateCreationFlowStep1 = new EstimateCreationFlowStep1();
-		estimateCreationFlowStep1.PKGEstimateFlowStep1("CANADA Domestic Market Rate",
+		estimateCreationFlowStep1.PKGEstimateFlowStep1("CANADA Domestic Market Rate","PKG",
 				"CCW/H&C Shuttle/ DAFF", "IO/Commissioning");
 	}
 		
@@ -111,14 +111,14 @@ public class HAC1165CreatePKGEstimatewithIOCommissioning extends CommonFunctions
 	@When("HAC1165PKGC verify the field label number of tech")
 	public void HAC1165PKGC_verify_the_field_label_number_of_tech() throws InterruptedException, IOException {
 		estimateCreationFlowStep2 = new EstimateCreationFlowStep2();
-		numberoftechpresent = estimateCreationFlowStep2.PROCNumberOfTech();
+		numberoftechpresent = estimateCreationFlowStep2.NumberOfTech();
 		Assert.assertTrue(numberoftechpresent);
 	}
 
 	@When("HAC1165PKGC verify the field value number of tech")
 	public void HAC1165PKGC_verify_the_field_value_number_of_tech() throws InterruptedException, IOException {
 		estimateCreationFlowStep2 = new EstimateCreationFlowStep2();
-		numberoftech = estimateCreationFlowStep2.NumberOfTech();
+		numberoftech = estimateCreationFlowStep2.NumberOfTechValue();
 		Assert.assertEquals(numberoftech,"2");
 	}
 	@When("HAC1165PKGC verify the field label number of days")
@@ -138,13 +138,13 @@ public class HAC1165CreatePKGEstimatewithIOCommissioning extends CommonFunctions
 	@When("HAC1165PKGC select from date")
 	public void HAC1165PKGC_seelct_from_date() throws InterruptedException, IOException {
 		estimateCreationFlowStep2 = new EstimateCreationFlowStep2();
-		estimateCreationFlowStep2.selectFromDate();
+		estimateCreationFlowStep2.selectFromDatePKG();
 	}
 
 	@When("HAC1165PKGC select to date")
 	public void HAC1165PKGC_seelct_to_date() throws InterruptedException, IOException {
 		estimateCreationFlowStep2 = new EstimateCreationFlowStep2();
-		estimateCreationFlowStep2.selectToDate();
+		estimateCreationFlowStep2.selectToDatePKG();
 	}
 
 	@When("HAC1165PKGC select view confirmation")

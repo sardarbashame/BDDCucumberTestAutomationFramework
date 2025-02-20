@@ -111,14 +111,14 @@ public class HAC1165CreatePROCEstimatewithIOCommissioning extends CommonFunction
 	@When("HAC1165 verify the field label number of tech")
 	public void HAC1165_verify_the_field_label_number_of_tech() throws InterruptedException, IOException {
 		estimateCreationFlowStep2 = new EstimateCreationFlowStep2();
-		numberoftechpresent = estimateCreationFlowStep2.PROCNumberOfTech();
+		numberoftechpresent = estimateCreationFlowStep2.NumberOfTech();
 		Assert.assertTrue(numberoftechpresent);
 	}
 
 	@When("HAC1165 verify the field value number of tech")
 	public void HAC1165_verify_the_field_value_number_of_tech() throws InterruptedException, IOException {
 		estimateCreationFlowStep2 = new EstimateCreationFlowStep2();
-		numberoftech = estimateCreationFlowStep2.NumberOfTech();
+		numberoftech = estimateCreationFlowStep2.NumberOfTechValue();
 		Assert.assertEquals(numberoftech,"2");
 	}
 	@When("HAC1165 verify the field label number of days")
@@ -140,13 +140,22 @@ public class HAC1165CreatePROCEstimatewithIOCommissioning extends CommonFunction
 		estimateCreationFlowStep2 = new EstimateCreationFlowStep2();
 		estimateCreationFlowStep2.selectFromDate();
 	}
+	@When("HAC1165 select from date INSP")
+	public void HAC1165_seelct_from_dateINSP() throws InterruptedException, IOException {
+		estimateCreationFlowStep2 = new EstimateCreationFlowStep2();
+		estimateCreationFlowStep2.selectFromDateINSP();
+	}
 
 	@When("HAC1165 select to date")
 	public void HAC1165_seelct_to_date() throws InterruptedException, IOException {
 		estimateCreationFlowStep2 = new EstimateCreationFlowStep2();
 		estimateCreationFlowStep2.selectToDate();
 	}
-
+	@When("HAC1165 select to date INSP")
+	public void HAC1165_seelct_to_dateINSP() throws InterruptedException, IOException {
+		estimateCreationFlowStep2 = new EstimateCreationFlowStep2();
+		estimateCreationFlowStep2.selectToDateINSP();
+	}
 	@When("HAC1165 select view confirmation")
 	public void HAC1165_seelct_view_confirmation() throws InterruptedException, IOException {
 		estimateCreationFlowStep3 = new EstimateCreationFlowStep3();
@@ -171,11 +180,11 @@ public class HAC1165CreatePROCEstimatewithIOCommissioning extends CommonFunction
 		homePage.createNewCase(CaseContact, CaseSub);
 	}
 
-	@When("Create Estimations with INSP {string}, {string}, {string}")
-	public void createEstimationsINSP(String Pricebook, String InspectionEstimateMatrix, String Estimateitem)
+	@When("Create Estimations with INSP {string}, {string}, {string}, {string}")
+	public void createEstimationsINSP(String Pricebook, String ProductFamily, String ProductCategory, String Purpose)
 			throws Exception {
 		estimateCreationFlowStep1 = new EstimateCreationFlowStep1();
-		estimateCreationFlowStep1.createEstimationINSP(Pricebook, InspectionEstimateMatrix, Estimateitem);
+		estimateCreationFlowStep1.createEstimationINSP(Pricebook, ProductFamily,ProductCategory, Purpose);
 	}
 	
 	@When("Create Estimations with SPRAY {string}, {string}, {string}")

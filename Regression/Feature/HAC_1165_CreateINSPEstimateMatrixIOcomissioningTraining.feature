@@ -1,6 +1,6 @@
 Feature: Verify HAC_1165_CreateINSP Estimate Matrix with IOCommissioning + Training
 
- @regtest
+  @regtest @test4
   Scenario Outline: Login as service user and HAC_1165_Create INSP Estimate Matrix  IO/comissioning+Training
     Given Login as SERVICE SCH USER NAME
     When HAC1165 select the applicaton
@@ -9,19 +9,19 @@ Feature: Verify HAC_1165_CreateINSP Estimate Matrix with IOCommissioning + Train
     When click on cases tab
     When Create new case with help of "<CaseContact>", "<CaseFirstName>", "<CaseSub>"
     When HAC1165 user is on estimate tab
-    When Create Estimations with INSP "<Pricebook>", "<InspectionEstimateMatrix>", "<Estimateitem>"
+    When Create Estimations with INSP "<Pricebook>", "<ProductFamily>", "<ProductCategory>", "<Purpose>"
     Then User click on INSP Tab
     When HAC1165 verify the field label number of tech
- #   When HAC1165PKGC verify the field value number of tech
+    #   When HAC1165PKGC verify the field value number of tech
     When HAC1165 verify the field label number of days
     When HAC1165 verify the field label number of hours
-    When HAC1165 select from date
-    When HAC1165 select to date
+    When HAC1165 select from date INSP
+    When HAC1165 select to date INSP
     When HAC1165 select view confirmation
     Then user click on Save Estimation
     When User click on Show All quick link
     Then Click on QuoteEstimates and verify quote is created in the details page
 
     Examples: 
-      | CaseContact | CaseFirstName | CaseSub     | Pricebook                   | InspectionEstimateMatrix | Estimateitem                |
-      | FN6 MN6 LN6 | FN6           | TestCase100 | CANADA Domestic Market Rate | ISHIDA DACS              | IO/Commissioning + Training |
+      | CaseContact         | CaseFirstName | CaseSub     | Pricebook                   | ProductFamily | ProductCategory | Purpose                     |
+      | FN6 MN6 LN6 Suffix6 | FN6           | TestCase110 | CANADA Domestic Market Rate | INSP          | ISHIDA DACS     | IO/Commissioning + Training |
