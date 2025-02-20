@@ -11,10 +11,10 @@ Feature: HAC_1165_Verify raw estimate creation with IOcommissioning+Training+Tes
     When HAC1165 verify the pricebook options
     When HAC1165RCTT select values on estimate flow step1
     When HAC1165RCTT select RAW tab
-    #When HAC1165RCTT verify the field label number of tech
+    When HAC1165RCTT verify the field label number of tech
     #When HAC1165RCTT verify the field value number of tech
-    #When HAC1165RCTT verify the field label number of days
-    #When HAC1165RCTT verify the field label number of hours
+    When HAC1165RCTT verify the field label number of days
+    When HAC1165RCTT verify the field label number of hours
     When HAC1165RCTT select from date
     When HAC1165RCTT select to date
     When HAC1165RCTT select view confirmation
