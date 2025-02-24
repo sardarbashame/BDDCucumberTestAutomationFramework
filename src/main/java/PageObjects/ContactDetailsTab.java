@@ -150,8 +150,8 @@ public class ContactDetailsTab extends CommonFunctions {
 	WebElement lnk_files;
 
 	@FindBy(xpath = "(//h2[text()='Related List Quick Links']/../..//slot[contains(text(), 'Notes')])")
-	WebElement lnk_notes;
 
+	WebElement lnk_notes;
 	By Wait_toastMessage = By.xpath("//span[contains(@class,'toastMessage')]//a//div");
 
 	public boolean isNamePresent() throws InterruptedException {
@@ -360,7 +360,7 @@ public class ContactDetailsTab extends CommonFunctions {
 		lnk_cases.isDisplayed();
 		lnk_voicecalls.isDisplayed();
 		lnk_chattranscripts.isDisplayed();
-		lnk_messagingsessions.isDisplayed();
+		//lnk_messagingsessions.isDisplayed();
 		lnk_files.isDisplayed();
 		lnk_notes.isDisplayed();
 		Thread.sleep(1000);

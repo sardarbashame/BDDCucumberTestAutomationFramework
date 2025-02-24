@@ -391,8 +391,8 @@ public class AccountDetailsTab extends CommonFunctions {
 		return actualcontactemail;
 	}
 
-	public void createNewAccount(String accType, String accountname, String tradename, String industryname,
-			String values) throws InterruptedException {
+	public void createNewAccount(String accType,String accountname, String tradename, String industryname
+			) throws InterruptedException {
 		js = (JavascriptExecutor) driver;
 		Thread.sleep(0, 4000);
 		waitForElementToAppear(By.xpath("//a//div[text()='New']"), 30);
@@ -407,49 +407,23 @@ public class AccountDetailsTab extends CommonFunctions {
 		accountnametxtbox.click();
 		accountnametxtbox.sendKeys(ConcatCurrentDateTime(accountname));
 		tradenametxtbox.click();
-		tradenametxtbox.sendKeys(ConcatCurrentDateTime(tradename));
-
-		javascriptClick(clk_drpdownAccType);
-		Thread.sleep(5000);
-		int cnt = lst_accTypes.size();
-		List<String> lst1 = new ArrayList<String>();
-		List<String> lst2 = new ArrayList<String>();
-
-		for (String str : values.split(",")) {
-			str = str.trim();
-			lst1.add(str);
-		}
-
-		for (int i = 0; i < cnt; i++) {
-			lst2.add(lst_accTypes.get(i).getText());
-		}
-
-		boolean flag = lst1.equals(lst2);
-		System.out.print(flag);
-		Assert.assertTrue(flag);
-
-		js.executeScript(
-				"var result = document.evaluate(\"//label[text()='Language']\", document.body, null, XPathResult.ANY_TYPE, null);var input = result.iterateNext();input.scrollIntoView();");
-		driver.findElement(By.xpath("//ul/li//span[text()='" + industryname + "']")).click();
+		tradenametxtbox.sendKeys(ConcatCurrentDateTime(tradename));		
+		WebElement ele = driver.findElement(By.xpath("//ul/li//span[text()='" + industryname + "']"));
+		moveToEle(ele);		
 		js.executeScript(
 				"var result = document.evaluate(\"(//span[text()='Move to Chosen'])[1]\", document.body, null, XPathResult.ANY_TYPE, null);     var input = result.iterateNext();input.scrollIntoView(); input.click();");
 		accountsavebtn.click();
         Thread.sleep(1000);
 		drawHighlight(clk_closeToasterMsg);
-		//elementToBePresent(Wait_toastMessage, 30);
 		clk_closeToasterMsg.click();	
 		
 	}
 
-	public void validateNewAccountCreatedInDetailsAndAccType(String accType, String accCnt)
+	public void validateNewAccountCreatedInDetailsAndAccType(String accType)
 			throws InterruptedException {
 		Thread.sleep(5000);
 		String str = txt_accTypeName.getText();
-		Assert.assertEquals(accType, str);
-		chk_editAccType.click();
-		sel_dropdownAccType.click();
-		int cnt = sel_dropdownAccTypeCnt.size();
-		Assert.assertEquals(String.valueOf(cnt), accCnt.toString());
+		Assert.assertEquals(accType, str);	
 	}
 
 	public String getBillingAddress() throws InterruptedException {

@@ -1,7 +1,7 @@
 Feature: HAC_1561 New Account Creation Request from SF to SAP
 
  Scenario: New account creation request in SF
-    Given Login as system administrator
+   Given Login as SERVICE SCH USER NAME
     When HAC387 select the applicaton
     When HAC387 close all the open tabs
     When HAC387 close the bottom bar

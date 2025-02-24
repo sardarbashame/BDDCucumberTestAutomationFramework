@@ -76,7 +76,7 @@ public class HAC1165CreatePKGEstimatewithIOCommissioning extends CommonFunctions
 	}
 
 	@When("HAC1165PKGC create new case")
-	public void HAC1165PKGC_create_new_case() throws InterruptedException, IOException {
+	public void HAC1165PKGC_create_new_case() throws InterruptedException, Exception {
 		homePage = new HomePage();
 		homePage.createNewCase(ppty.getProperty("CASECONTACT"), ppty.getProperty("CASEFIRSTNAME"));
 

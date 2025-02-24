@@ -65,7 +65,7 @@ public class HAC550VerifyCaseCloseReasons extends CommonFunctions {
 	}
 
 	@When("HAC550 create new case")
-	public void HAC550_create_new_case() throws InterruptedException, IOException  {
+	public void HAC550_create_new_case() throws  Exception  {
 		homepage = new HomePage();
 		homepage.createNewCase(
 				ppty.getProperty("CASECONTACT"),

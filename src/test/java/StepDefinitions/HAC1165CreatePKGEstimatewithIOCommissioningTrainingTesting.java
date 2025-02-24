@@ -83,7 +83,7 @@ public class HAC1165CreatePKGEstimatewithIOCommissioningTrainingTesting extends 
 	}
 
 	@When("HAC1165PKGCTT create new case")
-	public void HAC1165PKGCTT_create_new_case() throws InterruptedException, IOException {
+	public void HAC1165PKGCTT_create_new_case() throws InterruptedException, Exception {
 		homePage = new HomePage();
 		homePage.createNewCase(ppty.getProperty("CASECONTACT"), ppty.getProperty("CASEFIRSTNAME"));
 

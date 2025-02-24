@@ -1,5 +1,6 @@
 Feature: Verify HAC_1165_CreateINSP Estimate Matrix
-@regtest
+
+  @regtest @Test1
   Scenario Outline: Login as service user and HAC_1165_Create Spray Estimate Matrix  IO/comissioning+Training
     Given Login as SERVICE SCH USER NAME
     When HAC1165 select the applicaton
@@ -21,5 +22,5 @@ Feature: Verify HAC_1165_CreateINSP Estimate Matrix
     Then Click on QuoteEstimates and verify quote is created in the details page
 
     Examples: 
-      | CaseContact | CaseFirstName | CaseSub     | Pricebook                              | SprayEstimateMatrix                    | Estimateitem                |
-      | FN6 MN6 LN6 | FN6           | TestCase100 | CANADA Domestic MPA-PEPSICO (FRITOLAY) | BASIC 1-STAGE / 2-STAGE Coating System | IO/Commissioning + Training |
+      | CaseContact         | CaseFirstName | CaseSub     | Pricebook                              | SprayEstimateMatrix                    | Estimateitem                |
+      | FN6 MN6 LN6 Suffix6 | FN6           | TestCase100 | CANADA Domestic MPA-PEPSICO (FRITOLAY) | BASIC 1-STAGE / 2-STAGE Coating System | IO/Commissioning + Training |

@@ -30,6 +30,7 @@ public class SelectApplication extends CommonFunctions {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 		driver.findElement(By.xpath("//p[.//*[text()='" + appname + "']]")).click();
 		Thread.sleep(12000);
-		zoomOut(2);
+		//zoomOut(4);
+		zoomOutWithJS("70%");
 	}
 }

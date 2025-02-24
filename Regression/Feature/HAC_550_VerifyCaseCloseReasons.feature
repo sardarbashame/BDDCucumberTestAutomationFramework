@@ -2,7 +2,7 @@ Feature: HAC_550_Verify the case close reasons
 
   @regtest
   Scenario: Login as service manager and verify the case closure reasons
-    Given HAC550 login as a service manager
+    Given Login as SERVICE SCH USER NAME
     When HAC550 select the applicaton
     When HAC550 close all the open tabs
     When HAC550 close the bottom bar

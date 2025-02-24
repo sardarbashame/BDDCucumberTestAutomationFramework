@@ -24,8 +24,6 @@ public class GlobalSearch extends CommonFunctions {
 	@FindBy(xpath = "//input[@type='search' and @placeholder='Search...']")
 	WebElement sel_searchAccountAndSelect;
 
-	@FindBy(xpath = "(//span[@title='Test Customer Account11'])")
-	WebElement ipt_testCustomerAcc;
 
 	By wait_details = By.xpath("//li//a[text()='Details']");
 
@@ -33,7 +31,9 @@ public class GlobalSearch extends CommonFunctions {
 		expWaitToBeClickable(btn_search);
 		btn_search.click();
 		Thread.sleep(3000);
-		sel_searchAccountAndSelect.sendKeys("Test Customer Account11");
+		String value2 =getPropertyValue("ExistingBillingAccount");
+		sel_searchAccountAndSelect.sendKeys(value2);
+		WebElement ipt_testCustomerAcc = driver.findElement(By.xpath("(//span[@title='"+value2+"'])"));
 		expWaitToBeClickable(ipt_testCustomerAcc);
 		ipt_testCustomerAcc.click();
 		Thread.sleep(5000);
