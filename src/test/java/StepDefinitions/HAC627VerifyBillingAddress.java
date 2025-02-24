@@ -58,8 +58,9 @@ public class HAC627VerifyBillingAddress extends CommonFunctions {
 		System.out.println(billingaddress);
 		String formattedbillingaddress = billingaddress.replace("\n", "");
 		System.out.println(formattedbillingaddress);
+		String value2 =getPropertyValue("billingaddress");
 
-		if (formattedbillingaddress.contains("14287 Misty Meadow LnHouston, 77079United States")) {
+		if (formattedbillingaddress.contains(value2)) {
 			assertTrue(true);
 		} else {
 			assertTrue(false);

@@ -67,7 +67,7 @@ public class HAC408VerifyAddCaseTeam extends CommonFunctions {
 	}
 
 	@When("HAC408 create new case")
-	public void HAC408_create_new_case() throws InterruptedException, IOException  {
+	public void HAC408_create_new_case() throws  Exception  {
 		homepage = new HomePage();
 		homepage.createNewCase(
 				ppty.getProperty("CASECONTACT"),

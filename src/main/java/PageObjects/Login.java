@@ -1,6 +1,7 @@
 package PageObjects;
 
 import java.time.Duration;
+import java.util.List;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -23,6 +24,10 @@ public class Login extends CommonFunctions {
 
 	@FindBy(id = "Login")
 	WebElement Loginele;
+	
+	@FindBy(xpath = "//h2[text() = 'Register Your Mobile Phone']//parent::div//following-sibling::div//a[contains(text(), 'My Phone')]")
+	List<WebElement> registerPhonePrompt;
+
 
 	public void goTo(String URL) {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
@@ -47,6 +52,14 @@ public class Login extends CommonFunctions {
 		passwordele.sendKeys(password);
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		Loginele.click();
+		
+		int cnt = registerPhonePrompt.size();
+		System.out.println("Before If Register mobile prompt is displayed " + cnt);
+		if(cnt>=1)
+		{
+			System.out.println("Register mobile prompt is displayed " + cnt);
+			registerPhonePrompt.get(0).click();			
+		}
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 
 	}

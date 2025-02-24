@@ -1,3 +1,4 @@
+
 Feature: HAC_316_create view edit transfer a case
 
   @regtest
@@ -19,7 +20,7 @@ Feature: HAC_316_create view edit transfer a case
     When HAC316 create new case
     Then HAC316 update case status to In Progress
     Then HAC316 save the case
-
+ 
   @regtest
   Scenario Outline: Login as service technician and transfer the case status
     Given Login as SERVICE SCH USER NAME

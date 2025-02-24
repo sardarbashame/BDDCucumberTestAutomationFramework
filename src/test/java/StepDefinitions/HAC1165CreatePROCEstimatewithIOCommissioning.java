@@ -83,7 +83,7 @@ public class HAC1165CreatePROCEstimatewithIOCommissioning extends CommonFunction
 	}
 
 	@When("HAC1165 create new case")
-	public void HAC1165_create_new_case() throws InterruptedException, IOException {
+	public void HAC1165_create_new_case() throws InterruptedException, Exception {
 		homePage = new HomePage();
 		homePage.createNewCase(getTestData("CONTACT_NAME"), getTestData("CASE_SUB"));
 

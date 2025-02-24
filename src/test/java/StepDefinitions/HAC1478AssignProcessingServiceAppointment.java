@@ -87,7 +87,7 @@ public class HAC1478AssignProcessingServiceAppointment extends CommonFunctions {
 	}
 
 	@When("HAC1478 create new case")
-	public void HAC1478_create_new_case() throws InterruptedException, IOException {
+	public void HAC1478_create_new_case() throws Exception {
 		homePage = new HomePage();
 		homePage.createNewCase(ppty.getProperty("CASECONTACT"), ppty.getProperty("CASEFIRSTNAME"));
 

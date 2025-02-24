@@ -132,9 +132,9 @@ public class EstimateCreationFlowStep2 extends CommonFunctions {
 		Thread.sleep(2000);
 		waitForElementToAppear(By.xpath("(//button[text()='View Confirmation'])[1]"), 30);
 		expWaitToBeClickable(ipt_fromDate);
-		ipt_fromDate.click();
+		javascriptClick(ipt_fromDate);
 		expWaitToBeClickable(ipt_dateValueFromIsToday);
-		ipt_dateValueFromIsToday.click();
+		javascriptClick(ipt_dateValueFromIsToday);
 		Thread.sleep(2000);
 	}
 
@@ -142,9 +142,9 @@ public class EstimateCreationFlowStep2 extends CommonFunctions {
 		Thread.sleep(2000);
 		waitForElementToAppear(By.xpath("(//button[text()='View Confirmation'])[1]"), 30);
 		expWaitToBeClickable(ipt_toDate);
-		ipt_toDate.click();
+		javascriptClick(ipt_toDate);
 		expWaitToBeClickable(ipt_dateValueTO);
-		ipt_dateValueTO.click();
+		javascriptClick(ipt_dateValueTO);
 		Thread.sleep(3000);
 	}
 	
@@ -152,9 +152,9 @@ public class EstimateCreationFlowStep2 extends CommonFunctions {
 		Thread.sleep(2000);
 		waitForElementToAppear(By.xpath("(//button[text()='View Confirmation'])[1]"), 30);
 		expWaitToBeClickable(insp_ipt_fromDate);
-		insp_ipt_fromDate.click();
+		javascriptClick(insp_ipt_fromDate);
 		expWaitToBeClickable(ipt_dateValueFromIsToday);
-		ipt_dateValueFromIsToday.click();
+		javascriptClick(ipt_dateValueFromIsToday);
 		Thread.sleep(2000);
 	}
 	
@@ -180,9 +180,9 @@ public class EstimateCreationFlowStep2 extends CommonFunctions {
 		Thread.sleep(2000);
 		waitForElementToAppear(By.xpath("(//button[text()='View Confirmation'])[1]"), 30);
 		expWaitToBeClickable(pkg_ipt_fromDate);
-		pkg_ipt_fromDate.click();
+		javascriptClick(pkg_ipt_fromDate);
 		expWaitToBeClickable(ipt_dateValueFromIsToday);
-		ipt_dateValueFromIsToday.click();
+		javascriptClick(ipt_dateValueFromIsToday);
 		Thread.sleep(2000);
 	}
 	
@@ -214,10 +214,9 @@ public class EstimateCreationFlowStep2 extends CommonFunctions {
 	public void selectFromDateRAWTab() throws InterruptedException {
 		Thread.sleep(2000);
 		waitForElementToAppear(By.xpath("(//button[text()='View Confirmation'])[1]"), 30);
-		expWaitToBeClickable(raw_ipt_fromDate);
-		raw_ipt_fromDate.click();
+		javascriptClick(raw_ipt_fromDate);
 		expWaitToBeClickable(ipt_dateValueFromIsToday);
-		ipt_dateValueFromIsToday.click();
+		javascriptClick(ipt_dateValueFromIsToday);
 		Thread.sleep(2000);
 	}
 
@@ -225,9 +224,9 @@ public class EstimateCreationFlowStep2 extends CommonFunctions {
 		Thread.sleep(2000);
 		waitForElementToAppear(By.xpath("(//button[text()='View Confirmation'])[1]"), 30);
 		expWaitToBeClickable(raw_ipt_toDate);
-		raw_ipt_toDate.click();
+		javascriptClick(raw_ipt_toDate);
 		expWaitToBeClickable(raw_ipt_dateValueTO);
-		raw_ipt_dateValueTO.click();
+		javascriptClick(raw_ipt_dateValueTO);
 		Thread.sleep(3000);
 	}
 	

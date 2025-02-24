@@ -54,7 +54,7 @@ public class HAC316CreateViewEditTransferCase extends CommonFunctions {
 	}
 
 	@When("HAC316 create new case")
-	public void HAC316_create_new_case() throws InterruptedException, IOException  {
+	public void HAC316_create_new_case() throws InterruptedException, Exception  {
 		homePage = new HomePage();
 		homePage.createNewCase(
 				ppty.getProperty("CASECONTACT"),
@@ -77,7 +77,8 @@ public class HAC316CreateViewEditTransferCase extends CommonFunctions {
 	@Then("HAC316 transfer the case")
 	public void HAC316_transfer_the_case() throws InterruptedException, IOException  {
 		casedetails = new CaseDetailsTab();
-		casedetails.transferCase("Test Service Manager");
+		String str = getPropertyValue("transferOwner");
+		casedetails.transferCase(str);
 	}
 	
 

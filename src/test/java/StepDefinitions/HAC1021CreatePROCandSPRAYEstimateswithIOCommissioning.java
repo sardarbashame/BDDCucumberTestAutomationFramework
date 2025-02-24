@@ -76,7 +76,7 @@ public class HAC1021CreatePROCandSPRAYEstimateswithIOCommissioning extends Commo
 	}
 
 	@When("HAC1165PICT create new case")
-	public void HAC1165PICT_create_new_case() throws InterruptedException, IOException {
+	public void HAC1165PICT_create_new_case() throws InterruptedException, Exception {
 		homePage = new HomePage();
 		homePage.createNewCase(ppty.getProperty("CASECONTACT"), ppty.getProperty("CASEFIRSTNAME"));
 

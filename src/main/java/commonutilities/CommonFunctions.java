@@ -322,6 +322,13 @@ public class CommonFunctions extends BaseTest {
 			e.printStackTrace();
 		}
 	}
+	public void zoomOutWithJS(String str)
+	{
+		// JavaScript to zoom out
+        String script = "document.body.style.zoom='"+str+"';"; // Adjust the percentage as needed
+        js = ((JavascriptExecutor) driver);
+		js.executeScript(script);
+	}
 	public static void loadBaseURL() throws Exception {
 		String env = System.getProperty("env");
 		switch (env.toUpperCase()) {
@@ -375,5 +382,19 @@ public class CommonFunctions extends BaseTest {
 			pwd = ppty.getProperty(str);
 		}
 		return pwd;
+	}
+	public static String getPropertyValue(String key) {
+		String Uname = null;
+		String env = System.getProperty("env");
+		String str = env + "_" + key;
+
+		if (env.toUpperCase().equals("QA")) {
+			Uname = ppty.getProperty(str);
+		} else if (env.toUpperCase().equals("DEV4")) {
+			Uname = ppty.getProperty(str);
+		} else if (env.toUpperCase().equals("DEV")) {
+			Uname = ppty.getProperty(str);
+		}
+		return Uname;
 	}
 }

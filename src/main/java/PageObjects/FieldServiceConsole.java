@@ -27,7 +27,7 @@ public class FieldServiceConsole extends CommonFunctions {
 	@FindBy(xpath = "//a[contains(text(),'Related Records')]")
 	WebElement Assets_RelatedTab;
 
-	@FindBy(xpath = "//a[text() = 'Daily Notes']")
+	@FindBy(xpath = "//a[text() = 'Daily Notes & Punch List']")
 	WebElement clk_dailyNotes;
 
 	@FindBy(xpath = "//a[text() = 'Field Service Report']")

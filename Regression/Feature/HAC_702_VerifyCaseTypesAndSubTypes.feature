@@ -2,7 +2,7 @@ Feature: HAC_702_Verify the case types and subtypes
 
   @regtest
   Scenario: Login as service manager and verify the case types and subtypes
-    Given HAC702 login as a service manager
+   Given Login as SERVICE SCH USER NAME
     When HAC702 select the applicaton
     When HAC702 close all the open tabs
     When HAC702 close the bottom bar

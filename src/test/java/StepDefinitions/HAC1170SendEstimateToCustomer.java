@@ -82,7 +82,7 @@ public class HAC1170SendEstimateToCustomer extends CommonFunctions {
 	}
 
 	@When("HAC1170 create new case")
-	public void HAC1170_create_new_case() throws InterruptedException, IOException  {
+	public void HAC1170_create_new_case() throws  Exception  {
 		homePage = new HomePage();
 		homePage.createNewCase(
 				getObjDetails().getProperty("CASECONTACT"),
