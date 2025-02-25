@@ -114,7 +114,7 @@ public class FieldServiceConsole extends CommonFunctions {
 	@FindBy(xpath = "(//button[text() = 'Next'])[last()]")
 	WebElement btn_nextFA;
 
-	@FindBy(xpath = "(//span[text() = 'Title']//parent::label//following::input)[1]")
+	@FindBy(xpath = "(//span[text() = 'Name']//parent::label//following::input)[1]")
 	WebElement ipt_title;
 
 	@FindBy(xpath = "(//span[text() = 'Work Plan']//parent::label//following::input)[1]")

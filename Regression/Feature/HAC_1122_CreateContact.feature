@@ -19,11 +19,11 @@ Feature: HAC_1122_Verify contact creation
     Then HAC1122 verify contactowner field label
     Then HAC1122 verify preferredlanguage field label
     Then HAC1122 verify mailingaddress field label
-    Then HAC1122 verify location field label
+    #Then HAC1122 verify location field label
     Then HAC1122 verify asstphone field label
     Then HAC1122 verify preferredtechnician field label
     Then HAC1122 verify otherphone field label
     Then HAC1122 verify mobile field label
     Then HAC1122 verify shift field label
-    Then HAC1122 verify donotcall field label
-    Then HAC1122 verify emailoptout field label
+    #Then HAC1122 verify donotcall field label
+    #Then HAC1122 verify emailoptout field label

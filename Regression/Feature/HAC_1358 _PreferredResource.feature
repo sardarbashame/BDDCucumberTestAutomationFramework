@@ -1,5 +1,5 @@
 Feature: HAC_1358 _Preferred Resource
-@regtest @Test2
+@regtest
   Scenario: Login as service user and HAC_1358 _Preferred Resource
     Given Login as SERVICE SCH USER NAME
     When HAC1478 select the applicaton
