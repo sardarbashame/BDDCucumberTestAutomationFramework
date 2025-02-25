@@ -1,6 +1,6 @@
 Feature: Verify HAC_1165_CreateINSP Estimate Matrix with IOCommissioning + Training
 
-  @regtest @test4
+  @regtest
   Scenario Outline: Login as service user and HAC_1165_Create INSP Estimate Matrix  IO/comissioning+Training
     Given Login as SERVICE SCH USER NAME
     When HAC1165 select the applicaton

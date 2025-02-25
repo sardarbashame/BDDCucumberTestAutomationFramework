@@ -85,7 +85,7 @@ public class HAC1367CreateCaseAssetsbyGuidedFlow extends CommonFunctions {
 	}
 
 	@When("HAC1367 create new case")
-	public void HAC1367_create_new_case() throws InterruptedException, IOException  {
+	public void HAC1367_create_new_case() throws Exception  {
 		homePage = new HomePage();
 		homePage.createNewCase(
 				getObjDetails().getProperty("CASECONTACT"),

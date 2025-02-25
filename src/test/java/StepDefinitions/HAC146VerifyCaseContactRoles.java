@@ -49,7 +49,7 @@ public class HAC146VerifyCaseContactRoles extends CommonFunctions {
 	}
 
 	@When("HAC146 create new case")
-	public void HAC146_create_new_case() throws InterruptedException, IOException {
+	public void HAC146_create_new_case() throws InterruptedException, Exception {
 		homePage = new HomePage();
 		homePage.createNewCase(ppty.getProperty("CASECONTACT"), ppty.getProperty("CASEFIRSTNAME"));
 	}

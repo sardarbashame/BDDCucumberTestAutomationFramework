@@ -89,7 +89,7 @@ public class HAC1166CreateEstimateInDraftStatus extends CommonFunctions {
 	}
 
 	@When("HAC1166 create new case")
-	public void HAC1166_create_new_case() throws InterruptedException, IOException  {
+	public void HAC1166_create_new_case() throws  Exception  {
 		homePage = new HomePage();
 		homePage.createNewCase(
 				getObjDetails().getProperty("CASECONTACT"),

@@ -21,8 +21,8 @@ public class CaseRelatedListQuickLinks extends CommonFunctions {
 		PageFactory.initElements(new AjaxElementLocatorFactory(driver, 10), this);
 	}
 
-	@FindBy(xpath = "//slot[text()='Work Orders (0)']/..")
-	WebElement relatedlistlnk_workorder;
+	@FindBy(xpath = "//button[text() = 'Create Work Order']")
+	WebElement btnworkorder;
 	
 	@FindBy(xpath = "//slot[contains(text(), 'Case Team')]/..")
 	WebElement relatedlistlnk_caseteam;
@@ -59,9 +59,9 @@ public class CaseRelatedListQuickLinks extends CommonFunctions {
 	
 	public void clickWorkOrderLink() throws InterruptedException {
 		Thread.sleep(4000);
-		expWaitToBeClickable(relatedlistlnk_workorder);
+		expWaitToBeClickable(btnworkorder);
 		js = (JavascriptExecutor) driver;
-		js.executeScript("arguments[0].click();", relatedlistlnk_workorder);
+		js.executeScript("arguments[0].click();", btnworkorder);
 		Thread.sleep(5000);
 	}
 	

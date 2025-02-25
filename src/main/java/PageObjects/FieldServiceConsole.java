@@ -27,7 +27,7 @@ public class FieldServiceConsole extends CommonFunctions {
 	@FindBy(xpath = "//a[contains(text(),'Related Records')]")
 	WebElement Assets_RelatedTab;
 
-	@FindBy(xpath = "//a[text() = 'Daily Notes']")
+	@FindBy(xpath = "//a[text() = 'Daily Notes & Punch List']")
 	WebElement clk_dailyNotes;
 
 	@FindBy(xpath = "//a[text() = 'Field Service Report']")
@@ -114,7 +114,7 @@ public class FieldServiceConsole extends CommonFunctions {
 	@FindBy(xpath = "(//button[text() = 'Next'])[last()]")
 	WebElement btn_nextFA;
 
-	@FindBy(xpath = "(//span[text() = 'Title']//parent::label//following::input)[1]")
+	@FindBy(xpath = "(//span[text() = 'Name']//parent::label//following::input)[1]")
 	WebElement ipt_title;
 
 	@FindBy(xpath = "(//span[text() = 'Work Plan']//parent::label//following::input)[1]")

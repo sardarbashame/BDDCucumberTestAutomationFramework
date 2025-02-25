@@ -410,26 +410,17 @@ public class HomePage extends CommonFunctions {
 		nextbtn.click();
 		accountnametxtbox.click();
 		accountnametxtbox.sendKeys(accountname);
-		// txtbox_accountsite.click();
-		// txtbox_accountsite.sendKeys(accountsite);
 		txtbox_phone.click();
+		tradenametxtbox.sendKeys("HACTradeName");
 		txtbox_phone.sendKeys(phone);
-		// txtbox_fax.click();
-		// txtbox_fax.sendKeys(fax);
 		txtbox_email.click();
-		txtbox_email.sendKeys(email);
-		// txtbox_website.click();
-		// txtbox_website.sendKeys(website);
-		// tradenametxtbox.click();
-//		tradenametxtbox.sendKeys(tradename);
+		txtbox_email.sendKeys(email);	
 		Thread.sleep(2000);
-		driver.findElement(By.xpath("//ul/li//span[text()='" + industryname + "']")).click();
+		WebElement ele = driver.findElement(By.xpath("//ul/li//span[text()='" + industryname + "']"));
+		moveToEle(ele);
 		js.executeScript(
 				"var result = document.evaluate(\"(//span[text()='Move to Chosen'])[1]\", document.body, null, XPathResult.ANY_TYPE, null);     var input = result.iterateNext();input.scrollIntoView(); input.click();");
 
-		// ipt_ShippingAddress.sendKeys("100 1st street NY, USA");
-		Thread.sleep(3000);
-		// clk_ShippingAddress.click();
 		Thread.sleep(3000);
 		accountsavebtn.click();
 		waitForElementToAppear(By.xpath("//a[text()='Details']"), 30);
@@ -563,10 +554,10 @@ public class HomePage extends CommonFunctions {
 			String Phone, String title, String otherphone, String dept) throws InterruptedException {
 		js = (JavascriptExecutor) driver;
 		Thread.sleep(4000);
-		newcontactbtn.click();
-		ipt_name.click();
-		option_dr.click();
-		expWaitToBeClickable(ipt_firstname);
+		javascriptClick(newcontactbtn);
+		javascriptClick(ipt_name);
+		javascriptClick(option_dr);
+    	expWaitToBeClickable(ipt_firstname);
 		ipt_firstname.click();
 		ipt_firstname.sendKeys(FirstName);
 		expWaitToBeClickable(ipt_middlename);
@@ -577,10 +568,10 @@ public class HomePage extends CommonFunctions {
 		ipt_lastname.sendKeys(ConcatCurrentDateTime(LastName));
 		js.executeScript(
 				"var result = document.evaluate(\"//input[@name='lastName']\", document.body, null, XPathResult.ANY_TYPE, null);     var input = result.iterateNext();input.scrollIntoView();");
-		ipt_accountname.click();
+		javascriptClick(ipt_accountname);
 		ipt_accountname.sendKeys(AccountName);
 		Thread.sleep(3000);
-		select_accountname.click();
+		javascriptClick(select_accountname);
 		ipt_contacttitle.sendKeys(title);
 		ipt_contactemail.sendKeys(Email);
 		Thread.sleep(2000);
@@ -662,22 +653,20 @@ public class HomePage extends CommonFunctions {
 		Thread.sleep(0, 4000);
 	}
 
-	public void createNewCase(String contname, String sub) throws InterruptedException {
+	public void createNewCase(String contname, String sub) throws Exception {
 		waitForElementToAppear(By.xpath("//a//div[text()='New']"), 30);
 		expWaitToBeClickable(newcasebtn);
 		newcasebtn.click();
 		contactnametxtbox.click();
-		contactnametxtbox.sendKeys(contname);
-		driver.findElement(By.xpath("//ul//li//*[@title ='" + contname + "']")).click();
+		clickDrpDownAndSelValue(contactnametxtbox, contname);
+		javascriptClick(clkproductfamily);
 		Thread.sleep(1000);
-		clkproductfamily.click();
-		clkprocoption.click();
+		javascriptClick(clkprocoption);
 		// scroll to Type field
-//		js.executeScript("var result = document.evaluate(\"//label[text()='Sales Order']\", document.body, null, XPathResult.ANY_TYPE, null);var input = result.iterateNext();input.scrollIntoView();");
 		expWaitToBeClickable(casetype);
 		javascriptClick(casetype);
 		Thread.sleep(1000);
-		casetypebilling.click();
+		javascriptClick(casetypebilling);
 		Thread.sleep(1000);
 		expWaitToBeClickable(casesubtypebillingdispute);
 		javascriptClick(casesubtypebillingdispute);
@@ -685,16 +674,16 @@ public class HomePage extends CommonFunctions {
 		js.executeScript("arguments[0].click();", caseorigin);
 		Thread.sleep(2000);
 		expWaitToBeClickable(email);
-		email.click();
+		javascriptClick(email);
 		// scroll to Subject field
 		js.executeScript(
 				"var result = document.evaluate(\"//label[text()='Case Origin']\", document.body, null, XPathResult.ANY_TYPE, null);var input = result.iterateNext();input.scrollIntoView();");
-		casesubject.click();
+		javascriptClick(casesubject);
 		Thread.sleep(0, 3000);
 		casesubject.sendKeys(sub);
 		expWaitToBeClickable(casedescription);
-		casedescription.click();
-		casesavebtn.click();
+		javascriptClick(casedescription);
+		javascriptClick(casesavebtn);
 		waitForElementToAppear(By.xpath("//a[text()='Details']"), 30);
 		Thread.sleep(4000);
 	}

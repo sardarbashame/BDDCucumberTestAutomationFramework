@@ -1,5 +1,7 @@
 package PageObjects;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -22,22 +24,34 @@ public class WorkOrder extends CommonFunctions {
 		PageFactory.initElements(new AjaxElementLocatorFactory(driver, 10), this);
 	}
 
-	@FindBy(xpath = "(//div[@title='New'])[last()]")
+	@FindBy(xpath = "//button[text() = 'Next']")
 	WebElement btn_New;
 	
-	@FindBy(xpath = "//span[text()='Work Type']/../..//input")
+	@FindBy(xpath = "//input[@name = 'Subject']")
+	WebElement Subject;
+	
+	@FindBy(xpath = "(//label[text()='Date']/..//input)[@name='Start_Date']")
+	WebElement ipt_fromDate;
+	
+	@FindBy(xpath = "(//label[text()='Date']/..//input)[@name='End_Date']")
+	WebElement ipt_endDate;
+	
+	@FindBy(xpath = "(//label[text()='Date']/..//input)[@name='Start_Date']//parent::div//button[@name = 'today']")
+	WebElement ipt_dateValueFromIsToday;
+	
+	@FindBy(xpath = "//label[text()='Work Type' ]/../..//input[@placeholder= 'Select Work Type...']")
 	WebElement txt_worktype;
 	
 	@FindBy(xpath = "//div[@title='Break Fix']//span")
 	WebElement res_worktype;
 	
-	@FindBy(xpath = "(//button//span[text()='Save'])[last()]")
+	@FindBy(xpath = "//button[text()='Select Assets']")
 	WebElement btn_save;
 	
-	@FindBy(xpath = "(//span[text() = 'Account'])[last()]//parent::label//following-sibling::div//a//span[@class = 'deleteIcon']")
+	@FindBy(xpath = "(//span[text() = 'Account'])[last()]//ancestor::lightning-icon//following-sibling::div//span[text() = 'Clear Selection']")
 	List<WebElement> icon_deleteAccount;
 	
-	@FindBy(xpath = "(//span[text() = 'Account'])[last()]//parent::label//following-sibling::div//input")
+	@FindBy(xpath = "//input[@placeholder = 'Search Accounts...']")
 	WebElement ipt_AccountName;
 	
 	@FindBy(xpath = "//div//span[contains(@class, 'toastMessage')]//a")
@@ -79,24 +93,25 @@ public class WorkOrder extends CommonFunctions {
 	@FindBy(xpath="//span[text()='Customer Facing']/../..//*[@aria-checked='true']")
 	WebElement chckbox_customerfacing;
 	
-	public void CreateWorkOrder() throws Exception {
-		Thread.sleep(2000);
-		expWaitToBeClickable(btn_New);
-		js = (JavascriptExecutor) driver;
-		js.executeScript("arguments[0].click();", btn_New);
-		Thread.sleep(5000);
+	public void CreateWorkOrder() throws Exception {		
+		Thread.sleep(5000);		
+		Subject.sendKeys(ConcatCurrentDateTime("TestAuto"));
 		txt_worktype.click();
 		Thread.sleep(2000);
-		clickDrpDownAndSelValue(txt_worktype, "Break Fix");
+		clickDrpDownAndSelValue(txt_worktype, "Repair");
 		Thread.sleep(4000);
-		Thread.sleep(4000);
-		scrollIntoView(ipt_AccountName);
+		selectFromDate();
+		selectToDateNext5days();
 		if(icon_deleteAccount.size()>0)
 		{
 			icon_deleteAccount.get(0).click();
 		}
+		scrollIntoView(ipt_AccountName);
 		ipt_AccountName.click();
-		clickDrpDownAndSelValue(ipt_AccountName, "United Batter and Breading");
+		clickDrpDownAndSelValue(ipt_AccountName, "Blue Rock Farm Fresh");
+		expWaitToBeClickable(btn_New);
+		js = (JavascriptExecutor) driver;
+	    js.executeScript("arguments[0].click();", btn_New);
 		btn_save.click();
 		Thread.sleep(4000);
 		if (toast_message.size() > 0) {
@@ -104,7 +119,29 @@ public class WorkOrder extends CommonFunctions {
 		}
 		Thread.sleep(4000);
 	}
-		
+	public void selectFromDate() throws InterruptedException {
+		Thread.sleep(2000);
+		expWaitToBeClickable(ipt_fromDate);
+		javascriptClick(ipt_fromDate);
+		expWaitToBeClickable(ipt_dateValueFromIsToday);
+		javascriptClick(ipt_dateValueFromIsToday);
+		Thread.sleep(2000);
+	}
+	public void selectToDateNext5days() throws InterruptedException {
+	    Thread.sleep(2000);
+	    expWaitToBeClickable(ipt_endDate);
+	    javascriptClick(ipt_endDate);
+	    Thread.sleep(2000);
+	    // Calculate the date 5 days from now
+	    LocalDate targetDate = LocalDate.now().plusDays(5);
+	    String formattedDate = targetDate.format(DateTimeFormatter.ofPattern("dd"));
+	    // Find and click the target date
+	    WebElement targetDateElement = driver.findElement(By
+	            .xpath("((//label[text()='Date']/..//input)[@name='End_Date']//parent::div//td//span[text() = '"+formattedDate+"'])[last()]"));
+	    expWaitToBeClickable(targetDateElement);
+	    javascriptClick(targetDateElement);
+	    Thread.sleep(3000);
+	}
 	public void CreateNewWorkStep(String title, String workplan) throws Exception {
 		Thread.sleep(4000);
 		expWaitToBeClickable(btn_New);

@@ -1,5 +1,5 @@
 Feature: HAC_1165_Verify processing estimate creation with IO Commissioning
-
+@regtest
  Scenario: Login as service scheduler and verify the processing estimate creation
     Given Login as SERVICE SCH USER NAME
     When HAC1165 select the applicaton

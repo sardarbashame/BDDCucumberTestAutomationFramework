@@ -297,9 +297,11 @@ public class CaseDetailsTab extends CommonFunctions {
 		waitForElementToAppear(By.xpath("//ul/li/a[text()='Details']"), 30);
 		clk_editStatus.click();
 		Thread.sleep(2000);
-		btn_status.click();
+		zoomOutWithJS("30%");
+		javascriptClick(btn_status);
 		Thread.sleep(2000);
-		driver.findElement(By.xpath("//span[@title='"+newcasestatus+"']")).click();
+		WebElement ele = driver.findElement(By.xpath("//span[@title='"+newcasestatus+"']"));
+		moveToEle(ele);
 		Thread.sleep(2000);
 		clk_SaveEdit.click();	
 		}
@@ -307,7 +309,7 @@ public class CaseDetailsTab extends CommonFunctions {
 	public void updateCaseStatusNew() throws InterruptedException {
 		Thread.sleep(0, 2000);
 		Thread.sleep(0, 2000);
-		btn_status.click();
+		javascriptClick(btn_status);
 		Thread.sleep(2000);
 		clk_escalated.click();
 		Thread.sleep(2000);

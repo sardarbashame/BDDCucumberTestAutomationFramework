@@ -51,19 +51,16 @@ public class HAC_AccountCreation extends CommonFunctions {
 		loginPO.LoginApp(Uname, pwd);
 	   
 	}
-	
-	@When("HAC145 create new Account based on Type {string}, {string}, {string}, {string}, {string}")
-	public void hac145_create_new_account_based_on_type(String AccType, String AccName, String TradeName,
-			String industryname, String dropDwnValues) throws Exception {
-		accountDetailsTab = new AccountDetailsTab();
-		accountDetailsTab.createNewAccount(AccType, AccName, TradeName, industryname, dropDwnValues);
-	}
 
-	@Then("HAC94 Verify Account type after new account created and displaying in the edit details page {string},{string}")
-	public void hac94_verify_account_type_after_new_account_created_and_displaying_in_the_edit_details_page(
-			String AccType, String accCnt) throws Exception {
-		accountDetailsTab.validateNewAccountCreatedInDetailsAndAccType(AccType, accCnt);
+	@When("HAC145 create new Account based on Type {string}, {string}, {string}, {string},")
+	public void hac145_create_new_account_based_on_type(String accType,String AccName, String TradeName, String industryname) throws Exception {
+		accountDetailsTab = new AccountDetailsTab();
+		accountDetailsTab.createNewAccount(accType,AccName, TradeName, industryname);
 	}
+	@Then("HAC94 Verify Account type after new account created and displaying in the edit details page {string}")
+	public void hac94_verify_account_type_after_new_account_created_and_displaying_in_the_edit_details_page(String AccType) throws Exception {
+		accountDetailsTab.validateNewAccountCreatedInDetailsAndAccType(AccType);
+	}	
 	
 	@When("click on the Resource prefence link and add new Resource preference {string}, {string},{string}")
 	public void click_on_the_resource_prefence_link_and_add_new_resource_preference(String ServiceResource,

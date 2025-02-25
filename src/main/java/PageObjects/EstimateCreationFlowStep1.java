@@ -153,16 +153,15 @@ public class EstimateCreationFlowStep1 extends CommonFunctions {
 		expWaitToBeClickable(clk_priceBook);
 		clk_priceBook.click();
 		Thread.sleep(3000);
-		driver.findElement(By.xpath("//span[text()='" + pricebook + "']")).click();
-		
+		WebElement ele2 = driver.findElement(By.xpath("//span[text()='" + pricebook + "']"));
+		moveToEle(ele2);
 		clk_productfamily.click();
-		driver.findElement(By.xpath("//span[text()='" + productfamily + "']")).click();
-		
+		moveToEle(driver.findElement(By.xpath("//span[text()='" + productfamily + "']")));
 		expWaitToBeClickable(clk_productcategory);
 		clk_productcategory.click();
 		Thread.sleep(3000);
-		driver.findElement(By.xpath("//span[text()='" + productcategory + "']")).click();
-		
+		WebElement ele = driver.findElement(By.xpath("//span[text()='" + productcategory + "']"));
+		moveToEle(ele);		
 		expWaitToBeClickable(clk_purpose);
 		clk_purpose.click();
 		Thread.sleep(3000);
@@ -245,18 +244,15 @@ public class EstimateCreationFlowStep1 extends CommonFunctions {
 		clk_priceBook.click();
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("//span[text()='" + pricebook + "']")).click();
-		dropdownclick_processingestimatematrix.click();
+		clk_productfamily.click();
 		driver.findElement(By.xpath("//span[text()='" + processingestimatematrixoption + "']")).click();
-		dropdownclick_sprayestimatematrix.click();
+		clk_productfamily.click();
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//span[text()='" + sprayestimatematrixoption + "']")).click();
-		expWaitToBeClickable(clk_estimateItems);
-		clk_estimateItems.click();
+		clk_purpose.click();
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("//span[text()='" + estimateitem + "']")).click();
-		Thread.sleep(3000);
-		btn_next.click();
-		Thread.sleep(0, 4000);
+		Thread.sleep(3000);	
 	}
 
 	public void VerifyPriceBookOptions() throws InterruptedException {
@@ -294,21 +290,22 @@ public class EstimateCreationFlowStep1 extends CommonFunctions {
 		Thread.sleep(3000);
 	}
 
-	public void createEstimationSPRAY(String pricebook, String SPRAYEstimateMatrix, String Estimateitem)
+	public void createEstimationSPRAY(String pricebook, String ProductFamily, String purpose)
 			throws InterruptedException {
 		expWaitToBeClickable(clk_priceBook);
 		clk_priceBook.click();
 		Thread.sleep(3000);
-		driver.findElement(By.xpath("//span[text()='" + pricebook + "']")).click();
-		expWaitToBeClickable(drpDown_sprayEstMatrix);
-		drpDown_sprayEstMatrix.click();
+		moveToEle(driver.findElement(By.xpath("//span[text()='" + pricebook + "']")));
+		clk_productfamily.click();
 		Thread.sleep(3000);
-		driver.findElement(By.xpath("//span[text()='" + SPRAYEstimateMatrix + "']")).click();
-		expWaitToBeClickable(clk_estimateItems);
-		clk_estimateItems.click();
-		driver.findElement(By.xpath("//span[text()='" + Estimateitem + "']")).click();
+		moveToEle(driver.findElement(By.xpath("//span[text()='SPRAY']")));
+		clk_productcategory.click();
+		moveToEle(driver.findElement(By.xpath("//span[text()='" + ProductFamily + "']")));
 		Thread.sleep(3000);
-		btn_next.click();
+		expWaitToBeClickable(clk_purpose);
+		clk_purpose.click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//span[text()='"+purpose+"']")).click();
 		Thread.sleep(0, 4000);
 	}
 	public void clickOnINSPTab() throws InterruptedException {
