@@ -1,11 +1,7 @@
 Feature: HAC_1166_Verify processing estimate creation in draft status
 
    Scenario: Login as service scheduler and verify the processing estimate creation in draft status
-<<<<<<< HEAD
 		Given Login as SERVICE SCH USER NAME
-=======
-    Given Login as SERVICE SCH USER NAME
->>>>>>> b03a87ae4bd31143d753a18130be181a6c103318
     When HAC1165 select the applicaton
     When HAC1165 close all the open tabs
     When HAC1165 close the bottom bar

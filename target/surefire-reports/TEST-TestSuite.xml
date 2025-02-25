@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="TestSuite" time="181.211" tests="3" errors="0" skipped="0" failures="3">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="TestSuite" time="196.265" tests="2" errors="0" skipped="0" failures="2">
   <properties>
     <property name="java.specification.version" value="23"/>
     <property name="webdriver.chrome.driver" value="C:\Users\dell\.cache\selenium\chromedriver\win64\133.0.6943.126\chromedriver.exe"/>
     <property name="sun.cpu.isalist" value="amd64"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
     <property name="java.class.path" value="C:\Users\dell\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20240824-1409\jars\plexus-classworlds-2.8.0.jar"/>
-    <property name="sun.awt.enableExtraMouseButtons" value="true"/>
     <property name="forkCount" value="0"/>
     <property name="java.vm.vendor" value="Eclipse Adoptium"/>
     <property name="sun.arch.data.model" value="64"/>
@@ -58,153 +57,102 @@
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
     <property name="env" value="QA"/>
     <property name="sun.os.patch.level" value=""/>
-    <property name="m2e.build.project.data.socket.port" value="51071"/>
+    <property name="m2e.build.project.data.socket.port" value="57449"/>
     <property name="native.encoding" value="Cp1252"/>
-    <property name="java.library.path" value="C:\Users\dell\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_23.0.2.v20250131-0604\jre\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:/Users/dell/.p2/pool/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_23.0.2.v20250131-0604/jre/bin/server;C:/Users/dell/.p2/pool/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_23.0.2.v20250131-0604/jre/bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Users\dell\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Java\jdk-17\bin;;C:\Windows\system32;;."/>
+    <property name="java.library.path" value="C:\Users\dell\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_23.0.2.v20250131-0604\jre\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:/Users/dell/.p2/pool/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_23.0.2.v20250131-0604/jre/bin/server;C:/Users/dell/.p2/pool/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_23.0.2.v20250131-0604/jre/bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Users\dell\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Java\jdk-17\bin;;C:\Windows\system32;;."/>
     <property name="java.vm.info" value="mixed mode, sharing"/>
     <property name="stderr.encoding" value="UTF-8"/>
     <property name="java.vendor" value="Eclipse Adoptium"/>
     <property name="java.vm.version" value="23.0.2+7"/>
-    <property name="classworlds.conf" value="E:\SeleniumWorkSpace\.metadata\.plugins\org.eclipse.m2e.launching\launches\m2conf6557766548999275423.tmp"/>
+    <property name="classworlds.conf" value="E:\SeleniumWorkSpace\.metadata\.plugins\org.eclipse.m2e.launching\launches\m2conf14323461875993694061.tmp"/>
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="67.0"/>
   </properties>
-  <testcase name="runScenario" classname="Runner.MyRunner" time="73.125">
-    <failure message="Error communicating with the remote browser. It may have died.&#10;Build info: version: &apos;4.8.2&apos;, revision: &apos;826dbfc730&apos;&#10;System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;23.0.2&apos;&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [14c8ed8dc099d606ca635004ebd83da0, findElement {using=xpath, value=//span[@title=&apos;Aljawad Alraqia Company&apos;]}]&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.127, chrome: {chromedriverVersion: 133.0.6943.126 (cffa127ce7b..., userDataDir: C:\Users\dell\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51098}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:51098/devtoo..., se:cdpVersion: 133.0.6943.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}&#10;Session ID: 14c8ed8dc099d606ca635004ebd83da0" type="org.openqa.selenium.remote.UnreachableBrowserException">org.openqa.selenium.remote.UnreachableBrowserException: 
-Error communicating with the remote browser. It may have died.
+  <testcase name="runScenario" classname="Runner.MyRunner" time="193.983">
+    <failure message="Expected condition failed: waiting for element to be clickable: [[ChromeDriver: chrome on WINDOWS (53863f4c65ed65b0880edbb584003e7c)] -&gt; xpath: (//label[text()=&apos;Date&apos;]/..//input)[@name=&apos;Start_Date&apos;]//parent::div//button[@name = &apos;today&apos;]] (tried for 40 second(s) with 500 milliseconds interval)&#10;Build info: version: &apos;4.8.2&apos;, revision: &apos;826dbfc730&apos;&#10;System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;23.0.2&apos;&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.127, chrome: {chromedriverVersion: 133.0.6943.126 (cffa127ce7b..., userDataDir: C:\Users\dell\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57454}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:57454/devtoo..., se:cdpVersion: 133.0.6943.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}&#10;Session ID: 53863f4c65ed65b0880edbb584003e7c" type="org.openqa.selenium.TimeoutException">org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for element to be clickable: [[ChromeDriver: chrome on WINDOWS (53863f4c65ed65b0880edbb584003e7c)] -> xpath: (//label[text()='Date']/..//input)[@name='Start_Date']//parent::div//button[@name = 'today']] (tried for 40 second(s) with 500 milliseconds interval)
 Build info: version: '4.8.2', revision: '826dbfc730'
 System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.2'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [14c8ed8dc099d606ca635004ebd83da0, findElement {using=xpath, value=//span[@title='Aljawad Alraqia Company']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.127, chrome: {chromedriverVersion: 133.0.6943.126 (cffa127ce7b..., userDataDir: C:\Users\dell\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51098}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:51098/devtoo..., se:cdpVersion: 133.0.6943.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 14c8ed8dc099d606ca635004ebd83da0
-Caused by: java.io.UncheckedIOException: java.net.SocketException: Connection reset
-Caused by: java.net.SocketException: Connection reset
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.127, chrome: {chromedriverVersion: 133.0.6943.126 (cffa127ce7b..., userDataDir: C:\Users\dell\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57454}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:57454/devtoo..., se:cdpVersion: 133.0.6943.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 53863f4c65ed65b0880edbb584003e7c
 </failure>
     <system-out><![CDATA[
 @test3
-Scenario: account name change request from SF        &amp#27;[90m# Regression/Feature/HAC_1561_AccountNameAndTaxIDChangeRequest.feature:3&amp#27;[0m
+Scenario: Login as service scheduler and assign processing service appointment to a service technician &amp#27;[90m# Regression/Feature/HAC_1478_AssignProcessingServiceAppointmentToResource.feature:3&amp#27;[0m
 Application Login
-  &amp#27;[32mGiven &amp#27;[0m&amp#27;[32mLogin as system administrator&amp#27;[0m                &amp#27;[90m# StepDefinitions.HAC_AccountCreation.login_as_system_administrator()&amp#27;[0m
-  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32mHAC387 select the applicaton&amp#27;[0m                  &amp#27;[90m# StepDefinitions.HAC387VerifyIndustry.HAC387_select_the_applicaton()&amp#27;[0m
-  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32mHAC387 close all the open tabs&amp#27;[0m                &amp#27;[90m# StepDefinitions.HAC387VerifyIndustry.HAC387_close_all_the_open_tabs()&amp#27;[0m
-  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32mHAC387 close the bottom bar&amp#27;[0m                   &amp#27;[90m# StepDefinitions.HAC387VerifyIndustry.HAC387_close_the_bottom_bar()&amp#27;[0m
-Aljawad Alraqia Company
-  &amp#27;[31mWhen &amp#27;[0m&amp#27;[31mHAC1561 select an account from global search&amp#27;[0m  &amp#27;[90m# StepDefinitions.HAC1561NewAccountCreationRequest.hac1561_select_an_account_from_global_search()&amp#27;[0m
-      &amp#27;[31morg.openqa.selenium.remote.UnreachableBrowserException: Error communicating with the remote browser. It may have died.
+  &amp#27;[32mGiven &amp#27;[0m&amp#27;[32mLogin as SERVICE SCH USER NAME&amp#27;[0m                                                                 &amp#27;[90m# StepDefinitions.HAC_AccountCreation.login_as_service_sch_user_name()&amp#27;[0m
+  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32mHAC1165 select the applicaton&amp#27;[0m                                                                   &amp#27;[90m# StepDefinitions.HAC1165CreatePROCEstimatewithIOCommissioning.HAC1165_select_the_application()&amp#27;[0m
+  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32mHAC1165 close all the open tabs&amp#27;[0m                                                                 &amp#27;[90m# StepDefinitions.HAC1165CreatePROCEstimatewithIOCommissioning.HAC145_close_all_the_open_tabs()&amp#27;[0m
+  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32mHAC1165 close the bottom bar&amp#27;[0m                                                                    &amp#27;[90m# StepDefinitions.HAC1165CreatePROCEstimatewithIOCommissioning.HAC387_close_the_bottom_bar()&amp#27;[0m
+  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32mHAC1165 click on cases tab&amp#27;[0m                                                                      &amp#27;[90m# StepDefinitions.HAC1165CreatePROCEstimatewithIOCommissioning.HAC1165_click_on_cases_tab()&amp#27;[0m
+  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32mHAC1165 create new case&amp#27;[0m                                                                         &amp#27;[90m# StepDefinitions.HAC1165CreatePROCEstimatewithIOCommissioning.HAC1165_create_new_case()&amp#27;[0m
+  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32mHAC1165 user is on estimate tab&amp#27;[0m                                                                 &amp#27;[90m# StepDefinitions.HAC1165CreatePROCEstimatewithIOCommissioning.HAC1165_user_is_on_estimate_tab()&amp#27;[0m
+  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32mHAC1165 verify the pricebook options&amp#27;[0m                                                            &amp#27;[90m# StepDefinitions.HAC1165CreatePROCEstimatewithIOCommissioning.HAC1165_verify_the_pricebook_options()&amp#27;[0m
+  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32mHAC1165 select values on estimate flow step1&amp#27;[0m                                                    &amp#27;[90m# StepDefinitions.HAC1165CreatePROCEstimatewithIOCommissioning.HAC1165_select_values_on_estimate_flow_step1()&amp#27;[0m
+  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32mHAC1165 verify the field label number of days&amp#27;[0m                                                   &amp#27;[90m# StepDefinitions.HAC1165CreatePROCEstimatewithIOCommissioning.HAC1165_verify_the_field_label_number_of_days()&amp#27;[0m
+  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32mHAC1165 verify the field label number of hours&amp#27;[0m                                                  &amp#27;[90m# StepDefinitions.HAC1165CreatePROCEstimatewithIOCommissioning.HAC1165_verify_the_field_label_number_of_hours()&amp#27;[0m
+  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32mHAC1165 verify the field label number of tech&amp#27;[0m                                                   &amp#27;[90m# StepDefinitions.HAC1165CreatePROCEstimatewithIOCommissioning.HAC1165_verify_the_field_label_number_of_tech()&amp#27;[0m
+  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32mHAC1165 select from date&amp#27;[0m                                                                        &amp#27;[90m# StepDefinitions.HAC1165CreatePROCEstimatewithIOCommissioning.HAC1165_seelct_from_date()&amp#27;[0m
+  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32mHAC1165 select to date&amp#27;[0m                                                                          &amp#27;[90m# StepDefinitions.HAC1165CreatePROCEstimatewithIOCommissioning.HAC1165_select_to_date()&amp#27;[0m
+  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32mHAC1478 select view confirmation&amp#27;[0m                                                                &amp#27;[90m# StepDefinitions.HAC1478AssignProcessingServiceAppointment.HAC1478_seelct_view_confirmation()&amp#27;[0m
+  &amp#27;[32mThen &amp#27;[0m&amp#27;[32mHAC1478 save estimate&amp#27;[0m                                                                           &amp#27;[90m# StepDefinitions.HAC1478AssignProcessingServiceAppointment.HAC1478_save_estimate()&amp#27;[0m
+  &amp#27;[32mThen &amp#27;[0m&amp#27;[32mHAC1478 click on work order link&amp#27;[0m                                                                &amp#27;[90m# StepDefinitions.HAC1478AssignProcessingServiceAppointment.HAC1478_click_on_work_order_link()&amp#27;[0m
+  &amp#27;[31mThen &amp#27;[0m&amp#27;[31mHAC1478 create work order&amp#27;[0m                                                                       &amp#27;[90m# StepDefinitions.HAC1478AssignProcessingServiceAppointment.HAC1478_create_work_order()&amp#27;[0m
+      &amp#27;[31morg.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: [[ChromeDriver: chrome on WINDOWS (53863f4c65ed65b0880edbb584003e7c)] -> xpath: (//label[text()='Date']/..//input)[@name='Start_Date']//parent::div//button[@name = 'today']] (tried for 40 second(s) with 500 milliseconds interval)
 Build info: version: '4.8.2', revision: '826dbfc730'
 System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.2'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [14c8ed8dc099d606ca635004ebd83da0, findElement {using=xpath, value=//span[@title='Aljawad Alraqia Company']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.127, chrome: {chromedriverVersion: 133.0.6943.126 (cffa127ce7b..., userDataDir: C:\Users\dell\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51098}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:51098/devtoo..., se:cdpVersion: 133.0.6943.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 14c8ed8dc099d606ca635004ebd83da0
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:567)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
-	at PageObjects.GlobalSearch.SelectFromGlobalSearch(GlobalSearch.java:54)
-	at StepDefinitions.HAC1561NewAccountCreationRequest.hac1561_select_an_account_from_global_search(HAC1561NewAccountCreationRequest.java:72)
-	at ✽.HAC1561 select an account from global search(file:///E:/SeleniumWorkSpace/HeatAndControlAutomation/Regression/Feature/HAC_1561_AccountNameAndTaxIDChangeRequest.feature:8)
-Caused by: java.io.UncheckedIOException: java.net.SocketException: Connection reset
-	at org.openqa.selenium.remote.http.netty.NettyHttpHandler.makeCall(NettyHttpHandler.java:73)
-	at org.openqa.selenium.remote.http.AddSeleniumUserAgent.lambda$apply$0(AddSeleniumUserAgent.java:42)
-	at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:56)
-	at org.openqa.selenium.remote.http.netty.NettyHttpHandler.execute(NettyHttpHandler.java:49)
-	at org.openqa.selenium.remote.http.AddSeleniumUserAgent.lambda$apply$0(AddSeleniumUserAgent.java:42)
-	at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:56)
-	at org.openqa.selenium.remote.http.netty.NettyClient.execute(NettyClient.java:99)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:183)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:158)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
-	at PageObjects.GlobalSearch.SelectFromGlobalSearch(GlobalSearch.java:54)
-	at StepDefinitions.HAC1561NewAccountCreationRequest.hac1561_select_an_account_from_global_search(HAC1561NewAccountCreationRequest.java:72)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at io.cucumber.java.Invoker.doInvoke(Invoker.java:66)
-	at io.cucumber.java.Invoker.invoke(Invoker.java:24)
-	at io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)
-	at io.cucumber.java.JavaStepDefinition.execute(JavaStepDefinition.java:29)
-	at io.cucumber.core.runner.CoreStepDefinition.execute(CoreStepDefinition.java:66)
-	at io.cucumber.core.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:63)
-	at io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)
-	at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:84)
-	at io.cucumber.core.runner.TestStep.run(TestStep.java:56)
-	at io.cucumber.core.runner.PickleStepTestStep.run(PickleStepTestStep.java:51)
-	at io.cucumber.core.runner.TestCase.run(TestCase.java:84)
-	at io.cucumber.core.runner.Runner.runPickle(Runner.java:75)
-	at io.cucumber.testng.TestNGCucumberRunner.lambda$runScenario$1(TestNGCucumberRunner.java:132)
-	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:137)
-	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
-	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:137)
-	at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:129)
-	at io.cucumber.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:35)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-	at org.testng.TestRunner.privateRun(TestRunner.java:794)
-	at org.testng.TestRunner.run(TestRunner.java:596)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-	at org.testng.TestNG.runSuites(TestNG.java:1063)
-	at org.testng.TestNG.run(TestNG.java:1031)
-	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:283)
-	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:75)
-	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:120)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray2(ReflectionUtils.java:186)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:161)
-	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:84)
-	at org.apache.maven.plugin.surefire.InPluginVMSurefireStarter.runSuitesInProcess(InPluginVMSurefireStarter.java:87)
-	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeProvider(AbstractSurefireMojo.java:1144)
-	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeAfterPreconditionsChecked(AbstractSurefireMojo.java:1002)
-	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.execute(AbstractSurefireMojo.java:848)
-	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:126)
-	at org.apache.maven.lifecycle.internal.MojoExecutor.doExecute2(MojoExecutor.java:328)
-	at org.apache.maven.lifecycle.internal.MojoExecutor.doExecute(MojoExecutor.java:316)
-	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:212)
-	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:174)
-	at org.apache.maven.lifecycle.internal.MojoExecutor.access$000(MojoExecutor.java:75)
-	at org.apache.maven.lifecycle.internal.MojoExecutor$1.run(MojoExecutor.java:162)
-	at org.apache.maven.plugin.DefaultMojosExecutionStrategy.execute(DefaultMojosExecutionStrategy.java:39)
-	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:159)
-	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:105)
-	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:73)
-	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:53)
-	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:118)
-	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:261)
-	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:173)
-	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:101)
-	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:906)
-	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:283)
-	at org.apache.maven.cli.MavenCli.main(MavenCli.java:206)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:255)
-	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:201)
-	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:361)
-	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:314)
-Caused by: java.net.SocketException: Connection reset
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.127, chrome: {chromedriverVersion: 133.0.6943.126 (cffa127ce7b..., userDataDir: C:\Users\dell\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57454}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:57454/devtoo..., se:cdpVersion: 133.0.6943.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 53863f4c65ed65b0880edbb584003e7c
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:87)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
+	at commonutilities.CommonFunctions.expWaitToBeClickable(CommonFunctions.java:69)
+	at PageObjects.WorkOrder.CreateWorkOrder(WorkOrder.java:109)
+	at StepDefinitions.HAC1478AssignProcessingServiceAppointment.HAC1478_create_work_order(HAC1478AssignProcessingServiceAppointment.java:182)
+	at ✽.HAC1478 create work order(file:///E:/SeleniumWorkSpace/HeatAndControlAutomation/Regression/Feature/HAC_1478_AssignProcessingServiceAppointmentToResource.feature:21)
+&amp#27;[0m
+  &amp#27;[36mThen &amp#27;[0m&amp#27;[36mHAC1478 create service appointments&amp#27;[0m                                                             &amp#27;[90m# StepDefinitions.HAC1478AssignProcessingServiceAppointment.HAC1478_create_service_appointments()&amp#27;[0m
+  &amp#27;[36mThen &amp#27;[0m&amp#27;[36mHAC1478 click service appointment link&amp#27;[0m                                                          &amp#27;[90m# StepDefinitions.HAC1478AssignProcessingServiceAppointment.HAC1478_click_service_appointment_link()&amp#27;[0m
+  &amp#27;[36mThen &amp#27;[0m&amp#27;[36mHAC1478 select a service appointment&amp#27;[0m                                                            &amp#27;[90m# StepDefinitions.HAC1478AssignProcessingServiceAppointment.HAC1478_select_a_service_appointment()&amp#27;[0m
+  &amp#27;[36mThen &amp#27;[0m&amp#27;[36mHAC1478 select a schedule start date&amp#27;[0m                                                            &amp#27;[90m# StepDefinitions.HAC1478AssignProcessingServiceAppointment.HAC1478_select_a_schedule_start_date()&amp#27;[0m
+  &amp#27;[36mThen &amp#27;[0m&amp#27;[36mHAC1478 select a schedule end date&amp#27;[0m                                                              &amp#27;[90m# StepDefinitions.HAC1478AssignProcessingServiceAppointment.HAC1478_select_a_schedule_end_date()&amp#27;[0m
+  &amp#27;[36mThen &amp#27;[0m&amp#27;[36mHAC1478 click related tab&amp#27;[0m                                                                       &amp#27;[90m# StepDefinitions.HAC1478AssignProcessingServiceAppointment.HAC1478_click_related_tab()&amp#27;[0m
+  &amp#27;[36mThen &amp#27;[0m&amp#27;[36mHAC1478 assign service resource&amp#27;[0m                                                                 &amp#27;[90m# StepDefinitions.HAC1478AssignProcessingServiceAppointment.HAC1478_assign_service_resource()&amp#27;[0m
+  &amp#27;[36mThen &amp#27;[0m&amp#27;[36mHAC1478 update sa status to dispatched&amp#27;[0m                                                          &amp#27;[90m# StepDefinitions.HAC1478AssignProcessingServiceAppointment.HAC1478_update_sa_satus_to_dispatched()&amp#27;[0m
+  &amp#27;[36mThen &amp#27;[0m&amp#27;[36mHAC1478 logout as service scheduler&amp#27;[0m                                                             &amp#27;[90m# StepDefinitions.HAC1478AssignProcessingServiceAppointment.HAC1478_logout_as_service_scheduler()&amp#27;[0m
+  &amp#27;[36mThen &amp#27;[0m&amp#27;[36mHAC1478 login as service technician&amp#27;[0m                                                             &amp#27;[90m# StepDefinitions.HAC1478AssignProcessingServiceAppointment.HAC1478_login_as_service_technician()&amp#27;[0m
+  &amp#27;[36mThen &amp#27;[0m&amp#27;[36mHAC1478 select the field service applicaton&amp#27;[0m                                                     &amp#27;[90m# StepDefinitions.HAC1478AssignProcessingServiceAppointment.HAC1478_select_the_field_service_applicaton()&amp#27;[0m
+  &amp#27;[36mThen &amp#27;[0m&amp#27;[36mHAC1478 select the service appointments tab&amp#27;[0m                                                     &amp#27;[90m# StepDefinitions.HAC1478AssignProcessingServiceAppointment.HAC1478_select_the_service_appointments_tab()&amp#27;[0m
+  &amp#27;[36mThen &amp#27;[0m&amp#27;[36mHAC1478 select all service appointments listview&amp#27;[0m                                                &amp#27;[90m# StepDefinitions.HAC1478AssignProcessingServiceAppointment.HAC1478_select_all_service_appointments_listview()&amp#27;[0m
+  &amp#27;[36mThen &amp#27;[0m&amp#27;[36mHAC1478 select dispatched service appointment&amp#27;[0m                                                   &amp#27;[90m# StepDefinitions.HAC1478AssignProcessingServiceAppointment.HAC1478_select_dispatched_service_appointment()&amp#27;[0m
+
+    Current Page URL is https://heatandcontrol--qa.sandbox.lightning.force.com/lightning/action/quick/Case.Create_Work_Order?objectApiName&context=RECORD_DETAIL&recordId=500bf000007LygHAAS&backgroundContext=%2Flightning%2Fr%2FCase%2F500bf000007LygHAAS%2Fview
+
+Current Page URL is https://heatandcontrol--qa.sandbox.lightning.force.com/lightning/action/quick/Case.Create_Work_Order?objectApiName&context=RECORD_DETAIL&recordId=500bf000007LygHAAS&backgroundContext=%2Flightning%2Fr%2FCase%2F500bf000007LygHAAS%2Fview
+
+    Embedding Refer Screenshot [image/png 107694 bytes]
+
+2025-02-25 19:19:27      E:\SeleniumWorkSpace\HeatAndControlAutomation\target\cucumberreports\Screenshots\embedded1.png
+last file is 2025-02-25 19:19:27=E:\SeleniumWorkSpace\HeatAndControlAutomation\target\cucumberreports\Screenshots\embedded1.png
+]]></system-out>
+    <system-err><![CDATA[SLF4J(W): No SLF4J providers were found.
+SLF4J(W): Defaulting to no-operation (NOP) logger implementation
+SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
+log4j:WARN No appenders could be found for logger (io.netty.util.internal.logging.InternalLoggerFactory).
+log4j:WARN Please initialize the log4j system properly.
+log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
+Starting ChromeDriver 133.0.6943.126 (cffa127ce7b6be72885391527c15b452056a2e81-refs/branch-heads/6943@{#1570}) on port 44819
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully on port 44819.
+Feb 25, 2025 7:16:17 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 133
+Feb 25, 2025 7:16:17 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$3
+WARNING: Unable to find version of CDP to use for . You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.8.2` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+Feb 25, 2025 7:19:27 PM org.openqa.selenium.remote.http.WebSocket$Listener onError
+WARNING: Connection reset
+java.net.SocketException: Connection reset
 	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:403)
 	at java.base/sun.nio.ch.SocketChannelImpl.implRead(SocketChannelImpl.java:435)
 	at java.base/sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:493)
@@ -220,274 +168,12 @@ Caused by: java.net.SocketException: Connection reset
 	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
 	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
 	at java.base/java.lang.Thread.run(Thread.java:1575)
-&amp#27;[0m
-  &amp#27;[36mWhen &amp#27;[0m&amp#27;[36mHAC1561 submit name and tax id change request&amp#27;[0m &amp#27;[90m# StepDefinitions.HAC1561NewAccountCreationRequest.hac1561_submit_name_and_tax_id_change_request()&amp#27;[0m
-      &amp#27;[31morg.openqa.selenium.remote.UnreachableBrowserException: Error communicating with the remote browser. It may have died.
-Build info: version: '4.8.2', revision: '826dbfc730'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.2'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [14c8ed8dc099d606ca635004ebd83da0, getCurrentUrl {}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.127, chrome: {chromedriverVersion: 133.0.6943.126 (cffa127ce7b..., userDataDir: C:\Users\dell\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51098}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:51098/devtoo..., se:cdpVersion: 133.0.6943.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 14c8ed8dc099d606ca635004ebd83da0
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:567)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:598)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:602)
-	at org.openqa.selenium.remote.RemoteWebDriver.getCurrentUrl(RemoteWebDriver.java:309)
-	at Hooks.hooksclass.tearDown(hooksclass.java:35)
-Caused by: java.io.UncheckedIOException: java.net.ConnectException: Connection refused: getsockopt: localhost/[0:0:0:0:0:0:0:1]:34829
-	at org.openqa.selenium.remote.http.netty.NettyHttpHandler.makeCall(NettyHttpHandler.java:73)
-	at org.openqa.selenium.remote.http.AddSeleniumUserAgent.lambda$apply$0(AddSeleniumUserAgent.java:42)
-	at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:56)
-	at org.openqa.selenium.remote.http.netty.NettyHttpHandler.execute(NettyHttpHandler.java:49)
-	at org.openqa.selenium.remote.http.AddSeleniumUserAgent.lambda$apply$0(AddSeleniumUserAgent.java:42)
-	at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:56)
-	at org.openqa.selenium.remote.http.netty.NettyClient.execute(NettyClient.java:99)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:183)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:158)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:598)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:602)
-	at org.openqa.selenium.remote.RemoteWebDriver.getCurrentUrl(RemoteWebDriver.java:309)
-	at Hooks.hooksclass.tearDown(hooksclass.java:35)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at io.cucumber.java.Invoker.doInvoke(Invoker.java:66)
-	at io.cucumber.java.Invoker.invoke(Invoker.java:24)
-	at io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)
-	at io.cucumber.java.JavaHookDefinition.execute(JavaHookDefinition.java:64)
-	at io.cucumber.core.runner.CoreHookDefinition.execute(CoreHookDefinition.java:46)
-	at io.cucumber.core.runner.HookDefinitionMatch.runStep(HookDefinitionMatch.java:21)
-	at io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)
-	at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:84)
-	at io.cucumber.core.runner.TestStep.run(TestStep.java:56)
-	at io.cucumber.core.runner.TestCase.run(TestCase.java:90)
-	at io.cucumber.core.runner.Runner.runPickle(Runner.java:75)
-	at io.cucumber.testng.TestNGCucumberRunner.lambda$runScenario$1(TestNGCucumberRunner.java:132)
-	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:137)
-	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
-	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:137)
-	at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:129)
-	at io.cucumber.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:35)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-	at org.testng.TestRunner.privateRun(TestRunner.java:794)
-	at org.testng.TestRunner.run(TestRunner.java:596)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-	at org.testng.TestNG.runSuites(TestNG.java:1063)
-	at org.testng.TestNG.run(TestNG.java:1031)
-	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:283)
-	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:75)
-	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:120)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray2(ReflectionUtils.java:186)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:161)
-	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:84)
-	at org.apache.maven.plugin.surefire.InPluginVMSurefireStarter.runSuitesInProcess(InPluginVMSurefireStarter.java:87)
-	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeProvider(AbstractSurefireMojo.java:1144)
-	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeAfterPreconditionsChecked(AbstractSurefireMojo.java:1002)
-	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.execute(AbstractSurefireMojo.java:848)
-	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:126)
-	at org.apache.maven.lifecycle.internal.MojoExecutor.doExecute2(MojoExecutor.java:328)
-	at org.apache.maven.lifecycle.internal.MojoExecutor.doExecute(MojoExecutor.java:316)
-	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:212)
-	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:174)
-	at org.apache.maven.lifecycle.internal.MojoExecutor.access$000(MojoExecutor.java:75)
-	at org.apache.maven.lifecycle.internal.MojoExecutor$1.run(MojoExecutor.java:162)
-	at org.apache.maven.plugin.DefaultMojosExecutionStrategy.execute(DefaultMojosExecutionStrategy.java:39)
-	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:159)
-	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:105)
-	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:73)
-	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:53)
-	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:118)
-	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:261)
-	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:173)
-	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:101)
-	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:906)
-	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:283)
-	at org.apache.maven.cli.MavenCli.main(MavenCli.java:206)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:255)
-	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:201)
-	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:361)
-	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:314)
-Caused by: java.net.ConnectException: Connection refused: getsockopt: localhost/[0:0:0:0:0:0:0:1]:34829
-	at org.asynchttpclient.netty.channel.NettyConnectListener.onFailure(NettyConnectListener.java:179)
-	at org.asynchttpclient.netty.channel.NettyChannelConnector$1.onFailure(NettyChannelConnector.java:108)
-	at org.asynchttpclient.netty.SimpleChannelFutureListener.operationComplete(SimpleChannelFutureListener.java:28)
-	at org.asynchttpclient.netty.SimpleChannelFutureListener.operationComplete(SimpleChannelFutureListener.java:20)
-	at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:590)
-	at io.netty.util.concurrent.DefaultPromise.notifyListeners0(DefaultPromise.java:583)
-	at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:559)
-	at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:492)
-	at io.netty.util.concurrent.DefaultPromise.setValue0(DefaultPromise.java:636)
-	at io.netty.util.concurrent.DefaultPromise.setFailure0(DefaultPromise.java:629)
-	at io.netty.util.concurrent.DefaultPromise.tryFailure(DefaultPromise.java:118)
-	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.fulfillConnectPromise(AbstractNioChannel.java:321)
-	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:337)
-	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:776)
-	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724)
-	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650)
-	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
-	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
-	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
-	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
-	at java.base/java.lang.Thread.run(Thread.java:1575)
-Caused by: io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: getsockopt: localhost/[0:0:0:0:0:0:0:1]:34829
-Caused by: java.net.ConnectException: Connection refused: getsockopt
-	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
-	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:682)
-	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:1062)
-	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:337)
-	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:334)
-	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:776)
-	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724)
-	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650)
-	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
-	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
-	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
-	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
-	at java.base/java.lang.Thread.run(Thread.java:1575)
-&amp#27;[0m
-]]></system-out>
-    <system-err><![CDATA[SLF4J(W): No SLF4J providers were found.
-SLF4J(W): Defaulting to no-operation (NOP) logger implementation
-SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
-log4j:WARN No appenders could be found for logger (io.netty.util.internal.logging.InternalLoggerFactory).
-log4j:WARN Please initialize the log4j system properly.
-log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
-Starting ChromeDriver 133.0.6943.126 (cffa127ce7b6be72885391527c15b452056a2e81-refs/branch-heads/6943@{#1570}) on port 34829
-Only local connections are allowed.
-Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
-ChromeDriver was started successfully on port 34829.
-Feb 25, 2025 10:52:03 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
-WARNING: Unable to find CDP implementation matching 133
-Feb 25, 2025 10:52:03 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$3
-WARNING: Unable to find version of CDP to use for . You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.8.2` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+
 ]]></system-err>
   </testcase>
-  <testcase name="runScenario" classname="Runner.MyRunner" time="103.971">
-    <failure message="invalid session id: session deleted as the browser has closed the connection&#10;from disconnected: Unable to receive message from renderer&#10;  (Session info: chrome=133.0.6943.127)&#10;Build info: version: &apos;4.8.2&apos;, revision: &apos;826dbfc730&apos;&#10;System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;23.0.2&apos;&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [010b075061265850b51dcfd403c0db51, findElement {using=xpath, value=//span[text()=&apos;Arizona&apos;]}]&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.127, chrome: {chromedriverVersion: 133.0.6943.126 (cffa127ce7b..., userDataDir: C:\Users\dell\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51225}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:51225/devtoo..., se:cdpVersion: 133.0.6943.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}&#10;Session ID: 010b075061265850b51dcfd403c0db51" type="org.openqa.selenium.NoSuchSessionException">org.openqa.selenium.NoSuchSessionException: 
-invalid session id: session deleted as the browser has closed the connection
-from disconnected: Unable to receive message from renderer
-  (Session info: chrome=133.0.6943.127)
-Build info: version: '4.8.2', revision: '826dbfc730'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.2'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [010b075061265850b51dcfd403c0db51, findElement {using=xpath, value=//span[text()='Arizona']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.127, chrome: {chromedriverVersion: 133.0.6943.126 (cffa127ce7b..., userDataDir: C:\Users\dell\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51225}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:51225/devtoo..., se:cdpVersion: 133.0.6943.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 010b075061265850b51dcfd403c0db51
-</failure>
-    <system-out><![CDATA[
-@test3
-Scenario: New account creation request in SF &amp#27;[90m# Regression/Feature/HAC_1561_NewAccountCreateRequest.feature:3&amp#27;[0m
-Application Login
-  &amp#27;[32mGiven &amp#27;[0m&amp#27;[32mLogin as SERVICE SCH USER NAME&amp#27;[0m       &amp#27;[90m# StepDefinitions.HAC_AccountCreation.login_as_service_sch_user_name()&amp#27;[0m
-  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32mHAC387 select the applicaton&amp#27;[0m          &amp#27;[90m# StepDefinitions.HAC387VerifyIndustry.HAC387_select_the_applicaton()&amp#27;[0m
-  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32mHAC387 close all the open tabs&amp#27;[0m        &amp#27;[90m# StepDefinitions.HAC387VerifyIndustry.HAC387_close_all_the_open_tabs()&amp#27;[0m
-  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32mHAC387 close the bottom bar&amp#27;[0m           &amp#27;[90m# StepDefinitions.HAC387VerifyIndustry.HAC387_close_the_bottom_bar()&amp#27;[0m
-  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32mHAC387 select accounts tab&amp#27;[0m            &amp#27;[90m# StepDefinitions.HAC387VerifyIndustry.HAC387_select_accounts_tab()&amp#27;[0m
-  &amp#27;[31mWhen &amp#27;[0m&amp#27;[31mHAC1561 create new account request&amp#27;[0m    &amp#27;[90m# StepDefinitions.HAC1561NewAccountCreationRequest.HAC1561_create_new_account_request()&amp#27;[0m
-      &amp#27;[31morg.openqa.selenium.NoSuchSessionException: invalid session id: session deleted as the browser has closed the connection
-from disconnected: Unable to receive message from renderer
-  (Session info: chrome=133.0.6943.127)
-Build info: version: '4.8.2', revision: '826dbfc730'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.2'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [010b075061265850b51dcfd403c0db51, findElement {using=xpath, value=//span[text()='Arizona']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.127, chrome: {chromedriverVersion: 133.0.6943.126 (cffa127ce7b..., userDataDir: C:\Users\dell\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51225}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:51225/devtoo..., se:cdpVersion: 133.0.6943.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 010b075061265850b51dcfd403c0db51
-	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:193)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:183)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:158)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
-	at org.openqa.selenium.support.pagefactory.AjaxElementLocator.access$001(AjaxElementLocator.java:39)
-	at org.openqa.selenium.support.pagefactory.AjaxElementLocator$SlowLoadingElement.isLoaded(AjaxElementLocator.java:165)
-	at org.openqa.selenium.support.ui.SlowLoadableComponent.get(SlowLoadableComponent.java:51)
-	at org.openqa.selenium.support.pagefactory.AjaxElementLocator.findElement(AjaxElementLocator.java:95)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
-	at jdk.proxy4/jdk.proxy4.$Proxy51.getWrappedElement(Unknown Source)
-	at org.openqa.selenium.remote.internal.WebElementToJsonConverter.apply(WebElementToJsonConverter.java:52)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215)
-	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:1024)
-	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:570)
-	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:560)
-	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921)
-	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:265)
-	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:727)
-	at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:477)
-	at PageObjects.HomePage.CreateNewCustomerAccountRequest(HomePage.java:499)
-	at StepDefinitions.HAC1561NewAccountCreationRequest.HAC1561_create_new_account_request(HAC1561NewAccountCreationRequest.java:50)
-	at ✽.HAC1561 create new account request(file:///E:/SeleniumWorkSpace/HeatAndControlAutomation/Regression/Feature/HAC_1561_NewAccountCreateRequest.feature:9)
-&amp#27;[0m
-      &amp#27;[31morg.openqa.selenium.NoSuchSessionException: invalid session id
-Build info: version: '4.8.2', revision: '826dbfc730'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.2'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [010b075061265850b51dcfd403c0db51, getCurrentUrl {}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.127, chrome: {chromedriverVersion: 133.0.6943.126 (cffa127ce7b..., userDataDir: C:\Users\dell\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51225}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:51225/devtoo..., se:cdpVersion: 133.0.6943.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 010b075061265850b51dcfd403c0db51
-	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:193)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:183)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:158)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:598)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:602)
-	at org.openqa.selenium.remote.RemoteWebDriver.getCurrentUrl(RemoteWebDriver.java:309)
-	at Hooks.hooksclass.tearDown(hooksclass.java:35)
-&amp#27;[0m
-]]></system-out>
-    <system-err><![CDATA[Starting ChromeDriver 133.0.6943.126 (cffa127ce7b6be72885391527c15b452056a2e81-refs/branch-heads/6943@{#1570}) on port 30420
-Only local connections are allowed.
-Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
-ChromeDriver was started successfully on port 30420.
-Feb 25, 2025 10:53:12 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
-WARNING: Unable to find CDP implementation matching 133
-Feb 25, 2025 10:53:12 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$3
-WARNING: Unable to find version of CDP to use for . You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.8.2` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
-[1740461094.895][WARNING]: Processing messages while being disconnected
-[1740461094.899][WARNING]: Processing messages while being disconnected
-[1740461094.899][SEVERE]: Unable to receive message from renderer
-]]></system-err>
-  </testcase>
-  <testcase name="tearDownClass" classname="Runner.MyRunner" time="104.554">
+  <testcase name="tearDownClass" classname="Runner.MyRunner" time="194.447">
     <failure message="Failed making field &apos;java.lang.Throwable#detailMessage&apos; accessible; either increase its visibility or write a custom TypeAdapter for its declaring type." type="com.google.gson.JsonIOException">com.google.gson.JsonIOException: Failed making field 'java.lang.Throwable#detailMessage' accessible; either increase its visibility or write a custom TypeAdapter for its declaring type.
-Caused by: java.lang.reflect.InaccessibleObjectException: Unable to make field private java.lang.String java.lang.Throwable.detailMessage accessible: module java.base does not "opens java.lang" to unnamed module @7aa9bfc6
+Caused by: java.lang.reflect.InaccessibleObjectException: Unable to make field private java.lang.String java.lang.Throwable.detailMessage accessible: module java.base does not "opens java.lang" to unnamed module @25f7739c
 </failure>
   </testcase>
 </testsuite>

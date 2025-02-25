@@ -128,16 +128,16 @@ public class HAC1021CreatePROCandSPRAYEstimateswithIOCommissioning extends Commo
 		Assert.assertTrue(numberofhourspresent);
 	}
 
-	@When("HAC1165PICT select from date")
-	public void HAC1165PICT_seelct_from_date() throws InterruptedException, IOException {
+	@When("HAC1165PICT select from date for proc")
+	public void HAC1165PICT_seelct_from_date_for_proc() throws InterruptedException, IOException {
 		estimateCreationFlowStep2 = new EstimateCreationFlowStep2();
-		estimateCreationFlowStep2.selectFromDate();
+		estimateCreationFlowStep2.selectFromDatePROC();
 	}
 
-	@When("HAC1165PICT select to date")
-	public void HAC1165PICT_seelct_to_date() throws InterruptedException, IOException {
+	@When("HAC1165PICT select to date for proc")
+	public void HAC1165PICT_seelct_to_date_for_proc() throws InterruptedException, IOException {
 		estimateCreationFlowStep2 = new EstimateCreationFlowStep2();
-		estimateCreationFlowStep2.selectToDate();
+		estimateCreationFlowStep2.selectToDatePROC();
 	}
 	
 	@Then("HAC1165PICT user click on SPRAY Tab")
@@ -149,13 +149,13 @@ public class HAC1021CreatePROCandSPRAYEstimateswithIOCommissioning extends Commo
 	@When("HAC1165PICT select from date for SPRAY")
 	public void HAC1165PICT_seelct_from_date_for_INSP() throws InterruptedException, IOException {
 		estimateCreationFlowStep2 = new EstimateCreationFlowStep2();
-		estimateCreationFlowStep2.selectFromDateINSP();
+		estimateCreationFlowStep2.selectFromDateSPRAY();
 	}
 
 	@When("HAC1165PICT select to date for SPRAY")
 	public void HAC1165PICT_seelct_to_date_for_INSP() throws InterruptedException, IOException {
 		estimateCreationFlowStep2 = new EstimateCreationFlowStep2();
-		estimateCreationFlowStep2.selectToDateINSP();
+		estimateCreationFlowStep2.selectToDateSPRAY();
 	}
 
 	@When("HAC1165PICT select view confirmation")

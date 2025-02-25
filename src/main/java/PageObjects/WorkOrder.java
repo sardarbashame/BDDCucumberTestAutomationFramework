@@ -30,7 +30,10 @@ public class WorkOrder extends CommonFunctions {
 	@FindBy(xpath = "//input[@name = 'Subject']")
 	WebElement Subject;
 	
-	@FindBy(xpath = "(//label[text()='Date']/..//input)[@name='Start_Date']")
+	@FindBy(xpath = "//h2[text()='Create Work Order']")
+	WebElement heading_createworkorder;
+		
+	@FindBy(xpath = "(//input[@name='Start_Date'])[1]")
 	WebElement ipt_fromDate;
 	
 	@FindBy(xpath = "(//label[text()='Date']/..//input)[@name='End_Date']")
@@ -100,19 +103,20 @@ public class WorkOrder extends CommonFunctions {
 		Thread.sleep(2000);
 		clickDrpDownAndSelValue(txt_worktype, "Repair");
 		Thread.sleep(4000);
+	
 		selectFromDate();
 		selectToDateNext5days();
-		if(icon_deleteAccount.size()>0)
-		{
-			icon_deleteAccount.get(0).click();
-		}
-		scrollIntoView(ipt_AccountName);
-		ipt_AccountName.click();
-		clickDrpDownAndSelValue(ipt_AccountName, "Blue Rock Farm Fresh");
-		expWaitToBeClickable(btn_New);
-		js = (JavascriptExecutor) driver;
-	    js.executeScript("arguments[0].click();", btn_New);
-		btn_save.click();
+//		if(icon_deleteAccount.size()>0)
+//		{
+//			icon_deleteAccount.get(0).click();
+//		}
+//		scrollIntoView(ipt_AccountName);
+//		ipt_AccountName.click();
+//		clickDrpDownAndSelValue(ipt_AccountName, "Blue Rock Farm Fresh");
+//		expWaitToBeClickable(btn_New);
+//		js = (JavascriptExecutor) driver;
+//	    js.executeScript("arguments[0].click();", btn_New);
+//		btn_save.click();
 		Thread.sleep(4000);
 		if (toast_message.size() > 0) {
 			toast_message.get(0).click();
@@ -120,9 +124,10 @@ public class WorkOrder extends CommonFunctions {
 		Thread.sleep(4000);
 	}
 	public void selectFromDate() throws InterruptedException {
-		Thread.sleep(2000);
+		Thread.sleep(4000);
 		expWaitToBeClickable(ipt_fromDate);
-		javascriptClick(ipt_fromDate);
+		ipt_fromDate.click();
+		Thread.sleep(2000);
 		expWaitToBeClickable(ipt_dateValueFromIsToday);
 		javascriptClick(ipt_dateValueFromIsToday);
 		Thread.sleep(2000);
@@ -130,7 +135,7 @@ public class WorkOrder extends CommonFunctions {
 	public void selectToDateNext5days() throws InterruptedException {
 	    Thread.sleep(2000);
 	    expWaitToBeClickable(ipt_endDate);
-	    javascriptClick(ipt_endDate);
+	    ipt_endDate.click();;
 	    Thread.sleep(2000);
 	    // Calculate the date 5 days from now
 	    LocalDate targetDate = LocalDate.now().plusDays(5);

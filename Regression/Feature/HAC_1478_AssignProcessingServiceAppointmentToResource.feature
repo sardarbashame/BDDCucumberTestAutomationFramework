@@ -1,21 +1,20 @@
 Feature: HAC_1478_Assign processing service appointment to a service technician
-
-@regtest
+@test3
   Scenario: Login as service scheduler and assign processing service appointment to a service technician
     Given Login as SERVICE SCH USER NAME
-    When HAC1478 select the applicaton
-    When HAC1478 close all the open tabs
-    When HAC1478 close the bottom bar
-   	When HAC1478 click on cases tab
-   	When HAC1478 create new case
-    When HAC1478 user is on estimate tab
-   	When HAC1478 select values on estimate flow step1
- #  	When HAC1478 select pkg tab
-    When HAC1478 verify the field label number of tech
-    When HAC1478 verify the field label number of days
-    When HAC1478 verify the field label number of hours
-    When HAC1478 select from date
-    When HAC1478 select to date
+    When HAC1165 select the applicaton
+    When HAC1165 close all the open tabs
+    When HAC1165 close the bottom bar
+    When HAC1165 click on cases tab
+    When HAC1165 create new case
+    When HAC1165 user is on estimate tab
+    When HAC1165 verify the pricebook options
+    When HAC1165 select values on estimate flow step1
+    When HAC1165 verify the field label number of days
+		When HAC1165 verify the field label number of hours
+    When HAC1165 verify the field label number of tech
+    When HAC1165 select from date
+    When HAC1165 select to date
     When HAC1478 select view confirmation
     Then HAC1478 save estimate
     Then HAC1478 click on work order link
