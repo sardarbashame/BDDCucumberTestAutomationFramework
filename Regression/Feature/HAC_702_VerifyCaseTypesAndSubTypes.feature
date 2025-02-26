@@ -1,6 +1,6 @@
 Feature: HAC_702_Verify the case types and subtypes
 
-  @regtest
+  @regtests
   Scenario: Login as service manager and verify the case types and subtypes
    Given Login as SERVICE SCH USER NAME
     When HAC702 select the applicaton

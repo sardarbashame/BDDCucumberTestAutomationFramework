@@ -25,7 +25,7 @@ public class AssetDetailsTab extends CommonFunctions {
 	@FindBy(xpath="//*[@name='header']//*[text()='SAP Sales Order']")
 	WebElement headerfield_sapsalesorder;
 	
-	@FindBy(xpath="//*[@name='header']//*[text()='Inquiry']")
+	@FindBy(xpath="(//*[text()='Inquiry'])[last()]")
 	WebElement headerfield_inquiry;
 	
 	@FindBy(xpath="//*[text()='Supplier']")

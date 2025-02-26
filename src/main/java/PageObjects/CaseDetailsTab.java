@@ -416,10 +416,10 @@ public class CaseDetailsTab extends CommonFunctions {
 		Thread.sleep(4000);
 		// scroll to Sales Order field
 				js.executeScript(
-						"var result = document.evaluate(\"//label[text()='Sales Order']\", document.body, null, XPathResult.ANY_TYPE, null);var input = result.iterateNext();input.scrollIntoView();");
+						"var result = document.evaluate(\"//span[text()='Sales Order']\", document.body, null, XPathResult.ANY_TYPE, null);var input = result.iterateNext();input.scrollIntoView();");
 		Thread.sleep(2000);
-		casetype.click();
-		casetypebilling.click();
+		javascriptClick(casetype);
+		javascriptClick(casetypebilling);
 		casesubtypebillingdispute.isDisplayed();
 		casesubtypecreditapplication.isDisplayed();
 		casesubtyperequestforbackupsupport.isDisplayed();
@@ -432,7 +432,7 @@ public class CaseDetailsTab extends CommonFunctions {
 		Thread.sleep(4000);
 		casetype.click();
 		Thread.sleep(2000);
-		casetypeemergency.click();
+		javascriptClick(casetypeemergency);
 		Thread.sleep(2000);
 		casesubtypefire.isDisplayed();
 		casesubtypeinjury.isDisplayed();
@@ -444,7 +444,7 @@ public class CaseDetailsTab extends CommonFunctions {
 		Thread.sleep(2000);
 		casetype.click();
 		Thread.sleep(2000);
-		casetypeequipment.click();
+		javascriptClick(casetypeequipment);
 		Thread.sleep(2000);
 		casesubtypeinformation.isDisplayed();
 		casesubtypesafetyissue1.isDisplayed();
@@ -456,7 +456,7 @@ public class CaseDetailsTab extends CommonFunctions {
 		Thread.sleep(2000);
 		casetype.click();
 		Thread.sleep(2000);
-		casetypefeedback.click();
+		javascriptClick(casetypefeedback);
 		Thread.sleep(2000);
 		casesubtypecustomerservice.isDisplayed();
 		casesubtypeequipment.isDisplayed();
@@ -466,25 +466,25 @@ public class CaseDetailsTab extends CommonFunctions {
 	}	
 	public void VerifyCaseSubTypesForGeneralType() throws InterruptedException {
 		Thread.sleep(2000);
-		casetype.click();
+		javascriptClick(casetype);
 		Thread.sleep(2000);
-		casetypegeneral.click();
+		javascriptClick(casetypegeneral);
 		Thread.sleep(2000);
 	}	
 
 	public void VerifyCaseSubTypesForJunkSpamType() throws InterruptedException {
 		Thread.sleep(2000);
-		casetype.click();
+		javascriptClick(casetype);
 		Thread.sleep(2000);
-		casetypejunkspam.click();
+		javascriptClick(casetypejunkspam);
 		Thread.sleep(2000);
 	}
 
 	public void VerifyCaseSubTypesForNewProjectSchedulingType() throws InterruptedException {
 		Thread.sleep(2000);
-		casetype.click();
+		javascriptClick(casetype);
 		Thread.sleep(2000);
-		casetypenewprojscheduling.click();
+		javascriptClick(casetypenewprojscheduling);
 		Thread.sleep(2000);
 		casesubtypecandi.isDisplayed();
 		casesubtypecommissioning.isDisplayed();
@@ -496,7 +496,7 @@ public class CaseDetailsTab extends CommonFunctions {
 
 	public void VerifyCaseSubTypesForPartsType() throws InterruptedException {
 		Thread.sleep(2000);
-		casetype.click();
+		javascriptClick(casetype);
 		Thread.sleep(3000);
 	//	casetypeparts.click();
 		js.executeScript("var result = document.evaluate(\"//span[@title='Parts']\", document.body, null, XPathResult.ANY_TYPE, null);     var input = result.iterateNext();input.scrollIntoView(); input.click();");
@@ -517,7 +517,7 @@ public class CaseDetailsTab extends CommonFunctions {
 
 	public void VerifyCaseSubTypesForSchedulingType() throws InterruptedException {
 		Thread.sleep(2000);
-		casetype.click();
+		javascriptClick(casetype);
 		Thread.sleep(3000);
 		//casetypescheduling.click();
 		js.executeScript("var result = document.evaluate(\"//span[@title='Scheduling']\", document.body, null, XPathResult.ANY_TYPE, null);     var input = result.iterateNext();input.scrollIntoView(); input.click();");

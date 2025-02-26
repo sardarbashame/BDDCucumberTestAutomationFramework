@@ -88,13 +88,12 @@ public class EstimateCreationFlowStep2 extends CommonFunctions {
 	
 	@FindBy(xpath = "//tr/td[@data-value='2025-02-21']")
 	WebElement insp_ipt_dateValueTO;
-	
-	
+
 	@FindBy(xpath = "(//lightning-tab[contains(@class, 'show')]//label[text()='From']/..//input[@name = 'PKG'])[last()]")
 	WebElement pkg_ipt_fromDate;
-	
-//	@FindBy(xpath = "//tr/td[@data-value='2025-02-18']")
-//	WebElement pkg_ipt_dateValueFrom;
+
+	@FindBy(xpath = "(//label[text()='To']/..//input)[@name='SPRAY']")
+	WebElement ipt_toDateSpray;
 	
 	@FindBy(xpath = "(//lightning-tab[contains(@class, 'show')]//label[text()='To']/..//input[@name = 'PKG'])[last()]")
 	WebElement pkg_ipt_toDate;
@@ -109,8 +108,8 @@ public class EstimateCreationFlowStep2 extends CommonFunctions {
 	@FindBy(xpath = "(//label[text()='From']/..//input)[@name='PROC']")
 	WebElement ipt_fromDate;
 
-//	@FindBy(xpath = "//tr/td[@data-value='2025-02-18']")
-//    WebElement ipt_dateValueFrom;
+	@FindBy(xpath = "(//label[text()='From']/..//input)[@name='SPRAY']")
+	WebElement ipt_fromDateSPRAY;
 
 	@FindBy(xpath = "(//label[text()='To']/..//input)[@name='PROC']")
 	WebElement ipt_toDate;
@@ -137,6 +136,16 @@ public class EstimateCreationFlowStep2 extends CommonFunctions {
 		javascriptClick(ipt_dateValueFromIsToday);
 		Thread.sleep(2000);
 	}
+	public void selectFromDateSpray() throws InterruptedException {
+		Thread.sleep(2000);
+		waitForElementToAppear(By.xpath("(//button[text()='View Confirmation'])[1]"), 30);
+		expWaitToBeClickable(ipt_fromDateSPRAY);
+		javascriptClick(ipt_fromDateSPRAY);
+		expWaitToBeClickable(ipt_dateValueFromIsToday);
+		javascriptClick(ipt_dateValueFromIsToday);
+		Thread.sleep(2000);
+	}
+
 
 	public void selectToDate() throws InterruptedException {
 		Thread.sleep(2000);
@@ -157,7 +166,25 @@ public class EstimateCreationFlowStep2 extends CommonFunctions {
 		javascriptClick(ipt_dateValueFromIsToday);
 		Thread.sleep(2000);
 	}
-	
+	public void selectToDateSpray() throws InterruptedException {
+		Thread.sleep(2000);
+		waitForElementToAppear(By.xpath("(//button[text()='View Confirmation'])[1]"), 30);
+		expWaitToBeClickable(ipt_toDateSpray);
+		javascriptClick(ipt_toDateSpray);
+		Thread.sleep(2000);
+		 // Calculate the target date
+        LocalDate targetDate = LocalDate.now().plusDays(5);
+        String formattedDate = targetDate.format(DateTimeFormatter.ofPattern("d")); // Single digit without leading zero
+        // Locate the date element with single digit (e.g., '1' instead of '01')
+        WebElement dateElement;
+        if (formattedDate.length() == 1) {
+            dateElement = driver.findElement(By.xpath("((//lightning-tab[contains(@class, 'show')]//label[text() = 'To'])[last()]//parent::div//td//span[text() = '"+formattedDate+"'])[last()]"));
+        } else {
+            dateElement = driver.findElement(By.xpath("((//lightning-tab[contains(@class, 'show')]//label[text() = 'To'])[last()]//parent::div//td//span[text() = '"+formattedDate+"'])[last()]"));
+        }
+		javascriptClick(dateElement);
+		Thread.sleep(3000);
+	}
 	public void selectToDateINSP() throws InterruptedException {
 		Thread.sleep(2000);
 		waitForElementToAppear(By.xpath("(//button[text()='View Confirmation'])[1]"), 30);

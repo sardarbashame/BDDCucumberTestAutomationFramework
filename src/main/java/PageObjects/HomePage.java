@@ -417,7 +417,7 @@ public class HomePage extends CommonFunctions {
 		txtbox_email.sendKeys(email);	
 		Thread.sleep(2000);
 		WebElement ele = driver.findElement(By.xpath("//ul/li//span[text()='" + industryname + "']"));
-		moveToEle(ele);
+		javascriptClick(ele);
 		js.executeScript(
 				"var result = document.evaluate(\"(//span[text()='Move to Chosen'])[1]\", document.body, null, XPathResult.ANY_TYPE, null);     var input = result.iterateNext();input.scrollIntoView(); input.click();");
 

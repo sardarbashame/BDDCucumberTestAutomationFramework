@@ -94,7 +94,8 @@ public class WorkOrder extends CommonFunctions {
 	WebElement chckbox_customerfacing;
 	
 	public void CreateWorkOrder() throws Exception {		
-		Thread.sleep(5000);		
+		Thread.sleep(5000);	
+		zoomOut(5);
 		Subject.sendKeys(ConcatCurrentDateTime("TestAuto"));
 		txt_worktype.click();
 		Thread.sleep(2000);
@@ -104,43 +105,54 @@ public class WorkOrder extends CommonFunctions {
 		selectToDateNext5days();
 		if(icon_deleteAccount.size()>0)
 		{
-			icon_deleteAccount.get(0).click();
+			javascriptClick(icon_deleteAccount.get(0));
 		}
-		scrollIntoView(ipt_AccountName);
-		ipt_AccountName.click();
-		clickDrpDownAndSelValue(ipt_AccountName, "Blue Rock Farm Fresh");
+		javascriptClick(ipt_AccountName);
+		clickDrpDownAndSelValue(ipt_AccountName, "Walkers Snack Foods Ltd");
 		expWaitToBeClickable(btn_New);
 		js = (JavascriptExecutor) driver;
 	    js.executeScript("arguments[0].click();", btn_New);
 		btn_save.click();
 		Thread.sleep(4000);
 		if (toast_message.size() > 0) {
-			toast_message.get(0).click();
+			javascriptClick(toast_message.get(0));
 		}
 		Thread.sleep(4000);
 	}
 	public void selectFromDate() throws InterruptedException {
 		Thread.sleep(2000);
-		expWaitToBeClickable(ipt_fromDate);
-		javascriptClick(ipt_fromDate);
+		scrollIntoView(ipt_fromDate);
+		moveToEle(ipt_fromDate);
 		expWaitToBeClickable(ipt_dateValueFromIsToday);
 		javascriptClick(ipt_dateValueFromIsToday);
 		Thread.sleep(2000);
 	}
+
 	public void selectToDateNext5days() throws InterruptedException {
-	    Thread.sleep(2000);
-	    expWaitToBeClickable(ipt_endDate);
-	    javascriptClick(ipt_endDate);
-	    Thread.sleep(2000);
-	    // Calculate the date 5 days from now
-	    LocalDate targetDate = LocalDate.now().plusDays(5);
-	    String formattedDate = targetDate.format(DateTimeFormatter.ofPattern("dd"));
-	    // Find and click the target date
-	    WebElement targetDateElement = driver.findElement(By
-	            .xpath("((//label[text()='Date']/..//input)[@name='End_Date']//parent::div//td//span[text() = '"+formattedDate+"'])[last()]"));
-	    expWaitToBeClickable(targetDateElement);
-	    javascriptClick(targetDateElement);
-	    Thread.sleep(3000);
+		Thread.sleep(2000);
+		scrollIntoView(ipt_endDate);
+		expWaitToBeClickable(ipt_endDate);
+		javascriptClick(ipt_endDate);
+		Thread.sleep(2000);
+		// Calculate the date 5 days from now
+		LocalDate targetDate = LocalDate.now().plusDays(5);
+		String formattedDate = targetDate.format(DateTimeFormatter.ofPattern("d"));
+		// Find and click the target date
+		WebElement dateElement;
+
+		// Locate the date element with single digit (e.g., '1' instead of '01')
+		if (formattedDate.length() == 1) {
+			dateElement = driver.findElement(
+					By.xpath("((//label[text()='Date']/..//input)[@name='End_Date']//parent::div//td//span[text()='"
+							+ formattedDate + "'])[last()]"));
+		} else {
+			dateElement = driver.findElement(
+					By.xpath("((//label[text()='Date']/..//input)[@name='End_Date']//parent::div//td//span[text()='"
+							+ formattedDate + "'])[last()]"));
+		}
+		expWaitToBeClickable(dateElement);
+		javascriptClick(dateElement);
+		Thread.sleep(3000);
 	}
 	public void CreateNewWorkStep(String title, String workplan) throws Exception {
 		Thread.sleep(4000);

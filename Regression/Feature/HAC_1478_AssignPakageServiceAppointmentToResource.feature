@@ -1,6 +1,6 @@
 Feature: HAC_1478_Assign packaging service appointment to a service technician
 
-  @regtest @Test2
+  @regtest
   Scenario: Login as service scheduler and assign packaging service appointments
     Given Login as SERVICE SCH USER NAME
     When HAC1478 select the applicaton
