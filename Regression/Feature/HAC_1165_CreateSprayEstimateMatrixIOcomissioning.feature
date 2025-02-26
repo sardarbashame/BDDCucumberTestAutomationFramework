@@ -14,8 +14,10 @@ Feature: Verify HAC_1165_CreateSPRAY Estimate Matrix
     When HAC1165 verify the field label number of tech
     When HAC1165 verify the field label number of days
     When HAC1165 verify the field label number of hours
-    When HAC1165 select from date SPRAY
-    When HAC1165 select tos date SPRAY
+    When HAC1165 select from date for spray
+    When HAC1165 select to date for spray
+    #When HAC1165 select from date SPRAY
+    #When HAC1165 select tos date SPRAY
     When HAC1165 select view confirmation
     Then user click on Save Estimation
     When User click on Show All quick link

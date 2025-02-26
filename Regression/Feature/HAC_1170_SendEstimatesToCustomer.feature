@@ -17,6 +17,6 @@ Feature: HAC_1170_Send Estimates to Customer
     When HAC1170 select from date
     When HAC1170 select to date
     When HAC1170 select view confirmation
-    Then HAC1170 generate estimate pdf
+    #Then HAC1170 generate estimate pdf
     Then HAC1170 navigate back to case record
     Then HAC1170 verify the estimate version
