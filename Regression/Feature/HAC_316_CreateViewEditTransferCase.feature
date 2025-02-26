@@ -9,7 +9,7 @@ Feature: HAC_316_create view edit transfer a case
     When HAC316 click on cases tab
     When HAC1165 create new case
 
- 
+
   Scenario: Login as service technician and update the case status
     Given Login as SERVICE SCH USER NAME
     When HAC316 select the applicaton

@@ -66,6 +66,10 @@ public class CaseDetailsTab extends CommonFunctions {
 	@FindBy(xpath = "(//h2[text()='Related List Quick Links']/../..//slot[contains(text(), 'Work Orders')])")
 	WebElement relatedlistlnk_workorders;
 	
+	@FindBy(xpath = "//a[contains(text(), 'Show All')]")
+	WebElement lnk_showall;
+	
+	
 	@FindBy(xpath = "//span[text()='Show more actions']")
 	WebElement quickactions_showmoreactions;
 	
@@ -296,7 +300,7 @@ public class CaseDetailsTab extends CommonFunctions {
 	public void updateCaseStatus(String newcasestatus) throws InterruptedException {
 		waitForElementToAppear(By.xpath("//ul/li/a[text()='Details']"), 30);
 		clk_editStatus.click();
-		Thread.sleep(2000);
+		Thread.sleep(5000);
 	//	zoomOutWithJS("30%");
 		javascriptClick(btn_status);
 		Thread.sleep(2000);
@@ -355,6 +359,13 @@ public class CaseDetailsTab extends CommonFunctions {
 	}
 	
 	public void VerifyCaseRelatedListQuickLinks() throws InterruptedException {
+		expWaitToBeClickable(lnk_showall);
+		Thread.sleep(2000);
+		zoomIN(2);
+		drawHighlight(lnk_showall);
+		expWaitToBeClickable(lnk_showall);
+		javascriptClick(lnk_showall);
+		expWaitToBeClickable(relatedlistlnk_workorders);
 		Thread.sleep(2000);
 		relatedlistlnk_workorders.isDisplayed();
 		Thread.sleep(1000);

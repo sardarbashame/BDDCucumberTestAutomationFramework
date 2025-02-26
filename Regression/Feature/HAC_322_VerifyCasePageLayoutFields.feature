@@ -1,6 +1,6 @@
 Feature: HAC_322_Verify the case page layout fields
 
-  @regtest
+
   Scenario: Login as service scheduler and verify the case page layout fields
     Given Login as SERVICE SCH USER NAME
     When HAC322 select the applicaton
