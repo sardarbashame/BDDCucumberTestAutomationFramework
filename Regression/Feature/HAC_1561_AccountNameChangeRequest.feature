@@ -9,7 +9,7 @@ Feature: HAC_1561 Account Name Change Request
     #When HAC1561 recall name change request
 
  Scenario: account name change request from SF
-    Given Login as system administrator
+    Given Login as SERVICE SCH USER NAME
     When HAC387 select the applicaton
     When HAC387 close all the open tabs
     When HAC387 close the bottom bar

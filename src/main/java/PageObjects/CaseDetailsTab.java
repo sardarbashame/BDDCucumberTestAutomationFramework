@@ -297,7 +297,7 @@ public class CaseDetailsTab extends CommonFunctions {
 		waitForElementToAppear(By.xpath("//ul/li/a[text()='Details']"), 30);
 		clk_editStatus.click();
 		Thread.sleep(2000);
-		zoomOutWithJS("30%");
+	//	zoomOutWithJS("30%");
 		javascriptClick(btn_status);
 		Thread.sleep(2000);
 		WebElement ele = driver.findElement(By.xpath("//span[@title='"+newcasestatus+"']"));

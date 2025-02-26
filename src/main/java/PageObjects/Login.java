@@ -53,13 +53,13 @@ public class Login extends CommonFunctions {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 		Loginele.click();
 		
-		int cnt = registerPhonePrompt.size();
-		System.out.println("Before If Register mobile prompt is displayed " + cnt);
-		if(cnt>=1)
-		{
-			System.out.println("Register mobile prompt is displayed " + cnt);
-			registerPhonePrompt.get(0).click();			
-		}
+//		int cnt = registerPhonePrompt.size();
+//		System.out.println("Before If Register mobile prompt is displayed " + cnt);
+//		if(cnt>=1)
+//		{
+//			System.out.println("Register mobile prompt is displayed " + cnt);
+//			registerPhonePrompt.get(0).click();			
+//		}
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 
 	}
