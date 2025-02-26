@@ -80,11 +80,25 @@ public class EstimateCreationFlowStep2 extends CommonFunctions {
 	@FindBy(xpath = "(//label[text()='From']/..//input)[@name='INSP']")
 	WebElement insp_ipt_fromDate;
 	
+	@FindBy(xpath = "(//label[text()='From']/..//input)[@name='PROC']")
+	WebElement proc_ipt_fromDate;
+	
+	@FindBy(xpath = "(//label[text()='To']/..//input)[@name='PROC']")
+	WebElement proc_ipt_toDate;
+	
+	@FindBy(xpath = "(//label[text()='From']/..//input)[@name='SPRAY']")
+	WebElement spray_ipt_fromDate;
+	
 	@FindBy(xpath = "(//lightning-tab[contains(@class, 'show')]//label[text() = 'From'])[last()]//parent::div//button[@name = 'today']")
 	WebElement ipt_dateValueFromIsToday;
 	
 	@FindBy(xpath = "(//label[text()='To']/..//input)[@name='INSP']")
 	WebElement insp_ipt_toDate;
+	
+	@FindBy(xpath = "(//label[text()='To']/..//input)[@name='SPRAY']")
+	WebElement spray_ipt_toDate;
+	
+
 	
 	@FindBy(xpath = "//tr/td[@data-value='2025-02-21']")
 	WebElement insp_ipt_dateValueTO;
@@ -128,7 +142,7 @@ public class EstimateCreationFlowStep2 extends CommonFunctions {
 
 
 	public void selectFromDate() throws InterruptedException {
-		Thread.sleep(2000);
+		Thread.sleep(5000);
 		waitForElementToAppear(By.xpath("(//button[text()='View Confirmation'])[1]"), 30);
 		expWaitToBeClickable(ipt_fromDate);
 		javascriptClick(ipt_fromDate);
@@ -148,7 +162,7 @@ public class EstimateCreationFlowStep2 extends CommonFunctions {
 
 
 	public void selectToDate() throws InterruptedException {
-		Thread.sleep(2000);
+		Thread.sleep(5000);
 		waitForElementToAppear(By.xpath("(//button[text()='View Confirmation'])[1]"), 30);
 		expWaitToBeClickable(ipt_toDate);
 		javascriptClick(ipt_toDate);
@@ -166,6 +180,7 @@ public class EstimateCreationFlowStep2 extends CommonFunctions {
 		javascriptClick(ipt_dateValueFromIsToday);
 		Thread.sleep(2000);
 	}
+
 	public void selectToDateSpray() throws InterruptedException {
 		Thread.sleep(2000);
 		waitForElementToAppear(By.xpath("(//button[text()='View Confirmation'])[1]"), 30);
@@ -185,6 +200,66 @@ public class EstimateCreationFlowStep2 extends CommonFunctions {
 		javascriptClick(dateElement);
 		Thread.sleep(3000);
 	}
+
+	
+	public void selectFromDateSPRAY() throws InterruptedException {
+		Thread.sleep(2000);
+		waitForElementToAppear(By.xpath("(//button[text()='View Confirmation'])[1]"), 30);
+		expWaitToBeClickable(spray_ipt_fromDate);
+		javascriptClick(spray_ipt_fromDate);
+		expWaitToBeClickable(ipt_dateValueFromIsToday);
+		javascriptClick(ipt_dateValueFromIsToday);
+		Thread.sleep(2000);
+	}
+	
+	public void selectToDateSPRAY() throws InterruptedException {
+		Thread.sleep(2000);
+		waitForElementToAppear(By.xpath("(//button[text()='View Confirmation'])[1]"), 30);
+		expWaitToBeClickable(spray_ipt_toDate);
+		javascriptClick(spray_ipt_toDate);
+		Thread.sleep(2000);
+		// Calculate the last date of the current month
+		LocalDate lastDateOfMonth = LocalDate.now().withDayOfMonth(LocalDate.now().lengthOfMonth());
+		String formattedDate = lastDateOfMonth.format(DateTimeFormatter.ofPattern("dd"));
+		// Find and click the last date
+		WebElement lastDate = driver.findElement(By
+				.xpath("((//lightning-tab[contains(@class, 'show')]//label[text() = 'To'])[last()]//parent::div//td//span[text() = '"
+						+ formattedDate + "'])[last()]"));
+		expWaitToBeClickable(lastDate);
+		javascriptClick(lastDate);
+		Thread.sleep(3000);
+	}
+	
+	
+	public void selectFromDatePROC() throws InterruptedException {
+		Thread.sleep(2000);
+		waitForElementToAppear(By.xpath("(//button[text()='View Confirmation'])[1]"), 30);
+		expWaitToBeClickable(proc_ipt_fromDate);
+		javascriptClick(proc_ipt_fromDate);
+		expWaitToBeClickable(ipt_dateValueFromIsToday);
+		javascriptClick(ipt_dateValueFromIsToday);
+		Thread.sleep(2000);
+	}
+	
+	public void selectToDatePROC() throws InterruptedException {
+		Thread.sleep(2000);
+		waitForElementToAppear(By.xpath("(//button[text()='View Confirmation'])[1]"), 30);
+		expWaitToBeClickable(proc_ipt_toDate);
+		javascriptClick(proc_ipt_toDate);
+		Thread.sleep(2000);
+		// Calculate the last date of the current month
+		LocalDate lastDateOfMonth = LocalDate.now().withDayOfMonth(LocalDate.now().lengthOfMonth());
+		String formattedDate = lastDateOfMonth.format(DateTimeFormatter.ofPattern("dd"));
+		// Find and click the last date
+		WebElement lastDate = driver.findElement(By
+				.xpath("((//lightning-tab[contains(@class, 'show')]//label[text() = 'To'])[last()]//parent::div//td//span[text() = '"
+						+ formattedDate + "'])[last()]"));
+		expWaitToBeClickable(lastDate);
+		javascriptClick(lastDate);
+		Thread.sleep(3000);
+	}
+	
+
 	public void selectToDateINSP() throws InterruptedException {
 		Thread.sleep(2000);
 		waitForElementToAppear(By.xpath("(//button[text()='View Confirmation'])[1]"), 30);

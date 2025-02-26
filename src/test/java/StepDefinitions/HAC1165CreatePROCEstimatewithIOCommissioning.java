@@ -107,6 +107,21 @@ public class HAC1165CreatePROCEstimatewithIOCommissioning extends CommonFunction
 		estimateCreationFlowStep1.estimateFlowStep1("USA Domestic Market Rate", "PROC",
 				"BASIC Dual Spiral Ovens", "IO/Commissioning");
 	}
+	
+	@When("HAC1165 select values on estimate flow step1 for proc")
+	public void HAC1165_select_values_on_estimate_flow_step1_for_proc_and_spray() throws InterruptedException, IOException {
+		estimateCreationFlowStep1 = new EstimateCreationFlowStep1();
+		estimateCreationFlowStep1.estimateFlowStep1("USA Domestic Market Rate", "PROC",
+				"BASIC Dual Spiral Ovens", "IO/Commissioning");
+
+	}
+	
+	@When("HAC1165 select values on estimate flow step1 for spray")
+	public void HAC1165_select_values_on_estimate_flow_step1_for_spray() throws InterruptedException, IOException {
+		estimateCreationFlowStep1 = new EstimateCreationFlowStep1();
+		estimateCreationFlowStep1.estimateFlowStep1("USA Domestic Market Rate", "SPRAY",
+				"SINGLE RDR", "IO/Commissioning");
+	}
 
 	@When("HAC1165 verify the field label number of tech")
 	public void HAC1165_verify_the_field_label_number_of_tech() throws InterruptedException, IOException {
@@ -138,7 +153,7 @@ public class HAC1165CreatePROCEstimatewithIOCommissioning extends CommonFunction
 	@When("HAC1165 select from date")
 	public void HAC1165_seelct_from_date() throws InterruptedException, IOException {
 		estimateCreationFlowStep2 = new EstimateCreationFlowStep2();
-		estimateCreationFlowStep2.selectFromDate();
+		estimateCreationFlowStep2.selectFromDatePROC();
 	}
 
 	@When("HAC1165 select from date for spray")
@@ -160,15 +175,28 @@ public class HAC1165CreatePROCEstimatewithIOCommissioning extends CommonFunction
 	}
 
 	@When("HAC1165 select to date")
-	public void HAC1165_seelct_to_date() throws InterruptedException, IOException {
+	public void HAC1165_select_to_date() throws InterruptedException, IOException {
 		estimateCreationFlowStep2 = new EstimateCreationFlowStep2();
-		estimateCreationFlowStep2.selectToDate();
+		estimateCreationFlowStep2.selectToDatePROC();
 	}
 	@When("HAC1165 select to date INSP")
 	public void HAC1165_seelct_to_dateINSP() throws InterruptedException, IOException {
 		estimateCreationFlowStep2 = new EstimateCreationFlowStep2();
 		estimateCreationFlowStep2.selectToDateINSP();
 	}
+	
+	@When("HAC1165 select from date SPRAY")
+	public void HAC1165_select_from_date_SPRAY() throws InterruptedException, IOException {
+		estimateCreationFlowStep2 = new EstimateCreationFlowStep2();
+		estimateCreationFlowStep2.selectFromDateSPRAY();
+	}
+	
+	@When("HAC1165 select to date SPRAY")
+	public void HAC1165_seelct_to_date_SPRAY() throws InterruptedException, IOException {
+		estimateCreationFlowStep2 = new EstimateCreationFlowStep2();
+		estimateCreationFlowStep2.selectToDateSPRAY();
+	}
+	
 	@When("HAC1165 select view confirmation")
 	public void HAC1165_seelct_view_confirmation() throws InterruptedException, IOException {
 		estimateCreationFlowStep3 = new EstimateCreationFlowStep3();

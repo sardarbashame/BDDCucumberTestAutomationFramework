@@ -1,59 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-02-19T13:59:52 IST" name="Suite" finished-at="2025-02-19T14:04:09 IST" duration-ms="257727">
+  <suite started-at="2025-02-25T19:16:12 IST" name="Suite" finished-at="2025-02-25T19:19:28 IST" duration-ms="195851">
     <groups>
       <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.MyRunner@60dac476]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.MyRunner@52333498]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2025-02-19T13:59:52 IST" name="Test" finished-at="2025-02-19T14:04:09 IST" duration-ms="257727">
+    <test started-at="2025-02-25T19:16:12 IST" name="Test" finished-at="2025-02-25T19:19:28 IST" duration-ms="195851">
       <class name="Runner.MyRunner">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:Runner.MyRunner@60dac476]" started-at="2025-02-19T13:59:52 IST" name="setUpClass" finished-at="2025-02-19T13:59:53 IST" duration-ms="1401" status="PASS">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:Runner.MyRunner@52333498]" started-at="2025-02-25T19:16:12 IST" name="setUpClass" finished-at="2025-02-25T19:16:14 IST" duration-ms="1368" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@77a6f805]]>
+                <![CDATA[org.testng.TestRunner@615d6ee0]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.MyRunner@60dac476]" started-at="2025-02-19T13:59:53 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-02-19T14:02:07 IST" duration-ms="134171" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.MyRunner@52333498]" started-at="2025-02-25T19:16:14 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-02-25T19:19:28 IST" duration-ms="193978" status="FAIL">
           <params>
             <param index="0">
               <value>
-                <![CDATA["Login as service scheduler and verify the raw estimate creation"]]>
+                <![CDATA["Login as service scheduler and assign processing service appointment to a service technician"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["HAC_1165_Verify raw estimate creation with IOcommissioning+Training"]]>
+                <![CDATA["HAC_1478_Assign processing service appointment to a service technician"]]>
               </value>
             </param>
           </params>
+          <exception class="org.openqa.selenium.TimeoutException">
+            <message>
+              <![CDATA[Expected condition failed: waiting for element to be clickable: [[ChromeDriver: chrome on WINDOWS (53863f4c65ed65b0880edbb584003e7c)] -> xpath: (//label[text()='Date']/..//input)[@name='Start_Date']//parent::div//button[@name = 'today']] (tried for 40 second(s) with 500 milliseconds interval)
+Build info: version: '4.8.2', revision: '826dbfc730'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.127, chrome: {chromedriverVersion: 133.0.6943.126 (cffa127ce7b..., userDataDir: C:\Users\dell\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57454}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:57454/devtoo..., se:cdpVersion: 133.0.6943.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 53863f4c65ed65b0880edbb584003e7c]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: [[ChromeDriver: chrome on WINDOWS (53863f4c65ed65b0880edbb584003e7c)] -> xpath: (//label[text()='Date']/..//input)[@name='Start_Date']//parent::div//button[@name = 'today']] (tried for 40 second(s) with 500 milliseconds interval)
+Build info: version: '4.8.2', revision: '826dbfc730'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.127, chrome: {chromedriverVersion: 133.0.6943.126 (cffa127ce7b..., userDataDir: C:\Users\dell\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57454}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:57454/devtoo..., se:cdpVersion: 133.0.6943.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 53863f4c65ed65b0880edbb584003e7c
+at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:87)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
+at commonutilities.CommonFunctions.expWaitToBeClickable(CommonFunctions.java:69)
+at PageObjects.WorkOrder.CreateWorkOrder(WorkOrder.java:109)
+at StepDefinitions.HAC1478AssignProcessingServiceAppointment.HAC1478_create_work_order(HAC1478AssignProcessingServiceAppointment.java:182)
+at ✽.HAC1478 create work order(file:///E:/SeleniumWorkSpace/HeatAndControlAutomation/Regression/Feature/HAC_1478_AssignProcessingServiceAppointmentToResource.feature:21)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.MyRunner@60dac476]" started-at="2025-02-19T14:02:07 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-02-19T14:04:09 IST" duration-ms="121689" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["Login as service scheduler and verify the processing estimate creation in draft status"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["HAC_1166_Verify processing estimate creation in draft status"]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:Runner.MyRunner@60dac476]" started-at="2025-02-19T14:04:09 IST" name="tearDownClass" finished-at="2025-02-19T14:04:09 IST" duration-ms="432" status="FAIL">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:Runner.MyRunner@52333498]" started-at="2025-02-25T19:19:28 IST" name="tearDownClass" finished-at="2025-02-25T19:19:28 IST" duration-ms="462" status="FAIL">
           <exception class="com.google.gson.JsonIOException">
             <message>
               <![CDATA[Failed making field 'java.lang.Throwable#detailMessage' accessible; either increase its visibility or write a custom TypeAdapter for its declaring type.]]>
@@ -153,16 +162,16 @@ at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter
 at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:261)
 at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:173)
 at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:101)
-at org.apache.maven.cli.MavenCli.execute(MavenCli.java:904)
-at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:281)
-at org.apache.maven.cli.MavenCli.main(MavenCli.java:204)
+at org.apache.maven.cli.MavenCli.execute(MavenCli.java:906)
+at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:283)
+at org.apache.maven.cli.MavenCli.main(MavenCli.java:206)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:255)
 at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:201)
 at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:361)
 at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:314)
-Caused by: java.lang.reflect.InaccessibleObjectException: Unable to make field private java.lang.String java.lang.Throwable.detailMessage accessible: module java.base does not "opens java.lang" to unnamed module @44261f25
+Caused by: java.lang.reflect.InaccessibleObjectException: Unable to make field private java.lang.String java.lang.Throwable.detailMessage accessible: module java.base does not "opens java.lang" to unnamed module @25f7739c
 at java.base/java.lang.reflect.AccessibleObject.throwInaccessibleObjectException(AccessibleObject.java:388)
 at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:364)
 at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:312)

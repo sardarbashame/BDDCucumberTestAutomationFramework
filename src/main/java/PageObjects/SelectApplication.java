@@ -23,13 +23,13 @@ public class SelectApplication extends CommonFunctions {
 	}
 
 	public void selectApp(String appname) throws InterruptedException {
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 		clk_AppLauncher.click();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 		ipt_SearchAppsAndItems.sendKeys(appname);
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 		driver.findElement(By.xpath("//p[.//*[text()='" + appname + "']]")).click();
-		Thread.sleep(12000);
+		Thread.sleep(5000);
 		//zoomOut(4);
 		zoomOutWithJS("70%");
 	}

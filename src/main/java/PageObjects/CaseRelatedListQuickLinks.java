@@ -60,8 +60,7 @@ public class CaseRelatedListQuickLinks extends CommonFunctions {
 	public void clickWorkOrderLink() throws InterruptedException {
 		Thread.sleep(4000);
 		expWaitToBeClickable(btnworkorder);
-		js = (JavascriptExecutor) driver;
-		js.executeScript("arguments[0].click();", btnworkorder);
+		javascriptClick(btnworkorder);
 		Thread.sleep(5000);
 	}
 	

@@ -1,7 +1,7 @@
 Feature: HAC_1165_Verify raw estimate creation with IOcommissioning+Training
 
   Scenario: Login as service scheduler and verify the raw estimate creation
-  	Given Login as SERVICE SCH USER NAME
+		Given Login as SERVICE SCH USER NAME
     When HAC1165 select the applicaton
     When HAC1165 close all the open tabs
     When HAC1165 close the bottom bar

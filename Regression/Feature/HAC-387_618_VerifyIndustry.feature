@@ -1,4 +1,4 @@
-Feature: HAC_387_618_Verify the Industry field on the customer account
+Feature: HAC_387 Verify the Industry field on the customer account
 
  Scenario: Login as service user and verify the Industry field
     Given Login as SERVICE SCH USER NAME

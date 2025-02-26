@@ -39,18 +39,18 @@ public class Login extends CommonFunctions {
 		}
 		//driver.get(URL);
 		//driver.navigate().to(URL);
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 
 	}
 
 	public void LoginApp(String username, String password) {
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 		usernameele.sendKeys(username);
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 		passwordele.sendKeys(password);
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 		Loginele.click();
 		
 		int cnt = registerPhonePrompt.size();
@@ -60,7 +60,7 @@ public class Login extends CommonFunctions {
 			System.out.println("Register mobile prompt is displayed " + cnt);
 			registerPhonePrompt.get(0).click();			
 		}
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 
 	}
 
