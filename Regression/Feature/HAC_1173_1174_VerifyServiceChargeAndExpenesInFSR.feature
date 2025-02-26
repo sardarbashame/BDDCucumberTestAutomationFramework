@@ -1,5 +1,5 @@
 Feature: HAC-1173 Verify service charges and expenses on field service report tab
-@regtest
+@regtest @Test2
   Scenario: Login as service technician and verify the service charge and expenes on FSR
    # Step1
     Given Login as SERVICE SCH USER NAME

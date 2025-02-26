@@ -80,7 +80,7 @@ public class EstimateCreationFlowStep3 extends CommonFunctions {
 		js.executeScript("window.scrollTo(0,5000)");
 		Thread.sleep(2000);
 		expWaitToBeClickable(text_docx);
-		text_docx.isDisplayed();
+       //text_docx.isDisplayed();
 		
 	}
 }

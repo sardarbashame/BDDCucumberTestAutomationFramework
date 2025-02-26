@@ -155,6 +155,19 @@ public class HAC1165CreatePROCEstimatewithIOCommissioning extends CommonFunction
 		estimateCreationFlowStep2 = new EstimateCreationFlowStep2();
 		estimateCreationFlowStep2.selectFromDatePROC();
 	}
+
+	@When("HAC1165 select from date for spray")
+	public void HAC1165_seelct_from_dateSpray() throws InterruptedException, IOException {
+		estimateCreationFlowStep2 = new EstimateCreationFlowStep2();
+		estimateCreationFlowStep2.selectFromDateSpray();
+	}
+
+	@When("HAC1165 select to date for spray")
+	public void HAC1165_seelct_To_dateSpray() throws InterruptedException, IOException {
+		estimateCreationFlowStep2 = new EstimateCreationFlowStep2();
+		estimateCreationFlowStep2.selectToDateSpray();
+	}
+
 	@When("HAC1165 select from date INSP")
 	public void HAC1165_seelct_from_dateINSP() throws InterruptedException, IOException {
 		estimateCreationFlowStep2 = new EstimateCreationFlowStep2();
