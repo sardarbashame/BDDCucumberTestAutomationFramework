@@ -1,5 +1,5 @@
 Feature: HAC_1478_Assign processing service appointment to a service technician
-@test3
+
   Scenario: Login as service scheduler and assign processing service appointment to a service technician
     Given Login as SERVICE SCH USER NAME
     When HAC1165 select the applicaton
